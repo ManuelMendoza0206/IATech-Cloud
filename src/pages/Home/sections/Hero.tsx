@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-navy-950">
       <img
-        src="/images/cloud.jpg"
+        src="/images/cloud1.jpg"
         alt="Infraestructura cloud de IATECH"
         className="absolute inset-0 h-full w-full object-cover"
       />
