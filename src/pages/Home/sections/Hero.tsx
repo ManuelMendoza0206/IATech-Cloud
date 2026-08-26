@@ -71,7 +71,7 @@ export default function Hero() {
           style={{ '--scroll-progress': progress } as React.CSSProperties}
         >
           <img
-            src="/images/cloud1.jpg"
+            src="/images/cloud2.jpg"
             alt="Infraestructura cloud de IATECH"
             className="absolute inset-0 h-full w-full object-cover"
           />
