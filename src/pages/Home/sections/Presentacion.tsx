@@ -1,15 +1,15 @@
 const HIGHLIGHTS = [
   {
     title: 'Alta disponibilidad',
-    description: 'Arquitecturas resilientes que aseguran la continuidad del servicio clínico.',
+    description: 'Arquitecturas resilientes diseñadas para que el servicio clínico no se interrumpa.',
   },
   {
-    title: 'Actualizaciones fluidas',
-    description: 'Despliegues continuos que no interrumpen el trabajo de los equipos médicos.',
+    title: 'Actualizaciones sin downtime',
+    description: 'Despliegues continuos ejecutados sin detener el trabajo de los equipos médicos.',
   },
   {
-    title: 'Colaboración sin fronteras',
-    description: 'Acceso uniforme a la información de salud, sin importar la ubicación.',
+    title: 'Acceso sin fronteras',
+    description: 'Información de salud disponible desde cualquier ubicación, en tiempo real.',
   },
 ];
 
@@ -27,17 +27,16 @@ export default function Presentacion() {
           </h2>
 
           <p className="mt-6 text-navy-700/80">
-            El Área de Servicios Cloud e Integración de IATECH optimiza y despliega los
-            servicios en la nube de nuestras soluciones médicas. La computación en la
-            nube y el acceso rápido a internet han revolucionado el almacenamiento y el
-            acceso a los datos, facilitando actualizaciones fluidas y la colaboración
-            activa entre equipos distribuidos.
+            Cada actualización, cada despliegue, cada integración pasa por nosotros.
+            Diseñamos, operamos y escalamos la infraestructura cloud que sostiene
+            las soluciones médicas de IATECH — para que los equipos clínicos nunca
+            tengan que pensar en la tecnología detrás de su trabajo.
           </p>
 
           <p className="mt-4 text-navy-700/80">
-            Trabajamos para que cada institución médica acceda a su información sin
-            fronteras geográficas, con infraestructuras eficientes y sostenibles que
-            maximizan el valor de cada inversión.
+            Infraestructura que se adapta al ritmo de la salud: sin ventanas de
+            mantenimiento que interrumpan, sin fronteras que limiten el acceso,
+            sin silos que fragmenten la información.
           </p>
 
           <ul className="mt-10 grid gap-6 sm:grid-cols-3">

@@ -41,9 +41,9 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 text-lg text-navy-900/80">
-            Optimizamos y desplegamos los servicios en la nube de IATECH para
-            que la atención clínica nunca se detenga: rendimiento, velocidad y
-            disponibilidad en cada despliegue.
+            Operamos la infraestructura cloud de IATECH para que la atención
+            clínica nunca se detenga. Rendimiento, velocidad y disponibilidad
+            en cada despliegue.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-6">
