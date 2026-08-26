@@ -3,7 +3,7 @@ import Home from './pages/Home/Home';
 //import AreaTrabajo from './pages/AreaTrabajo/AreaTrabajo';
 import GestionTecnologia from './pages/GestionTecnologia/GestionTecnologia';
 import CienciaTecnologiaInnovacion from './pages/CienciaTecnologiaInnovacion/CienciaTecnologiaInnovacion';
-//import MisionVision from './pages/MisionVision/MisionVision';
+import MisionVision from './pages/MisionVision/MisionVision';
 //import Organizacion from './pages/Organizacion/Organizacion';
 import DescripcionPosiciones from './pages/DescripcionPosiciones/DescripcionPosiciones';
 
@@ -18,7 +18,7 @@ export const ROUTES: AppRoute[] = [
 //  { path: '/area-trabajo', label: 'Área de Trabajo', element: <AreaTrabajo /> },
   { path: '/gestion-tecnologia', label: 'Gestión de Tecnología', element: <GestionTecnologia /> },
   { path: '/ciencia-tecnologia-innovacion', label: 'Ciencia, Tecnología e Innovación', element: <CienciaTecnologiaInnovacion /> },
-//  { path: '/mision-vision', label: 'Misión y Visión', element: <MisionVision /> },
+  { path: '/mision-vision', label: 'Misión y Visión', element: <MisionVision /> },
 //  { path: '/organizacion', label: 'Organización', element: <Organizacion /> },
   { path: '/descripcion-posiciones', label: 'Descripción de Posiciones', element: <DescripcionPosiciones /> },
 ];
