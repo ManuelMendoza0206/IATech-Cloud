@@ -29,10 +29,13 @@ export default function Footer() {
                   <Link to="/" className="transition hover:text-signal">Inicio</Link>
                 </li>
                 <li>
-                  <Link to="/organizacion" className="transition hover:text-signal">Organización</Link>
+                  <Link to="/gestion-tecnologia" className="transition hover:text-signal">Gestión de Tecnología</Link>
                 </li>
                 <li>
-                  <Link to="/mision-vision" className="transition hover:text-signal">Misión y Visión</Link>
+                  <Link to="/ciencia-tecnologia-innovacion" className="transition hover:text-signal">Ciencia, Tecnología e Innovación</Link>
+                </li>
+                <li>
+                  <Link to="/descripcion-posiciones" className="transition hover:text-signal">Descripción de Posiciones</Link>
                 </li>
               </ul>
             </div>

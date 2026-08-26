@@ -31,21 +31,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 rounded-full bg-signal px-7 py-3.5 font-semibold text-navy-950 transition hover:opacity-90"
             >
               <span>Conoce el área</span>
-
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  d="M5 12h14M13 6l6 6-6 6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <i className="bx bx-right-arrow-alt text-lg" />
             </a>
 
             <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-mist/60">
@@ -65,20 +51,7 @@ export default function Hero() {
         aria-label="Ir a la siguiente sección"
         className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-bounce text-mist/50 transition hover:text-signal"
       >
-        <svg
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M12 4v16M6 14l6 6 6-6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        <i className="bx bx-chevron-down text-2xl" />
       </a>
     </section>
   );

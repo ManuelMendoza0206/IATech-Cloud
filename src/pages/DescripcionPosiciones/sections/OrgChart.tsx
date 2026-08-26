@@ -12,38 +12,22 @@ const POSITION_METRICS: Record<
   'gerente-cloud': {
     badge: 'Liderazgo & FinOps',
     focus: 'Estrategia, costos y gestión del talento Cloud',
-    icon: (
-      <svg className="w-5 h-5 text-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.75">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0h4m-4 0V9a2 2 0 012-2h2a2 2 0 012 2v12" />
-      </svg>
-    ),
+    icon: <i className="bx bx-building text-signal text-lg" />,
   },
   'arquitecto-cloud': {
     badge: 'Diseño & Resiliencia',
     focus: 'Patrones de arquitectura, DRP y Security by Design',
-    icon: (
-      <svg className="w-5 h-5 text-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.75">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-      </svg>
-    ),
+    icon: <i className="bx bx-layer text-signal text-lg" />,
   },
   'admin-devops': {
     badge: 'CI/CD & IaC',
     focus: 'Pipelines, orquestación y automatización ágil',
-    icon: (
-      <svg className="w-5 h-5 text-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.75">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-      </svg>
-    ),
+    icon: <i className="bx bx-refresh text-signal text-lg" />,
   },
   'admin-infraestructura': {
     badge: 'SysOps & Seguridad',
     focus: 'Disponibilidad 24/7, redes virtualizadas e IAM',
-    icon: (
-      <svg className="w-5 h-5 text-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.75">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
-      </svg>
-    ),
+    icon: <i className="bx bx-server text-signal text-lg" />,
   },
 };
 
