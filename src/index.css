@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Unbounded:wght@700;800;900&family=Lora:ital,wght@0,400..600;1,400..600&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Syne:wght@700;800&family=Unbounded:wght@700;800;900&family=Lora:ital,wght@0,400..600;1,400..600&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -9,7 +9,7 @@
   --color-mist: #eaf0f8;
   --color-signal: #38d6c8;
 
-  /* Paleta Editorial Minimalista (Estilo Claude / Anthropic) */
+  /* Paleta Editorial Minimalista */
   --color-ivory: #FAF9F5;
   --color-terracotta: #CC5A36;
   --color-terracotta-hover: #b84c2a;
@@ -27,10 +27,11 @@
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
+  --font-logo: "Bungee Shade", cursive;
 }
 
 body {
-  @apply bg-white text-navy-900 font-body antialiased;
+  @apply bg-navy-950 text-mist font-body antialiased;
 }
 
 @keyframes cloud-color-breathe {
@@ -52,4 +53,3 @@ body {
   background-size: 250% 250%;
   animation: cloud-color-breathe 5s ease-in-out infinite;
 }
-
