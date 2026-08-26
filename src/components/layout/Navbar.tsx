@@ -17,27 +17,65 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-30 transition-colors duration-300 ${
-          isScrolled ? 'bg-navy-950/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        className={`fixed inset-x-0 top-0 z-30 w-full transition-all duration-300 ${
+          isScrolled
+            ? 'bg-navy-950/90 backdrop-blur-md py-3 border-b border-mist/20'
+            : 'bg-transparent py-4 border-b border-navy-950/20'
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 sm:px-10">
-          <Link to="/" className="font-display text-lg tracking-wide text-mist">
-            IATECH <span className="text-signal">· CLOUD</span>
-          </Link>
+        <div className="flex w-full items-center px-6 sm:px-10">
+          <div className="flex items-center gap-4 sm:gap-6">
+            {/* Logo: oscuro en reposo, claro al hacer scroll */}
+            <Link
+              to="/"
+              className={`font-logo text-xl tracking-wider transition-colors duration-300 hover:opacity-80 sm:text-2xl ${
+                isScrolled ? 'text-mist' : 'text-navy-950'
+              }`}
+            >
+              IATECH{' '}
+              <span className={isScrolled ? 'text-signal' : 'text-navy-700'}>
+                · CLOUD
+              </span>
+            </Link>
 
-          <button
-            onClick={() => setIsMenuOpen(true)}
-            aria-label="Abrir menú"
-            aria-expanded={isMenuOpen}
-            className="flex items-center gap-3 text-mist transition hover:text-signal focus:outline-none focus-visible:ring-2 focus-visible:ring-signal"
-          >
-            <span className="font-mono text-xs uppercase tracking-widest">Menú</span>
-            <span className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 rounded-full border border-mist/30">
-              <span className="h-px w-4 bg-current" />
-              <span className="h-px w-4 bg-current" />
-            </span>
-          </button>
+            {/* Ícono de Menú Cuadrado adaptativo */}
+            <button
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="Abrir menú"
+              aria-expanded={isMenuOpen}
+              className="group flex items-center focus:outline-none"
+            >
+              <div
+                className={`flex h-9 w-9 flex-col items-center justify-center gap-1 border transition-all duration-200 ${
+                  isScrolled
+                    ? 'border-mist/30 bg-transparent group-hover:border-mist group-hover:bg-mist'
+                    : 'border-navy-950/30 bg-transparent group-hover:border-navy-950 group-hover:bg-navy-950'
+                }`}
+              >
+                <span
+                  className={`h-[2px] w-4 transition-colors duration-200 ${
+                    isScrolled
+                      ? 'bg-mist group-hover:bg-navy-950'
+                      : 'bg-navy-950 group-hover:bg-mist'
+                  }`}
+                />
+                <span
+                  className={`h-[2px] w-4 transition-colors duration-200 ${
+                    isScrolled
+                      ? 'bg-mist group-hover:bg-navy-950'
+                      : 'bg-navy-950 group-hover:bg-mist'
+                  }`}
+                />
+                <span
+                  className={`h-[2px] w-4 transition-colors duration-200 ${
+                    isScrolled
+                      ? 'bg-mist group-hover:bg-navy-950'
+                      : 'bg-navy-950 group-hover:bg-mist'
+                  }`}
+                />
+              </div>
+            </button>
+          </div>
         </div>
       </header>
 
