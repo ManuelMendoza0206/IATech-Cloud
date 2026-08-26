@@ -1,20 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap'); 
+@import "tailwindcss"; 
 
-@theme {
-  /* Paleta: navy + acento "signal" (cloud/conectividad) */
-  --color-navy-950: #050b18;
-  --color-navy-900: #0b1b33;
-  --color-navy-700: #16305c;
-  --color-mist: #eaf0f8;
-  --color-signal: #38d6c8;
+@theme { 
+  /* Paleta: navy + acento "signal" (cloud/conectividad) */ 
+  --color-navy-950: #050b18; 
+  --color-navy-900: #0b1b33; 
+  --color-navy-700: #16305c; 
+  --color-mist: #eaf0f8; 
+  --color-signal: #172A3A; 
 
-  /* Tipografía */
-  --font-display: "Space Grotesk", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
-}
+  /* Tipografía */ 
+  --font-display: "Space Grotesk", sans-serif; 
+  --font-body: "Inter", sans-serif; 
+  --font-mono: "IBM Plex Mono", monospace; 
+  --font-logo: "Bungee Shade", cursive; 
+} 
 
-body {
-  @apply bg-white text-navy-900 font-body antialiased;
+body { 
+  @apply bg-navy-950 text-mist font-body antialiased; 
 }
