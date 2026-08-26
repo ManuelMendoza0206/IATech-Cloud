@@ -5,7 +5,7 @@ import Home from './pages/Home/Home';
 //import CienciaTecnologiaInnovacion from './pages/CienciaTecnologiaInnovacion/CienciaTecnologiaInnovacion';
 //import MisionVision from './pages/MisionVision/MisionVision';
 //import Organizacion from './pages/Organizacion/Organizacion';
-//import DescripcionPosiciones from './pages/DescripcionPosiciones/DescripcionPosiciones';
+import DescripcionPosiciones from './pages/DescripcionPosiciones/DescripcionPosiciones';
 
 export interface AppRoute {
   path: string;
@@ -20,5 +20,5 @@ export const ROUTES: AppRoute[] = [
 //  { path: '/ciencia-tecnologia-innovacion', label: 'Ciencia, Tecnología e Innovación', element: <CienciaTecnologiaInnovacion /> },
 //  { path: '/mision-vision', label: 'Misión y Visión', element: <MisionVision /> },
 //  { path: '/organizacion', label: 'Organización', element: <Organizacion /> },
-//  { path: '/descripcion-posiciones', label: 'Descripción de Posiciones', element: <DescripcionPosiciones /> },
+  { path: '/descripcion-posiciones', label: 'Descripción de Posiciones', element: <DescripcionPosiciones /> },
 ];
