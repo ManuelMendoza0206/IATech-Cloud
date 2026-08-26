@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Unbounded:wght@700;800;900&family=Lora:ital,wght@0,400..600;1,400..600&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -9,7 +9,21 @@
   --color-mist: #eaf0f8;
   --color-signal: #38d6c8;
 
+  /* Paleta Editorial Minimalista (Estilo Claude / Anthropic) */
+  --color-ivory: #FAF9F5;
+  --color-terracotta: #CC5A36;
+  --color-terracotta-hover: #b84c2a;
+  --color-border-stone: #E7E5E0;
+  --color-connector-stone: #D6D1C7;
+  --color-pill-stone: #F3EFEA;
+  --color-pill-text: #44403C;
+  --color-text-primary: #1C1917;
+  --color-text-secondary: #78716C;
+
   /* Tipografía */
+  --font-wild: "Unbounded", "Syne", sans-serif;
+  --font-avant: "Syne", sans-serif;
+  --font-serif: "Newsreader", "Lora", serif;
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
@@ -18,3 +32,24 @@
 body {
   @apply bg-white text-navy-900 font-body antialiased;
 }
+
+@keyframes cloud-color-breathe {
+  0% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 2px 14px rgba(37, 99, 235, 0.25));
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 2px 6px rgba(56, 189, 248, 0.1));
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 2px 14px rgba(37, 99, 235, 0.25));
+  }
+}
+
+.animate-cloud-gradient {
+  background-size: 250% 250%;
+  animation: cloud-color-breathe 5s ease-in-out infinite;
+}
+

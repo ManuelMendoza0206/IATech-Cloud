@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const isDarkHero = location.pathname === '/';
 
   useEffect(() => {
     function handleScroll() {
@@ -14,14 +16,16 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const showDarkNavbar = isScrolled || !isDarkHero;
+
   return (
     <>
       <header
         className={`fixed inset-x-0 top-0 z-30 transition-colors duration-300 ${
-          isScrolled ? 'bg-navy-950/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
+          showDarkNavbar ? 'bg-navy-950/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 sm:px-10">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-10">
           <Link to="/" className="font-display text-lg tracking-wide text-mist">
             IATECH <span className="text-signal">· CLOUD</span>
           </Link>
@@ -33,9 +37,9 @@ export default function Navbar() {
             className="flex items-center gap-3 text-mist transition hover:text-signal focus:outline-none focus-visible:ring-2 focus-visible:ring-signal"
           >
             <span className="font-mono text-xs uppercase tracking-widest">Menú</span>
-            <span className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 rounded-full border border-mist/30">
-              <span className="h-px w-4 bg-current" />
-              <span className="h-px w-4 bg-current" />
+            <span className="flex h-8 w-8 flex-col items-center justify-center gap-1.5 rounded-full border border-mist/30">
+              <span className="h-px w-3.5 bg-current" />
+              <span className="h-px w-3.5 bg-current" />
             </span>
           </button>
         </div>
@@ -44,4 +48,4 @@ export default function Navbar() {
       <Sidebar isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     </>
   );
-}
+}
