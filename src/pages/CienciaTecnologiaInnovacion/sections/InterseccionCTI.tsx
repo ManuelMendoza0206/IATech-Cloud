@@ -26,7 +26,7 @@ const POINTS: CTIPoint[] = [
 
 export function InterseccionCTI() {
   return (
-    <section className="bg-navy-900 py-24 sm:py-32">
+    <section className="bg-navy-900 py-16 sm:py-20">
       <div className="mx-auto grid max-w-7xl gap-16 px-6 sm:px-10 lg:grid-cols-2 lg:items-center lg:gap-20">
         <div>
           <SectionHeader

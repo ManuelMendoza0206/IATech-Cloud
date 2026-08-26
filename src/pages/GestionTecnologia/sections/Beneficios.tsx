@@ -1,10 +1,22 @@
-import { TwoColumnLayout, SectionHeader } from '../../../components/content';
-import type { Beneficio } from '../types';
+import { TwoColumnLayout, SectionHeader } from "../../../components/content";
+import type { Beneficio } from "../types";
 
 const DATA: Beneficio[] = [
-  { title: 'Eficiencia operativa', text: 'Optimización de recursos tecnológicos y reducción de costos operativos.', metric: '↓ Costos' },
-  { title: 'Toma de decisiones', text: 'Explotación inteligente de datos para orientar la innovación.', metric: '↑ Datos' },
-  { title: 'Ventaja competitiva', text: 'Mejor posicionamiento en el mercado y mayor satisfacción de usuarios.', metric: '↑ ROI' },
+  {
+    title: "Eficiencia operativa",
+    text: "Optimización de recursos tecnológicos y reducción de costos operativos.",
+    metric: "↓ Costos",
+  },
+  {
+    title: "Toma de decisiones",
+    text: "Explotación inteligente de datos para orientar la innovación.",
+    metric: "↑ Datos",
+  },
+  {
+    title: "Ventaja competitiva",
+    text: "Mejor posicionamiento en el mercado y mayor satisfacción de usuarios.",
+    metric: "↑ ROI",
+  },
 ];
 
 export function Beneficios() {

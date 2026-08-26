@@ -30,7 +30,7 @@ const DATA: Componente[] = [
 
 export function ComponentesClave() {
   return (
-    <section className="bg-white py-24 sm:py-32">
+    <section className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader number="01" title="Componentes Clave" />
 

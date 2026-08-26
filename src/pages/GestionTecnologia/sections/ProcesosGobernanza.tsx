@@ -11,7 +11,7 @@ const TAGS = ['ITIL', 'COBIT', 'Ágiles', 'Mejora Continua'];
 
 export function ProcesosGobernanza() {
   return (
-    <section className="bg-white py-24 sm:py-32">
+    <section className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-start">
           <div>

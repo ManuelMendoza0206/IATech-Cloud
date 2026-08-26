@@ -20,7 +20,7 @@ const DATA: Conclusion[] = [
 
 export function Conclusiones() {
   return (
-    <section className="bg-navy-900 py-24 sm:py-32">
+    <section className="bg-navy-900 py-16 sm:py-20">
       <div className="mx-auto max-w-4xl px-6 sm:px-10 text-center">
         <span className="font-mono text-xs uppercase tracking-widest text-signal">
           Conclusiones

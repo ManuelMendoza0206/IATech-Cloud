@@ -22,7 +22,7 @@ export function TwoColumnLayout({
   const isRight = imagePosition === 'right';
 
   return (
-    <section className={`${BG_MAP[bg]} py-24 sm:py-32`}>
+    <section className={`${BG_MAP[bg]} py-16 sm:py-20`}>
       <div className="mx-auto grid max-w-7xl gap-16 px-6 sm:px-10 lg:grid-cols-2 lg:items-center lg:gap-20">
         <div className={isRight ? '' : 'order-2'}>
           {children}

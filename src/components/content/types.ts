@@ -4,6 +4,8 @@ export interface HeroProps {
   highlight?: string;
   description: string;
   author?: string;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 export interface SectionHeaderProps {

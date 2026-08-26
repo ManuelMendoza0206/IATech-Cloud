@@ -10,7 +10,7 @@ const DATA: Herramienta[] = [
 
 export function HerramientasSoporte() {
   return (
-    <section className="bg-navy-900 py-24 sm:py-32">
+    <section className="bg-navy-900 py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="04"

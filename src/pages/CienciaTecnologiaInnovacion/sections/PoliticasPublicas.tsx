@@ -11,7 +11,7 @@ const DATA: Politica[] = [
 
 export function PoliticasPublicas() {
   return (
-    <section className="bg-mist py-24 sm:py-32">
+    <section className="bg-mist py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="06"
