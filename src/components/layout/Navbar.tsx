@@ -28,12 +28,10 @@ export default function Navbar() {
             {/* Logo: oscuro en reposo, claro al hacer scroll */}
             <Link
               to="/"
-              className={`font-logo text-xl tracking-wider transition-colors duration-300 hover:opacity-80 sm:text-2xl ${
-                isScrolled ? 'text-mist' : 'text-navy-950'
-              }`}
+              className="font-logo text-xl tracking-wider text-mist transition-colors duration-300 hover:opacity-80 sm:text-2xl"
             >
               IATECH{' '}
-              <span className={isScrolled ? 'text-signal' : 'text-navy-700'}>
+              <span className="text-signal">
                 · CLOUD
               </span>
             </Link>
