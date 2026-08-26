@@ -4,7 +4,7 @@ export function Hero({ subtitle, title, highlight, description, author, imageSrc
   const [before, after] = highlight ? title.split(highlight) : [title];
 
   return (
-    <section className="relative overflow-hidden bg-navy-900 pt-32 pb-20 sm:pt-40 sm:pb-28">
+    <section className={`relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28 ${imageSrc ? '' : 'bg-navy-900'}`}>
       {imageSrc && (
         <img
           src={imageSrc}
@@ -12,13 +12,13 @@ export function Hero({ subtitle, title, highlight, description, author, imageSrc
           className="absolute inset-0 -z-20 h-full w-full object-cover"
         />
       )}
-      <div className="absolute inset-0 -z-10 bg-navy-950/70 mix-blend-multiply" />
-      <div className="absolute inset-0 -z-10 opacity-20">
+      <div className={`absolute inset-0 ${imageSrc ? 'bg-navy-950/60' : 'bg-navy-950/70 mix-blend-multiply'}`} />
+      <div className="absolute inset-0 opacity-20">
         <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-signal/30 blur-3xl" />
         <div className="absolute -bottom-20 -right-20 h-[300px] w-[300px] rounded-full bg-signal/20 blur-3xl" />
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 sm:px-10">
+      <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
         <span className="font-mono text-xs uppercase tracking-widest text-signal">
           {subtitle}
         </span>
