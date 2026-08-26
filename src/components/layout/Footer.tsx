@@ -40,15 +40,6 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div>
-              <p className="font-mono text-xs uppercase tracking-widest text-mist/50">Contacto</p>
-              <ul className="mt-4 space-y-2 text-sm text-mist/80">
-                {/* TODO: reemplazar con el correo real del área */}
-                <li>correo@iatech.com</li>
-                {/* TODO: reemplazar con el teléfono real */}
-                <li>+00 000 0000</li>
-              </ul>
-            </div>
           </div>
         </div>
 

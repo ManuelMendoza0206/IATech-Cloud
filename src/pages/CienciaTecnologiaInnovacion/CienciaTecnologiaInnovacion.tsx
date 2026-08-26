@@ -18,7 +18,7 @@ export default function CienciaTecnologiaInnovacion() {
         title="Ciencia, Tecnología"
         highlight="e Innovación"
         description="Exploración de conceptos clave y su impacto en la sociedad y la economía. El motor principal del progreso y el desarrollo humano."
-        imageSrc="/fondo1.png"
+        imageSrc="/images/fondo1.jpg"
         imageAlt="Ciencia, Tecnología e Innovación"
       />
       <div id="content-start" />

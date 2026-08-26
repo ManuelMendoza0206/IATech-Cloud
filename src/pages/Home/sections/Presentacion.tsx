@@ -57,7 +57,7 @@ export default function Presentacion() {
             className="h-[480px] w-full rounded-2xl object-cover shadow-xl"
           />
           <div className="absolute -bottom-6 -left-6 rounded-xl bg-navy-900 px-6 py-4 text-mist shadow-lg">
-            <p className="font-display text-2xl text-signal">99.9%</p>
+            <p className="font-display text-2xl text-signal">99%</p>
             <p className="font-mono text-xs uppercase tracking-widest text-mist/70">
               Disponibilidad
             </p>
