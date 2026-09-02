@@ -22,23 +22,26 @@ export default function Footer() {
           </div>
 
           <div className="flex gap-16">
-            <div>
+            <nav aria-label="Navegación del sitio">
               <p className="font-mono text-xs uppercase tracking-widest text-mist/50">Navegación</p>
               <ul className="mt-4 space-y-2 text-sm">
                 <li>
-                  <Link to="/" className="transition hover:text-signal">Inicio</Link>
+                  <Link to="/" className="transition hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded">Inicio</Link>
                 </li>
                 <li>
-                  <Link to="/gestion-tecnologia" className="transition hover:text-signal">Gestión de Tecnología</Link>
+                  <Link to="/gestion-tecnologia" className="transition hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded">Gestión de Tecnología</Link>
                 </li>
                 <li>
-                  <Link to="/ciencia-tecnologia-innovacion" className="transition hover:text-signal">Ciencia, Tecnología e Innovación</Link>
+                  <Link to="/ciencia-tecnologia-innovacion" className="transition hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded">Ciencia, Tecnología e Innovación</Link>
                 </li>
                 <li>
-                  <Link to="/descripcion-posiciones" className="transition hover:text-signal">Descripción de Posiciones</Link>
+                  <Link to="/mision-vision" className="transition hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded">Misión y Visión</Link>
+                </li>
+                <li>
+                  <Link to="/descripcion-posiciones" className="transition hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded">Descripción de Posiciones</Link>
                 </li>
               </ul>
-            </div>
+            </nav>
 
           </div>
         </div>

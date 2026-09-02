@@ -4,12 +4,12 @@ export default function Hero() {
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.12]"
         style={{
-          backgroundImage: 'radial-gradient(#38d6c8 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(var(--color-signal, #38d6c8) 1px, transparent 1px)',
           backgroundSize: '24px 24px',
         }}
       />
 
-      <div className="pointer-events-none absolute top-1/2 left-1/2 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-signal/15 via-sky-500/5 to-transparent blur-[120px]" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 h-[min(420px,60vh)] w-[min(720px,90vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-signal/15 via-signal/5 to-transparent blur-[120px]" />
 
       <div className="absolute top-6 left-8 hidden font-mono text-[10px] tracking-widest text-mist/20 sm:block">
         SYS_NODE // MISSION_VISION_V1.0

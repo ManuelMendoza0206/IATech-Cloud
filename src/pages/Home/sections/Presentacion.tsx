@@ -18,7 +18,7 @@ export default function Presentacion() {
     <section id="presentacion" className="bg-white py-24 sm:py-32">
       <div className="mx-auto grid max-w-7xl gap-16 px-6 sm:px-10 lg:grid-cols-2 lg:items-center lg:gap-20">
         <div>
-          <span className="font-mono text-xs uppercase tracking-widest text-navy-700/60">
+          <span className="font-mono text-xs uppercase tracking-widest text-navy-700/70">
             Sobre el área
           </span>
 
@@ -43,7 +43,7 @@ export default function Presentacion() {
             {HIGHLIGHTS.map((item) => (
               <li key={item.title} className="border-l-2 border-signal pl-4">
                 <p className="font-display text-base text-navy-900">{item.title}</p>
-                <p className="mt-1 text-sm text-navy-700/70">{item.description}</p>
+                <p className="mt-1 text-sm text-navy-700/80">{item.description}</p>
               </li>
             ))}
           </ul>
@@ -54,7 +54,8 @@ export default function Presentacion() {
           <img
             src="/images/cloud-equipo.jpg"
             alt="Equipo del área Cloud de IATECH"
-            className="h-[480px] w-full rounded-2xl object-cover shadow-xl"
+            className="aspect-[4/3] w-full rounded-2xl object-cover shadow-xl sm:aspect-video lg:aspect-[4/3]"
+            loading="lazy"
           />
           <div className="absolute -bottom-6 -left-6 rounded-xl bg-navy-900 px-6 py-4 text-mist shadow-lg">
             <p className="font-display text-2xl text-signal">99%</p>

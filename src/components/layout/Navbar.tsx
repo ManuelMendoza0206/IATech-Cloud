@@ -28,7 +28,8 @@ export default function Navbar() {
             {/* Logo: oscuro en reposo, claro al hacer scroll */}
             <Link
               to="/"
-              className="font-logo text-xl tracking-wider text-mist transition-colors duration-300 hover:opacity-80 sm:text-2xl"
+              className="font-logo text-xl tracking-wider text-mist transition-colors duration-300 hover:opacity-80 sm:text-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded"
+              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
             >
               IATECH{' '}
               <span className="text-signal">
@@ -41,10 +42,10 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(true)}
               aria-label="Abrir menú"
               aria-expanded={isMenuOpen}
-              className="group flex items-center focus:outline-none"
+              className="group flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded-full"
             >
               <div
-                className={`flex h-9 w-9 flex-col items-center justify-center gap-1 border transition-all duration-200 ${
+                className={`flex h-11 w-11 flex-col items-center justify-center gap-1 rounded-full border transition-all duration-200 ${
                   isScrolled
                     ? 'border-mist/30 bg-transparent group-hover:border-mist group-hover:bg-mist'
                     : 'border-navy-950/30 bg-transparent group-hover:border-navy-950 group-hover:bg-navy-950'

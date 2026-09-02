@@ -48,7 +48,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             <button
               onClick={onClose}
               aria-label="Cerrar menú"
-              className="rounded-full p-2 text-mist transition hover:text-signal focus:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+              className="rounded-full p-2 text-mist transition hover:text-signal focus:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />

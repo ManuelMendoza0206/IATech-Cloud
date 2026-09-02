@@ -44,14 +44,14 @@ export default function Declaraciones() {
         className="pointer-events-none absolute inset-0 opacity-[0.035]"
         style={{
           backgroundImage:
-            'linear-gradient(#0f172a 1px, transparent 1px), linear-gradient(to right, #0f172a 1px, transparent 1px)',
+            'linear-gradient(var(--color-navy-950, #050b18) 1px, transparent 1px), linear-gradient(to right, var(--color-navy-950, #050b18) 1px, transparent 1px)',
           backgroundSize: '32px 32px',
         }}
       />
 
       <div className="relative mx-auto max-w-6xl px-6 sm:px-10">
         <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
-          <span className="font-mono text-xs uppercase tracking-widest text-navy-700/60">
+          <span className="font-mono text-xs uppercase tracking-widest text-navy-700/70">
             Declaraciones
           </span>
           <h2 className="mt-3 font-display text-3xl font-semibold text-navy-900 sm:text-4xl">
@@ -67,7 +67,7 @@ export default function Declaraciones() {
           {STATEMENTS.map((item) => (
             <article
               key={item.id}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-8 shadow-sm transition hover:border-signal/50 hover:shadow-xl sm:p-10"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-navy-700/20 bg-white p-8 shadow-sm transition hover:border-signal/50 hover:shadow-xl sm:p-10"
             >
               <div className="absolute inset-x-8 top-0 h-0.5 bg-gradient-to-r from-transparent via-signal to-transparent opacity-0 transition group-hover:opacity-100" />
 
