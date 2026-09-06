@@ -37,6 +37,9 @@ export default function Footer() {
                 <li>
                   <Link to="/descripcion-posiciones" className="transition hover:text-signal">Descripción de Posiciones</Link>
                 </li>
+                <li>
+                  <Link to="/mbti" className="transition hover:text-signal">MBTI · Equipo</Link>
+                </li>
               </ul>
             </div>
 

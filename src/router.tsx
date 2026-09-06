@@ -6,6 +6,7 @@ import CienciaTecnologiaInnovacion from './pages/CienciaTecnologiaInnovacion/Cie
 import MisionVision from './pages/MisionVision/MisionVision';
 //import Organizacion from './pages/Organizacion/Organizacion';
 import DescripcionPosiciones from './pages/DescripcionPosiciones/DescripcionPosiciones';
+import MBTI from './pages/MBTI/MBTI';
 
 export interface AppRoute {
   path: string;
@@ -21,4 +22,5 @@ export const ROUTES: AppRoute[] = [
   { path: '/mision-vision', label: 'Misión y Visión', element: <MisionVision /> },
 //  { path: '/organizacion', label: 'Organización', element: <Organizacion /> },
   { path: '/descripcion-posiciones', label: 'Descripción de Posiciones', element: <DescripcionPosiciones /> },
+  { path: '/mbti', label: 'MBTI · Equipo', element: <MBTI /> },
 ];
