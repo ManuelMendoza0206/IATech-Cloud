@@ -23,7 +23,7 @@ export function HerramientasSoporte() {
           {DATA.map((h) => (
             <div
               key={h.title}
-              className={`rounded-2xl border-l-4 ${h.color} bg-white/5 p-6 backdrop-blur-sm`}
+              className={`rounded-2xl border-l-2 ${h.color} bg-white/5 p-6 backdrop-blur-sm`}
             >
               <p className="font-display text-lg text-mist">{h.title}</p>
               <p className="mt-2 text-sm text-mist/60">{h.desc}</p>

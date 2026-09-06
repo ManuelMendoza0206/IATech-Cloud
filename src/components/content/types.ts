@@ -21,6 +21,7 @@ export interface TwoColumnLayoutProps {
   imageAlt: string;
   imagePosition?: 'left' | 'right';
   bg?: 'white' | 'mist' | 'navy';
+  id?: string;
 }
 
 export interface VideoEmbedProps {

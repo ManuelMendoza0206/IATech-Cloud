@@ -7,6 +7,7 @@ import MisionVision from './pages/MisionVision/MisionVision';
 //import Organizacion from './pages/Organizacion/Organizacion';
 import DescripcionPosiciones from './pages/DescripcionPosiciones/DescripcionPosiciones';
 import MBTI from './pages/MBTI/MBTI';
+import Scrum from './pages/Scrum/Scrum';
 
 export interface AppRoute {
   path: string;
@@ -23,4 +24,5 @@ export const ROUTES: AppRoute[] = [
 //  { path: '/organizacion', label: 'Organización', element: <Organizacion /> },
   { path: '/descripcion-posiciones', label: 'Descripción de Posiciones', element: <DescripcionPosiciones /> },
   { path: '/mbti', label: 'MBTI · Equipo', element: <MBTI /> },
+  { path: '/scrum', label: 'Scrum', element: <Scrum /> },
 ];

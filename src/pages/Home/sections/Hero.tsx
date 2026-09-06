@@ -1,36 +1,48 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function Hero() {
-  const [progress, setProgress] = useState(0);
   const containerRef = useRef<HTMLElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const arrowRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
+    const container = containerRef.current;
+    const image = imageRef.current;
+    const arrow = arrowRef.current;
+    if (!container || !image || !arrow) return;
+
+    let raf: number;
+
     const handleScroll = () => {
-      if (!containerRef.current) return;
-      
-      const { top, height } = containerRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      const scrollDistance = height - windowHeight;
-      if (scrollDistance > 0) {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const { top, height } = container.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const scrollDistance = height - windowHeight;
+        if (scrollDistance <= 0) return;
+
         const scrolled = -top;
-        const currentProgress = Math.min(Math.max(scrolled / scrollDistance, 0), 1);
-        setProgress(currentProgress);
-      }
+        const progress = Math.min(Math.max(scrolled / scrollDistance, 0), 1);
+
+        const widthPercent = 60 + progress * 40;
+        image.style.width = `${widthPercent}%`;
+        arrow.style.opacity = String(Math.max(1 - progress * 4, 0));
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
-    
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
     <section ref={containerRef} className="relative h-[200vh] bg-mist">
-      {/* Contenedor Sticky que se mantiene pegado durante el scroll */}
       <div className="sticky top-0 flex h-screen w-full items-center overflow-hidden">
         
-        {/* LADO IZQUIERDO: Sección Blanca (Texto) */}
         <div className="relative z-10 flex w-full flex-col justify-center px-6 py-20 sm:px-10 lg:w-[40%] lg:px-14 xl:px-20">
           <span className="font-mono text-xs uppercase tracking-widest text-navy-700">
             Área de Servicios Cloud e Integración
@@ -49,7 +61,7 @@ export default function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-6">
             <a
               href="#presentacion"
-              className="group inline-flex items-center gap-3 border border-navy-950 bg-navy-950 px-6 py-3.5 text-sm font-medium tracking-wide text-mist transition-all hover:bg-signal hover:text-navy-950 hover:border-signal"
+              className="group inline-flex items-center gap-3 rounded-full border border-navy-950 bg-navy-950 px-6 py-3.5 text-sm font-medium tracking-wide text-mist transition-all hover:bg-signal hover:text-navy-950 hover:border-signal"
             >
               <span>Conoce el área</span>
               <i className="bx bx-right-arrow-alt text-lg" />
@@ -65,10 +77,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* LADO DERECHO: Imagen dinámicamente expansible hacia la izquierda */}
         <div
-          className="absolute right-0 top-0 z-20 h-full w-full shadow-2xl transition-all duration-75 ease-linear lg:w-[calc(60%+var(--scroll-progress)*40%)]"
-          style={{ '--scroll-progress': progress } as React.CSSProperties}
+          ref={imageRef}
+          className="absolute right-0 top-0 z-20 h-full w-[60%] shadow-2xl will-change-[width]"
         >
           <img
             src="/images/cloud2.jpg"
@@ -81,8 +92,8 @@ export default function Hero() {
           <a
             href="#presentacion"
             aria-label="Ir a la siguiente sección"
-            className="absolute bottom-8 left-1/2 z-30 -translate-x-1/2 animate-bounce text-mist transition hover:text-signal"
-            style={{ opacity: Math.max(1 - progress * 4, 0) }} 
+            ref={arrowRef}
+            className="absolute bottom-8 left-1/2 z-30 -translate-x-1/2 flex h-11 w-11 items-center justify-center animate-bounce rounded-full text-mist transition hover:text-signal"
           >
             <svg
               width="24"

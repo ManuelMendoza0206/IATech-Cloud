@@ -3,9 +3,9 @@ import Presentacion from "./sections/Presentacion";
 
 export default function Home() {
   return (
-    <main>
+    <div>
       <Hero />
       <Presentacion />
-    </main>
+    </div>
   );
 }

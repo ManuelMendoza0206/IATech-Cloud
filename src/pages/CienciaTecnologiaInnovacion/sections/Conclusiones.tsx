@@ -5,16 +5,16 @@ interface Conclusion {
 
 const DATA: Conclusion[] = [
   {
-    title: 'Motor principal',
-    text: 'La ciencia, la tecnología y la innovación operan como el motor principal del progreso y el desarrollo humano.',
+    title: "Motor principal",
+    text: "La ciencia, la tecnología y la innovación operan como el motor principal del progreso y el desarrollo humano.",
   },
   {
-    title: 'Inversión continua',
-    text: 'La inversión continua en I+D es esencial para la sostenibilidad y la prosperidad económica a largo plazo.',
+    title: "Inversión continua",
+    text: "La inversión continua en I+D es esencial para la sostenibilidad y la prosperidad económica a largo plazo.",
   },
   {
-    title: 'Colaboración',
-    text: 'El impacto positivo se maximiza mediante la colaboración coordinada entre el sector público, el privado y la comunidad científica.',
+    title: "Colaboración",
+    text: "El impacto positivo se maximiza mediante la colaboración coordinada entre el sector público, el privado y la comunidad científica.",
   },
 ];
 
@@ -31,7 +31,10 @@ export function Conclusiones() {
 
         <div className="mt-12 grid gap-8 sm:grid-cols-3">
           {DATA.map((c) => (
-            <div key={c.title} className="rounded-2xl border border-signal/20 bg-signal/5 p-6">
+            <div
+              key={c.title}
+              className="rounded-2xl border border-signal/20 bg-signal/5 p-6"
+            >
               <p className="font-display text-lg text-signal">{c.title}</p>
               <p className="mt-2 text-sm text-mist/60">{c.text}</p>
             </div>

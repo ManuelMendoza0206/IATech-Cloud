@@ -9,7 +9,7 @@ import {
 
 export default function GestionTecnologia() {
   return (
-    <main>
+    <div>
       <Hero
         subtitle="Gestión Estratégica"
         title="Gestión de"
@@ -24,6 +24,6 @@ export default function GestionTecnologia() {
       <ProcesosGobernanza />
       <HerramientasSoporte />
       <Beneficios />
-    </main>
+    </div>
   );
 }

@@ -1,4 +1,5 @@
 import { Hero } from '../../components/content';
+import SectionNav from './sections/SectionNav';
 import {
   FundamentosCiencia,
   FundamentosTecnologia,
@@ -12,7 +13,7 @@ import {
 
 export default function CienciaTecnologiaInnovacion() {
   return (
-    <main>
+    <div>
       <Hero
         subtitle="Fundamentos Teóricos"
         title="Ciencia, Tecnología"
@@ -22,14 +23,15 @@ export default function CienciaTecnologiaInnovacion() {
         imageAlt="Ciencia, Tecnología e Innovación"
       />
       <div id="content-start" />
-      <FundamentosCiencia />
-      <FundamentosTecnologia />
-      <FundamentosInnovacion />
-      <InterseccionCTI />
-      <ImpactoSocial />
-      <PoliticasPublicas />
-      <TendenciasFuturas />
+      <SectionNav />
+      <div id="ciencia"><FundamentosCiencia /></div>
+      <div id="tecnologia"><FundamentosTecnologia /></div>
+      <div id="innovacion"><FundamentosInnovacion /></div>
+      <div id="interseccion"><InterseccionCTI /></div>
+      <div id="impacto"><ImpactoSocial /></div>
+      <div id="politicas"><PoliticasPublicas /></div>
+      <div id="tendencias"><TendenciasFuturas /></div>
       <Conclusiones />
-    </main>
+    </div>
   );
 }

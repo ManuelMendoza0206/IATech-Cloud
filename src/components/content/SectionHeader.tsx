@@ -1,7 +1,7 @@
 import type { SectionHeaderProps } from './types';
 
 export function SectionHeader({ number, title, description, variant = 'light' }: SectionHeaderProps) {
-  const labelColor = variant === 'dark' ? 'text-signal' : 'text-navy-700/60';
+  const labelColor = variant === 'dark' ? 'text-signal' : 'text-navy-700/70';
   const titleColor = variant === 'dark' ? 'text-mist' : 'text-navy-900';
 
   return (
