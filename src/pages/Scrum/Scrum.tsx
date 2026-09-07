@@ -4,10 +4,11 @@ import {
   Definicion,
   Pilares,
   Valores,
-  ScrumTeam,
   Eventos,
   Artefactos,
   ConceptosOperativos,
+  ObjetivosAreas,
+  ScrumTeam,
 } from './sections';
 
 export default function Scrum() {
@@ -32,9 +33,6 @@ export default function Scrum() {
       <div id="valores">
         <Valores />
       </div>
-      <div id="equipo">
-        <ScrumTeam />
-      </div>
       <div id="eventos">
         <Eventos />
       </div>
@@ -42,6 +40,10 @@ export default function Scrum() {
         <Artefactos />
       </div>
       <ConceptosOperativos />
+      <ObjetivosAreas />
+      <div id="equipo">
+        <ScrumTeam />
+      </div>
 
       <section className="bg-navy-950 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-6 text-center sm:px-10">
