@@ -4,10 +4,11 @@ const SECTIONS = [
   { id: 'definicion', label: 'Definición', short: '01' },
   { id: 'pilares', label: 'Pilares', short: '02' },
   { id: 'valores', label: 'Valores', short: '03' },
-  { id: 'equipo', label: 'Equipo', short: '04' },
-  { id: 'eventos', label: 'Eventos', short: '05' },
-  { id: 'artefactos', label: 'Artefactos', short: '06' },
-  { id: 'conceptos', label: 'Conceptos', short: '07' },
+  { id: 'eventos', label: 'Eventos', short: '04' },
+  { id: 'artefactos', label: 'Artefactos', short: '05' },
+  { id: 'conceptos', label: 'Conceptos', short: '06' },
+  { id: 'objetivos', label: 'Objetivos', short: '07' },
+  { id: 'equipo', label: 'Equipo', short: '08' },
 ];
 
 export default function SectionNav() {

@@ -5,4 +5,5 @@ export { ScrumTeam } from './ScrumTeam';
 export { Eventos } from './Eventos';
 export { Artefactos } from './Artefactos';
 export { ConceptosOperativos } from './ConceptosOperativos';
+export { ObjetivosAreas } from './ObjetivosAreas';
 export { default as SectionNav } from './SectionNav';

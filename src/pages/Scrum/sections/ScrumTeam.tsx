@@ -1,38 +1,45 @@
 import { SectionHeader } from '../../../components/content';
 
-const ROLES = [
+const TEAM = [
   {
+    id: 'po',
     role: 'Product Owner',
     short: 'PO',
-    responsibility: 'Maximizar el valor del producto',
-    tasks: [
-      'Definir y comunicar la visión del producto',
-      'Crear, priorizar y detallar el Product Backlog',
-      'Puente directo con clientes y negocio',
-    ],
+    name: 'Prof. — Por definir',
     icon: 'bx-crown',
+    accent: 'bg-amber-500',
   },
   {
+    id: 'sm',
     role: 'Scrum Master',
     short: 'SM',
-    responsibility: 'Asegurar la efectividad del equipo',
-    tasks: [
-      'Facilitar ceremonias y el framework',
-      'Remover impedimentos organizacionales',
-      'Proteger al equipo de interrupciones externas',
-    ],
+    name: 'Por definir',
     icon: 'bx-shield',
+    accent: 'bg-signal',
   },
   {
-    role: 'Developers',
+    id: 'dev-1',
+    role: 'Equipo de Desarrollo',
     short: 'DEV',
-    responsibility: 'Crear un incremento utilizable cada Sprint',
-    tasks: [
-      'Estimar y planificar la ejecución técnica',
-      'Mantener calidad y adherencia al diseño',
-      'Autoorganizarse en el día a día',
-    ],
+    name: 'Por definir',
     icon: 'bx-code-alt',
+    accent: 'bg-navy-700',
+  },
+  {
+    id: 'dev-2',
+    role: 'Equipo de Desarrollo',
+    short: 'DEV',
+    name: 'Por definir',
+    icon: 'bx-code-alt',
+    accent: 'bg-navy-700',
+  },
+  {
+    id: 'dev-3',
+    role: 'Equipo de Desarrollo',
+    short: 'DEV',
+    name: 'Por definir',
+    icon: 'bx-code-alt',
+    accent: 'bg-navy-700',
   },
 ];
 
@@ -41,35 +48,47 @@ export function ScrumTeam() {
     <section className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
-          number="04"
+          number="08"
           title="El Scrum Team"
-          description="Equipo pequeño, cohesionado, sin jerarquías internas ni silos. Todo el equipo es responsable del incremento de valor en cada ciclo."
+          description="5 integrantes — 1 Product Owner (profe) + 4 del grupo. Equipo pequeño y cohesionado, sin jerarquías internas. Cada Sprint entrega un incremento de valor."
         />
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {ROLES.map((r) => (
+        {/* Botón hacia objetivos por área */}
+        <div className="mt-6">
+          <a
+            href="#objetivos"
+            className="inline-flex items-center gap-2 rounded-full bg-navy-950 px-5 py-2.5 text-xs font-medium text-mist transition-colors hover:bg-navy-800"
+          >
+            Ver objetivos por área
+            <i className="bx bx-arrow-to-bottom text-sm" />
+          </a>
+        </div>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          {TEAM.map((m) => (
             <div
-              key={r.role}
-              className="flex flex-col rounded-2xl border border-navy-900/10 bg-mist/50 p-8 transition-shadow hover:shadow-lg"
+              key={m.id}
+              className="flex flex-col rounded-2xl border border-navy-900/10 bg-mist/50 p-6 transition-shadow hover:shadow-lg"
             >
               <div className="flex items-center justify-between">
-                <i className={`bx ${r.icon} text-3xl text-signal`} />
+                <i className={`bx ${m.icon} text-3xl text-signal`} />
                 <span className="rounded-full bg-navy-900 px-3 py-1 font-mono text-xs text-mist">
-                  {r.short}
+                  {m.short}
                 </span>
               </div>
-              <p className="mt-4 font-display text-lg text-navy-900">{r.role}</p>
-              <p className="font-mono text-xs uppercase tracking-widest text-signal">
-                {r.responsibility}
-              </p>
-              <ul className="mt-6 flex-1 space-y-2">
-                {r.tasks.map((t) => (
-                  <li key={t} className="flex gap-2 text-sm text-navy-700/70">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-signal" />
-                    {t}
-                  </li>
-                ))}
-              </ul>
+              <p className="mt-4 font-display text-base font-semibold text-navy-900">{m.role}</p>
+              <div className="mt-3 flex items-center gap-2 rounded-xl border border-navy-900/10 bg-white px-3 py-2.5">
+                <i className="bx bx-user text-sm text-navy-700/40" />
+                <p className="font-mono text-xs text-navy-700/70">{m.name}</p>
+              </div>
+              {m.id === 'po' && (
+                <p className="mt-3 font-mono text-[11px] uppercase tracking-widest text-navy-700/40">
+                  Docente — Product Owner
+                </p>
+              )}
+              {m.id === 'sm' && (
+                <p className="mt-3 font-mono text-[11px] uppercase tracking-widest text-signal">Scrum Master</p>
+              )}
             </div>
           ))}
         </div>
