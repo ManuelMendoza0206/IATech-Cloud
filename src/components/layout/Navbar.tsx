@@ -17,64 +17,34 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-30 w-full transition-all duration-300 ${
-          isScrolled
-            ? 'bg-navy-950/90 backdrop-blur-md py-3 border-b border-mist/20'
-            : 'bg-transparent py-4 border-b border-navy-950/20'
+        className={`fixed inset-x-0 top-0 z-30 w-full border-b border-mist/20 bg-navy-950/90 backdrop-blur-md transition-all duration-300 ${
+          isScrolled ? 'py-2 shadow-lg shadow-navy-950/20' : 'py-3'
         }`}
       >
-        <div className="flex w-full items-center px-6 sm:px-10">
-          <div className="flex items-center gap-4 sm:gap-6">
-            {/* Logo: oscuro en reposo, claro al hacer scroll */}
-            <Link
-              to="/"
-              className="font-logo text-xl tracking-wider text-mist transition-colors duration-300 hover:opacity-80 sm:text-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded"
-              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
-            >
-              IATECH{' '}
-              <span className="text-signal">
-                · CLOUD
-              </span>
-            </Link>
+        <div className="flex w-full items-center justify-between px-6 sm:px-10">
+          <Link
+            to="/"
+            className="font-logo text-xl tracking-wider text-mist transition-colors duration-300 hover:opacity-80 sm:text-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded"
+            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
+          >
+            IATECH{' '}
+            <span className="text-signal">
+              · CLOUD
+            </span>
+          </Link>
 
-            {/* Ícono de Menú Cuadrado adaptativo */}
-            <button
-              onClick={() => setIsMenuOpen(true)}
-              aria-label="Abrir menú"
-              aria-expanded={isMenuOpen}
-              className="group flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded-full"
-            >
-              <div
-                className={`flex h-11 w-11 flex-col items-center justify-center gap-1 rounded-full border transition-all duration-200 ${
-                  isScrolled
-                    ? 'border-mist/30 bg-transparent group-hover:border-mist group-hover:bg-mist'
-                    : 'border-navy-950/30 bg-transparent group-hover:border-navy-950 group-hover:bg-navy-950'
-                }`}
-              >
-                <span
-                  className={`h-[2px] w-4 transition-colors duration-200 ${
-                    isScrolled
-                      ? 'bg-mist group-hover:bg-navy-950'
-                      : 'bg-navy-950 group-hover:bg-mist'
-                  }`}
-                />
-                <span
-                  className={`h-[2px] w-4 transition-colors duration-200 ${
-                    isScrolled
-                      ? 'bg-mist group-hover:bg-navy-950'
-                      : 'bg-navy-950 group-hover:bg-mist'
-                  }`}
-                />
-                <span
-                  className={`h-[2px] w-4 transition-colors duration-200 ${
-                    isScrolled
-                      ? 'bg-mist group-hover:bg-navy-950'
-                      : 'bg-navy-950 group-hover:bg-mist'
-                  }`}
-                />
-              </div>
-            </button>
-          </div>
+          <button
+            onClick={() => setIsMenuOpen(true)}
+            aria-label="Abrir menú"
+            aria-expanded={isMenuOpen}
+            className="group flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded-full"
+          >
+            <div className="flex h-11 w-11 flex-col items-center justify-center gap-1 rounded-full border border-mist/30 transition-all duration-200 group-hover:border-mist group-hover:bg-mist">
+              <span className="h-[2px] w-4 bg-mist transition-colors duration-200 group-hover:bg-navy-950" />
+              <span className="h-[2px] w-4 bg-mist transition-colors duration-200 group-hover:bg-navy-950" />
+              <span className="h-[2px] w-4 bg-mist transition-colors duration-200 group-hover:bg-navy-950" />
+            </div>
+          </button>
         </div>
       </header>
 
