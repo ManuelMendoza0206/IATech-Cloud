@@ -41,7 +41,10 @@ export default function Footer() {
                   <Link to="/descripcion-posiciones" className="transition hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded">Descripción de Posiciones</Link>
                 </li>
                 <li>
-                  <Link to="/mbti" className="transition hover:text-signal">MBTI · Equipo</Link>
+                  <Link to="/mbti" className="transition hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded">MBTI · Equipo</Link>
+                </li>
+                <li>
+                  <Link to="/scrum" className="transition hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded">Scrum</Link>
                 </li>
               </ul>
             </nav>

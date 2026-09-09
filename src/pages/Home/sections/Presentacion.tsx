@@ -15,35 +15,39 @@ const HIGHLIGHTS = [
 
 export default function Presentacion() {
   return (
-    <section id="presentacion" className="bg-white py-24 sm:py-32">
+    <section id="presentacion" className="bg-white py-20 sm:py-28">
       <div className="mx-auto grid max-w-7xl gap-16 px-6 sm:px-10 lg:grid-cols-2 lg:items-center lg:gap-20">
         <div>
-          <span className="font-mono text-xs uppercase tracking-widest text-navy-700/70">
-            Sobre el área
-          </span>
-
-          <h2 className="mt-4 font-display text-3xl text-navy-900 sm:text-4xl">
+          <h2 className="font-display text-3xl leading-tight text-navy-900 sm:text-4xl">
             El motor tecnológico detrás de cada despliegue clínico
           </h2>
 
-          <p className="mt-6 text-navy-700/80">
+          <p className="mt-6 max-w-[65ch] leading-relaxed text-navy-700/80">
             Cada actualización, cada despliegue, cada integración pasa por nosotros.
             Diseñamos, operamos y escalamos la infraestructura cloud que sostiene
             las soluciones médicas de IATECH — para que los equipos clínicos nunca
             tengan que pensar en la tecnología detrás de su trabajo.
           </p>
 
-          <p className="mt-4 text-navy-700/80">
+          <p className="mt-4 max-w-[65ch] leading-relaxed text-navy-700/80">
             Infraestructura que se adapta al ritmo de la salud: sin ventanas de
             mantenimiento que interrumpan, sin fronteras que limiten el acceso,
             sin silos que fragmenten la información.
           </p>
 
-          <ul className="mt-10 grid gap-6 sm:grid-cols-3">
+          <ul className="mt-10 grid gap-4 sm:grid-cols-3">
             {HIGHLIGHTS.map((item) => (
-              <li key={item.title} className="border-l-2 border-signal pl-4">
-                <p className="font-display text-base text-navy-900">{item.title}</p>
-                <p className="mt-1 text-sm text-navy-700/80">{item.description}</p>
+              <li
+                key={item.title}
+                className="rounded-2xl border border-navy-700/10 bg-mist/50 p-4"
+              >
+                <span className="mb-3 block h-1.5 w-8 rounded-full bg-signal" aria-hidden="true" />
+                <p className="font-display text-[15px] font-semibold leading-tight text-navy-900">
+                  {item.title}
+                </p>
+                <p className="mt-1.5 text-sm leading-relaxed text-navy-700/80">
+                  {item.description}
+                </p>
               </li>
             ))}
           </ul>
@@ -53,12 +57,16 @@ export default function Presentacion() {
           <div className="absolute -inset-4 -z-10 rounded-2xl bg-mist" />
           <img
             src="/images/cloud-equipo.jpg"
-            alt="Equipo del área Cloud de IATECH"
-            className="aspect-[4/3] w-full rounded-2xl object-cover shadow-xl sm:aspect-video lg:aspect-[4/3]"
+            alt="Equipo del área Cloud de IATECH colaborando frente a pantallas de monitoreo"
+            width={800}
+            height={600}
+            sizes="(max-width: 1024px) 100vw, 560px"
             loading="lazy"
+            decoding="async"
+            className="aspect-[4/3] w-full rounded-2xl object-cover shadow-[0_12px_32px_rgba(5,11,24,0.12)] sm:aspect-video lg:aspect-[4/3]"
           />
-          <div className="absolute -bottom-6 -left-6 rounded-xl bg-navy-900 px-6 py-4 text-mist shadow-lg">
-            <p className="font-display text-2xl text-signal">99%</p>
+          <div className="absolute -bottom-6 -left-6 rounded-xl border border-navy-700/10 bg-navy-900 px-6 py-4 text-mist shadow-[0_12px_32px_rgba(5,11,24,0.18)]">
+            <p className="font-display text-2xl font-semibold tabular-nums text-signal">99%</p>
             <p className="font-mono text-xs uppercase tracking-widest text-mist/70">
               Disponibilidad
             </p>
