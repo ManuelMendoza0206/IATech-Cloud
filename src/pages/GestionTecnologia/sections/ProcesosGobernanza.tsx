@@ -2,9 +2,10 @@ import { SectionHeader, VideoEmbed } from '../../../components/content';
 import type { TalentoItem } from '../types';
 
 const GOBERNANZA: TalentoItem[] = [
-  { title: 'Gestión de proyectos', text: 'Planificación estructurada, ejecución y seguimiento de iniciativas tecnológicas.' },
-  { title: 'Gestión de riesgos', text: 'Identificación temprana y mitigación proactiva de amenazas e interrupciones.' },
-  { title: 'Marcos y metodologías', text: 'Aplicación de ITIL, COBIT y prácticas de mejora continua / metodologías ágiles.' },
+  { title: 'Gestión de proyectos', text: 'Planificación estructurada, ejecución y seguimiento de iniciativas tecnológicas con entregas medibles.' },
+  { title: 'Gestión de riesgos', text: 'Identificación temprana y mitigación proactiva de amenazas, interrupciones y deuda técnica.' },
+  { title: 'Marcos y metodologías', text: 'Aplicación de ITIL, COBIT y prácticas de mejora continua junto a metodologías ágiles.' },
+  { title: 'Ciclo de vida y KPIs', text: 'Seguimiento del ciclo de vida tecnológico con indicadores de disponibilidad, costos y valor.' },
 ];
 
 const TAGS = ['ITIL', 'COBIT', 'Ágiles', 'Mejora Continua'];
@@ -23,8 +24,8 @@ export function ProcesosGobernanza() {
                   key={g.title}
                   className="rounded-xl border border-navy-900/10 p-5"
                 >
-                  <p className="font-display text-base text-navy-900">{g.title}</p>
-                  <p className="mt-1 text-sm text-navy-700/70">{g.text}</p>
+                  <p className="font-display text-lg sm:text-xl text-navy-900">{g.title}</p>
+                  <p className="mt-1 text-base sm:text-lg leading-relaxed text-navy-700/70">{g.text}</p>
                 </div>
               ))}
             </div>

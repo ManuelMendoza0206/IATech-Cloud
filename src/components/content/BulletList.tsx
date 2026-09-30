@@ -11,8 +11,8 @@ export function BulletList({ items, variant = 'light' }: BulletListProps) {
         <div key={item.title} className="flex items-start gap-4">
           <span className={`mt-1 h-3 w-3 shrink-0 rounded-full ${dotBg}`} />
           <div>
-            <p className={`font-display text-base ${titleColor}`}>{item.title}</p>
-            <p className={`mt-1 ${textColor}`}>{item.text}</p>
+            <p className={`font-display text-lg sm:text-xl ${titleColor}`}>{item.title}</p>
+            <p className={`mt-1 text-base sm:text-lg leading-relaxed ${textColor}`}>{item.text}</p>
           </div>
         </div>
       ))}

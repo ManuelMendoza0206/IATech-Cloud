@@ -2,9 +2,10 @@ import { TwoColumnLayout, SectionHeader, BulletList } from '../../../components/
 import type { TalentoItem } from '../types';
 
 const DATA: TalentoItem[] = [
-  { title: 'Desarrollo de habilidades', text: 'Capacitación y actualización técnica continua.' },
-  { title: 'Atracción y retención', text: 'Captación y fidelización de perfiles técnicos clave.' },
-  { title: 'Cultura organizacional', text: 'Fomento del trabajo colaborativo y la innovación tecnológica.' },
+  { title: 'Desarrollo de habilidades', text: 'Capacitación y actualización técnica continua en cloud, datos y seguridad.' },
+  { title: 'Atracción y retención', text: 'Captación y fidelización de perfiles técnicos clave con plan de carrera claro.' },
+  { title: 'Cultura organizacional', text: 'Fomento del trabajo colaborativo, la experimentación y la innovación tecnológica.' },
+  { title: 'Liderazgo técnico', text: 'Mentoría, comunidades de práctica y gestión del conocimiento entre equipos.' },
 ];
 
 export function GestionTalento() {

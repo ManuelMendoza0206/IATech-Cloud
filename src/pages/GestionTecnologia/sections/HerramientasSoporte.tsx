@@ -2,10 +2,12 @@ import { SectionHeader } from '../../../components/content';
 import type { Herramienta } from '../types';
 
 const DATA: Herramienta[] = [
-  { title: 'Gestión de proyectos', desc: 'Plataformas de software para planificar, asignar recursos y controlar avances.', color: 'border-signal' },
-  { title: 'Monitorización y Service Desk', desc: 'Herramientas de supervisión de infraestructura y soporte técnico operativo.', color: 'border-navy-700' },
-  { title: 'Analítica de datos', desc: 'Plataformas de Business Intelligence para la toma de decisiones informadas.', color: 'border-signal' },
-  { title: 'Seguridad', desc: 'Soluciones para control de accesos, gestión de riesgos y protección de activos.', color: 'border-navy-700' },
+  { title: 'Gestión de proyectos', desc: 'Plataformas de software para planificar, asignar recursos y controlar avances en tiempo real.', color: 'border-signal' },
+  { title: 'Monitorización y Service Desk', desc: 'Supervisión de infraestructura, alertas proactivas y soporte técnico operativo continuo.', color: 'border-navy-700' },
+  { title: 'Analítica de datos', desc: 'Plataformas de Business Intelligence e IA para decisiones informadas y predictivas.', color: 'border-signal' },
+  { title: 'Seguridad', desc: 'Control de accesos, gestión de riesgos, respaldo y protección integral de activos.', color: 'border-navy-700' },
+  { title: 'Automatización ITSM', desc: 'Flujos automáticos de tickets, cambios y despliegues para reducir errores manuales.', color: 'border-signal' },
+  { title: 'Colaboración DevOps', desc: 'Integración entre desarrollo y operaciones con CI/CD, observabilidad y entrega continua.', color: 'border-navy-700' },
 ];
 
 export function HerramientasSoporte() {
@@ -25,8 +27,8 @@ export function HerramientasSoporte() {
               key={h.title}
               className={`rounded-2xl border-l-2 ${h.color} bg-white/5 p-6 backdrop-blur-sm`}
             >
-              <p className="font-display text-lg text-mist">{h.title}</p>
-              <p className="mt-2 text-sm text-mist/60">{h.desc}</p>
+              <p className="font-display text-xl text-mist">{h.title}</p>
+              <p className="mt-2 text-base sm:text-lg leading-relaxed text-mist/60">{h.desc}</p>
             </div>
           ))}
         </div>

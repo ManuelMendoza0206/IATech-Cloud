@@ -13,7 +13,7 @@ export function SectionHeader({ number, title, description, variant = 'light' }:
         {title}
       </h2>
       {description && (
-        <p className={`mt-4 ${variant === 'dark' ? 'text-mist/60' : 'text-navy-700/80'}`}>
+        <p className={`mt-4 text-base sm:text-lg leading-relaxed ${variant === 'dark' ? 'text-mist/60' : 'text-navy-700/80'}`}>
           {description}
         </p>
       )}

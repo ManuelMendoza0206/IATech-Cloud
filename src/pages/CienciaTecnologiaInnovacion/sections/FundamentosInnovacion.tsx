@@ -2,9 +2,10 @@ import { SectionHeader, VideoEmbed } from '../../../components/content';
 import type { TipoItem } from '../types';
 
 const TIPOS: TipoItem[] = [
-  { label: 'Incremental', desc: 'Mejoras progresivas sobre productos o procesos existentes.' },
-  { label: 'Disruptiva', desc: 'Transforma mercados y desplaza tecnologías establecidas.' },
-  { label: 'Radical', desc: 'Saltos cualitativos basados en avances científicos profundos.' },
+  { label: 'Incremental', desc: 'Mejoras progresivas sobre productos o procesos existentes con menor riesgo.' },
+  { label: 'Disruptiva', desc: 'Transforma mercados, crea nuevas categorías y desplaza tecnologías establecidas.' },
+  { label: 'Radical', desc: 'Saltos cualitativos basados en avances científicos profundos y nuevas plataformas.' },
+  { label: 'Abierta', desc: 'Colaboración con universidades, startups y comunidades para innovar más rápido.' },
 ];
 
 const FASES = ['Ideación', 'Selección', 'Desarrollo', 'Implementación', 'Difusión'];
@@ -21,7 +22,7 @@ export function FundamentosInnovacion() {
 
         <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-start">
           <div>
-            <h3 className="font-display text-xl text-navy-900">Tipos de Innovación</h3>
+            <h3 className="font-display text-2xl text-navy-900">Tipos de Innovación</h3>
             <div className="mt-6 space-y-4">
               {TIPOS.map((tipo) => (
                 <div
@@ -32,8 +33,8 @@ export function FundamentosInnovacion() {
                     {tipo.label[0]}
                   </span>
                   <div>
-                    <p className="font-display text-base text-navy-900">{tipo.label}</p>
-                    <p className="mt-1 text-sm text-navy-700/70">{tipo.desc}</p>
+                    <p className="font-display text-lg text-navy-900">{tipo.label}</p>
+                    <p className="mt-1 text-base leading-relaxed text-navy-700/70">{tipo.desc}</p>
                   </div>
                 </div>
               ))}
@@ -41,14 +42,14 @@ export function FundamentosInnovacion() {
           </div>
 
           <div>
-            <h3 className="font-display text-xl text-navy-900">Fases del Proceso</h3>
+            <h3 className="font-display text-2xl text-navy-900">Fases del Proceso</h3>
             <ol className="mt-6 space-y-3">
               {FASES.map((fase, i) => (
                 <li key={fase} className="flex items-center gap-4">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-navy-900 font-mono text-xs text-mist">
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <span className="text-navy-700/80">{fase}</span>
+                  <span className="text-base sm:text-lg text-navy-700/80">{fase}</span>
                 </li>
               ))}
             </ol>
@@ -60,7 +61,7 @@ export function FundamentosInnovacion() {
           </div>
         </div>
 
-        <p className="mt-8 text-sm text-navy-700/60">
+        <p className="mt-8 text-base text-navy-700/60">
           <span className="font-semibold text-navy-900">Ejemplos:</span> Teléfonos
           inteligentes, energía solar y vehículos eléctricos.
         </p>

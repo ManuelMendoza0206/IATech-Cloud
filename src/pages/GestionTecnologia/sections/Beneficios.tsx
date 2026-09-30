@@ -4,18 +4,23 @@ import type { Beneficio } from "../types";
 const DATA: Beneficio[] = [
   {
     title: "Eficiencia operativa",
-    text: "Optimización de recursos tecnológicos y reducción de costos operativos.",
+    text: "Optimización de recursos tecnológicos, alta disponibilidad y reducción de costos operativos.",
     metric: "↓ Costos",
   },
   {
     title: "Toma de decisiones",
-    text: "Explotación inteligente de datos para orientar la innovación.",
+    text: "Explotación inteligente de datos e IA para orientar la innovación y anticipar riesgos.",
     metric: "↑ Datos",
   },
   {
     title: "Ventaja competitiva",
-    text: "Mejor posicionamiento en el mercado y mayor satisfacción de usuarios.",
+    text: "Mejor posicionamiento, continuidad clínica y mayor satisfacción de usuarios y pacientes.",
     metric: "↑ ROI",
+  },
+  {
+    title: "Resiliencia y seguridad",
+    text: "Continuidad del negocio con respaldos, recuperación ante desastres y cultura preventiva.",
+    metric: "◉ SLA",
   },
 ];
 
@@ -39,8 +44,8 @@ export function Beneficios() {
               {b.metric}
             </span>
             <div>
-              <p className="font-display text-base text-navy-900">{b.title}</p>
-              <p className="mt-1 text-navy-700/70">{b.text}</p>
+              <p className="font-display text-lg sm:text-xl text-navy-900">{b.title}</p>
+              <p className="mt-1 text-base sm:text-lg leading-relaxed text-navy-700/70">{b.text}</p>
             </div>
           </div>
         ))}

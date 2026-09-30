@@ -1,12 +1,13 @@
-import { SectionHeader } from '../../../components/content';
+import { SectionHeader, VideoEmbed } from '../../../components/content';
 import type { Politica } from '../types';
 
 const DATA: Politica[] = [
-  { num: '01', title: 'Promoción y regulación', text: 'Marcos normativos y fomento de la investigación.' },
-  { num: '02', title: 'Incentivos', text: 'Subsidios y exenciones fiscales para I+D.' },
-  { num: '03', title: 'Colaboración', text: 'Alianzas estratégicas entre academia e industria.' },
-  { num: '04', title: 'Propiedad Intelectual', text: 'Protección legal de patentes y derechos de autor.' },
-  { num: '05', title: 'Educación STEM', text: 'Formación de capital humano en ciencia, tecnología, ingeniería y matemáticas.' },
+  { num: '01', title: 'Promoción y regulación', text: 'Marcos normativos, estándares y fomento activo de la investigación y la adopción tecnológica.' },
+  { num: '02', title: 'Incentivos', text: 'Subsidios, fondos concursables y exenciones fiscales para investigación y desarrollo.' },
+  { num: '03', title: 'Colaboración', text: 'Alianzas estratégicas entre academia, industria, Estado y sector salud.' },
+  { num: '04', title: 'Propiedad Intelectual', text: 'Protección legal de patentes, transferencia tecnológica y derechos de autor.' },
+  { num: '05', title: 'Educación STEM', text: 'Formación de capital humano en ciencia, tecnología, ingeniería y matemáticas desde la base.' },
+  { num: '06', title: 'Infraestructura CTI', text: 'Laboratorios, centros de datos, conectividad y plataformas compartidas de innovación.' },
 ];
 
 export function PoliticasPublicas() {
@@ -26,11 +27,16 @@ export function PoliticasPublicas() {
               className="group relative overflow-hidden rounded-2xl border border-navy-900/10 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
             >
               <span className="font-mono text-4xl font-bold text-signal/20">{p.num}</span>
-              <p className="mt-3 font-display text-lg text-navy-900">{p.title}</p>
-              <p className="mt-2 text-sm text-navy-700/70">{p.text}</p>
+              <p className="mt-3 font-display text-xl text-navy-900">{p.title}</p>
+              <p className="mt-2 text-base leading-relaxed text-navy-700/70">{p.text}</p>
             </div>
           ))}
         </div>
+
+        <VideoEmbed
+          src="https://www.youtube.com/embed/45v9vg3bDcY"
+          title="Educación STEM y políticas de innovación"
+        />
       </div>
     </section>
   );

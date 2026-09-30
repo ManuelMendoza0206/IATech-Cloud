@@ -2,9 +2,10 @@ import { TwoColumnLayout, SectionHeader } from '../../../components/content';
 import type { TipoItem } from '../types';
 
 const DATA: TipoItem[] = [
-  { label: 'Tecnología dura', desc: 'Hardware — dispositivos físicos y maquinaria.' },
-  { label: 'Tecnología blanda', desc: 'Software — aplicaciones, sistemas y algoritmos.' },
-  { label: 'Tecnología de gestión', desc: 'Procesos y metodologías para optimizar recursos.' },
+  { label: 'Tecnología dura', desc: 'Hardware — dispositivos físicos, maquinaria y equipamiento médico.' },
+  { label: 'Tecnología blanda', desc: 'Software — aplicaciones, sistemas, datos y algoritmos de IA.' },
+  { label: 'Tecnología de gestión', desc: 'Procesos y metodologías para optimizar recursos y gobernar el cambio.' },
+  { label: 'Tecnología emergente', desc: 'IA generativa, nube híbrida y edge computing que redefinen lo posible.' },
 ];
 
 export function FundamentosTecnologia() {
@@ -16,7 +17,7 @@ export function FundamentosTecnologia() {
       bg="mist"
     >
       <SectionHeader number="02" title="Fundamentos de la Tecnología" />
-      <p className="mt-6 text-navy-700/80">
+      <p className="mt-6 text-base sm:text-lg leading-relaxed text-navy-700/80">
         Aplicación práctica del conocimiento científico orientada a resolver
         problemas concretos. El proceso de desarrollo sigue una cadena:
         Diseño → Prototipado → Pruebas → Producción.
@@ -28,13 +29,13 @@ export function FundamentosTecnologia() {
             key={tipo.label}
             className="rounded-xl border border-navy-900/10 bg-white p-5 shadow-sm"
           >
-            <p className="font-display text-sm text-navy-900">{tipo.label}</p>
-            <p className="mt-2 text-sm text-navy-700/70">{tipo.desc}</p>
+            <p className="font-display text-base sm:text-lg text-navy-900">{tipo.label}</p>
+            <p className="mt-2 text-base leading-relaxed text-navy-700/70">{tipo.desc}</p>
           </div>
         ))}
       </div>
 
-      <p className="mt-6 text-sm text-navy-700/60">
+      <p className="mt-6 text-base text-navy-700/60">
         <span className="font-semibold text-navy-900">Ejemplos:</span> Internet,
         Inteligencia Artificial y Biotecnología.
       </p>

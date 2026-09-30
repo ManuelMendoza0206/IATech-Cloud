@@ -40,8 +40,8 @@ export function InterseccionCTI() {
               <div key={p.title} className="flex items-start gap-4">
                 <span className={`mt-1 h-3 w-3 shrink-0 rounded-full bg-signal${p.dotOpacity}`} />
                 <div>
-                  <p className="font-display text-lg text-mist">{p.title}</p>
-                  <p className="mt-1 text-mist/60">{p.text}</p>
+                  <p className="font-display text-xl text-mist">{p.title}</p>
+                  <p className="mt-1 text-base sm:text-lg leading-relaxed text-mist/60">{p.text}</p>
                 </div>
               </div>
             ))}
@@ -51,7 +51,7 @@ export function InterseccionCTI() {
             <p className="font-mono text-xs uppercase tracking-widest text-signal">
               Ejemplo integrador
             </p>
-            <p className="mt-3 text-mist/80">
+            <p className="mt-3 text-base sm:text-lg leading-relaxed text-mist/80">
               Las <span className="font-semibold text-signal">vacunas</span>, donde convergen la
               investigación científica, la producción tecnológica y la logística de
               distribución innovadora.

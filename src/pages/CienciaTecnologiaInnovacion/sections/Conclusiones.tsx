@@ -35,8 +35,8 @@ export function Conclusiones() {
               key={c.title}
               className="rounded-2xl border border-signal/20 bg-signal/5 p-6"
             >
-              <p className="font-display text-lg text-signal">{c.title}</p>
-              <p className="mt-2 text-sm text-mist/60">{c.text}</p>
+              <p className="font-display text-xl text-signal">{c.title}</p>
+              <p className="mt-2 text-base leading-relaxed text-mist/60">{c.text}</p>
             </div>
           ))}
         </div>

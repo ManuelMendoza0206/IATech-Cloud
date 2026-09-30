@@ -1,12 +1,13 @@
-import { SectionHeader } from '../../../components/content';
+import { SectionHeader, VideoEmbed } from '../../../components/content';
 import type { Tendencia } from '../types';
 
 const DATA: Tendencia[] = [
-  { title: 'Inteligencia Artificial', text: 'Aprendizaje automático y automatización de procesos.', color: 'bg-signal/10 text-signal' },
-  { title: 'Computación Cuántica', text: 'Salto de escala en capacidad y velocidad de procesamiento.', color: 'bg-navy-900/10 text-navy-900' },
-  { title: 'Biotecnología', text: 'Medicina personalizada, terapias avanzadas y genética.', color: 'bg-signal/10 text-signal' },
-  { title: 'Nanotecnología', text: 'Materiales avanzados con propiedades optimizadas.', color: 'bg-navy-900/10 text-navy-900' },
-  { title: 'Energías Renovables', text: 'Transición hacia tecnologías limpias y sostenibles.', color: 'bg-signal/10 text-signal' },
+  { title: 'Inteligencia Artificial', text: 'Aprendizaje automático, IA generativa y automatización de procesos clínicos y operativos.', color: 'bg-signal/10 text-signal' },
+  { title: 'Computación Cuántica', text: 'Salto de escala en capacidad y velocidad de procesamiento para problemas complejos.', color: 'bg-navy-900/10 text-navy-900' },
+  { title: 'Biotecnología', text: 'Medicina personalizada, terapias avanzadas, genética y diagnóstico de precisión.', color: 'bg-signal/10 text-signal' },
+  { title: 'Nanotecnología', text: 'Materiales avanzados con propiedades optimizadas y nuevas aplicaciones médicas.', color: 'bg-navy-900/10 text-navy-900' },
+  { title: 'Energías Renovables', text: 'Transición hacia tecnologías limpias, sostenibles y eficientes en costos.', color: 'bg-signal/10 text-signal' },
+  { title: 'Convergencia Cloud + Datos', text: 'Plataformas cloud, datos en tiempo real e interoperabilidad como base de la innovación.', color: 'bg-navy-900/10 text-navy-900' },
 ];
 
 export function TendenciasFuturas() {
@@ -30,8 +31,8 @@ export function TendenciasFuturas() {
               >
                 Trending
               </span>
-              <p className="mt-4 font-display text-lg text-navy-900">{t.title}</p>
-              <p className="mt-2 text-sm text-navy-700/70">{t.text}</p>
+              <p className="mt-4 font-display text-xl text-navy-900">{t.title}</p>
+              <p className="mt-2 text-base leading-relaxed text-navy-700/70">{t.text}</p>
             </div>
           ))}
         </div>
@@ -57,6 +58,10 @@ export function TendenciasFuturas() {
                 para 2025.
               </p>
             </p>
+            <VideoEmbed
+              src="https://www.youtube.com/embed/5Izihr4BCbo"
+              title="Tendencias futuras de tecnología"
+            />
           </div>
         </div>
       </div>
