@@ -75,6 +75,16 @@ export default function Hero() {
               <span>Conoce el área</span>
               <i className="bx bx-right-arrow-alt text-lg transition-transform duration-200 group-hover:translate-x-0.5" />
             </a>
+            <a
+              href="https://iatech-co-frontend.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir inventario conjunto en Vercel"
+              className="group inline-flex items-center gap-3 rounded-full border border-signal bg-transparent px-6 py-3.5 text-sm font-medium tracking-wide text-navy-950 transition-all hover:bg-signal hover:border-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-mist"
+            >
+              <span>Acceder al inventario</span>
+              <i className="bx bx-link-external text-lg transition-transform duration-200 group-hover:translate-x-0.5" />
+            </a>
 
             <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-navy-900/70">
               <span className="relative flex h-2 w-2">

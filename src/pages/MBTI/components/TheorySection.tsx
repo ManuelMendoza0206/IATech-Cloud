@@ -125,19 +125,19 @@ export default function TheorySection() {
         </div>
 
         <div className="mt-12 overflow-hidden rounded-2xl border border-navy-900/8 bg-mist/30 shadow-sm sm:mt-14">
-          <img src="/images/extra.jpg" alt="Diagrama conceptual de las 16 personalidades" className="h-64 w-full object-cover sm:h-80" loading="lazy" />
+          <img src="/images/extra.jpg" alt="Diagrama conceptual de las 16 preferencias" className="h-64 w-full object-cover sm:h-80" loading="lazy" />
         </div>
 
         <div className="mx-auto mt-14 max-w-3xl text-center sm:mt-16">
           <h3 className="font-display text-xl font-semibold tracking-tight text-navy-950 sm:text-2xl">Video introductorio</h3>
           <p className="mx-auto mt-2 max-w-[48ch] text-sm leading-relaxed text-navy-700/60">
-            Una explicación visual de las 16 personalidades y cómo se potencian en equipos de trabajo reales.
+            Una explicación visual de las 16 preferencias y cómo se potencian en equipos de trabajo reales.
           </p>
           <div className="mx-auto mt-7 max-w-4xl overflow-hidden rounded-2xl border border-navy-900/8 shadow-lg">
             <div className="aspect-video bg-navy-950">
               <iframe
                 src="https://www.youtube.com/embed/vcp6hPnUgyU"
-                title="Intro a las 16 personalidades MBTI"
+                title="Intro a las 16 preferencias MBTI"
                 className="h-full w-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

@@ -60,7 +60,7 @@ export default function TeamSection() {
             Nuestros perfiles MBTI
           </h2>
           <p className="mx-auto mt-4 max-w-[52ch] text-[15px] leading-relaxed text-navy-700/65">
-            Cuatro personalidades distintas, un mismo objetivo: mantener la infraestructura cloud de IATECH funcionando
+            Cuatro preferencias distintas, un mismo objetivo: mantener la infraestructura cloud de IATECH funcionando
             sin fallas.
           </p>
         </div>
