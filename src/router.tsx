@@ -9,6 +9,7 @@ import DescripcionPosiciones from './pages/DescripcionPosiciones/DescripcionPosi
 import MBTI from './pages/MBTI/MBTI';
 import Scrum from './pages/Scrum/Scrum';
 import Objetivos from './pages/Scrum/Objetivos';
+import Idef0 from './pages/Idef0/Idef0';
 
 export interface AppRoute {
   path: string;
@@ -28,4 +29,5 @@ export const ROUTES: AppRoute[] = [
   { path: '/mbti', label: 'MBTI · Equipo', element: <MBTI /> },
   { path: '/scrum', label: 'Scrum', element: <Scrum /> },
   { path: '/scrum/objetivos', label: 'Objetivos por Área', element: <Objetivos />, hideFromNav: true },
+  { path: '/idef0', label: 'IDEF0', element: <Idef0 /> },
 ];

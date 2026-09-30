@@ -1,0 +1,10 @@
+export { Definicion } from './Definicion';
+export { DiagramaA0 } from './DiagramaA0';
+export { ProcesoPrincipal } from './ProcesoPrincipal';
+export { Entradas } from './Entradas';
+export { Controles } from './Controles';
+export { Mecanismos } from './Mecanismos';
+export { Salidas } from './Salidas';
+export { Resumen } from './Resumen';
+export { Video } from './Video';
+export { default as SectionNav } from './SectionNav';

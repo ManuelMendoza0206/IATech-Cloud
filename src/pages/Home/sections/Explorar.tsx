@@ -37,6 +37,12 @@ const AREA_PAGES = [
     title: 'Scrum',
     description: 'El marco ágil con el que entregamos valor continuo.',
   },
+  {
+    path: '/idef0',
+    icon: 'bx-git-branch',
+    title: 'IDEF0',
+    description: 'El modelo de funciones del proyecto CLOUD, documentado.',
+  },
 ];
 
 export default function Explorar() {

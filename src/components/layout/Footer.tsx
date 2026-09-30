@@ -46,6 +46,9 @@ export default function Footer() {
                 <li>
                   <Link to="/scrum" className="transition hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded">Scrum</Link>
                 </li>
+                <li>
+                  <Link to="/idef0" className="transition hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950 rounded">IDEF0</Link>
+                </li>
               </ul>
             </nav>
 
