@@ -14,6 +14,7 @@ const TEAM = [
     role: 'Scrum Master',
     short: 'SM',
     name: 'Marcelo Riveros',
+    puestoCloud: 'Gerente de Área Cloud',
     imageSrc: '/images/team/l_cjr.png',
     accent: 'bg-signal',
   },
@@ -22,6 +23,7 @@ const TEAM = [
     role: 'Equipo de Desarrollo',
     short: 'DEV',
     name: 'Roman Pabon',
+    puestoCloud: 'Administrador de Infraestructura Cloud',
     imageSrc: '/images/team/rp.png',
     accent: 'bg-navy-700',
   },
@@ -30,6 +32,7 @@ const TEAM = [
     role: 'Equipo de Desarrollo',
     short: 'DEV',
     name: 'Jaicel Velasco',
+    puestoCloud: 'Arquitecto de Soluciones Cloud',
     imageSrc: '/images/team/jr.png',
     accent: 'bg-navy-700',
   },
@@ -38,6 +41,7 @@ const TEAM = [
     role: 'Equipo de Desarrollo',
     short: 'DEV',
     name: 'Manuel Jimenez',
+    puestoCloud: 'Administrador DevOps',
     imageSrc: '/images/team/mj.png',
     accent: 'bg-navy-700',
   },
@@ -64,6 +68,11 @@ function TeamCard({ member, featured = false }: { member: (typeof TEAM)[number];
         </span>
       </div>
       <p className="mt-5 font-display text-lg font-bold leading-tight text-navy-900">{member.role}</p>
+      {'puestoCloud' in member && member.puestoCloud ? (
+        <p className="mt-2 inline-flex items-center gap-1.5 self-start rounded-full border border-signal/20 bg-signal/10 px-3 py-1 text-[11px] font-medium text-signal">
+          {member.puestoCloud as string}
+        </p>
+      ) : null}
       <div className="mt-4 flex items-center gap-3 rounded-2xl border border-navy-900/10 bg-white px-4 py-3 shadow-sm">
         <p className="font-mono text-sm font-medium leading-tight text-navy-900">{member.name}</p>
       </div>

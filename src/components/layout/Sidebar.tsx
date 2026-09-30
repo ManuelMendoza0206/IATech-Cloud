@@ -83,6 +83,16 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           <p className="font-mono text-xs uppercase tracking-wider text-mist/50">
             Servicios Cloud e Integración · IATECH
           </p>
+          <a
+            href="https://iatech-co-frontend.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Acceder al inventario conjunto en Vercel"
+            className="mt-3 inline-flex items-center gap-2 self-start rounded-full bg-signal px-4 py-2 text-xs font-semibold text-navy-950 transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900"
+          >
+            Acceder al inventario
+            <i className="bx bx-link-external text-sm" aria-hidden="true" />
+          </a>
         </div>
       </aside>
     </>
