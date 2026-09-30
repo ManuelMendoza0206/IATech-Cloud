@@ -14,6 +14,9 @@ const POSITION_TAGS: Record<string, string[]> = {
   'admin-infraestructura': ['SysOps & Redes', 'IAM & Seguridad', 'Backups & DR', 'Disponibilidad 24/7'],
 };
 
+const DRIVE_DOC_URL =
+  'https://drive.google.com/file/d/1xLWHBKVKV9tvqg8R5h3rQeVmC4HH8Qrc/view?usp=drive_link';
+
 export default function PositionCards({ expandedId, onToggle, cardRefs }: PositionCardsProps) {
   return (
     <section id="perfiles" className="bg-mist py-14 lg:py-20 text-navy-950">
@@ -287,6 +290,33 @@ function PositionDetail({ position }: { position: Position }) {
             <p className="text-navy-700/70 text-[11px] leading-relaxed mt-0.5">{position.requirements.skills}</p>
           </div>
         </div>
+      </div>
+
+      {/* Documento de respaldo en Drive */}
+      <div className="flex justify-center sm:justify-start">
+        <a
+          href={DRIVE_DOC_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Ver documento de ${position.title} en Google Drive`}
+          className="inline-flex items-center gap-2 rounded-md bg-signal px-4 py-2 text-xs font-medium text-white transition-all hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+        >
+          <svg
+            aria-hidden="true"
+            className="h-3.5 w-3.5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+            />
+          </svg>
+          <span>Ver documento</span>
+        </a>
       </div>
     </div>
   );
