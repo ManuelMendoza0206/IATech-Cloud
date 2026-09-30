@@ -6,7 +6,7 @@ const TEAM = [
     role: 'Product Owner',
     short: 'PO',
     name: 'Ing. Vicente Yamil Cárdenas Miguel',
-    icon: 'bx-crown',
+    imageSrc: '/images/team/Yamil-CardenasPO.jpg',
     accent: 'bg-amber-500',
   },
   {
@@ -14,7 +14,7 @@ const TEAM = [
     role: 'Scrum Master',
     short: 'SM',
     name: 'Marcelo Riveros',
-    icon: 'bx-shield',
+    imageSrc: '/images/team/l_cjr.png',
     accent: 'bg-signal',
   },
   {
@@ -22,7 +22,7 @@ const TEAM = [
     role: 'Equipo de Desarrollo',
     short: 'DEV',
     name: 'Roman Pabon',
-    icon: 'bx-code-alt',
+    imageSrc: '/images/team/rp.png',
     accent: 'bg-navy-700',
   },
   {
@@ -30,7 +30,7 @@ const TEAM = [
     role: 'Equipo de Desarrollo',
     short: 'DEV',
     name: 'Jaicel Velasco',
-    icon: 'bx-code-alt',
+    imageSrc: '/images/team/jr.png',
     accent: 'bg-navy-700',
   },
   {
@@ -38,7 +38,7 @@ const TEAM = [
     role: 'Equipo de Desarrollo',
     short: 'DEV',
     name: 'Manuel Jimenez',
-    icon: 'bx-code-alt',
+    imageSrc: '/images/team/mj.png',
     accent: 'bg-navy-700',
   },
 ];
@@ -48,8 +48,15 @@ function TeamCard({ member, featured = false }: { member: (typeof TEAM)[number];
     <div
       className={`flex w-full flex-col rounded-3xl border bg-mist/50 p-8 transition-all hover:-translate-y-1 hover:shadow-xl ${featured ? 'border-amber-400/40 bg-gradient-to-br from-amber-50 to-mist shadow-lg' : 'border-navy-900/10 shadow-sm hover:shadow-lg'}`}
     >
-      <div className="flex items-center justify-between">
-        <i className={`bx ${member.icon} text-4xl ${featured ? 'text-amber-500' : 'text-signal'}`} />
+      <div className="flex items-start justify-between gap-4">
+        <img
+          src={member.imageSrc}
+          alt={`${member.name} — ${member.role}`}
+          loading="lazy"
+          className={`shrink-0 rounded-2xl object-cover object-center ring-1 ${
+            featured ? 'h-28 w-28 ring-amber-400/50' : 'h-24 w-24 ring-navy-900/10'
+          }`}
+        />
         <span
           className={`rounded-full px-4 py-1.5 font-mono text-xs font-semibold tracking-widest ${featured ? 'bg-amber-500 text-white' : member.id === 'sm' ? 'bg-signal text-navy-950' : 'bg-navy-900 text-mist'}`}
         >
@@ -57,10 +64,7 @@ function TeamCard({ member, featured = false }: { member: (typeof TEAM)[number];
         </span>
       </div>
       <p className="mt-5 font-display text-lg font-bold leading-tight text-navy-900">{member.role}</p>
-      <div className="mt-4 flex items-center gap-3 rounded-2xl border border-navy-900/10 bg-white px-4 py-4 shadow-sm">
-        <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${featured ? 'bg-amber-500' : member.id === 'sm' ? 'bg-signal' : 'bg-navy-900'}`}>
-          <i className="bx bx-user text-base text-white" />
-        </span>
+      <div className="mt-4 flex items-center gap-3 rounded-2xl border border-navy-900/10 bg-white px-4 py-3 shadow-sm">
         <p className="font-mono text-sm font-medium leading-tight text-navy-900">{member.name}</p>
       </div>
       {member.id === 'po' && (

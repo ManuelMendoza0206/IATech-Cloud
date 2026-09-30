@@ -8,11 +8,13 @@ import MisionVision from './pages/MisionVision/MisionVision';
 import DescripcionPosiciones from './pages/DescripcionPosiciones/DescripcionPosiciones';
 import MBTI from './pages/MBTI/MBTI';
 import Scrum from './pages/Scrum/Scrum';
+import Objetivos from './pages/Scrum/Objetivos';
 
 export interface AppRoute {
   path: string;
   label: string;
   element: ReactNode;
+  hideFromNav?: boolean;
 }
 
 export const ROUTES: AppRoute[] = [
@@ -25,4 +27,5 @@ export const ROUTES: AppRoute[] = [
   { path: '/descripcion-posiciones', label: 'Descripción de Posiciones', element: <DescripcionPosiciones /> },
   { path: '/mbti', label: 'MBTI · Equipo', element: <MBTI /> },
   { path: '/scrum', label: 'Scrum', element: <Scrum /> },
+  { path: '/scrum/objetivos', label: 'Objetivos por Área', element: <Objetivos />, hideFromNav: true },
 ];

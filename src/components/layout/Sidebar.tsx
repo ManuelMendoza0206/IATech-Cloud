@@ -58,7 +58,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
           <nav className="mt-14 flex-1 overflow-y-auto">
             <ul className="flex flex-col gap-1">
-              {ROUTES.map((route, index) => {
+              {ROUTES.filter((route) => !route.hideFromNav).map((route, index) => {
                 const isActive = location.pathname === route.path;
                 return (
                   <li key={route.path} className="border-b border-navy-700/60 py-4 first:pt-0">
