@@ -39,25 +39,25 @@ const STATEMENTS = [
 
 export default function Declaraciones() {
   return (
-    <section id="declaraciones" className="relative overflow-hidden bg-white py-20 sm:py-28">
+    <section id="declaraciones" className="relative overflow-hidden bg-neu-base py-20 sm:py-28">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.035]"
         style={{
           backgroundImage:
-            'linear-gradient(var(--color-navy-950, #050b18) 1px, transparent 1px), linear-gradient(to right, var(--color-navy-950, #050b18) 1px, transparent 1px)',
+            'linear-gradient(var(--color-steel, #90bede) 1px, transparent 1px), linear-gradient(to right, var(--color-steel, #90bede) 1px, transparent 1px)',
           backgroundSize: '32px 32px',
         }}
       />
 
       <div className="relative mx-auto max-w-6xl px-6 sm:px-10">
         <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
-          <span className="font-mono text-xs uppercase tracking-widest text-navy-700/70">
+          <span className="font-mono text-xs uppercase tracking-widest text-ink-700/70">
             Declaraciones
           </span>
-          <h2 className="mt-3 font-display text-3xl font-semibold text-navy-900 sm:text-4xl">
+          <h2 className="mt-3 font-neu-display text-3xl font-semibold text-ink-950 sm:text-4xl">
             Lo que hacemos y hacia dónde vamos
           </h2>
-          <p className="mt-4 text-navy-700/75">
+          <p className="mt-4 text-ink-700/75">
             Dos compromisos que orientan cada arquitectura, cada despliegue y cada
             integración del ecosistema IATECH.
           </p>
@@ -67,7 +67,7 @@ export default function Declaraciones() {
           {STATEMENTS.map((item) => (
             <article
               key={item.id}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-navy-700/20 bg-white p-8 shadow-sm transition hover:border-signal/50 hover:shadow-xl sm:p-10"
+              className="neu-raised group relative flex flex-col overflow-hidden rounded-2xl p-8 transition sm:p-10"
             >
               <div className="absolute inset-x-8 top-0 h-0.5 bg-gradient-to-r from-transparent via-signal to-transparent opacity-0 transition group-hover:opacity-100" />
 
@@ -75,22 +75,22 @@ export default function Declaraciones() {
                 <span className="font-mono text-[11px] uppercase tracking-widest text-signal">
                   {item.kicker}
                 </span>
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-signal/20 bg-navy-950 text-signal">
+                <span className="neu-raised flex h-11 w-11 items-center justify-center rounded-xl text-signal">
                   {item.icon}
                 </span>
               </div>
 
-              <h3 className="mt-6 font-display text-3xl font-semibold text-navy-900">
+              <h3 className="mt-6 font-neu-display text-3xl font-semibold text-ink-950">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm font-medium text-navy-700/80">{item.lead}</p>
-              <p className="mt-5 flex-1 leading-relaxed text-navy-700/75">{item.body}</p>
+              <p className="mt-2 text-sm font-medium text-ink-700/80">{item.lead}</p>
+              <p className="mt-5 flex-1 leading-relaxed text-ink-700/75">{item.body}</p>
 
               <ul className="mt-8 flex flex-wrap gap-2">
                 {item.highlights.map((tag) => (
                   <li
                     key={tag}
-                    className="rounded-full border border-navy-700/15 bg-mist px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-navy-900"
+                    className="neu-raised rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-ink-950"
                   >
                     {tag}
                   </li>

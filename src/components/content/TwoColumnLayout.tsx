@@ -2,15 +2,9 @@ import { useState } from 'react';
 import type { TwoColumnLayoutProps } from './types';
 
 const BG_MAP = {
-  white: 'bg-white',
-  mist: 'bg-mist',
-  navy: 'bg-navy-900',
-} as const;
-
-const IMAGE_BG_MAP = {
-  white: 'bg-mist',
-  mist: 'bg-white',
-  navy: 'bg-signal/10',
+  white: 'bg-neu-base',
+  mist: 'bg-neu-base',
+  navy: 'bg-neu-base',
 } as const;
 
 export function TwoColumnLayout({
@@ -32,16 +26,16 @@ export function TwoColumnLayout({
         </div>
 
         <div className={`relative ${isRight ? '' : 'order-1'}`}>
-          <div className={`absolute -inset-4 -z-10 rounded-2xl ${IMAGE_BG_MAP[bg]}`} />
+          <div className="neu-raised absolute -inset-4 -z-10" />
           {imgError ? (
-            <div className="flex h-64 items-center justify-center rounded-2xl bg-navy-900/5 border border-navy-700/10">
-              <span className="text-sm text-navy-700/60">{imageAlt}</span>
+            <div className="neu-pressed flex h-64 items-center justify-center">
+              <span className="text-sm text-ink-500">{imageAlt}</span>
             </div>
           ) : (
             <img
               src={imageSrc}
               alt={imageAlt}
-              className="w-full rounded-2xl object-cover shadow-xl"
+              className="neu-raised w-full object-cover"
               loading="lazy"
               onError={() => setImgError(true)}
             />

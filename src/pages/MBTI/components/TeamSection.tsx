@@ -45,7 +45,7 @@ const TEAM = [
 
 export default function TeamSection() {
   return (
-    <section id="equipo" className="relative overflow-hidden bg-mist py-16 sm:py-20 lg:py-24">
+    <section id="equipo" className="relative overflow-hidden bg-neu-base py-16 sm:py-20 lg:py-24">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.035]"
         style={{
@@ -56,10 +56,10 @@ export default function TeamSection() {
 
       <div className="relative mx-auto max-w-6xl px-6 sm:px-10">
         <div className="mx-auto max-w-[60ch] text-center">
-          <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-navy-950 sm:text-[2.35rem] sm:leading-none">
+          <h2 className="font-neu-display text-3xl font-semibold tracking-[-0.02em] text-ink-950 sm:text-[2.35rem] sm:leading-none">
             Nuestros perfiles MBTI
           </h2>
-          <p className="mx-auto mt-4 max-w-[52ch] text-[15px] leading-relaxed text-navy-700/65">
+          <p className="mx-auto mt-4 max-w-[52ch] text-[15px] leading-relaxed text-ink-700/65">
             Cuatro preferencias distintas, un mismo objetivo: mantener la infraestructura cloud de IATECH funcionando
             sin fallas.
           </p>

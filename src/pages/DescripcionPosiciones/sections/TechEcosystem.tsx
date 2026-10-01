@@ -39,21 +39,21 @@ export default function TechEcosystem() {
   ];
 
   return (
-    <section className="bg-mist py-14 lg:py-16 border-t border-navy-700/20">
+    <section className="bg-neu-base py-14 lg:py-16 border-t border-ink-950/10">
       <div className="mx-auto max-w-5xl px-6 sm:px-10">
         
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 pb-4 border-b border-navy-700/20">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 pb-4 border-b border-ink-950/10">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-signal/10 px-3 py-0.5 text-xs font-medium text-signal border border-signal/20">
+            <span className="neu-pressed neu-raised inline-flex items-center gap-2 rounded-full px-3 py-0.5 text-xs font-medium text-signal">
               <span className="h-1.5 w-1.5 rounded-full bg-signal" />
               Estándares Técnicos
             </span>
-            <h2 className="mt-2 font-sans text-2xl sm:text-3xl text-navy-950 font-semibold tracking-tight">
+            <h2 className="mt-2 font-sans text-2xl sm:text-3xl text-ink-950 font-semibold tracking-tight">
               Ecosistema Tecnológico del Área
             </h2>
           </div>
-          <p className="text-xs text-navy-700/70 max-w-xs sm:text-right">
+          <p className="text-xs text-ink-700/70 max-w-xs sm:text-right">
             Capacidades, plataformas y estándares consolidados que gestiona el departamento.
           </p>
         </div>
@@ -63,13 +63,13 @@ export default function TechEcosystem() {
           {domains.map((dom, idx) => (
             <div
               key={idx}
-              className="rounded-xl border border-navy-700/20 bg-white p-5 shadow-[0_1px_3px_rgba(5,11,24,0.03)] hover:border-signal/30 hover:shadow-md transition-all duration-200"
+              className="neu-raised rounded-xl p-5 transition-all duration-200"
             >
               <div className="flex items-center gap-3 mb-3.5">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-signal/10 border border-signal/20">
+                <span className="neu-pressed neu-raised flex h-8 w-8 items-center justify-center rounded-lg">
                   {dom.icon}
                 </span>
-                <h3 className="font-sans text-sm font-semibold text-navy-950">
+                <h3 className="font-sans text-sm font-semibold text-ink-950">
                   {dom.category}
                 </h3>
               </div>
@@ -78,7 +78,7 @@ export default function TechEcosystem() {
                 {dom.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="inline-flex items-center rounded-md bg-mist/50 border border-navy-700/20 px-2.5 py-1 text-xs text-navy-700/70 font-medium"
+                    className="neu-raised inline-flex items-center rounded-md px-2.5 py-1 text-xs text-ink-700/70 font-medium"
                   >
                     {tag}
                   </span>

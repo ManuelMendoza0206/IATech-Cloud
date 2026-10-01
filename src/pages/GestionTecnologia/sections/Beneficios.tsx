@@ -40,12 +40,12 @@ export function Beneficios() {
       <div className="mt-8 space-y-6">
         {DATA.map((b) => (
           <div key={b.title} className="flex items-start gap-4">
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-signal/10 font-display text-sm text-signal">
+            <span className="neu-pressed flex h-12 w-12 shrink-0 items-center justify-center rounded-xl font-neu-display text-sm text-signal">
               {b.metric}
             </span>
             <div>
-              <p className="font-display text-lg sm:text-xl text-navy-900">{b.title}</p>
-              <p className="mt-1 text-base sm:text-lg leading-relaxed text-navy-700/70">{b.text}</p>
+              <p className="font-neu-display text-lg sm:text-xl text-ink-950">{b.title}</p>
+              <p className="mt-1 text-base sm:text-lg leading-relaxed text-ink-700/70">{b.text}</p>
             </div>
           </div>
         ))}

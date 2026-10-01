@@ -3,7 +3,6 @@ export interface HeroProps {
   title: string;
   highlight?: string;
   description: string;
-  author?: string;
   imageSrc?: string;
   imageAlt?: string;
 }

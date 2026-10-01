@@ -35,7 +35,7 @@ const VALORES = [
 
 export function Valores() {
   return (
-    <section className="bg-navy-900 py-16 sm:py-20">
+    <section className="bg-neu-base py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div>
@@ -49,32 +49,32 @@ export function Valores() {
               {VALORES.map((v) => (
                 <div
                   key={v.title}
-                  className="rounded-xl border border-signal/20 bg-navy-950/50 p-6"
+                  className="neu-raised rounded-xl p-6"
                 >
                   <div className="flex items-center gap-3">
                     <i className={`bx ${v.icon} text-2xl text-signal`} />
                     <div>
-                      <p className="font-display text-base text-mist">{v.title}</p>
+                      <p className="font-neu-display text-base text-ink-950">{v.title}</p>
                       <p className="font-mono text-[10px] uppercase tracking-widest text-signal">
                         {v.english}
                       </p>
                     </div>
                   </div>
-                  <p className="mt-3 text-sm text-mist/60">{v.text}</p>
+                  <p className="mt-3 text-sm text-ink-950/60">{v.text}</p>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="relative">
-            <div className="absolute -inset-4 -z-10 rounded-2xl bg-signal/10" />
+            <div className="neu-pressed absolute -inset-4 -z-10 rounded-2xl" />
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj24EmKcz_4A_CkYEHq_W4riQnYaSAAamMWqPLApPS1A&s=10"
               alt="Los cinco valores de Scrum"
               className="w-full rounded-2xl object-cover shadow-xl"
               loading="lazy"
             />
-            <p className="mt-4 font-mono text-xs uppercase tracking-widest text-mist/40">
+            <p className="mt-4 font-mono text-xs uppercase tracking-widest text-ink-950/40">
               Commitment · Focus · Openness · Respect · Courage
             </p>
           </div>

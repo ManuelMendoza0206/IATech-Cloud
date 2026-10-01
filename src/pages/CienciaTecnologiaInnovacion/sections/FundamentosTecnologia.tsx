@@ -17,7 +17,7 @@ export function FundamentosTecnologia() {
       bg="mist"
     >
       <SectionHeader number="02" title="Fundamentos de la Tecnología" />
-      <p className="mt-6 text-base sm:text-lg leading-relaxed text-navy-700/80">
+      <p className="mt-6 text-base sm:text-lg leading-relaxed text-ink-700/80">
         Aplicación práctica del conocimiento científico orientada a resolver
         problemas concretos. El proceso de desarrollo sigue una cadena:
         Diseño → Prototipado → Pruebas → Producción.
@@ -27,16 +27,16 @@ export function FundamentosTecnologia() {
         {DATA.map((tipo) => (
           <div
             key={tipo.label}
-            className="rounded-xl border border-navy-900/10 bg-white p-5 shadow-sm"
+            className="neu-raised rounded-xl p-5"
           >
-            <p className="font-display text-base sm:text-lg text-navy-900">{tipo.label}</p>
-            <p className="mt-2 text-base leading-relaxed text-navy-700/70">{tipo.desc}</p>
+            <p className="font-neu-display text-base sm:text-lg text-ink-950">{tipo.label}</p>
+            <p className="mt-2 text-base leading-relaxed text-ink-700/70">{tipo.desc}</p>
           </div>
         ))}
       </div>
 
-      <p className="mt-6 text-base text-navy-700/60">
-        <span className="font-semibold text-navy-900">Ejemplos:</span> Internet,
+      <p className="mt-6 text-base text-ink-700/60">
+        <span className="font-semibold text-ink-950">Ejemplos:</span> Internet,
         Inteligencia Artificial y Biotecnología.
       </p>
     </TwoColumnLayout>

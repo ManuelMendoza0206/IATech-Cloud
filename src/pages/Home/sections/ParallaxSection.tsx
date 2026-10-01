@@ -57,15 +57,11 @@ function ParallaxRow({
   return (
     <div
       ref={rowRef}
-      className={`grid items-center lg:grid-cols-2 ${
-        isDark ? 'bg-navy-950 text-mist' : 'bg-[#EDE8E0] text-navy-900'
-      }`}
+      className={`grid items-center lg:grid-cols-2 ${ isDark ? 'bg-neu-base text-ink-950' : 'bg-[#EDE8E0] text-ink-950' }`}
     >
       {/* Lado de Texto */}
       <div
-        className={`relative flex flex-col justify-between p-8 sm:p-14 lg:p-20 min-h-[400px] lg:min-h-[520px] ${
-          isImageLeft ? 'lg:order-2' : 'lg:order-1'
-        }`}
+        className={`relative flex flex-col justify-between p-8 sm:p-14 lg:p-20 min-h-[400px] lg:min-h-[520px] ${ isImageLeft ? 'lg:order-2' : 'lg:order-1' }`}
       >
         <div>
           {/* Elemento gráfico geométrico flotante al estilo de la referencia */}
@@ -77,14 +73,12 @@ function ParallaxRow({
             </svg>
           </div>
 
-          <h2 className="font-display text-3xl font-bold uppercase tracking-tight sm:text-4xl lg:text-5xl max-w-md leading-none">
+          <h2 className="font-neu-display text-3xl font-bold uppercase tracking-tight sm:text-4xl lg:text-5xl max-w-md leading-none">
             {title}
           </h2>
           
           <p
-            className={`mt-6 max-w-md text-sm leading-relaxed sm:text-base ${
-              isDark ? 'text-mist/70' : 'text-navy-900/75'
-            }`}
+            className={`mt-6 max-w-md text-sm leading-relaxed sm:text-base ${ isDark ? 'text-ink-950/70' : 'text-ink-950/75' }`}
           >
             {description}
           </p>
@@ -94,11 +88,7 @@ function ParallaxRow({
         <div className="mt-10">
           <a
             href={link}
-            className={`inline-block px-7 py-3 font-mono text-xs font-bold uppercase tracking-widest transition ${
-              isDark
-                ? 'bg-mist text-navy-950 hover:bg-signal hover:text-navy-950'
-                : 'bg-navy-950 text-mist hover:bg-signal hover:text-navy-950'
-            }`}
+            className={`inline-block px-7 py-3 font-mono text-xs font-bold uppercase tracking-widest transition ${ isDark ? 'bg-neu-base text-ink-950 hover:brightness-105' : 'bg-neu-base text-ink-950 hover:brightness-105' }`}
           >
             Descubrir
           </a>
@@ -107,9 +97,7 @@ function ParallaxRow({
 
       {/* Lado de Imagen con padding enmarcado y efecto Parallax */}
       <div
-        className={`p-6 sm:p-10 lg:p-12 ${
-          isImageLeft ? 'lg:order-1' : 'lg:order-2'
-        }`}
+        className={`p-6 sm:p-10 lg:p-12 ${ isImageLeft ? 'lg:order-1' : 'lg:order-2' }`}
       >
         <div className="relative overflow-hidden w-full h-[320px] sm:h-[420px] lg:h-[480px]">
           <div ref={imgRef} className="absolute inset-0 h-[125%] -top-[12.5%] w-full">

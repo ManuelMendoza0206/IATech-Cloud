@@ -36,21 +36,21 @@ const STEPS = [
 
 export default function CollaborationFlow({ activeId, onSelect }: CollaborationFlowProps) {
   return (
-    <section className="bg-mist py-14 lg:py-16 border-b border-navy-700/20">
+    <section className="bg-neu-base py-14 lg:py-16 border-b border-ink-950/10">
       <div className="mx-auto max-w-5xl px-6 sm:px-10">
         
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 pb-4 border-b border-navy-700/20">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 pb-4 border-b border-ink-950/10">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-signal/10 px-3 py-0.5 text-xs font-medium text-signal border border-signal/20">
+            <span className="neu-pressed neu-raised inline-flex items-center gap-2 rounded-full px-3 py-0.5 text-xs font-medium text-signal">
               <span className="h-1.5 w-1.5 rounded-full bg-signal" />
               Sinergia Operativa
             </span>
-            <h2 className="mt-2 font-sans text-2xl sm:text-3xl text-navy-950 font-semibold tracking-tight">
+            <h2 className="mt-2 font-sans text-2xl sm:text-3xl text-ink-950 font-semibold tracking-tight">
               Ciclo de Colaboración Cloud
             </h2>
           </div>
-          <p className="text-xs text-navy-700/70 max-w-xs sm:text-right">
+          <p className="text-xs text-ink-700/70 max-w-xs sm:text-right">
             Cómo interactúan los 4 roles para asegurar el ciclo de vida de cada servicio.
           </p>
         </div>
@@ -63,41 +63,33 @@ export default function CollaborationFlow({ activeId, onSelect }: CollaborationF
               <button
                 key={step.id}
                 onClick={() => onSelect(step.id)}
-                className={`group relative flex flex-col justify-between text-left rounded-xl p-4 sm:p-5 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
-                  isSelected
-                    ? 'border-2 border-signal bg-white shadow-[0_4px_14px_rgba(56,214,200,0.08)] ring-2 ring-signal/15 -translate-y-1'
-                    : 'border border-navy-700/20 bg-white shadow-[0_1px_3px_rgba(5,11,24,0.03)] hover:border-signal/30 hover:bg-white hover:-translate-y-0.5'
-                }`}
+                className={`neu-raised group relative flex flex-col justify-between text-left rounded-xl p-4 sm:p-5 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base ${ isSelected ? 'border-2 ring-2 ring-signal/15 -translate-y-1' : 'border hover:-translate-y-0.5' }`}
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className={`flex h-7 w-7 items-center justify-center rounded font-mono text-xs font-bold transition-colors ${
-                      isSelected ? 'bg-signal text-white' : 'bg-signal/10 text-signal group-hover:bg-signal/20'
-                    }`}>
+                    <span className={`flex h-7 w-7 items-center justify-center rounded font-mono text-xs font-bold transition-colors ${ isSelected ? 'neu-pressed text-signal' : 'text-ink-500 group-hover:text-signal' }`}>
                       {step.step}
                     </span>
-                    <span className="font-mono text-[10px] text-navy-700/70 uppercase">
+                    <span className="font-mono text-[10px] text-ink-700/70 uppercase">
                       FASE {step.step}
                     </span>
                   </div>
 
-                  <h3 className={`font-sans text-sm font-semibold transition-colors ${
-                    isSelected ? 'text-signal' : 'text-navy-950 group-hover:text-signal'
-                  }`}>
+                  <h3 className={`font-sans text-sm font-semibold transition-colors ${ isSelected ? 'text-signal' : 'text-ink-950 group-hover:text-signal' }`}>
                     {step.phase}
                   </h3>
 
-                  <p className="font-sans text-xs font-medium text-navy-950 mt-0.5">
+                  <p className="font-sans text-xs font-medium text-ink-950 mt-0.5">
                     {step.role}
                   </p>
 
-                  <p className="text-[11px] text-navy-700/70 leading-relaxed mt-2">
+                  <p className="text-[11px] text-ink-700/70 leading-relaxed mt-2">
                     {step.summary}
                   </p>
                 </div>
 
-                <div className="mt-4 pt-2.5 border-t border-mist/50 flex items-center justify-between text-[10px] font-mono">
-                  <span className={isSelected ? 'text-signal font-semibold' : 'text-navy-700/70'}>
+                <div className="mt-4 pt-2.5 border-t border-ink-950/10 flex items-center justify-between text-[10px] font-mono">
+                  <span className={isSelected ? 'text-signal font-semibold' : 'text-ink-700/70'}>
                     {isSelected ? '✓ Seleccionado' : 'Examinar rol →'}
                   </span>
                 </div>

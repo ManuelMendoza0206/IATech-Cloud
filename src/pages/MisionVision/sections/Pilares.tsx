@@ -27,27 +27,27 @@ const PILLARS = [
 
 export default function Pilares() {
   return (
-    <section id="pilares" className="relative overflow-hidden bg-navy-950 py-20 text-mist sm:py-28">
+    <section id="pilares" className="relative overflow-hidden bg-neu-base py-20 text-ink-950 sm:py-28">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.1]"
         style={{
-          backgroundImage: 'radial-gradient(var(--color-signal, #38d6c8) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(var(--color-signal) 1px, transparent 1px)',
           backgroundSize: '24px 24px',
         }}
       />
-      <div className="pointer-events-none absolute -top-24 right-0 h-80 w-80 rounded-full bg-signal/10 blur-[100px]" />
+      <div className="neu-pressed pointer-events-none absolute -top-24 right-0 h-80 w-80 rounded-full blur-[100px]" />
 
       <div className="relative mx-auto max-w-6xl px-6 sm:px-10">
-        <div className="flex flex-col gap-4 border-b border-navy-700/60 pb-8 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex flex-col gap-4 border-b border-ink-950/10 pb-8 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-signal/10 px-3.5 py-1 font-mono text-[11px] uppercase tracking-widest text-signal">
+            <span className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-mono text-[11px] uppercase tracking-widest text-signal">
               Cómo lo hacemos realidad
             </span>
-            <h2 className="mt-4 font-display text-3xl font-semibold sm:text-4xl">
+            <h2 className="mt-4 font-neu-display text-3xl font-semibold sm:text-4xl">
               Pilares que sostienen el área
             </h2>
           </div>
-          <p className="max-w-sm text-sm text-mist/65">
+          <p className="max-w-sm text-sm text-ink-950/65">
             Extraídos de nuestra misión y visión: el estándar con el que diseñamos,
             operamos e integramos cada servicio en la nube.
           </p>
@@ -57,13 +57,13 @@ export default function Pilares() {
           {PILLARS.map((pillar, index) => (
             <li
               key={pillar.title}
-              className="rounded-2xl border border-navy-700/70 bg-navy-900/70 p-6 backdrop-blur-sm transition hover:border-signal/50 hover:bg-navy-900"
+              className="neu-raised rounded-2xl p-6 backdrop-blur-sm transition"
             >
               <span className="font-mono text-xs text-signal">
                 {String(index + 1).padStart(2, '0')}
               </span>
-              <h3 className="mt-3 font-display text-xl text-mist">{pillar.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-mist/70">{pillar.description}</p>
+              <h3 className="mt-3 font-neu-display text-xl text-ink-950">{pillar.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-950/70">{pillar.description}</p>
             </li>
           ))}
         </ul>

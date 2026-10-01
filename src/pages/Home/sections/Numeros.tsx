@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { animate, createScope, createSpring } from 'animejs';
 
 interface Stat {
   value: number;
@@ -83,48 +84,75 @@ function useCountUp(target: number, start: boolean, duration = 1500) {
 
 function StatItem({ stat, start }: { stat: Stat; start: boolean }) {
   const count = useCountUp(stat.value, start);
+  const numRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    if (!start) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!numRef.current) return;
+    const animation = animate(numRef.current, {
+      scale: [0.85, 1],
+      duration: 600,
+      ease: createSpring({ stiffness: 220, damping: 16 }),
+    });
+    return () => {
+      animation.revert();
+    };
+  }, [start]);
 
   return (
-    <div>
-      <p className="font-display text-5xl font-bold tabular-nums text-signal sm:text-6xl">
+    <div className="reveal neu-raised p-6 sm:p-8">
+      <p ref={numRef} className="font-neu-display text-5xl font-black tabular-nums text-signal sm:text-6xl">
         {count}
         {stat.suffix}
       </p>
-      <p className="mt-3 font-mono text-xs uppercase tracking-widest text-mist">
+      <p className="mt-3 font-mono text-xs font-bold uppercase tracking-widest text-ink-950">
         {stat.label}
       </p>
-      <p className="mt-1 max-w-[28ch] text-sm leading-relaxed text-mist/60">{stat.sub}</p>
+      <p className="mt-1 max-w-[28ch] text-sm leading-relaxed text-ink-700">{stat.sub}</p>
     </div>
   );
 }
 
 export default function Numeros() {
   const { ref, inView } = useInView<HTMLDivElement>(0.3);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!sectionRef.current) return;
+    const scope = createScope({ root: sectionRef.current }).add(() => {
+      animate('.neu-blob', {
+        translateX: [0, 30],
+        translateY: [0, -20],
+        duration: 6000,
+        ease: 'inOutSine',
+        loop: true,
+        alternate: true,
+      });
+    });
+    return () => scope.revert();
+  }, []);
 
   return (
     <section
       id="numeros"
       aria-label="El área en cifras"
-      className="relative overflow-hidden bg-navy-950 py-20 sm:py-28"
+      ref={sectionRef}
+      className="relative overflow-hidden bg-neu-base py-20 sm:py-28"
       style={{ contentVisibility: 'auto', containIntrinsicSize: '400px' }}
     >
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.07]"
-        style={{
-          backgroundImage: 'radial-gradient(#38d6c8 1px, transparent 1px)',
-          backgroundSize: '26px 26px',
-        }}
-      />
-      <div className="pointer-events-none absolute -top-32 right-0 h-[360px] w-[360px] rounded-full bg-signal/15 blur-[120px]" />
+      <div className="neu-blob pointer-events-none absolute -top-24 -left-24 h-[320px] w-[320px] rounded-full bg-aqua/25 blur-[100px]" />
+      <div className="neu-blob pointer-events-none absolute -bottom-32 right-0 h-[360px] w-[360px] rounded-full bg-glow/40 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
-        <h2 className="font-display text-3xl leading-tight text-mist sm:text-4xl">
+        <h2 className="reveal font-neu-display text-3xl font-extrabold leading-tight text-ink-950 sm:text-4xl">
           Números que respaldan el servicio
         </h2>
 
         <div
           ref={ref}
-          className="mt-10 grid grid-cols-1 gap-10 border-t border-mist/10 pt-10 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
         >
           {STATS.map((stat) => (
             <StatItem key={stat.label} stat={stat} start={inView} />
