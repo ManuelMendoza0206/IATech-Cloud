@@ -1,151 +1,220 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────────────────────
+   Swiss Design (International Typographic Style)
+   "The grid is absolute. Typography is the primary visual element."
+
+   Reglas duras del skill:
+   - Sin drop shadows
+   - Sin gradientes (superficie plana)
+   - Texto NUNCA centrado: flush left / ragged right
+   - Un solo color de acento
+   - Espacio negativo como elemento estructural
+   ───────────────────────────────────────────────────────────── */
+
 @theme {
-  /* Sistema claro final — tus 5 + tinta */
-  --color-lavender: #e5e1ee;
-  --color-ice: #dffdff;
-  --color-steel: #90bede;
-  --color-aqua: #68edc6;
-  --color-glow: #90f3ff;
+  /* Paleta: papel, tinta y UN acento */
+  --color-paper: #f4f4f4;
+  --color-surface: #ffffff;
+  --color-ink: #111111;
+  --color-ink-60: #555555;
+  --color-ink-40: #8a8a8a;
+  --color-ink-15: #d4d4d4;
+  --color-accent: #e2001a;
 
-  --color-ink-950: #0f2540;
-  --color-ink-700: #2e4a67;
-  --color-ink-500: #5b7a99;
+  /* Alias de compatibilidad (migración mecánica en curso) */
+  --color-neu-base: #f4f4f4;
+  --color-ink-950: #111111;
+  --color-ink-700: #555555;
+  --color-ink-500: #8a8a8a;
+  --color-cloud-50: #ffffff;
+  --color-cloud-100: #f4f4f4;
+  --color-cloud-200: #d4d4d4;
+  --color-signal: #e2001a;
+  --color-aqua: #e2001a;
+  --color-glow: #e2001a;
+  --color-steel: #8a8a8a;
+  --color-ice: #ffffff;
+  --color-lavender: #d4d4d4;
 
-  --color-cloud-50: #f6feff;
-  --color-cloud-100: #dffdff;
-  --color-cloud-200: #e5e1ee;
-
-  /* Base neomórfica unificada: mezcla 50/50 de ice + lavender.
-     Regla del skill: fondo y elementos comparten el MISMO base exacto. */
-  --color-neu-base: #e2eff6;
-  --color-neu-shadow: #b7cbd8;
-  --color-neu-highlight: #ffffff;
-
-  /* Sombras neomórficas: highlight arriba-izq, sombra abajo-der (skill) */
-  --shadow-neu-raised: 9px 9px 18px var(--color-neu-shadow), -9px -9px 18px var(--color-neu-highlight);
-  --shadow-neu-pressed: inset 9px 9px 18px var(--color-neu-shadow), inset -9px -9px 18px var(--color-neu-highlight);
-  --shadow-neu-btn: 5px 5px 14px var(--color-neu-shadow), -5px -5px 14px var(--color-neu-highlight);
-
-  /* Aliases de compatibilidad con semántica legible (temporal, migración total en curso) */
-  --color-navy-950: #0f2540;
-  --color-navy-900: #14365f;
-  --color-navy-700: #2e4a67;
-  --color-mist: #f2f8ff;
-  --color-signal: #0e9f8a;
-
-  /* Tipografía institucional */
-  --font-display: "Space Grotesk", sans-serif;
+  /* Tipografía: Inter en todo (el skill lo nombra) */
+  --font-display: "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
-  --font-logo: "Space Grotesk", sans-serif;
-  --font-heading: "Space Grotesk", sans-serif;
-
-  /* Tipografía neumórfica (skill neumorphism: rounded sans) — uso scopado al Home */
-  --font-neu-display: "Nunito", sans-serif;
-  --font-neu-body: "Quicksand", sans-serif;
+  --font-mono: "Inter", sans-serif;
+  --font-logo: "Inter", sans-serif;
+  --font-heading: "Inter", sans-serif;
+  --font-neu-display: "Inter", sans-serif;
+  --font-neu-body: "Inter", sans-serif;
 }
 
 body {
-  @apply bg-neu-base text-ink-950 font-body antialiased;
+  @apply bg-paper text-ink font-body antialiased;
 }
 
 ::selection {
-  background-color: var(--color-aqua);
-  color: var(--color-ink-950);
+  background-color: var(--color-accent);
+  color: #ffffff;
 }
 
 * {
-  scrollbar-color: var(--color-neu-shadow) var(--color-neu-base);
+  scrollbar-color: var(--color-ink-15) var(--color-paper);
   scrollbar-width: thin;
 }
 
-.hero-light-gradient {
-  background: linear-gradient(135deg, #e5e1ee 0%, #dffdff 45%, #90f3ff 100%);
+/* ── Componentes ─────────────────────────────────────────── */
+
+.swiss-cell {
+  background: var(--color-surface);
+  border: 1px solid var(--color-ink-15);
+  border-radius: 0;
 }
 
-/* Neomorfismo (skill neumorphism): MISMO base que el fondo, SIN bordes,
-   la forma la definen solo las sombras. */
-.neu-raised {
-  background: var(--color-neu-base);
-  border: none;
-  border-radius: 20px;
-  box-shadow: var(--shadow-neu-raised);
+.swiss-chip {
+  background: transparent;
+  border: 1px solid var(--color-ink);
+  border-radius: 0;
+  color: var(--color-ink);
+  transition: background-color 120ms linear, color 120ms linear;
 }
 
-.neu-pressed {
-  background: var(--color-neu-base);
-  border: none;
-  border-radius: 9999px;
-  box-shadow: var(--shadow-neu-pressed);
+.swiss-chip-active,
+.swiss-chip:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
 }
 
-.neu-btn {
-  border: none;
-  box-shadow: var(--shadow-neu-btn);
-  transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+.swiss-btn {
+  border-radius: 0;
+  border: 1px solid var(--color-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  transition: background-color 120ms linear, color 120ms linear;
 }
 
-.neu-btn:hover {
-  filter: brightness(1.03);
+.swiss-btn-primary {
+  background: var(--color-ink);
+  color: var(--color-paper);
 }
 
-.neu-btn:active {
-  box-shadow: var(--shadow-neu-pressed);
-  transform: translateY(1px);
+.swiss-btn-primary:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
 }
 
-.neu-icon {
-  background: var(--color-neu-base);
-  border: none;
-  border-radius: 16px;
-  box-shadow: var(--shadow-neu-btn);
+.swiss-btn-secondary {
+  background: transparent;
+  color: var(--color-ink);
 }
 
-@keyframes cloud-color-breathe {
-  0% {
-    background-position: 0% 50%;
-    filter: drop-shadow(0 2px 14px rgba(104, 237, 198, 0.35));
+.swiss-btn-secondary:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.swiss-icon {
+  background: transparent;
+  border: 1px solid var(--color-ink);
+  border-radius: 0;
+  color: var(--color-ink);
+}
+
+.swiss-rule {
+  border: 0;
+  border-top: 1px solid var(--color-ink);
+}
+
+.swiss-rule-soft {
+  border: 0;
+  border-top: 1px solid var(--color-ink-15);
+}
+
+/* Grid absoluto de 12 columnas */
+.swiss-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .swiss-grid {
+    grid-template-columns: repeat(6, 1fr);
   }
-  50% {
-    background-position: 100% 50%;
-    filter: drop-shadow(0 2px 6px rgba(104, 237, 198, 0.15));
-  }
-  100% {
-    background-position: 0% 50%;
-    filter: drop-shadow(0 2px 14px rgba(104, 237, 198, 0.35));
-  }
 }
 
-.animate-cloud-gradient {
-  background-size: 250% 250%;
-  animation: cloud-color-breathe 5s ease-in-out infinite;
+/* Micro-label en mayúsculas: elemento de jerarquía recurrente */
+.swiss-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ink-60);
 }
 
-@media (scripting: enabled) {
-  .hero-enter {
-    opacity: 0;
-    transform: translateY(14px);
-    filter: blur(6px);
-  }
+.swiss-numeral {
+  font-size: clamp(4rem, 12vw, 11rem);
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+}
 
-  .hero-enter.is-mounted {
-    opacity: 1;
-    transform: none;
-    filter: blur(0);
-    transition:
-      opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
-      transform 700ms cubic-bezier(0.16, 1, 0.3, 1),
-      filter 700ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
+/* Titular masivo: el elemento visual primario */
+.swiss-display {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
 
-  .hero-enter-delay-1 {
-    transition-delay: 80ms;
-  }
+.swiss-display-sm {
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
 
-  .hero-enter-delay-2 {
-    transition-delay: 160ms;
+/* Revelado tipográfico: el texto entra por corte, no por opacidad */
+/* Revelado tipografico: el texto entra por corte, no por opacidad.
+   El estado inicial NO se define aqui a proposito: si JS no corre,
+   el contenido queda visible. Lo oculta el componente Reveal. */
+.hero-item {
+  opacity: 0;
+}
+
+.swiss-rule-soft {
+  border: 0;
+  border-top: 1px solid var(--color-ink-15);
+}
+
+.hero-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.hero-enter.is-mounted {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 500ms linear,
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-enter-delay-1 {
+  transition-delay: 90ms;
+}
+
+.hero-enter-delay-2 {
+  transition-delay: 180ms;
+}
+
+@keyframes swiss-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 
@@ -156,15 +225,13 @@ body {
     animation: none !important;
   }
 
+  .reveal,
+  .hero-item,
   .hero-enter {
-    opacity: 1;
-    transform: none;
-    filter: none;
-    transition: opacity 150ms ease;
-  }
-
-  .hero-enter.is-mounted {
-    transition: opacity 150ms ease;
+    opacity: 1 !important;
+    clip-path: none !important;
+    transform: none !important;
+    transition: none !important;
   }
 
   * {

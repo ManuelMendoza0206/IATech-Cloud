@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { animate, createScope, createSpring } from 'animejs';
+import { animate, createSpring } from 'animejs';
 
 interface Stat {
   value: number;
@@ -101,58 +101,37 @@ function StatItem({ stat, start }: { stat: Stat; start: boolean }) {
   }, [start]);
 
   return (
-    <div className="reveal neu-raised p-6 sm:p-8">
-      <p ref={numRef} className="font-neu-display text-5xl font-black tabular-nums text-signal sm:text-6xl">
+    <div className="reveal bg-surface p-6 sm:p-8">
+      <p ref={numRef} className="font-display text-5xl font-black tabular-nums text-accent sm:text-6xl">
         {count}
         {stat.suffix}
       </p>
-      <p className="mt-3 font-mono text-xs font-bold uppercase tracking-widest text-ink-950">
+      <p className="swiss-label mt-3">
         {stat.label}
       </p>
-      <p className="mt-1 max-w-[28ch] text-sm leading-relaxed text-ink-700">{stat.sub}</p>
+      <p className="mt-1 max-w-[28ch] text-sm leading-relaxed text-ink-60">{stat.sub}</p>
     </div>
   );
 }
 
 export default function Numeros() {
   const { ref, inView } = useInView<HTMLDivElement>(0.3);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    if (!sectionRef.current) return;
-    const scope = createScope({ root: sectionRef.current }).add(() => {
-      animate('.neu-blob', {
-        translateX: [0, 30],
-        translateY: [0, -20],
-        duration: 6000,
-        ease: 'inOutSine',
-        loop: true,
-        alternate: true,
-      });
-    });
-    return () => scope.revert();
-  }, []);
 
   return (
-    <section
-      id="numeros"
-      aria-label="El área en cifras"
-      ref={sectionRef}
-      className="relative overflow-hidden bg-neu-base py-20 sm:py-28"
-      style={{ contentVisibility: 'auto', containIntrinsicSize: '400px' }}
-    >
-      <div className="neu-blob pointer-events-none absolute -top-24 -left-24 h-[320px] w-[320px] rounded-full bg-aqua/25 blur-[100px]" />
-      <div className="neu-blob pointer-events-none absolute -bottom-32 right-0 h-[360px] w-[360px] rounded-full bg-glow/40 blur-[120px]" />
-
-      <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
-        <h2 className="reveal font-neu-display text-3xl font-extrabold leading-tight text-ink-950 sm:text-4xl">
-          Números que respaldan el servicio
-        </h2>
+    <section id="numeros" aria-label="El área en cifras" className="border-b border-ink bg-paper py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10">
+        <div className="swiss-grid items-end">
+          <h2 className="reveal col-span-full font-display text-3xl font-extrabold leading-tight text-ink sm:col-span-8 sm:text-5xl sm:leading-none">
+            Números que respaldan el servicio
+          </h2>
+          <p className="swiss-label col-span-full border-t border-ink pt-3 sm:col-span-4 sm:mt-0">
+            El área en cifras
+          </p>
+        </div>
 
         <div
           ref={ref}
-          className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-12 grid grid-cols-1 gap-px border border-ink bg-ink sm:grid-cols-2 lg:grid-cols-4"
         >
           {STATS.map((stat) => (
             <StatItem key={stat.label} stat={stat} start={inView} />

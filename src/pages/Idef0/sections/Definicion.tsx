@@ -64,7 +64,7 @@ const REGLAS = [
 
 export function Definicion() {
   return (
-    <section className="bg-neu-base py-20 sm:py-28">
+    <section className="bg-paper py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="01"
@@ -72,10 +72,10 @@ export function Definicion() {
           description="IDEF0 es el lenguaje estándar de modelado de funciones: una forma de dibujar qué hace un sistema sin fijar todavía cómo lo hace. Antes de elegir una tecnología, IDEF0 obliga a acordar qué tiene que ocurrir."
         />
 
-        <div className="mt-6 max-w-4xl space-y-4 text-ink-700/80">
+        <div className="mt-6 max-w-4xl space-y-4 text-ink-60/80">
           <p>
-            La sigla viene de <strong className="text-ink-950">IDEF</strong> (ICOm DEFinition) más
-            el <strong className="text-ink-950">0</strong> que identifica la versión del método. Un
+            La sigla viene de <strong className="text-ink">IDEF</strong> (ICOm DEFinition) más
+            el <strong className="text-ink">0</strong> que identifica la versión del método. Un
             diagrama IDEF0 no muestra clases, ni servicios, ni bases de datos: modela
             <em> funciones</em>. Es una herramienta de análisis, no de diseño, y por eso funciona
             bien como punto de partida cuando distintas áreas hablan idiomas técnicos distintos.
@@ -92,32 +92,32 @@ export function Definicion() {
           {ORIGENES.map((o) => (
             <li
               key={o.title}
-              className="neu-raised group rounded-2xl p-6 transition"
+              className="swiss-cell group p-6 transition"
             >
-              <span className="neu-raised flex h-11 w-11 items-center justify-center rounded-xl text-xl text-signal transition group-hover:text-ink-950">
+              <span className="swiss-cell flex h-11 w-11 items-center justify-center text-xl text-accent transition group-hover:text-ink">
                 <i className={`bx ${o.icon}`} aria-hidden="true" />
               </span>
-              <h3 className="mt-4 font-neu-display text-lg font-semibold text-ink-950">{o.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-700/80">{o.text}</p>
+              <h3 className="mt-4 font-display text-lg font-semibold text-ink">{o.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-60/80">{o.text}</p>
             </li>
           ))}
         </ul>
 
         {/* Las 4 flechas */}
         <div className="mt-16">
-          <h3 className="font-neu-display text-2xl font-semibold text-ink-950 sm:text-3xl">
+          <h3 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
             Las cuatro flechas y su significado
           </h3>
-          <p className="mt-3 max-w-3xl text-ink-700/80">
+          <p className="mt-3 max-w-3xl text-ink-60/80">
             Cada grupo responde a una pregunta distinta sobre la función. Confundirlas es el
             error más común al modelar procesos.
           </p>
 
-          <div className="mt-8 overflow-hidden rounded-2xl border border-ink-950/10">
+          <div className="mt-8 overflow-hidden border border-ink-15">
             <table className="w-full border-collapse text-left">
               <caption className="sr-only">Tipos de flecha en un diagrama IDEF0</caption>
               <thead>
-                <tr className="bg-neu-base text-ink-950">
+                <tr className="bg-paper text-ink">
                   <th scope="col" className="px-4 py-3 font-mono text-[11px] uppercase tracking-widest sm:px-6">
                     Posición
                   </th>
@@ -136,17 +136,17 @@ export function Definicion() {
                   { pos: 'Abajo', arrow: '↑', name: 'Mecanismos / Mechanisms', q: '¿Con qué se hace?' },
                   { pos: 'Derecha', arrow: '→', name: 'Salidas / Outputs', q: '¿Qué se produce?' },
                 ].map((row) => (
-                  <tr key={row.name} className="border-b border-ink-950/10 bg-neu-base last:border-0 even:bg-neu-base/30">
-                    <td className="px-4 py-4 font-mono text-xs uppercase tracking-wider text-ink-700/70 sm:px-6">
+                  <tr key={row.name} className="border-b border-ink-15 bg-paper last:border-0 even:bg-paper/30">
+                    <td className="px-4 py-4 font-mono text-xs uppercase tracking-wider text-ink-60/70 sm:px-6">
                       {row.pos}
                     </td>
                     <td className="px-4 py-4 sm:px-6">
-                      <span className="font-neu-display text-lg text-signal" aria-hidden="true">
+                      <span className="font-display text-lg text-accent" aria-hidden="true">
                         {row.arrow}
                       </span>
-                      <span className="ml-2 text-sm font-semibold text-ink-950">{row.name}</span>
+                      <span className="ml-2 text-sm font-semibold text-ink">{row.name}</span>
                     </td>
-                    <td className="px-4 py-4 text-sm text-ink-700/80 sm:px-6">{row.q}</td>
+                    <td className="px-4 py-4 text-sm text-ink-60/80 sm:px-6">{row.q}</td>
                   </tr>
                 ))}
               </tbody>
@@ -156,10 +156,10 @@ export function Definicion() {
 
         {/* ICOM */}
         <div className="mt-16">
-          <h3 className="font-neu-display text-2xl font-semibold text-ink-950 sm:text-3xl">
+          <h3 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
             Códigos ICOM
           </h3>
-          <p className="mt-3 max-w-3xl text-ink-700/80">
+          <p className="mt-3 max-w-3xl text-ink-60/80">
             Cuando una flecha de una categoría se apoya en otra, la relación se nombra con un
             código ICOM de dos letras. Sirve para dejar por escrito de dónde sale cada
             dependencia, sobre todo cuando el diagrama lo revisa alguien que no estuvo en la
@@ -168,14 +168,14 @@ export function Definicion() {
 
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {ICOM.map((c) => (
-              <li key={c.code} className="neu-raised rounded-xl p-4">
-                <span className="neu-raised inline-block rounded-md px-2 py-0.5 font-mono text-[11px] font-semibold text-signal">
+              <li key={c.code} className="swiss-cell p-4">
+                <span className="swiss-cell inline-block px-2 py-0.5 font-mono text-[11px] font-semibold text-accent">
                   {c.code}
                 </span>
-                <p className="mt-3 font-mono text-[11px] uppercase tracking-wider text-ink-700/70">
+                <p className="mt-3 font-mono text-[11px] uppercase tracking-wider text-ink-60/70">
                   {c.label}
                 </p>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-700/80">{c.text}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-ink-60/80">{c.text}</p>
               </li>
             ))}
           </ul>
@@ -183,29 +183,29 @@ export function Definicion() {
 
         {/* Reglas */}
         <div className="mt-16">
-          <h3 className="font-neu-display text-2xl font-semibold text-ink-950 sm:text-3xl">
+          <h3 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
             Reglas de buena práctica
           </h3>
           <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {REGLAS.map((r) => (
               <li
                 key={r.title}
-                className="neu-raised relative rounded-2xl p-6 transition"
+                className="swiss-cell relative p-6 transition"
               >
-                <span className="absolute left-0 top-6 h-8 w-1 rounded-r bg-signal" aria-hidden="true" />
-                <h4 className="font-neu-display text-base font-semibold text-ink-950">{r.title}</h4>
-                <p className="mt-2 text-sm leading-relaxed text-ink-700/80">{r.text}</p>
+                <span className="absolute left-0 top-6 h-8 w-1 bg-accent" aria-hidden="true" />
+                <h4 className="font-display text-base font-semibold text-ink">{r.title}</h4>
+                <p className="mt-2 text-sm leading-relaxed text-ink-60/80">{r.text}</p>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="neu-raised mt-14 rounded-2xl p-6 sm:p-8">
-          <p className="font-mono text-xs uppercase tracking-widest text-signal">En resumen</p>
-          <p className="mt-3 text-ink-700/80">
-            IDEF0 no dice <em>cómo</em> construir el sistema: dice <strong className="text-ink-950">qué</strong> debe
-            ocurrir, <strong className="text-ink-950">con qué insumos</strong>, bajo <strong className="text-ink-950">qué reglas</strong> y
-            produciendo <strong className="text-ink-950">qué resultados</strong>. Cuando el equipo de Cloud puede
+        <div className="swiss-cell mt-14 p-6 sm:p-8">
+          <p className="font-mono text-xs uppercase tracking-widest text-accent">En resumen</p>
+          <p className="mt-3 text-ink-60/80">
+            IDEF0 no dice <em>cómo</em> construir el sistema: dice <strong className="text-ink">qué</strong> debe
+            ocurrir, <strong className="text-ink">con qué insumos</strong>, bajo <strong className="text-ink">qué reglas</strong> y
+            produciendo <strong className="text-ink">qué resultados</strong>. Cuando el equipo de Cloud puede
             responder esas cuatro preguntas con precisión, el resto —la arquitectura, el proveedor,
             el pipeline— se vuelve una decisión, no una adivinanza.
           </p>

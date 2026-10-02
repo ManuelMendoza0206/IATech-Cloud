@@ -49,15 +49,14 @@ export default function Explorar() {
   return (
     <section
       id="explorar"
-      className="bg-neu-base py-20 sm:py-28"
-      style={{ contentVisibility: 'auto', containIntrinsicSize: '700px' }}
+      className="bg-paper py-20 sm:py-28"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <h2 className="reveal font-neu-display text-3xl font-extrabold leading-tight text-ink-950 sm:text-4xl">
+          <h2 className="reveal font-display text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
             Toda el área, en un solo lugar
           </h2>
-          <p className="reveal max-w-xl text-sm leading-relaxed text-ink-700 sm:text-base">
+          <p className="reveal max-w-xl text-sm leading-relaxed text-ink-60 sm:text-base">
             Accedé a cada rincón del Área de Servicios Cloud e Integración desde acá.
           </p>
         </div>
@@ -68,18 +67,18 @@ export default function Explorar() {
               <Link
                 to={page.path}
                 aria-label={`Abrir ${page.title}`}
-                className="reveal neu-raised group flex h-full flex-col p-6 transition-all duration-200 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base"
+                className="reveal swiss-cell group flex h-full flex-col p-6 transition-all duration-200 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
               >
-                <span className="neu-icon flex h-11 w-11 items-center justify-center rounded-xl text-xl text-signal transition-colors duration-200 group-hover:bg-signal group-hover:text-white group-focus-visible:bg-signal group-focus-visible:text-white">
+                <span className="swiss-icon flex h-11 w-11 items-center justify-center text-xl text-accent transition-colors duration-200 group-hover:bg-accent group-hover:text-white group-focus-visible:bg-accent group-focus-visible:text-white">
                   <i className={`bx ${page.icon}`} aria-hidden="true" />
                 </span>
-                <h3 className="mt-4 font-neu-display text-lg font-extrabold leading-tight text-ink-950">
+                <h3 className="mt-4 font-display text-lg font-extrabold leading-tight text-ink">
                   {page.title}
                 </h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-700">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-60">
                   {page.description}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-ink-500 transition-colors group-hover:text-signal group-focus-visible:text-signal">
+                <span className="mt-5 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-ink-40 transition-colors group-hover:text-accent group-focus-visible:text-accent">
                   Ver página
                   <i
                     className="bx bx-right-arrow-alt text-base transition-transform duration-200 group-hover:translate-x-1 group-focus-visible:translate-x-1"

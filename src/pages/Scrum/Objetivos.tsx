@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SectionHeader } from '../../components/content';
+import { Reveal } from '../../components/ui/Reveal';
 import { AREAS } from './data/areas';
 
 export default function Objetivos() {
@@ -11,50 +12,55 @@ export default function Objetivos() {
   return (
     <div>
       {/* Hero compacto */}
-      <section className="relative overflow-hidden bg-neu-base pt-32 pb-16 sm:pt-36 sm:pb-20">
-        <div className="pointer-events-none absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage: 'radial-gradient(var(--color-signal) 1px, transparent 1px)',
-            backgroundSize: '28px 28px',
-          }}
-        />
-        <div className="pointer-events-none absolute -top-24 left-1/3 h-[320px] w-[520px] rounded-full bg-aqua/20 blur-[120px]" />
-        <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
-          <Link
-            to="/scrum"
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-ink-500 transition hover:text-signal"
-          >
-            <i className="bx bx-left-arrow-alt text-base" />
-            Volver a Scrum
-          </Link>
+      <section className="border-b border-ink bg-paper">
+        <div className="mx-auto max-w-7xl px-6 sm:px-10">
+          <div className="swiss-grid py-20 sm:py-28">
+            <div className="col-span-full sm:col-span-8">
+              <Link
+                to="/scrum"
+                className="swiss-label inline-flex items-center gap-2 transition-colors hover:text-accent"
+              >
+                <i className="bx bx-left-arrow-alt text-base" />
+                Volver a Scrum
+              </Link>
 
-          <span className="neu-pressed mt-8 inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-widest text-signal">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-signal" />
-            Scrum · Subpágina
-          </span>
+              <Reveal asHero>
+                <span className="swiss-label hero-item mt-8 flex items-center gap-3 text-accent">
+                  <span className="inline-block h-2 w-8 bg-accent" aria-hidden="true" />
+                  Scrum · Subpágina
+                </span>
 
-          <h1 className="mt-6 font-neu-display text-3xl font-black leading-tight text-ink-950 sm:text-5xl">
-            Objetivos por Área
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-ink-700">
-            Cada área de la descripción de posiciones aporta un objetivo propio
-            que alimenta el Product Backlog.
-          </p>
+                <h1 className="swiss-display-sm hero-item mt-8 text-ink">
+                  Objetivos <span className="text-accent">por Área</span>
+                </h1>
 
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            <a
-              href="#contenido"
-              className="neu-btn inline-flex items-center gap-2 rounded-full bg-aqua px-6 py-3 text-sm font-bold text-ink-950 transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base"
-            >
-              Ver las áreas
-              <i className="bx bx-down-arrow-alt text-base" aria-hidden="true" />
-            </a>
+                <p className="hero-item mt-10 max-w-2xl border-l-2 border-ink pl-5 text-base leading-relaxed text-ink-60 sm:text-lg">
+                  Cada área de la descripción de posiciones aporta un objetivo propio
+                  que alimenta el Product Backlog.
+                </p>
+
+                <div className="hero-cta mt-12">
+                  <a
+                    href="#contenido"
+                    className="swiss-btn swiss-btn-primary inline-flex items-center gap-2 px-7 py-3 text-[11px]"
+                  >
+                    Ver las áreas
+                    <i className="bx bx-down-arrow-alt text-base" aria-hidden="true" />
+                  </a>
+                </div>
+              </Reveal>
+            </div>
+
+            <div className="col-span-full mt-12 sm:col-span-3 sm:col-start-10 sm:mt-0 sm:self-end">
+              <p className="swiss-numeral hero-item text-accent">04</p>
+              <p className="swiss-label mt-2 border-t border-ink pt-3">Áreas del equipo</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Contenido */}
-      <section id="contenido" className="bg-neu-base py-16 sm:py-20">
+      <section id="contenido" className="bg-paper py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-6 sm:px-10">
           <SectionHeader
             number="07"
@@ -66,31 +72,31 @@ export default function Objetivos() {
             {AREAS.map((a, idx) => (
               <div
                 key={a.id}
-                className="neu-raised flex flex-col rounded-2xl p-6 sm:p-8 transition-shadow"
+                className="swiss-cell flex flex-col p-6 sm:p-8 transition-shadow"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <span className="neu-raised flex h-8 w-8 items-center justify-center rounded-full font-mono text-xs text-ink-950">
+                    <span className="swiss-cell flex h-8 w-8 items-center justify-center font-mono text-xs text-ink">
                       {String(idx + 1).padStart(2, '0')}
                     </span>
-                    <i className={`bx ${a.icon} text-2xl text-signal`} />
+                    <i className={`bx ${a.icon} text-2xl text-accent`} />
                   </div>
-                  <span className="neu-pressed rounded-full px-3 py-1 font-mono text-xs font-medium text-signal">
+                  <span className="swiss-chip px-3 py-1 font-mono text-xs font-medium text-accent">
                     {a.short}
                   </span>
                 </div>
 
-                <h3 className="mt-4 font-neu-display text-lg font-semibold text-ink-950">{a.title}</h3>
+                <h3 className="mt-4 font-display text-lg font-semibold text-ink">{a.title}</h3>
 
-                <div className="neu-raised mt-4 flex-1 rounded-xl p-4">
-                  <p className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-widest text-signal">
-                    <span className="h-1.5 w-1.5 rounded-full bg-signal" />
+                <div className="swiss-cell mt-4 flex-1 p-4">
+                  <p className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-widest text-accent">
+                    <span className="h-1.5 w-1.5 bg-accent" />
                     Objetivo del área
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-700/80">{a.objective}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-60/80">{a.objective}</p>
                 </div>
 
-                <p className="mt-4 font-mono text-[11px] uppercase tracking-widest text-ink-700/40">
+                <p className="mt-4 font-mono text-[11px] uppercase tracking-widest text-ink-60/40">
                   Área {String(idx + 1).padStart(2, '0')} — Descripción de Posiciones
                 </p>
               </div>
@@ -101,14 +107,14 @@ export default function Objetivos() {
           <div className="mt-12 flex flex-wrap items-center gap-3">
             <Link
               to="/scrum"
-              className="neu-raised inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-ink-950 transition-colors"
+              className="swiss-cell inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-ink transition-colors"
             >
               <i className="bx bx-left-arrow-alt text-base" />
               Volver a Scrum
             </Link>
             <Link
               to="/descripcion-posiciones"
-              className="neu-raised inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-ink-950 transition-colors hover:text-signal"
+              className="swiss-cell inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-ink transition-colors hover:text-accent"
             >
               Ver Descripción de Posiciones
               <i className="bx bx-right-arrow-alt text-base" />

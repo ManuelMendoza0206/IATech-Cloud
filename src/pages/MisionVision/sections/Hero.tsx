@@ -1,47 +1,44 @@
+import { Reveal } from '../../../components/ui/Reveal';
+
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-neu-base pt-32 pb-20 text-ink-950 sm:pt-36 sm:pb-24">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.12]"
-        style={{
-          backgroundImage: 'radial-gradient(var(--color-signal) 1px, transparent 1px)',
-          backgroundSize: '24px 24px',
-        }}
-      />
+    <section className="border-b border-ink bg-paper">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10">
+        <div className="swiss-grid py-20 sm:py-28">
+          <div className="col-span-full sm:col-span-7">
+            <Reveal asHero>
+              <span className="swiss-label hero-item flex items-center gap-3 text-accent">
+                <span className="inline-block h-2 w-8 bg-accent" aria-hidden="true" />
+                Propósito del área
+              </span>
 
-      <div className="pointer-events-none absolute top-1/2 left-1/2 h-[min(420px,60vh)] w-[min(720px,90vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-aqua/25 blur-[120px]" />
+              <h1 className="swiss-display hero-item mt-8 text-ink">
+                Misión
+                <br />
+                y <span className="text-accent">Visión</span>
+              </h1>
 
-      <div className="relative mx-auto max-w-4xl px-6 text-center sm:px-10">
-        <span className="neu-pressed inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-widest text-signal">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-signal" />
-          Propósito del área
-        </span>
+              <p className="hero-item mt-10 max-w-xl border-l-2 border-ink pl-5 text-base leading-relaxed text-ink-60 sm:text-lg">
+                El norte que guía cada despliegue del Área de Servicios Cloud e Integración:
+                infraestructura médica confiable, continua y al servicio de la clínica.
+              </p>
 
-        <h1 className="mt-6 font-neu-display text-4xl font-black leading-tight text-ink-950 sm:text-6xl">
-          Misión y Visión
-        </h1>
+              <div className="hero-cta mt-12 flex flex-wrap items-center gap-4">
+                <a href="#declaraciones" className="swiss-btn swiss-btn-primary inline-flex items-center gap-2 px-7 py-3 text-[11px]">
+                  Declaraciones
+                  <i className="bx bx-down-arrow-alt text-base" aria-hidden="true" />
+                </a>
+                <a href="#pilares" className="swiss-btn swiss-btn-secondary inline-flex items-center gap-2 px-7 py-3 text-[11px]">
+                  Pilares
+                </a>
+              </div>
+            </Reveal>
+          </div>
 
-        <p className="mx-auto mt-5 max-w-2xl text-base text-ink-950/70 sm:text-lg">
-          El norte que guía cada despliegue del Área de Servicios Cloud e Integración:
-          infraestructura médica confiable, continua y al servicio de la clínica.
-        </p>
-
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          <a
-            href="#declaraciones"
-            className="neu-btn inline-flex items-center gap-2 rounded-full bg-aqua px-6 py-3 text-sm font-bold text-ink-950 transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base"
-          >
-            Leer declaraciones
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M12 5v14M6 13l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
-          <a
-            href="#pilares"
-            className="neu-btn inline-flex items-center gap-2 rounded-full bg-neu-base px-6 py-3 text-sm font-bold text-ink-950 transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base"
-          >
-            Ver pilares
-          </a>
+          <div className="col-span-full mt-12 sm:col-span-4 sm:col-start-9 sm:mt-0 sm:self-end">
+            <p className="swiss-numeral hero-item text-accent">01</p>
+            <p className="swiss-label mt-2 border-t border-ink pt-3">Documento de propósito</p>
+          </div>
         </div>
       </div>
     </section>

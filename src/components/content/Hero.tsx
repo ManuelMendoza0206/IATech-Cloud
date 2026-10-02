@@ -1,52 +1,64 @@
 import type { HeroProps } from './types';
 import { Reveal } from '../ui/Reveal';
 
+/**
+ * Hero Swiss: tipografía masiva al Flush left, columna de contenido
+ * indentada sobre el grid y columna vacía como espacio negativo estructural.
+ */
 export function Hero({ subtitle, title, highlight, description, imageSrc, imageAlt }: HeroProps) {
   const [before, after] = highlight ? title.split(highlight) : [title];
 
   return (
-    <section className="relative overflow-hidden bg-neu-base pt-32 pb-20 sm:pt-40 sm:pb-28">
-      {imageSrc && (
-        <img
-          src={imageSrc}
-          alt={imageAlt || ''}
-          className="absolute inset-0 h-full w-full object-cover opacity-[0.12]"
-        />
-      )}
-      <div className="absolute inset-0 bg-neu-base/50" />
-      <div className="absolute inset-0 opacity-60">
-        <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-aqua/30 blur-3xl" />
-        <div className="absolute -bottom-20 -right-20 h-[300px] w-[300px] rounded-full bg-glow/40 blur-3xl" />
+    <section className="relative border-b border-ink bg-paper">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10">
+        <div className="swiss-grid py-20 sm:py-28">
+          <div className="col-span-full sm:col-span-8">
+            <Reveal asHero>
+              <span className="swiss-label hero-item flex items-center gap-3 text-accent">
+                <span className="inline-block h-2 w-8 bg-accent" aria-hidden="true" />
+                {subtitle}
+              </span>
+
+              <h1 className="swiss-display hero-item mt-8 text-ink">
+                {before}
+                {highlight && (
+                  <>
+                    {' '}
+                    <span className="text-accent">{highlight}</span>
+                  </>
+                )}
+                {after}
+              </h1>
+
+              <p className="hero-item mt-8 max-w-xl text-base leading-relaxed text-ink-60 sm:text-lg">
+                {description}
+              </p>
+            </Reveal>
+          </div>
+
+          {imageSrc && (
+            <div className="hero-item col-span-full mt-12 sm:col-span-4 sm:mt-0 sm:self-end">
+              <img
+                src={imageSrc}
+                alt={imageAlt || ''}
+                className="aspect-[4/3] w-full border border-ink object-cover grayscale"
+                loading="lazy"
+                decoding="async"
+              />
+              <p className="swiss-label mt-2">{imageAlt}</p>
+            </div>
+          )}
+        </div>
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
-        <Reveal asHero>
-          <span className="neu-pressed hero-item inline-flex items-center px-5 py-2 font-mono text-[11px] font-bold uppercase tracking-widest text-signal">
-            {subtitle}
-          </span>
-          <h1 className="hero-item mt-6 font-neu-display text-4xl font-black leading-tight text-ink-950 sm:text-5xl lg:text-6xl">
-            {before}
-            {highlight && (
-              <>
-                <br />
-                <span className="text-signal">{highlight}</span>
-              </>
-            )}
-            {after}
-          </h1>
-          <p className="hero-item mt-6 max-w-2xl text-lg text-ink-700">{description}</p>
-        </Reveal>
-      </div>
-
-      <div className="mt-14 flex justify-center">
-        <a
-          href="#content-start"
-          aria-label="Ir al contenido"
-          className="neu-btn flex h-12 w-12 items-center justify-center rounded-full bg-neu-base text-ink-950 transition hover:brightness-105 hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base"
-        >
-          <i className="bx bx-chevrons-down text-2xl" aria-hidden="true" />
-        </a>
-      </div>
+      <a
+        href="#content-start"
+        aria-label="Ir al contenido"
+        className="swiss-btn swiss-btn-secondary inline-flex items-center gap-2 border-x-0 border-b-0 px-6 py-3 text-[11px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+      >
+        Contenido
+        <i className="bx bx-down-arrow-alt text-base" aria-hidden="true" />
+      </a>
     </section>
   );
 }

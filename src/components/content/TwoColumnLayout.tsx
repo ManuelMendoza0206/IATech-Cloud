@@ -1,45 +1,40 @@
 import { useState } from 'react';
 import type { TwoColumnLayoutProps } from './types';
 
-const BG_MAP = {
-  white: 'bg-neu-base',
-  mist: 'bg-neu-base',
-  navy: 'bg-neu-base',
-} as const;
-
 export function TwoColumnLayout({
   children,
   imageSrc,
   imageAlt,
   imagePosition = 'right',
-  bg = 'white',
   id,
 }: TwoColumnLayoutProps) {
   const isRight = imagePosition === 'right';
   const [imgError, setImgError] = useState(false);
 
   return (
-    <section id={id} className={`${BG_MAP[bg]} py-16 sm:py-20`}>
-      <div className="mx-auto grid max-w-7xl gap-16 px-6 sm:px-10 lg:grid-cols-2 lg:items-center lg:gap-20">
-        <div className={isRight ? '' : 'order-2'}>
-          {children}
-        </div>
+    <section id={id} className="border-b border-ink bg-paper py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10">
+        <div className="swiss-grid items-center gap-y-10">
+          <div className={`col-span-full sm:col-span-6 ${isRight ? 'sm:col-start-1' : 'sm:col-start-7 sm:order-2'}`}>
+            {children}
+          </div>
 
-        <div className={`relative ${isRight ? '' : 'order-1'}`}>
-          <div className="neu-raised absolute -inset-4 -z-10" />
-          {imgError ? (
-            <div className="neu-pressed flex h-64 items-center justify-center">
-              <span className="text-sm text-ink-500">{imageAlt}</span>
-            </div>
-          ) : (
-            <img
-              src={imageSrc}
-              alt={imageAlt}
-              className="neu-raised w-full object-cover"
-              loading="lazy"
-              onError={() => setImgError(true)}
-            />
-          )}
+          <div className={`col-span-full sm:col-span-5 ${isRight ? 'sm:col-start-8' : 'sm:col-start-1 sm:order-1'}`}>
+            {imgError ? (
+              <div className="flex aspect-[4/3] items-center border border-ink bg-surface">
+                <span className="swiss-label p-6">{imageAlt}</span>
+              </div>
+            ) : (
+              <img
+                src={imageSrc}
+                alt={imageAlt}
+                className="aspect-[4/3] w-full border border-ink object-cover grayscale"
+                loading="lazy"
+                onError={() => setImgError(true)}
+              />
+            )}
+            <p className="swiss-label mt-3 border-t border-ink-15 pt-2">{imageAlt}</p>
+          </div>
         </div>
       </div>
     </section>

@@ -39,7 +39,7 @@ const STATEMENTS = [
 
 export default function Declaraciones() {
   return (
-    <section id="declaraciones" className="relative overflow-hidden bg-neu-base py-20 sm:py-28">
+    <section id="declaraciones" className="relative overflow-hidden bg-paper py-20 sm:py-28">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.035]"
         style={{
@@ -50,14 +50,14 @@ export default function Declaraciones() {
       />
 
       <div className="relative mx-auto max-w-6xl px-6 sm:px-10">
-        <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
-          <span className="font-mono text-xs uppercase tracking-widest text-ink-700/70">
+        <div className="mx-auto mb-12 max-w-2xl sm:mb-16">
+          <span className="font-mono text-xs uppercase tracking-widest text-ink-60/70">
             Declaraciones
           </span>
-          <h2 className="mt-3 font-neu-display text-3xl font-semibold text-ink-950 sm:text-4xl">
+          <h2 className="mt-3 font-display text-3xl font-semibold text-ink sm:text-4xl">
             Lo que hacemos y hacia dónde vamos
           </h2>
-          <p className="mt-4 text-ink-700/75">
+          <p className="mt-4 text-ink-60/75">
             Dos compromisos que orientan cada arquitectura, cada despliegue y cada
             integración del ecosistema IATECH.
           </p>
@@ -67,30 +67,30 @@ export default function Declaraciones() {
           {STATEMENTS.map((item) => (
             <article
               key={item.id}
-              className="neu-raised group relative flex flex-col overflow-hidden rounded-2xl p-8 transition sm:p-10"
+              className="swiss-cell group relative flex flex-col overflow-hidden p-8 transition sm:p-10"
             >
-              <div className="absolute inset-x-8 top-0 h-0.5 bg-gradient-to-r from-transparent via-signal to-transparent opacity-0 transition group-hover:opacity-100" />
+              <div className="absolute inset-x-8 top-0 h-0.5 opacity-0 transition group-hover:opacity-100" />
 
               <div className="flex items-center justify-between gap-4">
-                <span className="font-mono text-[11px] uppercase tracking-widest text-signal">
+                <span className="font-mono text-[11px] uppercase tracking-widest text-accent">
                   {item.kicker}
                 </span>
-                <span className="neu-raised flex h-11 w-11 items-center justify-center rounded-xl text-signal">
+                <span className="swiss-cell flex h-11 w-11 items-center justify-center text-accent">
                   {item.icon}
                 </span>
               </div>
 
-              <h3 className="mt-6 font-neu-display text-3xl font-semibold text-ink-950">
+              <h3 className="mt-6 font-display text-3xl font-semibold text-ink">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm font-medium text-ink-700/80">{item.lead}</p>
-              <p className="mt-5 flex-1 leading-relaxed text-ink-700/75">{item.body}</p>
+              <p className="mt-2 text-sm font-medium text-ink-60/80">{item.lead}</p>
+              <p className="mt-5 flex-1 leading-relaxed text-ink-60/75">{item.body}</p>
 
               <ul className="mt-8 flex flex-wrap gap-2">
                 {item.highlights.map((tag) => (
                   <li
                     key={tag}
-                    className="neu-raised rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-ink-950"
+                    className="swiss-cell px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-ink"
                   >
                     {tag}
                   </li>

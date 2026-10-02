@@ -2,17 +2,17 @@ import { VideoEmbed } from '../../../components/content';
 
 export function Video() {
   return (
-    <section className="bg-neu-base py-20 sm:py-28">
+    <section className="bg-paper py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.8fr)] lg:items-start lg:gap-16">
           <div>
-            <span className="font-mono text-[11px] uppercase tracking-widest text-ink-700/60">
+            <span className="font-mono text-[11px] uppercase tracking-widest text-ink-60/60">
               Sección 10
             </span>
-            <h2 className="mt-4 font-neu-display text-3xl text-ink-950 sm:text-4xl">
+            <h2 className="mt-4 font-display text-3xl text-ink sm:text-4xl">
               IDEF0 en video
             </h2>
-            <p className="mt-5 leading-relaxed text-ink-700/80">
+            <p className="mt-5 leading-relaxed text-ink-60/80">
               Una introducción visual al método: qué representa cada flecha, cómo se construye un
               árbol de nodos y por qué el modelo sigue siendo útil decades después de haber sido
               publicado.
@@ -25,8 +25,8 @@ export function Video() {
                 'Cómo se descompone A-0 en nodos hijos',
               ].map((t) => (
                 <li key={t} className="flex items-start gap-3">
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-signal" aria-hidden="true" />
-                  <span className="text-sm leading-relaxed text-ink-700/80">{t}</span>
+                  <span className="mt-1.5 h-2 w-2 shrink-0 bg-accent" aria-hidden="true" />
+                  <span className="text-sm leading-relaxed text-ink-60/80">{t}</span>
                 </li>
               ))}
             </ul>
@@ -37,13 +37,13 @@ export function Video() {
               src="https://www.youtube.com/embed/k9OYt2QEZ8A"
               title="IDEF0 — introducción al modelado de funciones"
             />
-            <p className="mt-3 text-sm text-ink-700/60">
+            <p className="mt-3 text-sm text-ink-60/60">
               Fuente:{' '}
               <a
                 href="https://www.youtube.com/watch?v=k9OYt2QEZ8A"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline decoration-signal underline-offset-4 hover:text-ink-950"
+                className="underline decoration-accent underline-offset-4 hover:text-ink"
               >
                 Ver en YouTube
               </a>

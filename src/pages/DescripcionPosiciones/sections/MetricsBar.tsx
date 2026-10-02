@@ -5,7 +5,7 @@ export default function MetricsBar() {
       label: 'Especialistas Clave',
       desc: '100% de cobertura en roles críticos del área',
       icon: (
-        <svg aria-hidden="true" className="w-5 h-5 text-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <svg aria-hidden="true" className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
       ),
@@ -15,7 +15,7 @@ export default function MetricsBar() {
       label: 'Disponibilidad Objetivo',
       desc: 'Arquitecturas de alta resiliencia y planes DRP',
       icon: (
-        <svg aria-hidden="true" className="w-5 h-5 text-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <svg aria-hidden="true" className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
@@ -25,7 +25,7 @@ export default function MetricsBar() {
       label: 'Ecosistema Híbrido',
       desc: 'Capacidad operativa en AWS, Azure y Google Cloud',
       icon: (
-        <svg aria-hidden="true" className="w-5 h-5 text-signal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <svg aria-hidden="true" className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
           <path strokeLinecap="round" strokeLinejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
         </svg>
       ),
@@ -43,29 +43,29 @@ export default function MetricsBar() {
   ];
 
   return (
-    <section className="bg-neu-base py-8 border-b border-ink-950/10">
+    <section className="bg-paper py-8 border-b border-ink-15">
       <div className="mx-auto max-w-5xl px-6 sm:px-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {metrics.map((item, idx) => (
             <div
               key={idx}
-              className="neu-raised group relative rounded-xl p-4 sm:p-5 hover:-translate-y-0.5 transition-all duration-200"
+              className="swiss-cell group relative p-4 sm:p-5 hover:-translate-y-0.5 transition-all duration-200"
             >
               <div className="flex items-center justify-between gap-3 mb-2">
-                <span className="neu-raised flex h-9 w-9 items-center justify-center rounded-lg transition-colors">
+                <span className="swiss-cell flex h-9 w-9 items-center justify-center transition-colors">
                   {item.icon}
                 </span>
-                <span className="font-mono text-[10px] font-semibold text-ink-700/70 uppercase tracking-wider">
+                <span className="font-mono text-[10px] font-semibold text-ink-60/70 uppercase tracking-wider">
                   MÉTRICA 0{idx + 1}
                 </span>
               </div>
-              <h3 className="font-sans text-xl sm:text-2xl font-bold text-ink-950 tracking-tight">
+              <h3 className="font-sans text-xl sm:text-2xl font-bold text-ink tracking-tight">
                 {item.value}
               </h3>
-              <p className="font-sans text-xs font-semibold text-ink-950 mt-0.5">
+              <p className="font-sans text-xs font-semibold text-ink mt-0.5">
                 {item.label}
               </p>
-              <p className="text-[11px] text-ink-700/70 leading-relaxed mt-1">
+              <p className="text-[11px] text-ink-60/70 leading-relaxed mt-1">
                 {item.desc}
               </p>
             </div>

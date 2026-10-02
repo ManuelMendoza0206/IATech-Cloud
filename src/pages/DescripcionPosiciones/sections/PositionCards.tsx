@@ -19,21 +19,21 @@ const DRIVE_DOC_URL =
 
 export default function PositionCards({ expandedId, onToggle, cardRefs }: PositionCardsProps) {
   return (
-    <section id="perfiles" className="bg-neu-base py-14 lg:py-20 text-ink-950">
+    <section id="perfiles" className="bg-paper py-14 lg:py-20 text-ink">
       <div className="mx-auto max-w-5xl px-6 sm:px-10">
         
         {/* Encabezado de la Sección */}
-        <div className="mb-8 flex flex-col justify-between gap-4 border-b border-ink-950/10 pb-4 sm:flex-row sm:items-end">
+        <div className="mb-8 flex flex-col justify-between gap-4 border-b border-ink-15 pb-4 sm:flex-row sm:items-end">
           <div>
-            <span className="neu-pressed inline-flex items-center gap-2 px-4 py-1.5 text-xs font-medium text-signal">
-              <span className="h-1.5 w-1.5 rounded-full bg-signal" />
+            <span className="swiss-chip inline-flex items-center gap-2 px-4 py-1.5 text-xs font-medium text-accent">
+              <span className="h-1.5 w-1.5 bg-accent" />
               Fichas de Puesto
             </span>
-            <h2 className="mt-2 font-neu-display text-2xl font-extrabold tracking-tight text-ink-950 sm:text-3xl">
+            <h2 className="mt-2 font-display text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
               Especificaciones & Fichas Técnicas
             </h2>
           </div>
-          <p className="shrink-0 font-mono text-xs text-ink-500">
+          <p className="shrink-0 font-mono text-xs text-ink-40">
             [ 4 PUESTOS REGISTRADOS ]
           </p>
         </div>
@@ -50,35 +50,35 @@ export default function PositionCards({ expandedId, onToggle, cardRefs }: Positi
                 ref={(el) => {
                   cardRefs.current[position.id] = el;
                 }}
-                className={`group relative overflow-hidden rounded-2xl transition-all duration-200 ${ isExpanded ? 'neu-pressed' : 'neu-raised' }`}
+                className={`group relative overflow-hidden transition-all duration-200 ${ isExpanded ? 'swiss-chip' : 'swiss-cell' }`}
               >
                 {/* Indicador de acento en el borde izquierdo */}
-                <div className={`absolute left-0 top-0 h-1 w-full transition-colors duration-200 lg:h-full lg:w-1 ${ isExpanded ? 'bg-signal' : 'bg-transparent group-hover:bg-signal/40' }`} />
+                <div className={`absolute left-0 top-0 h-1 w-full transition-colors duration-200 lg:h-full lg:w-1 ${ isExpanded ? 'bg-accent' : 'bg-transparent group-hover:bg-accent/40' }`} />
 
                 {/* Header Clickeable */}
                 <button
                   onClick={() => onToggle(position.id)}
                   aria-expanded={isExpanded}
-                  className="flex w-full flex-col lg:flex-row lg:items-center justify-between gap-4 rounded-xl pl-5 sm:pl-7 pr-6 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base"
+                  className="flex w-full flex-col lg:flex-row lg:items-center justify-between gap-4 pl-5 sm:pl-7 pr-6 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
                 >
                   <div className="flex items-start gap-4 flex-1">
                     {/* Index Badge */}
-                    <span className={`neu-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-xl font-mono text-xs font-bold transition-colors ${ isExpanded ? 'text-signal' : 'text-ink-500 group-hover:text-signal' }`}>
+                    <span className={`swiss-icon flex h-9 w-9 shrink-0 items-center justify-center font-mono text-xs font-bold transition-colors ${ isExpanded ? 'text-accent' : 'text-ink-40 group-hover:text-accent' }`}>
                       {String(index + 1).padStart(2, '0')}
                     </span>
 
                     <div className="space-y-1.5 flex-1">
                       <div className="flex flex-wrap items-center gap-2.5">
-                        <h3 className="font-neu-display text-lg font-extrabold text-ink-950 transition-colors group-hover:text-signal sm:text-xl">
+                        <h3 className="font-display text-lg font-extrabold text-ink transition-colors group-hover:text-accent sm:text-xl">
                           {position.title}
                         </h3>
-                        <span className="neu-pressed inline-block rounded-full px-3 py-1 text-xs font-medium text-signal">
+                        <span className="swiss-chip inline-block px-3 py-1 text-xs font-medium text-accent">
                           {position.identification.category}
                         </span>
                       </div>
 
                       {/* Resumen explicativo de 1 línea */}
-                      <p className="line-clamp-1 max-w-3xl text-xs leading-relaxed text-ink-700 sm:text-sm">
+                      <p className="line-clamp-1 max-w-3xl text-xs leading-relaxed text-ink-60 sm:text-sm">
                         {position.purpose[0]}
                       </p>
 
@@ -87,7 +87,7 @@ export default function PositionCards({ expandedId, onToggle, cardRefs }: Positi
                         {tags.map((tag) => (
                           <span
                             key={tag}
-                            className="neu-pressed inline-flex items-center px-3 py-1 text-[11px] text-ink-700"
+                            className="swiss-chip inline-flex items-center px-3 py-1 text-[11px] text-ink-60"
                           >
                             {tag}
                           </span>
@@ -97,13 +97,13 @@ export default function PositionCards({ expandedId, onToggle, cardRefs }: Positi
                   </div>
 
                   {/* Estado / Botón desplegable */}
-                  <div className="flex shrink-0 items-center justify-between gap-4 border-t border-ink-950/10 pt-3 lg:justify-end lg:border-t-0 lg:pt-0">
-                    <span className="hidden font-mono text-xs text-ink-500 sm:inline-flex sm:items-center sm:gap-1.5">
-                      <span className="h-1.5 w-1.5 rounded-full bg-signal" />
+                  <div className="flex shrink-0 items-center justify-between gap-4 border-t border-ink-15 pt-3 lg:justify-end lg:border-t-0 lg:pt-0">
+                    <span className="hidden font-mono text-xs text-ink-40 sm:inline-flex sm:items-center sm:gap-1.5">
+                      <span className="h-1.5 w-1.5 bg-accent" />
                       1 Titular · {position.identification.schedule}
                     </span>
 
-                    <div className={`neu-btn flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-bold transition-all ${ isExpanded ? 'bg-aqua text-ink-950' : 'bg-neu-base text-ink-700' }`}>
+                    <div className={`swiss-btn flex items-center gap-1.5 px-4 py-2 text-xs font-bold transition-all ${ isExpanded ? 'bg-aqua text-ink' : 'bg-paper text-ink-60' }`}>
                       <span>{isExpanded ? 'Ocultar' : 'Ver Ficha'}</span>
                         <svg
                         className={`w-3.5 h-3.5 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
@@ -120,7 +120,7 @@ export default function PositionCards({ expandedId, onToggle, cardRefs }: Positi
 
                 {/* Contenido Expandido */}
                 {isExpanded && (
-                  <div className="border-t border-ink-950/10 px-6 py-6 sm:px-8">
+                  <div className="border-t border-ink-15 px-6 py-6 sm:px-8">
                     <PositionDetail position={position} />
                   </div>
                 )}
@@ -136,12 +136,12 @@ export default function PositionCards({ expandedId, onToggle, cardRefs }: Positi
 /* ─── Detalle de Puesto en Layout Dashboard Warm Cloud ──────────────── */
 function PositionDetail({ position }: { position: Position }) {
   return (
-    <div className="space-y-6 text-ink-950">
+    <div className="space-y-6 text-ink">
       {/* Grid Superior: Identificación & Relaciones */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="neu-raised rounded-2xl p-4 sm:p-5">
-          <h4 className="font-neu-body text-xs font-semibold uppercase tracking-wider text-ink-950 mb-3 pb-2 border-b border-ink-950/10 flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-signal" />
+        <div className="swiss-cell p-4 sm:p-5">
+          <h4 className="font-body text-xs font-semibold uppercase tracking-wider text-ink mb-3 pb-2 border-b border-ink-15 flex items-center gap-2">
+            <span className="h-1.5 w-1.5 bg-accent" />
             Identificación del Puesto
           </h4>
           <dl className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
@@ -152,19 +152,19 @@ function PositionDetail({ position }: { position: Position }) {
           </dl>
         </div>
 
-        <div className="neu-raised rounded-2xl p-4 sm:p-5">
-          <h4 className="font-neu-body text-xs font-semibold uppercase tracking-wider text-ink-950 mb-3 pb-2 border-b border-ink-950/10 flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-signal" />
+        <div className="swiss-cell p-4 sm:p-5">
+          <h4 className="font-body text-xs font-semibold uppercase tracking-wider text-ink mb-3 pb-2 border-b border-ink-15 flex items-center gap-2">
+            <span className="h-1.5 w-1.5 bg-accent" />
             Relaciones Organizacionales
           </h4>
           <div className="space-y-2 text-xs">
             <div>
-              <span className="text-[11px] text-ink-700 block font-mono">Jerarquía Directa</span>
-              <p className="text-ink-950 font-medium">{position.relationships.hierarchical}</p>
+              <span className="text-[11px] text-ink-60 block font-mono">Jerarquía Directa</span>
+              <p className="text-ink font-medium">{position.relationships.hierarchical}</p>
             </div>
             <div>
-              <span className="text-[11px] text-ink-700 block font-mono">Relaciones Funcionales</span>
-              <p className="text-ink-700 leading-relaxed">{position.relationships.functional}</p>
+              <span className="text-[11px] text-ink-60 block font-mono">Relaciones Funcionales</span>
+              <p className="text-ink-60 leading-relaxed">{position.relationships.functional}</p>
             </div>
           </div>
         </div>
@@ -174,11 +174,11 @@ function PositionDetail({ position }: { position: Position }) {
       <SectionCard title="Finalidad del Cargo">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
           {position.purpose.map((item, idx) => (
-            <div key={idx} className="neu-pressed flex items-start gap-2.5 rounded-xl p-3">
-              <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded text-signal text-[10px] font-semibold mt-0.5 font-mono">
+            <div key={idx} className="swiss-chip flex items-start gap-2.5 p-3">
+              <span className="flex h-4 w-4 shrink-0 items-center justify-center text-accent text-[10px] font-semibold mt-0.5 font-mono">
                 {idx + 1}
               </span>
-              <p className="text-xs text-ink-950 leading-relaxed">{item}</p>
+              <p className="text-xs text-ink leading-relaxed">{item}</p>
             </div>
           ))}
         </div>
@@ -190,8 +190,8 @@ function PositionDetail({ position }: { position: Position }) {
           <SectionCard title="Funciones Específicas">
             <ul className="space-y-2">
               {position.functions.map((fn, idx) => (
-                <li key={idx} className="flex items-start gap-2 text-xs text-ink-950 leading-relaxed">
-                  <span className="h-1.5 w-1.5 rounded-full bg-signal shrink-0 mt-1.5" />
+                <li key={idx} className="flex items-start gap-2 text-xs text-ink leading-relaxed">
+                  <span className="h-1.5 w-1.5 bg-accent shrink-0 mt-1.5" />
                   <span>{fn}</span>
                 </li>
               ))}
@@ -203,7 +203,7 @@ function PositionDetail({ position }: { position: Position }) {
           <SectionCard title="Áreas de Eficiencia">
             <ul className="space-y-2">
               {position.efficiencyAreas.map((eff, idx) => (
-                <li key={idx} className="neu-pressed rounded-xl p-2.5 text-[11px] font-medium leading-relaxed text-ink-950">
+                <li key={idx} className="swiss-chip p-2.5 text-[11px] font-medium leading-relaxed text-ink">
                   ✓ {eff}
                 </li>
               ))}
@@ -217,8 +217,8 @@ function PositionDetail({ position }: { position: Position }) {
         <SectionCard title="Responsabilidades Clave">
           <ul className="space-y-2">
             {position.responsibilities.map((resp, idx) => (
-              <li key={idx} className="flex items-start gap-2 text-xs text-ink-950 leading-relaxed">
-                <span className="text-signal font-semibold">•</span>
+              <li key={idx} className="flex items-start gap-2 text-xs text-ink leading-relaxed">
+                <span className="text-accent font-semibold">•</span>
                 <span>{resp}</span>
               </li>
             ))}
@@ -227,11 +227,11 @@ function PositionDetail({ position }: { position: Position }) {
 
         <SectionCard title="Condiciones de Trabajo & Factores de Riesgo">
           <div className="space-y-2 text-xs">
-            <div className="rounded-lg bg-amber-50 p-3 border border-amber-200">
+            <div className="bg-amber-50 p-3 border border-amber-200">
               <span className="text-[11px] font-mono font-medium text-amber-800 block mb-0.5">Entorno & Jornada</span>
               <p className="text-amber-900 text-[11px] leading-relaxed">{position.conditions.workConditions}</p>
             </div>
-            <div className="rounded-lg bg-rose-50 p-3 border border-rose-200">
+            <div className="bg-rose-50 p-3 border border-rose-200">
               <span className="text-[11px] font-mono font-medium text-rose-800 block mb-0.5">Factores de Riesgo</span>
               <p className="text-rose-900 text-[11px] leading-relaxed">{position.conditions.risks}</p>
             </div>
@@ -240,40 +240,40 @@ function PositionDetail({ position }: { position: Position }) {
       </div>
 
       {/* Requerimientos y Competencias en Caja Destacada */}
-      <div className="neu-raised rounded-2xl p-5 sm:p-6">
-        <h4 className="font-neu-body text-xs font-semibold text-signal uppercase tracking-wider mb-4 pb-2 border-b border-ink-950/10 flex items-center gap-2">
-          <span className="h-1.5 w-1.5 rounded-full bg-signal" />
+      <div className="swiss-cell p-5 sm:p-6">
+        <h4 className="font-body text-xs font-semibold text-accent uppercase tracking-wider mb-4 pb-2 border-b border-ink-15 flex items-center gap-2">
+          <span className="h-1.5 w-1.5 bg-accent" />
           Requerimientos y Competencias Exigidas
         </h4>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
           <div>
-            <span className="text-[11px] text-ink-700 block font-mono">Educación Requerida</span>
-            <p className="text-ink-950 font-medium leading-relaxed mt-0.5">{position.requirements.education}</p>
+            <span className="text-[11px] text-ink-60 block font-mono">Educación Requerida</span>
+            <p className="text-ink font-medium leading-relaxed mt-0.5">{position.requirements.education}</p>
           </div>
 
           <div>
-            <span className="text-[11px] text-ink-700 block font-mono">Experiencia Mínima</span>
-            <p className="text-ink-950 font-medium leading-relaxed mt-0.5">{position.requirements.experience}</p>
+            <span className="text-[11px] text-ink-60 block font-mono">Experiencia Mínima</span>
+            <p className="text-ink font-medium leading-relaxed mt-0.5">{position.requirements.experience}</p>
           </div>
 
           {position.requirements.technicalKnowledge && (
             <div>
-              <span className="text-[11px] text-ink-700 block font-mono">Conocimientos Técnicos</span>
-              <p className="text-ink-700 text-[11px] leading-relaxed mt-0.5">{position.requirements.technicalKnowledge}</p>
+              <span className="text-[11px] text-ink-60 block font-mono">Conocimientos Técnicos</span>
+              <p className="text-ink-60 text-[11px] leading-relaxed mt-0.5">{position.requirements.technicalKnowledge}</p>
             </div>
           )}
 
           {position.requirements.certifications && (
             <div>
-              <span className="text-[11px] text-ink-700 block font-mono">Certificaciones Relevantes</span>
-              <p className="text-ink-700 text-[11px] leading-relaxed mt-0.5">{position.requirements.certifications}</p>
+              <span className="text-[11px] text-ink-60 block font-mono">Certificaciones Relevantes</span>
+              <p className="text-ink-60 text-[11px] leading-relaxed mt-0.5">{position.requirements.certifications}</p>
             </div>
           )}
 
-          <div className="md:col-span-2 pt-3 border-t border-ink-950/10">
-            <span className="text-[11px] text-ink-700 block font-mono">Habilidades & Competencias Clave</span>
-            <p className="text-ink-700 text-[11px] leading-relaxed mt-0.5">{position.requirements.skills}</p>
+          <div className="md:col-span-2 pt-3 border-t border-ink-15">
+            <span className="text-[11px] text-ink-60 block font-mono">Habilidades & Competencias Clave</span>
+            <p className="text-ink-60 text-[11px] leading-relaxed mt-0.5">{position.requirements.skills}</p>
           </div>
         </div>
       </div>
@@ -285,7 +285,7 @@ function PositionDetail({ position }: { position: Position }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`Ver documento de ${position.title} en Google Drive`}
-          className="inline-flex items-center gap-2 rounded-md bg-signal px-4 py-2 text-xs font-medium text-white transition-all hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base"
+          className="inline-flex items-center gap-2 bg-accent px-4 py-2 text-xs font-medium text-white transition-all hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
         >
           <svg
             aria-hidden="true"
@@ -310,10 +310,10 @@ function PositionDetail({ position }: { position: Position }) {
 
 function SectionCard({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="neu-raised flex h-full flex-col justify-between rounded-2xl p-4 sm:p-5">
+    <div className="swiss-cell flex h-full flex-col justify-between p-4 sm:p-5">
       <div>
-        <h4 className="font-neu-body text-xs font-semibold uppercase tracking-wider text-ink-950 mb-3 pb-2 border-b border-ink-950/10 flex items-center gap-2">
-          <span className="h-1.5 w-1.5 rounded-full bg-signal" />
+        <h4 className="font-body text-xs font-semibold uppercase tracking-wider text-ink mb-3 pb-2 border-b border-ink-15 flex items-center gap-2">
+          <span className="h-1.5 w-1.5 bg-accent" />
           {title}
         </h4>
         {children}
@@ -325,8 +325,8 @@ function SectionCard({ title, children }: { title: string; children: React.React
 function InfoItem({ label, value }: { label: string; value: string }) {
   return (
     <div>
-              <dt className="text-[11px] text-ink-700 font-mono">{label}</dt>
-      <dd className="font-medium text-ink-950 text-xs mt-0.5">{value}</dd>
+              <dt className="text-[11px] text-ink-60 font-mono">{label}</dt>
+      <dd className="font-medium text-ink text-xs mt-0.5">{value}</dd>
     </div>
   );
 }

@@ -7,7 +7,7 @@ import { Reveal } from '../../components/ui/Reveal';
 
 export default function Home() {
   return (
-    <div className="font-neu-body">
+    <div className="font-body">
       <Hero />
       <Reveal stagger>
         <Presentacion />
