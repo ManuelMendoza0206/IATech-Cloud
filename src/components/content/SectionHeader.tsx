@@ -3,8 +3,8 @@ import { Reveal } from '../ui/Reveal';
 
 export function SectionHeader({ number, title, description, variant = 'light' }: SectionHeaderProps) {
   const labelColor = 'text-signal';
-  const titleColor = 'text-ink-950';
-  const descColor = variant === 'dark' ? 'text-ink-950/70' : 'text-ink-700';
+  const titleColor = 'text-ink';
+  const descColor = variant === 'dark' ? 'text-ink/70' : 'text-ink-700';
 
   return (
     <Reveal>
@@ -12,7 +12,7 @@ export function SectionHeader({ number, title, description, variant = 'light' }:
         <span className={`font-mono text-xs uppercase tracking-widest ${labelColor}`}>
           Sección {number}
         </span>
-        <h2 className={`mt-4 font-neu-display text-3xl font-bold ${titleColor} sm:text-4xl`}>
+        <h2 className={`mt-4 font-display text-3xl font-bold ${titleColor} sm:text-4xl`}>
           {title}
         </h2>
         {description && (

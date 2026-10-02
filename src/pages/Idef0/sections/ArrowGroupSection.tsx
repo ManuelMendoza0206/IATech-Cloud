@@ -16,7 +16,7 @@ const POSITION_ICON: Record<ArrowGroup['position'], string> = {
 
 export default function ArrowGroupSection({ group }: { group: ArrowGroup }) {
   return (
-    <section className="bg-neu-base py-20 sm:py-28">
+    <section className="bg-ice-50 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] lg:gap-16">
           {/* Columna izquierda: encabezado */}
@@ -39,7 +39,7 @@ export default function ArrowGroupSection({ group }: { group: ArrowGroup }) {
               </div>
             </div>
 
-            <h2 className="mt-6 font-neu-display text-3xl text-ink-950 sm:text-4xl">
+            <h2 className="mt-6 font-display text-3xl text-ink sm:text-4xl">
               {group.label}{' '}
               <span className="text-ink-700/40">/ {group.english}</span>
             </h2>
@@ -56,7 +56,7 @@ export default function ArrowGroupSection({ group }: { group: ArrowGroup }) {
             {group.items.map((item, i) => (
               <li
                 key={item.title}
-                className="neu-raised group relative overflow-hidden rounded-2xl p-6 transition sm:p-7"
+                className="panel group relative overflow-hidden rounded-2xl p-6 transition sm:p-7"
               >
                 <span
                   className="absolute left-0 top-0 h-full w-1 origin-top scale-y-0 transition-transform duration-300 group-hover:scale-y-100"
@@ -72,7 +72,7 @@ export default function ArrowGroupSection({ group }: { group: ArrowGroup }) {
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <div>
-                    <h3 className="font-neu-display text-lg font-semibold text-ink-950">{item.title}</h3>
+                    <h3 className="font-display text-lg font-semibold text-ink">{item.title}</h3>
                     <p className="mt-2 leading-relaxed text-ink-700/80">{item.text}</p>
                   </div>
                 </div>

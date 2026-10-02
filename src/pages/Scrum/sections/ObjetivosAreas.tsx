@@ -3,7 +3,7 @@ import { AREAS } from '../data/areas';
 
 export function ObjetivosAreas() {
   return (
-    <section id="objetivos" className="bg-neu-base py-16 sm:py-20">
+    <section id="objetivos" className="bg-ice-50 py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="07"
@@ -15,23 +15,23 @@ export function ObjetivosAreas() {
           {AREAS.map((a, idx) => (
             <div
               key={a.id}
-              className="neu-raised flex flex-col rounded-2xl p-6 sm:p-8 transition-shadow"
+              className="panel flex flex-col rounded-2xl p-6 sm:p-8 transition-shadow"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <span className="neu-raised flex h-8 w-8 items-center justify-center rounded-full font-mono text-xs text-ink-950">
+                  <span className="panel flex h-8 w-8 items-center justify-center rounded-full font-mono text-xs text-ink">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
                   <i className={`bx ${a.icon} text-2xl text-signal`} />
                 </div>
-                <span className="neu-pressed rounded-full px-3 py-1 font-mono text-xs font-medium text-signal">
+                <span className="chip rounded-full px-3 py-1 font-mono text-xs font-medium text-signal">
                   {a.short}
                 </span>
               </div>
 
-              <h3 className="mt-4 font-neu-display text-lg font-semibold text-ink-950">{a.title}</h3>
+              <h3 className="mt-4 font-display text-lg font-semibold text-ink">{a.title}</h3>
 
-              <div className="neu-raised mt-4 flex-1 rounded-xl p-4">
+              <div className="panel mt-4 flex-1 rounded-xl p-4">
                 <p className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-widest text-signal">
                   <span className="h-1.5 w-1.5 rounded-full bg-signal" />
                   Objetivo del área

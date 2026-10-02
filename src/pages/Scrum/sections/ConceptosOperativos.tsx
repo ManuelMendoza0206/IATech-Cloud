@@ -38,17 +38,17 @@ export function ConceptosOperativos() {
           <div key={c.title} className="flex items-start gap-4">
             <span className="mt-1 h-3 w-3 shrink-0 rounded-full bg-signal" />
             <div>
-              <p className="font-neu-display text-base text-ink-950">{c.title}</p>
+              <p className="font-display text-base text-ink">{c.title}</p>
               <p className="mt-1 text-sm leading-relaxed text-ink-700/70">{c.text}</p>
             </div>
           </div>
         ))}
       </div>
-      <div className="neu-raised mt-8 rounded-xl p-5">
+      <div className="panel mt-8 rounded-xl p-5">
         <p className="font-mono text-xs uppercase tracking-widest text-signal">Tip práctico</p>
         <p className="mt-2 text-sm text-ink-700/70">
           Refinar el Backlog cada Sprint evita que el Planning se vuelva una sesión de descubrimiento. La
-          Velocity es una brújula del equipo, <span className="font-semibold text-ink-950">no un KPI de productividad</span>.
+          Velocity es una brújula del equipo, <span className="font-semibold text-ink">no un KPI de productividad</span>.
         </p>
       </div>
     </TwoColumnLayout>

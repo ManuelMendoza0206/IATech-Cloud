@@ -20,7 +20,7 @@ const PILARES = [
 
 export function Pilares() {
   return (
-    <section className="bg-neu-base py-16 sm:py-20">
+    <section className="bg-ice-50 py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="02"
@@ -32,16 +32,16 @@ export function Pilares() {
           {PILARES.map((p) => (
             <div
               key={p.title}
-              className="neu-raised rounded-2xl p-8 transition-shadow"
+              className="panel rounded-2xl p-8 transition-shadow"
             >
               <i className={`bx ${p.icon} text-3xl text-signal`} />
-              <p className="mt-4 font-neu-display text-xl text-ink-950">{p.title}</p>
+              <p className="mt-4 font-display text-xl text-ink">{p.title}</p>
               <p className="mt-3 text-sm leading-relaxed text-ink-700/70">{p.text}</p>
             </div>
           ))}
         </div>
 
-        <div className="neu-raised mt-10 overflow-hidden rounded-2xl">
+        <div className="panel mt-10 overflow-hidden rounded-2xl">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNN8VTQG1QWpqmMYN34qEPryzlc_y7ipv_LNDF7EkosA&s=10"
             alt="Diagrama de los tres pilares de Scrum"

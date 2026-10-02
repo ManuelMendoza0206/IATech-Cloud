@@ -35,7 +35,7 @@ export function FundamentosCiencia() {
       <div className="mt-8 space-y-6">
         {DATA.map((item) => (
           <div key={item.title} className="border-l border-ink-950/10-2 border-ink-950/10 pl-5">
-            <p className="font-neu-display text-lg sm:text-xl text-ink-950">{item.title}</p>
+            <p className="font-display text-lg sm:text-xl text-ink">{item.title}</p>
             <p className="mt-1 text-base sm:text-lg leading-relaxed text-ink-700/70">{item.text}</p>
           </div>
         ))}

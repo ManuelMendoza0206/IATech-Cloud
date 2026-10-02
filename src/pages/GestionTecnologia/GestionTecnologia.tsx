@@ -1,4 +1,5 @@
 import { Hero } from '../../components/content';
+import { Reveal } from '../../components/ui/Reveal';
 import {
   ComponentesClave,
   GestionTalento,
@@ -19,9 +20,13 @@ export default function GestionTecnologia() {
         imageAlt="Gestión de Tecnología"
       />
       <div id="content-start" />
-      <ComponentesClave />
+      <Reveal stagger>
+        <ComponentesClave />
+      </Reveal>
       <GestionTalento />
-      <ProcesosGobernanza />
+      <Reveal stagger>
+        <ProcesosGobernanza />
+      </Reveal>
       <HerramientasSoporte />
       <Beneficios />
     </div>

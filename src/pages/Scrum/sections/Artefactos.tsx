@@ -6,7 +6,7 @@ const ARTEFACTOS = [
     commitment: 'Product Goal',
     desc: 'Lista dinámica y priorizada de todo lo que el producto necesita. Describe un estado futuro hacia el cual apunta todo el esfuerzo acumulado.',
     owner: 'Product Owner',
-    color: 'bg-neu-base',
+    color: 'bg-ice-50',
   },
   {
     name: 'Sprint Backlog',
@@ -26,7 +26,7 @@ const ARTEFACTOS = [
 
 export function Artefactos() {
   return (
-    <section className="bg-neu-base py-16 sm:py-20">
+    <section className="bg-ice-50 py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="06"
@@ -34,7 +34,7 @@ export function Artefactos() {
           description="Cada artefacto representa trabajo o valor y contiene un compromiso que aporta transparencia y criterio claro de éxito."
         />
 
-        <div className="neu-raised mt-10 overflow-hidden rounded-2xl p-4 sm:p-6">
+        <div className="panel mt-10 overflow-hidden rounded-2xl p-4 sm:p-6">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0GH2HfJcNOR6mhTxpNUOmB1tnFSKGkoLtcZEyDLwYD-CukYsgDuQLus19&s=10"
             alt="Artefactos de Scrum y sus compromisos: Product Backlog → Product Goal, Sprint Backlog → Sprint Goal, Incremento → Definition of Done"
@@ -47,14 +47,14 @@ export function Artefactos() {
           {ARTEFACTOS.map((a) => (
             <div
               key={a.name}
-              className="neu-raised rounded-2xl p-8"
+              className="panel rounded-2xl p-8"
             >
               <span
-                className={`inline-flex rounded-full px-3 py-1 font-mono text-xs uppercase tracking-widest ${a.color} ${a.color === 'bg-signal' ? 'text-ink-950' : 'text-ink-950'}`}
+                className={`inline-flex rounded-full px-3 py-1 font-mono text-xs uppercase tracking-widest ${a.color} ${a.color === 'bg-signal' ? 'text-ink' : 'text-ink'}`}
               >
                 {a.owner}
               </span>
-              <p className="mt-4 font-neu-display text-lg text-ink-950">{a.name}</p>
+              <p className="mt-4 font-display text-lg text-ink">{a.name}</p>
               <p className="font-mono text-xs uppercase tracking-widest text-signal">
                 ↔ {a.commitment}
               </p>
@@ -63,20 +63,20 @@ export function Artefactos() {
           ))}
         </div>
 
-        <div className="neu-raised mt-8 grid gap-4 rounded-xl p-6 sm:grid-cols-3">
+        <div className="panel mt-8 grid gap-4 rounded-xl p-6 sm:grid-cols-3">
           <div className="text-center">
             <p className="font-mono text-xs uppercase tracking-widest text-ink-700/60">Artefacto</p>
-            <p className="mt-1 font-neu-display text-sm text-ink-950">Product Backlog</p>
+            <p className="mt-1 font-display text-sm text-ink">Product Backlog</p>
             <p className="font-mono text-xs text-signal">→ Product Goal</p>
           </div>
           <div className="text-center border-t border-ink-950/10 pt-4 sm:border-t border-ink-950/10-0 sm:border-l sm:pt-0 sm:pl-4">
             <p className="font-mono text-xs uppercase tracking-widest text-ink-700/60">Artefacto</p>
-            <p className="mt-1 font-neu-display text-sm text-ink-950">Sprint Backlog</p>
+            <p className="mt-1 font-display text-sm text-ink">Sprint Backlog</p>
             <p className="font-mono text-xs text-signal">→ Sprint Goal</p>
           </div>
           <div className="text-center border-t border-ink-950/10 pt-4 sm:border-t border-ink-950/10-0 sm:border-l sm:pt-0 sm:pl-4">
             <p className="font-mono text-xs uppercase tracking-widest text-ink-700/60">Artefacto</p>
-            <p className="mt-1 font-neu-display text-sm text-ink-950">Incremento</p>
+            <p className="mt-1 font-display text-sm text-ink">Incremento</p>
             <p className="font-mono text-xs text-signal">→ Definition of Done</p>
           </div>
         </div>

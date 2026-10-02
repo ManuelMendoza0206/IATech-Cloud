@@ -57,7 +57,7 @@ function ParallaxRow({
   return (
     <div
       ref={rowRef}
-      className={`grid items-center lg:grid-cols-2 ${ isDark ? 'bg-neu-base text-ink-950' : 'bg-[#EDE8E0] text-ink-950' }`}
+      className={`grid items-center lg:grid-cols-2 ${ isDark ? 'bg-ice-50 text-ink' : 'bg-[#EDE8E0] text-ink' }`}
     >
       {/* Lado de Texto */}
       <div
@@ -73,12 +73,12 @@ function ParallaxRow({
             </svg>
           </div>
 
-          <h2 className="font-neu-display text-3xl font-bold uppercase tracking-tight sm:text-4xl lg:text-5xl max-w-md leading-none">
+          <h2 className="font-display text-3xl font-bold uppercase tracking-tight sm:text-4xl lg:text-5xl max-w-md leading-none">
             {title}
           </h2>
           
           <p
-            className={`mt-6 max-w-md text-sm leading-relaxed sm:text-base ${ isDark ? 'text-ink-950/70' : 'text-ink-950/75' }`}
+            className={`mt-6 max-w-md text-sm leading-relaxed sm:text-base ${ isDark ? 'text-ink/70' : 'text-ink/75' }`}
           >
             {description}
           </p>
@@ -88,7 +88,7 @@ function ParallaxRow({
         <div className="mt-10">
           <a
             href={link}
-            className={`inline-block px-7 py-3 font-mono text-xs font-bold uppercase tracking-widest transition ${ isDark ? 'bg-neu-base text-ink-950 hover:brightness-105' : 'bg-neu-base text-ink-950 hover:brightness-105' }`}
+            className={`inline-block px-7 py-3 font-mono text-xs font-bold uppercase tracking-widest transition ${ isDark ? 'bg-ice-50 text-ink hover:brightness-105' : 'bg-ice-50 text-ink hover:brightness-105' }`}
           >
             Descubrir
           </a>

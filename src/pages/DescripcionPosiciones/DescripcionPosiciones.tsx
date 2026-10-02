@@ -26,7 +26,7 @@ export default function DescripcionPosiciones() {
   }
 
   return (
-    <div className="bg-neu-base min-h-screen">
+    <div className="bg-ice-50 min-h-screen">
       {/* 1. Organigrama Interactivo */}
       <OrgChart activeId={activeId} onSelect={handleOrgSelect} />
 

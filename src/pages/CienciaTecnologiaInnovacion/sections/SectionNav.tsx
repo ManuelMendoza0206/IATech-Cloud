@@ -51,7 +51,7 @@ export default function SectionNav() {
   return (
     <nav
       aria-label="Navegación de secciones"
-      className="sticky top-0 z-20 border-b border-ink-950/10 bg-neu-base backdrop-blur-md"
+      className="sticky top-0 z-20 border-b border-ink-950/10 bg-ice-50 backdrop-blur-md"
     >
       <div className="mx-auto max-w-7xl overflow-x-auto px-6 sm:px-10">
         <ul className="flex gap-1 py-2">
@@ -59,7 +59,7 @@ export default function SectionNav() {
             <li key={id}>
               <a
                 href={`#${id}`}
-                className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${ active === id ? 'bg-neu-base text-ink-950' : 'text-ink-700/60 hover:bg-steel/15 hover:text-ink-950' }`}
+                className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${ active === id ? 'bg-ice-50 text-ink' : 'text-ink-700/60 hover:bg-steel/15 hover:text-ink' }`}
               >
                 <span className="font-mono text-[10px]">{short}</span>
                 <span className="hidden sm:inline">{label}</span>

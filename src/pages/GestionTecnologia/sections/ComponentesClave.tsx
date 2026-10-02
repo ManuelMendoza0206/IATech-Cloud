@@ -42,7 +42,7 @@ const DATA: Componente[] = [
 
 export function ComponentesClave() {
   return (
-    <section className="bg-neu-base py-16 sm:py-20">
+    <section className="bg-ice-50 py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader number="01" title="Componentes Clave" />
 
@@ -50,10 +50,10 @@ export function ComponentesClave() {
           {DATA.map((c) => (
             <div
               key={c.title}
-              className="neu-raised reveal group rounded-2xl p-6 transition-shadow"
+              className="panel reveal group rounded-2xl p-6 transition-shadow"
             >
               <i className={`bx ${c.icon} text-3xl text-signal`} />
-              <p className="mt-4 font-neu-display text-xl sm:text-2xl text-ink-950">{c.title}</p>
+              <p className="mt-4 font-display text-xl sm:text-2xl text-ink">{c.title}</p>
               <p className="mt-1 font-mono text-xs uppercase tracking-widest text-signal">
                 {c.focus}
               </p>

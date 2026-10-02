@@ -27,43 +27,45 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       <div
         onClick={onClose}
         aria-hidden="true"
-        className={`fixed inset-0 z-40 bg-ink-950/40 backdrop-blur-sm transition-opacity duration-300 ${ isOpen ? 'opacity-100' : 'pointer-events-none opacity-0' }`}
+        className={`fixed inset-0 z-40 bg-ink/40 transition-opacity duration-200 ${ isOpen ? 'opacity-100' : 'pointer-events-none opacity-0' }`}
       />
 
       <aside
         role="dialog"
         aria-modal="true"
         aria-label="Menú de navegación"
-        className={`fixed right-0 top-0 z-50 h-full w-full max-w-md border-l border-ink-950/10 bg-neu-base shadow-2xl transition-transform duration-300 ease-out ${ isOpen ? 'translate-x-0' : 'translate-x-full' }`}
+        className={`fixed right-0 top-0 z-50 h-full w-full max-w-sm border-l border-steel/30 bg-ice-50 shadow-panel-hi transition-transform duration-300 ease-out ${ isOpen ? 'translate-x-0' : 'translate-x-full' }`}
       >
         <div className="flex h-full flex-col px-8 py-8 sm:px-12 sm:py-10">
           <div className="flex items-center justify-between">
-            <span className="font-neu-display text-lg tracking-wide text-ink-950">
-              IATECH <span className="text-signal">· CLOUD</span>
-            </span>
+            <span className="mono-label">Índice de navegación</span>
             <button
               onClick={onClose}
               aria-label="Cerrar menú"
-              className="rounded-full p-2 text-ink-950 transition hover:text-signal focus:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base"
+              className="btn btn-secondary h-9 px-3"
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-              </svg>
+              Cerrar
             </button>
           </div>
 
-          <nav className="mt-14 flex-1 overflow-y-auto">
+          <nav className="mt-6 flex-1 overflow-y-auto">
             <ul className="flex flex-col gap-1">
               {ROUTES.filter((route) => !route.hideFromNav).map((route, index) => {
                 const isActive = location.pathname === route.path;
                 return (
-                  <li key={route.path} className="border-b border-ink-950/10 py-4 first:pt-0">
-                    <Link to={route.path} onClick={onClose} className="group flex items-baseline gap-4">
-                      <span className="font-mono text-xs text-signal">
+                  <li key={route.path} className="border-b border-steel/25 last:border-b-0">
+                    <Link
+                      to={route.path}
+                      onClick={onClose}
+                      className={`panel-hover group flex items-center gap-3 rounded-xl px-3 py-3 ${
+                        isActive ? 'bg-white shadow-panel' : ''
+                      }`}
+                    >
+                      <span className="mono-label w-6 shrink-0 text-signal">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                       <span
-                        className={`font-neu-display text-2xl uppercase tracking-tight transition-colors sm:text-3xl ${ isActive ? 'text-signal' : 'text-ink-950 group-hover:text-signal' }`}
+                        className={`text-[15px] font-semibold leading-tight transition-colors ${ isActive ? 'text-signal' : 'text-ink group-hover:text-signal' }`}
                       >
                         {route.label}
                       </span>
@@ -74,17 +76,24 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             </ul>
           </nav>
 
-          <p className="font-mono text-xs uppercase tracking-wider text-ink-500">
-            Servicios Cloud e Integración · IATECH
-          </p>
+          <div className="border-t border-steel/25 pt-4">
+            <p className="mono-label">Servicios Cloud e Integración</p>
+            <div className="mt-3 flex items-center gap-2">
+              <span className="chip chip-ok">
+                <span className="dot" />
+                Operativo
+              </span>
+              <span className="chip metric">24/7</span>
+            </div>
+          </div>
           <a
             href="https://iatech-co-frontend.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Acceder al inventario conjunto en Vercel"
-            className="neu-btn mt-3 inline-flex items-center gap-2 self-start rounded-full bg-aqua px-4 py-2 text-xs font-semibold text-ink-950 transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base"
+            className="btn btn-primary mt-4 self-start"
           >
-            Acceder al inventario
+            Inventario
             <i className="bx bx-link-external text-sm" aria-hidden="true" />
           </a>
         </div>
