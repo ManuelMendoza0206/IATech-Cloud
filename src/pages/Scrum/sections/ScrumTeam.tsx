@@ -16,7 +16,7 @@ const TEAM = [
     name: 'Marcelo Riveros',
     puestoCloud: 'Gerente de Área Cloud',
     imageSrc: '/images/team/l_cjr.png',
-    accent: 'bg-signal',
+    accent: 'bg-accent',
   },
   {
     id: 'dev-1',
@@ -25,7 +25,7 @@ const TEAM = [
     name: 'Roman Pabon',
     puestoCloud: 'Administrador de Infraestructura Cloud',
     imageSrc: '/images/team/rp.png',
-    accent: 'bg-neu-base',
+    accent: 'bg-paper',
   },
   {
     id: 'dev-2',
@@ -34,7 +34,7 @@ const TEAM = [
     name: 'Jaicel Velasco',
     puestoCloud: 'Arquitecto de Soluciones Cloud',
     imageSrc: '/images/team/jr.png',
-    accent: 'bg-neu-base',
+    accent: 'bg-paper',
   },
   {
     id: 'dev-3',
@@ -43,44 +43,44 @@ const TEAM = [
     name: 'Manuel Jimenez',
     puestoCloud: 'Administrador DevOps',
     imageSrc: '/images/team/mj.png',
-    accent: 'bg-neu-base',
+    accent: 'bg-paper',
   },
 ];
 
 function TeamCard({ member, featured = false }: { member: (typeof TEAM)[number]; featured?: boolean }) {
   return (
     <div
-      className={`neu-raised flex w-full flex-col rounded-3xl p-8 transition-all hover:-translate-y-1 ${featured ? 'bg-aqua/25' : ''}`}
+      className={`ed-card flex w-full flex-col p-8 transition-all hover:-translate-y-1 ${featured ? 'bg-aqua/25' : ''}`}
     >
       <div className="flex items-start justify-between gap-4">
         <img
           src={member.imageSrc}
           alt={`${member.name} — ${member.role}`}
           loading="lazy"
-          className={`shrink-0 rounded-2xl object-cover object-center ${ featured ? 'neu-icon h-28 w-28' : 'neu-icon h-24 w-24' }`}
+          className={`shrink-0 object-cover object-center ${ featured ? 'ed-chip h-28 w-28' : 'ed-chip h-24 w-24' }`}
         />
         <span
-          className={`rounded-full px-4 py-1.5 font-mono text-xs font-semibold tracking-widest ${featured ? 'bg-aqua text-ink-950' : 'neu-pressed text-signal'}`}
+          className={`px-4 py-1.5 font-mono text-xs font-semibold tracking-widest ${featured ? 'bg-aqua text-ink' : 'ed-chip text-accent'}`}
         >
           {member.short}
         </span>
       </div>
-      <p className="mt-5 font-neu-display text-lg font-extrabold leading-tight text-ink-950">{member.role}</p>
+      <p className="mt-5 font-display text-lg font-extrabold leading-tight text-ink">{member.role}</p>
       {'puestoCloud' in member && member.puestoCloud ? (
-        <p className="neu-pressed mt-2 inline-flex items-center gap-1.5 self-start px-4 py-1.5 text-[11px] font-medium text-signal">
+        <p className="ed-chip mt-2 inline-flex items-center gap-1.5 self-start px-4 py-1.5 text-[11px] font-medium text-accent">
           {member.puestoCloud as string}
         </p>
       ) : null}
-      <div className="neu-pressed mt-4 flex items-center gap-3 px-5 py-3">
-        <p className="font-mono text-sm font-medium leading-tight text-ink-950">{member.name}</p>
+      <div className="ed-chip mt-4 flex items-center gap-3 px-5 py-3">
+        <p className="font-mono text-sm font-medium leading-tight text-ink">{member.name}</p>
       </div>
       {member.id === 'po' && (
-        <p className="mt-4 text-center font-mono text-[11px] uppercase tracking-widest text-ink-500">
+        <p className="mt-4 font-mono text-[11px] uppercase tracking-widest text-ink-45">
           Área Cloud — Product Owner
         </p>
       )}
       {member.id === 'sm' && (
-        <p className="mt-4 text-center font-mono text-[11px] uppercase tracking-widest text-signal">
+        <p className="mt-4 font-mono text-[11px] uppercase tracking-widest text-accent">
           Facilitador del framework
         </p>
       )}
@@ -94,7 +94,7 @@ export function ScrumTeam() {
   const devs = TEAM.filter((m) => m.id.startsWith('dev'));
 
   return (
-    <section className="bg-neu-base py-16 sm:py-20">
+    <section className="bg-paper py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="08"
@@ -106,7 +106,7 @@ export function ScrumTeam() {
         <div className="mt-6">
           <a
             href="#objetivos"
-            className="neu-btn inline-flex items-center gap-2 rounded-full bg-neu-base px-5 py-2.5 text-xs font-bold text-ink-950 transition hover:brightness-105"
+            className="ed-btn inline-flex items-center gap-2 bg-paper px-5 py-2.5 text-xs font-bold text-ink transition hover:brightness-105"
           >
             Ver objetivos por área
             <i className="bx bx-arrow-to-bottom text-sm" />
@@ -141,14 +141,14 @@ export function ScrumTeam() {
           </div>
         </div>
 
-        <div className="neu-raised mt-12 overflow-hidden rounded-2xl p-4 sm:p-6">
+        <div className="ed-card mt-12 overflow-hidden p-4 sm:p-6">
           <img
             src="https://scrumorg-website-prod.s3.amazonaws.com/drupal/inline-images/2019-01/scrum%20team.png"
             alt="Scrum Team: Product Owner, Scrum Master y Developers colaborando"
-            className="mx-auto max-h-80 w-auto rounded-xl object-contain"
+            className="mx-auto max-h-80 w-auto object-contain"
             loading="lazy"
           />
-          <p className="mt-4 text-center font-mono text-xs uppercase tracking-widest text-ink-500">
+          <p className="mt-4 font-mono text-xs uppercase tracking-widest text-ink-45">
             Un solo equipo, un solo objetivo por Sprint
           </p>
         </div>

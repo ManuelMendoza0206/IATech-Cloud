@@ -39,7 +39,7 @@ const SERVICES = [
 
 export default function ServiciosGrid() {
   return (
-    <section className="relative overflow-hidden bg-neu-base py-24 sm:py-32">
+    <section className="relative overflow-hidden bg-paper py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         
         {/* Contenedor Grid Principal a 3 Columnas */}
@@ -47,10 +47,10 @@ export default function ServiciosGrid() {
           
           {/* Título - Ocupa el espacio vacío superior izquierdo del diseño original */}
           <div className="flex flex-col justify-center mb-12 md:mb-0 lg:col-start-1 lg:row-start-1 lg:pr-8">
-            <span className="reveal font-mono text-xs uppercase tracking-widest text-ink-500">
+            <span className="reveal font-mono text-xs uppercase tracking-widest text-ink-45">
               Lo que hacemos
             </span>
-            <h2 className="reveal mt-4 font-neu-display text-4xl font-black uppercase tracking-tight text-ink-950 sm:text-5xl">
+            <h2 className="reveal mt-4 font-display text-4xl font-black uppercase tracking-tight text-ink sm:text-5xl">
               Pilares de nuestro servicio
             </h2>
           </div>
@@ -59,26 +59,26 @@ export default function ServiciosGrid() {
           {SERVICES.map((service) => (
             <article
               key={service.title}
-              className={`reveal neu-raised group relative flex flex-col p-8 sm:p-10 transition hover:-translate-y-1 min-h-[420px] ${service.gridClass}`}
+              className={`reveal ed-card group relative flex flex-col p-8 sm:p-10 transition hover:-translate-y-1 min-h-[420px] ${service.gridClass}`}
             >
               {/* Decorative glow on hover original */}
-              <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-glow/50 blur-3xl opacity-0 transition group-hover:opacity-100" />
+              <div className="absolute -top-16 -right-16 h-40 w-40 bg-glow/50 opacity-0 transition group-hover:opacity-100" />
 
               {/* Contenedor de la Imagen (reemplazo de las formas) */}
               <div className="mb-auto flex justify-center pb-8 pt-4">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="neu-icon h-32 w-32 rounded-2xl object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="ed-chip h-32 w-32 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
 
               {/* Textos de la Card */}
               <div className="mb-8">
-                <h3 className="font-neu-display text-xl font-black uppercase text-ink-950 sm:text-2xl">
+                <h3 className="font-display text-xl font-black uppercase text-ink sm:text-2xl">
                   {service.title}
                 </h3>
-                <p className="mt-4 text-sm leading-relaxed text-ink-700">
+                <p className="mt-4 text-sm leading-relaxed text-ink-70">
                   {service.description}
                 </p>
               </div>
@@ -86,7 +86,7 @@ export default function ServiciosGrid() {
               {/* CTA adaptado al estilo bloque de la imagen, pero con tus colores */}
               <a
                 href={service.link}
-                className="neu-btn mt-auto inline-flex self-end items-center gap-2 rounded-full bg-aqua px-6 py-2 font-mono text-[11px] font-black uppercase tracking-wider text-ink-950 transition group-hover:brightness-105"
+                className="ed-btn mt-auto inline-flex self-end items-center gap-2 bg-aqua px-6 py-2 font-mono text-[11px] font-black uppercase tracking-wider text-ink transition group-hover:brightness-105"
               >
                 Descubrir
               </a>

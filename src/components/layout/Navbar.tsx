@@ -2,6 +2,11 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
+/**
+ * Editorial: masthead, no barra de app.
+ * El skill dice "DON'T clutter the UI with heavy navigation bars",
+ * asi que esto es una linea tipografica con filete, nada mas.
+ */
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,31 +22,34 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-30 w-full bg-neu-base/90 backdrop-blur-md transition-all duration-300 ${ isScrolled ? 'py-2 shadow-lg shadow-steel/20' : 'py-3' }`}
+        className={`fixed inset-x-0 top-0 z-30 w-full border-b bg-paper/95 backdrop-blur-sm transition-all duration-300 ${
+          isScrolled ? 'border-rule py-2' : 'border-rule-soft py-4'
+        }`}
       >
-        <div className="flex w-full items-center justify-between px-6 sm:px-10">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 sm:px-10">
           <Link
             to="/"
-            className="font-logo text-xl tracking-wide text-ink-950 transition-opacity duration-300 hover:opacity-80 sm:text-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base rounded"
+            className="font-logo text-2xl leading-none tracking-tight text-ink transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
           >
-            IATECH{' '}
-            <span className="text-signal">
-              · CLOUD
-            </span>
+            IATECH<span className="italic text-accent">.</span>CLOUD
           </Link>
 
-          <button
-            onClick={() => setIsMenuOpen(true)}
-            aria-label="Abrir menú"
-            aria-expanded={isMenuOpen}
-            className="group flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base rounded-full"
-          >
-            <div className="neu-btn flex h-11 w-11 flex-col items-center justify-center gap-1 rounded-full bg-neu-base transition-all duration-200 group-hover:brightness-105">
-              <span className="h-[2px] w-4 bg-ink-950 transition-colors duration-200" />
-              <span className="h-[2px] w-4 bg-ink-950 transition-colors duration-200" />
-              <span className="h-[2px] w-4 bg-ink-950 transition-colors duration-200" />
-            </div>
-          </button>
+          <div className="flex items-center gap-6">
+            <span className="ed-caption hidden sm:block">Área de Servicios Cloud</span>
+            <button
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="Abrir menú"
+              aria-expanded={isMenuOpen}
+              className="group flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
+            >
+              <span className="ed-caption transition-colors group-hover:text-accent">Índice</span>
+              <span className="flex flex-col gap-[3px]">
+                <span className="block h-px w-6 bg-ink transition-all group-hover:bg-accent" />
+                <span className="block h-px w-6 bg-ink transition-all group-hover:bg-accent" />
+                <span className="block h-px w-6 bg-ink transition-all group-hover:bg-accent" />
+              </span>
+            </button>
+          </div>
         </div>
       </header>
 

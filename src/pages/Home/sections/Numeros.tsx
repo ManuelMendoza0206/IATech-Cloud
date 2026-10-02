@@ -101,15 +101,15 @@ function StatItem({ stat, start }: { stat: Stat; start: boolean }) {
   }, [start]);
 
   return (
-    <div className="reveal neu-raised p-6 sm:p-8">
-      <p ref={numRef} className="font-neu-display text-5xl font-black tabular-nums text-signal sm:text-6xl">
+    <div className="reveal ed-card p-6 sm:p-8">
+      <p ref={numRef} className="font-display text-5xl font-black tabular-nums text-accent sm:text-6xl">
         {count}
         {stat.suffix}
       </p>
-      <p className="mt-3 font-mono text-xs font-bold uppercase tracking-widest text-ink-950">
+      <p className="mt-3 font-mono text-xs font-bold uppercase tracking-widest text-ink">
         {stat.label}
       </p>
-      <p className="mt-1 max-w-[28ch] text-sm leading-relaxed text-ink-700">{stat.sub}</p>
+      <p className="mt-1 max-w-[28ch] text-sm leading-relaxed text-ink-70">{stat.sub}</p>
     </div>
   );
 }
@@ -139,14 +139,14 @@ export default function Numeros() {
       id="numeros"
       aria-label="El área en cifras"
       ref={sectionRef}
-      className="relative overflow-hidden bg-neu-base py-20 sm:py-28"
+      className="relative overflow-hidden bg-paper py-20 sm:py-28"
       style={{ contentVisibility: 'auto', containIntrinsicSize: '400px' }}
     >
-      <div className="neu-blob pointer-events-none absolute -top-24 -left-24 h-[320px] w-[320px] rounded-full bg-aqua/25 blur-[100px]" />
-      <div className="neu-blob pointer-events-none absolute -bottom-32 right-0 h-[360px] w-[360px] rounded-full bg-glow/40 blur-[120px]" />
+      <div className="neu-blob pointer-events-none absolute -top-24 -left-24 h-[320px] w-[320px] bg-aqua/25" />
+      <div className="neu-blob pointer-events-none absolute -bottom-32 right-0 h-[360px] w-[360px] bg-glow/40" />
 
       <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
-        <h2 className="reveal font-neu-display text-3xl font-extrabold leading-tight text-ink-950 sm:text-4xl">
+        <h2 className="reveal font-display text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
           Números que respaldan el servicio
         </h2>
 

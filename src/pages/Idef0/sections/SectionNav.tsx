@@ -50,17 +50,17 @@ export default function SectionNav() {
   return (
     <nav
       aria-label="Navegación de secciones IDEF0"
-      className="sticky top-0 z-20 border-b border-ink-950/10 bg-neu-base backdrop-blur-md"
+      className="sticky top-0 z-20 border-b border-rule bg-paper/95 backdrop-blur-sm"
     >
       <div className="mx-auto max-w-7xl overflow-x-auto px-6 sm:px-10">
-        <ul className="flex gap-1 py-2">
+        <ul className="flex">
           {SECTIONS.map(({ id, label, short }) => (
             <li key={id}>
               <a
                 href={`#${id}`}
-                className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${ active === id ? 'bg-neu-base text-ink-950' : 'text-ink-700/60 hover:bg-steel/15 hover:text-ink-950' }`}
+                className={`inline-flex items-center gap-1.5 whitespace-nowrap px-3 py-1.5 text-xs font-medium transition-colors ${ active === id ? 'bg-paper text-ink' : 'text-ink-70/60 hover:bg-steel/15 hover:text-ink' }`}
               >
-                <span className="font-mono text-[10px]">{short}</span>
+                <span className="font-display text-[11px] font-bold tracking-tight">{short}</span>
                 <span className="hidden sm:inline">{label}</span>
               </a>
             </li>

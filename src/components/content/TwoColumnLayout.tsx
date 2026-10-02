@@ -1,45 +1,42 @@
 import { useState } from 'react';
 import type { TwoColumnLayoutProps } from './types';
 
-const BG_MAP = {
-  white: 'bg-neu-base',
-  mist: 'bg-neu-base',
-  navy: 'bg-neu-base',
-} as const;
-
 export function TwoColumnLayout({
   children,
   imageSrc,
   imageAlt,
   imagePosition = 'right',
-  bg = 'white',
   id,
 }: TwoColumnLayoutProps) {
   const isRight = imagePosition === 'right';
   const [imgError, setImgError] = useState(false);
 
   return (
-    <section id={id} className={`${BG_MAP[bg]} py-16 sm:py-20`}>
-      <div className="mx-auto grid max-w-7xl gap-16 px-6 sm:px-10 lg:grid-cols-2 lg:items-center lg:gap-20">
-        <div className={isRight ? '' : 'order-2'}>
-          {children}
-        </div>
+    <section id={id} className="ed-rule bg-paper py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10">
+        <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
+          <div className={`lg:col-span-7 ${isRight ? 'lg:col-start-1' : 'lg:col-start-6'}`}>
+            {children}
+          </div>
 
-        <div className={`relative ${isRight ? '' : 'order-1'}`}>
-          <div className="neu-raised absolute -inset-4 -z-10" />
-          {imgError ? (
-            <div className="neu-pressed flex h-64 items-center justify-center">
-              <span className="text-sm text-ink-500">{imageAlt}</span>
-            </div>
-          ) : (
-            <img
-              src={imageSrc}
-              alt={imageAlt}
-              className="neu-raised w-full object-cover"
-              loading="lazy"
-              onError={() => setImgError(true)}
-            />
-          )}
+          <figure className={`lg:col-span-4 ${isRight ? 'lg:col-start-9' : 'lg:col-start-1'}`}>
+            {imgError ? (
+              <div className="ed-figure flex aspect-[4/3] items-center">
+                <span className="ed-caption p-6">{imageAlt}</span>
+              </div>
+            ) : (
+              <div className="ed-figure">
+                <img
+                  src={imageSrc}
+                  alt={imageAlt}
+                  className="aspect-[4/3] w-full object-cover grayscale"
+                  loading="lazy"
+                  onError={() => setImgError(true)}
+                />
+              </div>
+            )}
+            <figcaption className="ed-caption ed-rule-soft mt-3 pt-2">{imageAlt}</figcaption>
+          </figure>
         </div>
       </div>
     </section>

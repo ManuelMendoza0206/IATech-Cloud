@@ -1,3 +1,4 @@
+import { Reveal } from '../../components/ui/Reveal';
 import SectionNav from './sections/SectionNav';
 import {
   Definicion,
@@ -14,50 +15,46 @@ import {
 export default function Idef0() {
   return (
     <div>
-      {/* Hero compacto */}
-      <section className="relative overflow-hidden bg-neu-base pt-32 pb-16 text-ink-950 sm:pt-36 sm:pb-20">
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage: 'radial-gradient(var(--color-signal) 1px, transparent 1px)',
-            backgroundSize: '28px 28px',
-          }}
-        />
-        <div className="pointer-events-none absolute top-1/2 left-1/2 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-aqua/25 blur-[140px]" />
+      <section className="border-b border-rule bg-paper">
+        <div className="mx-auto max-w-7xl px-6 pt-32 pb-20 sm:px-10 sm:pt-40 sm:pb-28">
+          <Reveal asHero>
+            <span className="ed-kicker hero-item block">Modelado de funciones</span>
 
-        <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
-          <span className="neu-pressed inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-widest text-signal">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-signal" />
-            Modelado de funciones
-          </span>
+            <h1 className="ed-headline hero-item mt-6 max-w-4xl text-6xl sm:text-8xl">
+              IDEF<span className="italic text-accent">0</span>
+            </h1>
 
-          <h1 className="mt-6 font-neu-display text-4xl font-black leading-tight text-ink-950 sm:text-6xl">
-            IDEF0
-          </h1>
+            <div className="mt-12 grid gap-12 lg:grid-cols-12">
+              <div className="lg:col-span-7">
+                <p className="ed-body ed-dropcap hero-item">
+                  El lenguaje estándar para documentar <em>qué</em> hace un sistema antes de decidir{' '}
+                  <em>cómo</em> lo hace. En esta página está el diagrama A-0 del proyecto CLOUD:
+                  automatizar el despliegue y alojamiento de aplicaciones en la nube.
+                </p>
 
-          <p className="mt-5 max-w-3xl text-base text-ink-950/70 sm:text-lg">
-            El lenguaje estándar para documentar <em>qué</em> hace un sistema antes de decidir{' '}
-            <em>cómo</em> lo hace. En esta página está el diagrama A-0 del proyecto CLOUD:
-            automatizar el despliegue y alojamiento de aplicaciones en la nube.
-          </p>
+                <div className="hero-cta mt-10 flex flex-wrap items-center gap-4">
+                  <a href="#definicion" className="ed-btn ed-btn-primary">
+                    Ver la teoría
+                    <i className="bx bx-down-arrow-alt text-base" aria-hidden="true" />
+                  </a>
+                  <a href="#diagrama" className="ed-btn ed-btn-secondary">
+                    Ir al diagrama
+                  </a>
+                </div>
+              </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            <a
-              href="#definicion"
-              className="neu-btn inline-flex items-center gap-2 rounded-full bg-aqua px-6 py-3 text-sm font-bold text-ink-950 transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base"
-            >
-              Ver la teoría
-              <i className="bx bx-down-arrow-alt text-base" aria-hidden="true" />
-            </a>
-            <a
-              href="#diagrama"
-              className="neu-btn inline-flex items-center gap-2 rounded-full bg-neu-base px-6 py-3 text-sm font-bold text-ink-950 transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base"
-            >
-              Ir al diagrama
-            </a>
-          </div>
-
-          </div>
+              <figure className="hero-item lg:col-span-4 lg:col-start-9">
+                <blockquote className="ed-pullquote my-0">
+                  Documentar el <em>qué</em> antes del <em>cómo</em>: ese es el
+                  orden correcto.
+                </blockquote>
+                <p className="ed-caption ed-rule-soft mt-3 pt-2">
+                  Nodo raíz A-0 · Proyecto CLOUD
+                </p>
+              </figure>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       <div id="content-start" />
@@ -84,28 +81,8 @@ export default function Idef0() {
       <div id="salidas">
         <Salidas />
       </div>
-      <div id="resumen">
-        <Resumen />
-      </div>
-      <div id="video">
-        <Video />
-      </div>
-
-      {/* Cierre */}
-      <section className="bg-neu-base py-16 sm:py-20">
-        <div className="mx-auto max-w-3xl px-6 text-center sm:px-10">
-          <p className="font-mono text-xs uppercase tracking-widest text-signal">Cierre</p>
-          <h2 className="mt-4 font-neu-display text-3xl text-ink-950 sm:text-4xl">
-            Un diagrama que sobrevive al cambio tecnológico
-          </h2>
-          <p className="mt-4 text-ink-950/60">
-            El proveedor de cloud, el pipeline y los límites de presupuesto van a cambiar varias
-            veces en la vida del proyecto. La función no: automatizar el despliegue sin intervención
-            manual. IDEF0 documenta justamente esa capa estable, y por eso sigue siendo válida
-            cuando todo lo demás se ha reconfigurado.
-          </p>
-        </div>
-      </section>
+      <Resumen />
+      <Video />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import type { VideoEmbedProps } from './types';
 
 export function VideoEmbed({ src, title }: VideoEmbedProps) {
   return (
-    <div className="neu-raised mt-8 aspect-video overflow-hidden rounded-2xl">
+    <div className="ed-card mt-8 aspect-video overflow-hidden">
       <iframe
         src={src}
         title={title}

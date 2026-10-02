@@ -59,7 +59,7 @@ const FACTS = [
 
 export default function TheorySection() {
   return (
-    <section id="teoria" className="relative overflow-hidden bg-neu-base py-16 sm:py-20 lg:py-24">
+    <section id="teoria" className="relative overflow-hidden bg-paper py-16 sm:py-20 lg:py-24">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{
@@ -70,11 +70,11 @@ export default function TheorySection() {
       />
 
       <div className="relative mx-auto max-w-6xl px-6 sm:px-10">
-        <div className="mx-auto max-w-[62ch] text-center">
-          <h2 className="font-neu-display text-3xl font-semibold tracking-[-0.02em] text-ink-950 sm:text-[2.35rem] sm:leading-none">
+        <div className="mx-auto max-w-[62ch]">
+          <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-[2.35rem] sm:leading-none">
             ¿Qué es el MBTI?
           </h2>
-          <p className="mx-auto mt-4 max-w-[60ch] text-[15px] leading-relaxed text-ink-700/70 sm:text-[16px]">
+          <p className="mx-auto mt-4 max-w-[60ch] text-[15px] leading-relaxed text-ink-70/70 sm:text-[16px]">
             El Myers-Briggs Type Indicator clasifica preferencias psicológicas en cómo percibimos información y tomamos
             decisiones. Desarrollado por Isabel Briggs Myers y Katharine Cook Briggs a partir del trabajo de Carl Jung.
           </p>
@@ -84,12 +84,12 @@ export default function TheorySection() {
           {FACTS.map((item) => (
             <div
               key={item.label}
-              className="neu-raised flex flex-col items-center rounded-2xl px-4 py-6 text-center transition"
+              className="ed-card flex flex-col items-center px-4 py-6 transition"
             >
-              <span className="font-neu-display text-[1.7rem] font-bold tracking-tight text-ink-950 sm:text-3xl">
+              <span className="font-display text-[1.7rem] font-bold tracking-tight text-ink sm:text-3xl">
                 {item.stat}
               </span>
-              <span className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-ink-700/55">{item.label}</span>
+              <span className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-ink-70/55">{item.label}</span>
             </div>
           ))}
         </div>
@@ -98,43 +98,43 @@ export default function TheorySection() {
           {DIMENSIONS.map((dim) => (
             <article
               key={dim.letter}
-              className="neu-raised group relative overflow-hidden rounded-2xl p-6 transition duration-300 sm:p-7"
+              className="ed-card group relative overflow-hidden p-6 transition duration-300 sm:p-7"
             >
-              <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-signal/50 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+              <div className="absolute inset-x-6 top-0 h-px opacity-0 transition duration-300 group-hover:opacity-100" />
 
               <div className="flex items-start justify-between gap-4">
                 <div className="flex items-center gap-3.5">
-                  <span className="neu-raised flex h-11 w-11 items-center justify-center rounded-xl font-neu-display text-[1.1rem] font-bold tracking-tight text-ink-950">
+                  <span className="ed-card flex h-11 w-11 items-center justify-center font-display text-[1.1rem] font-bold tracking-tight text-ink">
                     {dim.letter}
                   </span>
                   <div>
-                    <h3 className="font-neu-display text-[15px] font-semibold leading-none tracking-tight text-ink-950">
+                    <h3 className="font-display text-[15px] font-semibold leading-none tracking-tight text-ink">
                       {dim.label}
                     </h3>
-                    <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.1em] text-signal">vs. {dim.opposite}</p>
+                    <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.1em] text-accent">vs. {dim.opposite}</p>
                   </div>
                 </div>
-                <span className="neu-raised flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-ink-700/70 transition group-hover:text-ink-950">
+                <span className="ed-card flex h-9 w-9 shrink-0 items-center justify-center text-ink-70/70 transition group-hover:text-ink">
                   {dim.icon}
                 </span>
               </div>
 
-              <p className="mt-5 text-[14px] leading-relaxed text-ink-700/70">{dim.description}</p>
+              <p className="mt-5 text-[14px] leading-relaxed text-ink-70/70">{dim.description}</p>
             </article>
           ))}
         </div>
 
-        <div className="neu-raised mt-12 overflow-hidden rounded-2xl sm:mt-14">
+        <div className="ed-card mt-12 overflow-hidden sm:mt-14">
           <img src="/images/extra.jpg" alt="Diagrama conceptual de las 16 preferencias" className="h-64 w-full object-cover sm:h-80" loading="lazy" />
         </div>
 
-        <div className="mx-auto mt-14 max-w-3xl text-center sm:mt-16">
-          <h3 className="font-neu-display text-xl font-semibold tracking-tight text-ink-950 sm:text-2xl">Video introductorio</h3>
-          <p className="mx-auto mt-2 max-w-[48ch] text-sm leading-relaxed text-ink-700/60">
+        <div className="mx-auto mt-14 max-w-3xl sm:mt-16">
+          <h3 className="font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl">Video introductorio</h3>
+          <p className="mx-auto mt-2 max-w-[48ch] text-sm leading-relaxed text-ink-70/60">
             Una explicación visual de las 16 preferencias y cómo se potencian en equipos de trabajo reales.
           </p>
-          <div className="mx-auto mt-7 max-w-4xl overflow-hidden rounded-2xl border border-ink-950/10 shadow-lg">
-            <div className="aspect-video bg-neu-base">
+          <div className="mx-auto mt-7 max-w-4xl overflow-hidden border border-rule-soft">
+            <div className="aspect-video bg-paper">
               <iframe
                 src="https://www.youtube.com/embed/vcp6hPnUgyU"
                 title="Intro a las 16 preferencias MBTI"

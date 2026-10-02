@@ -75,7 +75,7 @@ export function DiagramaA0() {
   const dim = (kind: ArrowKind) => active !== null && active !== kind;
 
   return (
-    <section className="relative overflow-hidden bg-neu-base py-20 sm:py-28">
+    <section className="relative overflow-hidden bg-paper py-20 sm:py-28">
       <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="02"
@@ -84,12 +84,12 @@ export function DiagramaA0() {
         />
 
         {/* Diagrama SVG interactivo */}
-        <div className="neu-raised mt-10 overflow-hidden rounded-2xl p-4 sm:p-8">
+        <div className="ed-card mt-10 overflow-hidden p-4 sm:p-8">
           <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-ink-700/60">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-ink-70/60">
               A-0 · Reproducción interactiva
             </p>
-            <p className="font-mono text-[11px] text-ink-700/40">
+            <p className="font-mono text-[11px] text-ink-70/40">
               {active ? 'Soltá para volver' : 'Pasá el cursor por cada flecha'}
             </p>
           </div>
@@ -241,7 +241,7 @@ export function DiagramaA0() {
               y={BOX.y + 52}
               textAnchor="middle"
               fill="#eaf0f8"
-              className="font-neu-display"
+              className="font-display"
               style={{ fontSize: 12.5, fontWeight: 700 }}
             >
               AUTOMATIZAR EL DESPLIEGUE Y
@@ -251,7 +251,7 @@ export function DiagramaA0() {
               y={BOX.y + 70}
               textAnchor="middle"
               fill="#eaf0f8"
-              className="font-neu-display"
+              className="font-display"
               style={{ fontSize: 12.5, fontWeight: 700 }}
             >
               ALOJAMIENTO DE APLICACIONES
@@ -261,7 +261,7 @@ export function DiagramaA0() {
               y={BOX.y + 88}
               textAnchor="middle"
               fill="#eaf0f8"
-              className="font-neu-display"
+              className="font-display"
               style={{ fontSize: 12.5, fontWeight: 700 }}
             >
               EN LA NUBE
@@ -288,17 +288,17 @@ export function DiagramaA0() {
           </svg>
 
           {/* Leyenda */}
-          <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-3 border-t border-ink-950/10 pt-5">
+          <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-3 border-t border-rule-soft pt-5">
             {GROUPS_BY_KIND.map((kind) => {
               const g = ARROW_GROUPS[kind];
               return (
                 <li key={kind} className="flex items-center gap-2">
                   <span
-                    className="h-2.5 w-2.5 rounded-full"
+                    className="h-2.5 w-2.5"
                     style={{ backgroundColor: g.color }}
                     aria-hidden="true"
                   />
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-ink-700/70">
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-ink-70/70">
                     {g.label} · {g.english}
                   </span>
                 </li>
@@ -308,16 +308,16 @@ export function DiagramaA0() {
         </div>
 
         {/* Imagen oficial */}
-        <div className="neu-raised mt-10 overflow-hidden rounded-2xl">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-ink-950/10 px-5 py-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-ink-700/60">
+        <div className="ed-card mt-10 overflow-hidden">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-rule-soft px-5 py-4">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-ink-70/60">
               A-0 · Diagrama oficial
             </p>
             <a
               href="/images/IDEF.png"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-ink-700/60 transition hover:text-signal"
+              className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-ink-70/60 transition hover:text-accent"
             >
               Ver en tamaño completo
               <i className="bx bx-external-link text-sm" aria-hidden="true" />
@@ -335,37 +335,37 @@ export function DiagramaA0() {
         </div>
 
         {/* Pie de diagrama */}
-        <div className="neu-raised mt-6 overflow-hidden rounded-xl">
+        <div className="ed-card mt-6 overflow-hidden">
           <div className="grid divide-y divide-steel/900/10 sm:grid-cols-[110px_1fr_110px] sm:divide-x sm:divide-y-0">
-            <div className="flex items-center justify-center bg-neu-base px-4 py-3">
-              <span className="font-mono text-[11px] uppercase tracking-widest text-signal">
+            <div className="flex items-center justify-center bg-paper px-4 py-3">
+              <span className="font-mono text-[11px] uppercase tracking-widest text-accent">
                 {DIAGRAM_FOOTER[0].key}
               </span>
             </div>
             <div className="flex items-center px-4 py-3">
-              <span className="font-mono text-lg font-bold text-ink-950">{DIAGRAM_FOOTER[0].value}</span>
-              <span className="ml-3 text-xs text-ink-700/60">
+              <span className="font-mono text-lg font-bold text-ink">{DIAGRAM_FOOTER[0].value}</span>
+              <span className="ml-3 text-xs text-ink-70/60">
                 Diagrama de contexto de nivel cero
               </span>
             </div>
-            <div className="flex items-center justify-center bg-neu-base px-4 py-3">
-              <span className="font-mono text-[11px] uppercase tracking-widest text-signal">
+            <div className="flex items-center justify-center bg-paper px-4 py-3">
+              <span className="font-mono text-[11px] uppercase tracking-widest text-accent">
                 {DIAGRAM_FOOTER[2].key}
               </span>
             </div>
           </div>
           <div className="grid divide-y divide-steel/900/10 sm:grid-cols-[110px_1fr] sm:divide-x sm:divide-y-0">
-            <div className="flex items-center justify-center bg-neu-base px-4 py-3">
-              <span className="font-mono text-[11px] uppercase tracking-widest text-signal">
+            <div className="flex items-center justify-center bg-paper px-4 py-3">
+              <span className="font-mono text-[11px] uppercase tracking-widest text-accent">
                 {DIAGRAM_FOOTER[1].key}
               </span>
             </div>
             <div className="flex items-center px-4 py-3">
-              <span className="text-sm text-ink-950">{DIAGRAM_FOOTER[1].value}</span>
+              <span className="text-sm text-ink">{DIAGRAM_FOOTER[1].value}</span>
             </div>
           </div>
         </div>
-        <p className="mt-3 text-center font-mono text-[11px] text-ink-700/50">
+        <p className="mt-3 font-mono text-[11px] text-ink-70/50">
           TITLE: {PROCESS_TEXT}
         </p>
       </div>
