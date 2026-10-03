@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-neu-base pt-24 pb-0 text-ink-950 sm:pt-28">
+    <section className="relative overflow-hidden bg-canvas pt-24 pb-0 text-ink sm:pt-28">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.05]"
         style={{
@@ -12,16 +12,16 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-0 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="relative z-10 px-6 py-14 sm:px-10 sm:py-16 lg:py-20 lg:pr-8">
-          <span className="neu-pressed inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-signal">
+          <span className="layer-pill inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-signal">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-signal" />
             Perfiles del equipo
           </span>
 
-          <h1 className="mt-7 font-neu-display text-[2.1rem] font-black leading-[0.95] tracking-[-0.03em] text-ink-950 sm:text-5xl xl:text-[3.6rem]">
+          <h1 className="mt-7 font-display text-[2.1rem] font-black leading-[0.95] tracking-[-0.03em] text-ink sm:text-5xl xl:text-[3.6rem]">
             MBTI <span className="font-normal text-signal">·</span> Equipo Cloud
           </h1>
 
-          <p className="mt-5 max-w-[52ch] text-[15px] leading-relaxed text-ink-950/65 sm:text-[17px] sm:leading-relaxed">
+          <p className="mt-5 max-w-[52ch] text-[15px] leading-relaxed text-ink/65 sm:text-[17px] sm:leading-relaxed">
             Comprender cómo piensa y trabaja cada miembro del equipo es clave para construir infraestructura que no
             solo funcione, sino que escale con propósito y continuidad clínica.
           </p>
@@ -29,7 +29,7 @@ export default function Hero() {
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a
               href="#teoria"
-              className="inline-flex items-center gap-2 rounded-full neu-btn bg-aqua px-6 py-3 text-sm font-bold tracking-tight text-ink-950 transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base"
+              className="inline-flex items-center gap-2 rounded-full layer-btn bg-aqua px-6 py-3 text-sm font-bold tracking-tight text-ink transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
             >
               Conocer la teoría
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -38,14 +38,14 @@ export default function Hero() {
             </a>
             <a
               href="#equipo"
-              className="neu-btn inline-flex items-center gap-2 rounded-full bg-neu-base px-6 py-3 text-sm font-bold tracking-tight text-ink-950 transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base"
+              className="layer-btn inline-flex items-center gap-2 rounded-full bg-canvas px-6 py-3 text-sm font-bold tracking-tight text-ink transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
             >
               Ver perfiles
             </a>
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
-            <span className="neu-pressed inline-flex items-center rounded-full px-4 py-2 text-xs font-semibold text-ink-700">
+            <span className="layer-pill inline-flex items-center rounded-full px-4 py-2 text-xs font-semibold text-ink-700">
               4 perfiles mapeados
             </span>
           </div>
@@ -58,15 +58,13 @@ export default function Hero() {
             className="absolute inset-0 h-full w-full object-cover"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-neu-base via-neu-base/50 to-transparent lg:via-neu-base/35" />
-          <div className="absolute inset-0 bg-gradient-to-t from-neu-base/70 to-transparent" />
 
-          <div className="neu-raised absolute bottom-6 right-6 flex items-center gap-2.5 rounded-full px-4 py-2 backdrop-blur-md">
+          <div className="layer absolute bottom-6 right-6 flex items-center gap-2.5 rounded-full px-4 py-2 backdrop-blur-md">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-signal opacity-60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-signal" />
             </span>
-            <span className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-ink-950">4 perfiles activos</span>
+            <span className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-ink">4 perfiles activos</span>
           </div>
         </div>
       </div>

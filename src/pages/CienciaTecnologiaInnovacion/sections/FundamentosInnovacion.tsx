@@ -12,7 +12,7 @@ const FASES = ['Ideación', 'Selección', 'Desarrollo', 'Implementación', 'Difu
 
 export function FundamentosInnovacion() {
   return (
-    <section className="bg-neu-base py-16 sm:py-20">
+    <section className="bg-canvas py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="03"
@@ -22,18 +22,18 @@ export function FundamentosInnovacion() {
 
         <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-start">
           <div>
-            <h3 className="font-neu-display text-2xl text-ink-950">Tipos de Innovación</h3>
+            <h3 className="font-display text-2xl text-ink">Tipos de Innovación</h3>
             <div className="mt-6 space-y-4">
               {TIPOS.map((tipo) => (
                 <div
                   key={tipo.label}
                   className="flex items-start gap-4 rounded-xl border border-ink-950/10 p-5"
                 >
-                  <span className="neu-pressed flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-neu-display text-sm text-signal">
+                  <span className="layer-pill flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-display text-sm text-signal">
                     {tipo.label[0]}
                   </span>
                   <div>
-                    <p className="font-neu-display text-lg text-ink-950">{tipo.label}</p>
+                    <p className="font-display text-lg text-ink">{tipo.label}</p>
                     <p className="mt-1 text-base leading-relaxed text-ink-700/70">{tipo.desc}</p>
                   </div>
                 </div>
@@ -42,11 +42,11 @@ export function FundamentosInnovacion() {
           </div>
 
           <div>
-            <h3 className="font-neu-display text-2xl text-ink-950">Fases del Proceso</h3>
+            <h3 className="font-display text-2xl text-ink">Fases del Proceso</h3>
             <ol className="mt-6 space-y-3">
               {FASES.map((fase, i) => (
                 <li key={fase} className="flex items-center gap-4">
-                  <span className="neu-raised flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-mono text-xs text-ink-950">
+                  <span className="layer flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-mono text-xs text-ink">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <span className="text-base sm:text-lg text-ink-700/80">{fase}</span>
@@ -62,7 +62,7 @@ export function FundamentosInnovacion() {
         </div>
 
         <p className="mt-8 text-base text-ink-700/60">
-          <span className="font-semibold text-ink-950">Ejemplos:</span> Teléfonos
+          <span className="font-semibold text-ink">Ejemplos:</span> Teléfonos
           inteligentes, energía solar y vehículos eléctricos.
         </p>
       </div>

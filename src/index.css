@@ -1,170 +1,204 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────────────────────
+   Layered Design — "Stacking context. Interfaces built from
+   overlapping, independent layers."
+
+   Las tres reglas del skill:
+   1. EXPLICIT OVERLAP  — los elementos se pisan y rompen la grilla
+   2. CLEAR STRATIFICATION — cada capa es distinta por sombra/borde/color
+   3. PARALLAX SCROLLING — el fondo se mueve mas lento que el frente
+
+   Y la regla de espaciado: "Negative space is required around
+   overlapping elements so they don't feel cluttered."
+
+   Paleta Sophisticated Neutral: el unico warm/taupe de las seis.
+   ───────────────────────────────────────────────────────────── */
+
 @theme {
-  /* Sistema claro final — tus 5 + tinta */
-  --color-lavender: #e5e1ee;
-  --color-ice: #dffdff;
-  --color-steel: #90bede;
-  --color-aqua: #68edc6;
-  --color-glow: #90f3ff;
+  /* Sophisticated Neutral */
+  --color-canvas: #e6e2dd;
+  --color-canvas-deep: #d9d4cd;
+  --color-surface: #ffffff;
+  --color-surface-warm: #f3f1ee;
+  --color-ink: #1f1c1b;
+  --color-ink-70: #524036;
+  --color-ink-45: #8a8178;
+  --color-line: #b8b0a8;
+  --color-accent: #524036;
 
-  --color-ink-950: #0f2540;
-  --color-ink-700: #2e4a67;
-  --color-ink-500: #5b7a99;
-
-  --color-cloud-50: #f6feff;
-  --color-cloud-100: #dffdff;
-  --color-cloud-200: #e5e1ee;
-
-  /* Base neomórfica unificada: mezcla 50/50 de ice + lavender.
-     Regla del skill: fondo y elementos comparten el MISMO base exacto. */
-  --color-neu-base: #e2eff6;
-  --color-neu-shadow: #b7cbd8;
+  /* Alias de compatibilidad (migracion en curso) */
+  --color-neu-base: #e6e2dd;
+  --color-neu-shadow: #b8b0a8;
   --color-neu-highlight: #ffffff;
+  --color-ink-950: #1f1c1b;
+  --color-ink-700: #524036;
+  --color-ink-500: #8a8178;
+  --color-cloud-50: #ffffff;
+  --color-cloud-100: #f3f1ee;
+  --color-cloud-200: #d9d4cd;
+  --color-signal: #524036;
+  --color-aqua: #b8b0a8;
+  --color-glow: #d9d4cd;
+  --color-steel: #8a8178;
+  --color-ice: #f3f1ee;
+  --color-lavender: #d9d4cd;
 
-  /* Sombras neomórficas: highlight arriba-izq, sombra abajo-der (skill) */
-  --shadow-neu-raised: 9px 9px 18px var(--color-neu-shadow), -9px -9px 18px var(--color-neu-highlight);
-  --shadow-neu-pressed: inset 9px 9px 18px var(--color-neu-shadow), inset -9px -9px 18px var(--color-neu-highlight);
-  --shadow-neu-btn: 5px 5px 14px var(--color-neu-shadow), -5px -5px 14px var(--color-neu-highlight);
-
-  /* Aliases de compatibilidad con semántica legible (temporal, migración total en curso) */
-  --color-navy-950: #0f2540;
-  --color-navy-900: #14365f;
-  --color-navy-700: #2e4a67;
-  --color-mist: #f2f8ff;
-  --color-signal: #0e9f8a;
-
-  /* Tipografía institucional */
-  --font-display: "Space Grotesk", sans-serif;
+  --font-display: "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
-  --font-logo: "Space Grotesk", sans-serif;
-  --font-heading: "Space Grotesk", sans-serif;
+  --font-mono: "Inter", sans-serif;
+  --font-logo: "Inter", sans-serif;
+  --font-heading: "Inter", sans-serif;
+  --font-neu-display: "Inter", sans-serif;
+  --font-neu-body: "Inter", sans-serif;
 
-  /* Tipografía neumórfica (skill neumorphism: rounded sans) — uso scopado al Home */
-  --font-neu-display: "Nunito", sans-serif;
-  --font-neu-body: "Quicksand", sans-serif;
+  /* Estratificacion: cada capa con su propia profundidad de sombra */
+  --shadow-layer-1: 0 1px 2px rgba(31, 28, 27, 0.04);
+  --shadow-layer-2: 0 8px 20px rgba(31, 28, 27, 0.07);
+  --shadow-layer-3: 0 20px 40px rgba(31, 28, 27, 0.1);
+  --shadow-layer-4: 0 34px 68px rgba(31, 28, 27, 0.14);
 }
 
 body {
-  @apply bg-neu-base text-ink-950 font-body antialiased;
+  @apply bg-canvas text-ink font-body antialiased;
+  line-height: 1.7;
 }
 
 ::selection {
-  background-color: var(--color-aqua);
-  color: var(--color-ink-950);
+  background-color: var(--color-ink);
+  color: #ffffff;
 }
 
 * {
-  scrollbar-color: var(--color-neu-shadow) var(--color-neu-base);
+  scrollbar-color: var(--color-line) #ffffff;
   scrollbar-width: thin;
 }
 
-.hero-light-gradient {
-  background: linear-gradient(135deg, #e5e1ee 0%, #dffdff 45%, #90f3ff 100%);
+/* ── Capas ────────────────────────────────────────────────── */
+
+/* Capa base: superficie limpia, sombra minima */
+.layer {
+  background: var(--color-surface);
+  box-shadow: var(--shadow-layer-2);
 }
 
-/* Neomorfismo (skill neumorphism): MISMO base que el fondo, SIN bordes,
-   la forma la definen solo las sombras. */
-.neu-raised {
-  background: var(--color-neu-base);
-  border: none;
-  border-radius: 20px;
-  box-shadow: var(--shadow-neu-raised);
+/* Estratificacion explicita: bordes de acento que separan las capas */
+.layer-edge {
+  background: var(--color-surface);
+  box-shadow: var(--shadow-layer-3);
+  border-left: 4px solid var(--color-accent);
 }
 
-.neu-pressed {
-  background: var(--color-neu-base);
-  border: none;
-  border-radius: 9999px;
-  box-shadow: var(--shadow-neu-pressed);
+.layer-warm {
+  background: var(--color-surface-warm);
+  box-shadow: var(--shadow-layer-2);
 }
 
-.neu-btn {
-  border: none;
-  box-shadow: var(--shadow-neu-btn);
-  transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+.layer-deep {
+  background: var(--color-ink);
+  color: #ffffff;
+  box-shadow: var(--shadow-layer-4);
 }
 
-.neu-btn:hover {
-  filter: brightness(1.03);
+/* Pildoras: los controles flotan como una capa mas */
+.layer-pill {
+  background: var(--color-surface);
+  border-radius: 999px;
+  box-shadow: var(--shadow-layer-2);
 }
 
-.neu-btn:active {
-  box-shadow: var(--shadow-neu-pressed);
-  transform: translateY(1px);
+.layer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border-radius: 999px;
+  padding: 0.8rem 1.6rem;
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms ease,
+    background-color 220ms ease;
 }
 
-.neu-icon {
-  background: var(--color-neu-base);
-  border: none;
-  border-radius: 16px;
-  box-shadow: var(--shadow-neu-btn);
+.layer-btn-primary {
+  background: var(--color-ink);
+  color: #ffffff;
+  box-shadow: var(--shadow-layer-2);
 }
 
-@keyframes cloud-color-breathe {
-  0% {
-    background-position: 0% 50%;
-    filter: drop-shadow(0 2px 14px rgba(104, 237, 198, 0.35));
-  }
-  50% {
-    background-position: 100% 50%;
-    filter: drop-shadow(0 2px 6px rgba(104, 237, 198, 0.15));
-  }
-  100% {
-    background-position: 0% 50%;
-    filter: drop-shadow(0 2px 14px rgba(104, 237, 198, 0.35));
-  }
+.layer-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-layer-3);
 }
 
-.animate-cloud-gradient {
-  background-size: 250% 250%;
-  animation: cloud-color-breathe 5s ease-in-out infinite;
+.layer-btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-layer-2);
 }
 
-@media (scripting: enabled) {
-  .hero-enter {
-    opacity: 0;
-    transform: translateY(14px);
-    filter: blur(6px);
-  }
+.layer-btn-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-layer-3);
+}
 
-  .hero-enter.is-mounted {
-    opacity: 1;
-    transform: none;
-    filter: blur(0);
-    transition:
-      opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
-      transform 700ms cubic-bezier(0.16, 1, 0.3, 1),
-      filter 700ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
+/* Tarjetas con hover de capa */
+.layer-hover {
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 250ms ease;
+}
 
-  .hero-enter-delay-1 {
-    transition-delay: 80ms;
-  }
+.layer-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-layer-3);
+}
 
-  .hero-enter-delay-2 {
-    transition-delay: 160ms;
-  }
+/* Zonas de apilado: el espacio negativo que exige el skill
+   alrededor de los solapes */
+.stack-space {
+  padding: 7rem 0;
+}
+
+.stack-space-sm {
+  padding: 4.5rem 0;
+}
+
+/* Titular: peso 200 para que se lea como capa de fondo.
+   El texto 700 es la capa de frente. */
+.display-back {
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  color: var(--color-ink-45);
+}
+
+.display-front {
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--color-ink);
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ink-45);
+}
+
+/* Estado inicial del reveal: lo aplica JS, no CSS */
+.hero-item {
+  opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-ping,
-  .animate-pulse,
-  .animate-cloud-gradient {
+  .animate-pulse {
     animation: none !important;
   }
 
-  .hero-enter {
-    opacity: 1;
-    transform: none;
-    filter: none;
-    transition: opacity 150ms ease;
-  }
-
-  .hero-enter.is-mounted {
-    transition: opacity 150ms ease;
+  .hero-item {
+    opacity: 1 !important;
   }
 
   * {

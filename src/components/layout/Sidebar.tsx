@@ -27,24 +27,24 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       <div
         onClick={onClose}
         aria-hidden="true"
-        className={`fixed inset-0 z-40 bg-ink-950/40 backdrop-blur-sm transition-opacity duration-300 ${ isOpen ? 'opacity-100' : 'pointer-events-none opacity-0' }`}
+        className={`fixed inset-0 z-40 bg-ink/45 backdrop-blur-sm transition-opacity duration-300 ${ isOpen ? 'opacity-100' : 'pointer-events-none opacity-0' }`}
       />
 
       <aside
         role="dialog"
         aria-modal="true"
         aria-label="Menú de navegación"
-        className={`fixed right-0 top-0 z-50 h-full w-full max-w-md border-l border-ink-950/10 bg-neu-base shadow-2xl transition-transform duration-300 ease-out ${ isOpen ? 'translate-x-0' : 'translate-x-full' }`}
+        className={`fixed right-0 top-0 z-50 h-full w-full max-w-md border-l border-ink-950/10 bg-canvas transition-transform duration-300 ease-out ${ isOpen ? 'translate-x-0' : 'translate-x-full' }`}
       >
-        <div className="flex h-full flex-col px-8 py-8 sm:px-12 sm:py-10">
+        <div className="layer-edge flex h-full flex-col px-8 py-8 sm:px-12 sm:py-10">
           <div className="flex items-center justify-between">
-            <span className="font-neu-display text-lg tracking-wide text-ink-950">
+            <span className="font-display text-lg tracking-wide text-ink">
               IATECH <span className="text-signal">· CLOUD</span>
             </span>
             <button
               onClick={onClose}
               aria-label="Cerrar menú"
-              className="rounded-full p-2 text-ink-950 transition hover:text-signal focus:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base"
+              className="rounded-full p-2 text-ink transition hover:text-signal focus:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
@@ -63,7 +63,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                         {String(index + 1).padStart(2, '0')}
                       </span>
                       <span
-                        className={`font-neu-display text-2xl uppercase tracking-tight transition-colors sm:text-3xl ${ isActive ? 'text-signal' : 'text-ink-950 group-hover:text-signal' }`}
+                        className={`font-display text-2xl uppercase tracking-tight transition-colors sm:text-3xl ${ isActive ? 'text-signal' : 'text-ink group-hover:text-signal' }`}
                       >
                         {route.label}
                       </span>
@@ -74,7 +74,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             </ul>
           </nav>
 
-          <p className="font-mono text-xs uppercase tracking-wider text-ink-500">
+          <p className="label">
             Servicios Cloud e Integración · IATECH
           </p>
           <a
@@ -82,7 +82,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Acceder al inventario conjunto en Vercel"
-            className="neu-btn mt-3 inline-flex items-center gap-2 self-start rounded-full bg-aqua px-4 py-2 text-xs font-semibold text-ink-950 transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base"
+            className="layer-btn mt-3 inline-flex items-center gap-2 self-start rounded-full bg-aqua px-4 py-2 text-xs font-semibold text-ink transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
           >
             Acceder al inventario
             <i className="bx bx-link-external text-sm" aria-hidden="true" />

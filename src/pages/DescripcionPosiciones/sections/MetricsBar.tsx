@@ -43,26 +43,26 @@ export default function MetricsBar() {
   ];
 
   return (
-    <section className="bg-neu-base py-8 border-b border-ink-950/10">
+    <section className="bg-canvas py-8 border-b border-ink-950/10">
       <div className="mx-auto max-w-5xl px-6 sm:px-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {metrics.map((item, idx) => (
             <div
               key={idx}
-              className="neu-raised group relative rounded-xl p-4 sm:p-5 hover:-translate-y-0.5 transition-all duration-200"
+              className="layer group relative rounded-xl p-4 sm:p-5 hover:-translate-y-0.5 transition-all duration-200"
             >
               <div className="flex items-center justify-between gap-3 mb-2">
-                <span className="neu-raised flex h-9 w-9 items-center justify-center rounded-lg transition-colors">
+                <span className="layer flex h-9 w-9 items-center justify-center rounded-lg transition-colors">
                   {item.icon}
                 </span>
                 <span className="font-mono text-[10px] font-semibold text-ink-700/70 uppercase tracking-wider">
                   MÉTRICA 0{idx + 1}
                 </span>
               </div>
-              <h3 className="font-sans text-xl sm:text-2xl font-bold text-ink-950 tracking-tight">
+              <h3 className="font-sans text-xl sm:text-2xl font-bold text-ink tracking-tight">
                 {item.value}
               </h3>
-              <p className="font-sans text-xs font-semibold text-ink-950 mt-0.5">
+              <p className="font-sans text-xs font-semibold text-ink mt-0.5">
                 {item.label}
               </p>
               <p className="text-[11px] text-ink-700/70 leading-relaxed mt-1">

@@ -1,51 +1,55 @@
 import type { HeroProps } from './types';
 import { Reveal } from '../ui/Reveal';
 
+/**
+ * Hero compartido: la imagen es la capa de fondo y el panel de texto
+ * se superpone sobre ella — el overlap explicito del skill.
+ */
 export function Hero({ subtitle, title, highlight, description, imageSrc, imageAlt }: HeroProps) {
   const [before, after] = highlight ? title.split(highlight) : [title];
 
   return (
-    <section className="relative overflow-hidden bg-neu-base pt-32 pb-20 sm:pt-40 sm:pb-28">
-      {imageSrc && (
-        <img
-          src={imageSrc}
-          alt={imageAlt || ''}
-          className="absolute inset-0 h-full w-full object-cover opacity-[0.12]"
-        />
-      )}
-      <div className="absolute inset-0 bg-neu-base/50" />
-      <div className="absolute inset-0 opacity-60">
-        <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-aqua/30 blur-3xl" />
-        <div className="absolute -bottom-20 -right-20 h-[300px] w-[300px] rounded-full bg-glow/40 blur-3xl" />
-      </div>
-
+    <section className="bg-canvas pb-24 pt-16 sm:pb-28">
       <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
+        {imageSrc && (
+          <div data-speed="0.3" className="absolute inset-x-0 top-0 -z-10 h-72 overflow-hidden sm:h-96">
+            <img
+              src={imageSrc}
+              alt={imageAlt || ''}
+              className="h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="absolute inset-0 bg-canvas/50" />
+          </div>
+        )}
+
         <Reveal asHero>
-          <span className="neu-pressed hero-item inline-flex items-center px-5 py-2 font-mono text-[11px] font-bold uppercase tracking-widest text-signal">
-            {subtitle}
-          </span>
-          <h1 className="hero-item mt-6 font-neu-display text-4xl font-black leading-tight text-ink-950 sm:text-5xl lg:text-6xl">
+          <span className="hero-item label">{subtitle}</span>
+
+          <h1 className="hero-item display-front mt-5 max-w-3xl text-4xl sm:text-5xl lg:text-6xl">
             {before}
             {highlight && (
               <>
-                <br />
-                <span className="text-signal">{highlight}</span>
+                {' '}
+                <span className="display-back">{highlight}</span>
               </>
             )}
             {after}
           </h1>
-          <p className="hero-item mt-6 max-w-2xl text-lg text-ink-700">{description}</p>
         </Reveal>
-      </div>
 
-      <div className="mt-14 flex justify-center">
-        <a
-          href="#content-start"
-          aria-label="Ir al contenido"
-          className="neu-btn flex h-12 w-12 items-center justify-center rounded-full bg-neu-base text-ink-950 transition hover:brightness-105 hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base"
-        >
-          <i className="bx bx-chevrons-down text-2xl" aria-hidden="true" />
-        </a>
+        {/* Panel de frente: se superpone sobre la imagen de fondo */}
+        <div className="layer-edge mt-10 max-w-2xl p-8 sm:mt-12 sm:p-10">
+          <Reveal asHero>
+            <p className="hero-item text-lg leading-relaxed text-ink-70">{description}</p>
+
+            <a href="#content-start" className="layer-btn layer-btn-primary hero-item mt-8 w-fit">
+              Ver contenido
+              <i className="bx bx-down-arrow-alt text-lg" aria-hidden="true" />
+            </a>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
