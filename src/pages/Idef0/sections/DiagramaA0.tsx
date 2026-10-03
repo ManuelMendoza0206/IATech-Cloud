@@ -75,7 +75,7 @@ export function DiagramaA0() {
   const dim = (kind: ArrowKind) => active !== null && active !== kind;
 
   return (
-    <section className="relative overflow-hidden bg-neu-base py-20 sm:py-28">
+    <section className="relative overflow-hidden bg-canvas py-20 sm:py-28">
       <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="02"
@@ -84,7 +84,7 @@ export function DiagramaA0() {
         />
 
         {/* Diagrama SVG interactivo */}
-        <div className="neu-raised mt-10 overflow-hidden rounded-2xl p-4 sm:p-8">
+        <div className="float mt-10 overflow-hidden rounded-2xl p-4 sm:p-8">
           <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
             <p className="font-mono text-[11px] uppercase tracking-widest text-ink-700/60">
               A-0 · Reproducción interactiva
@@ -241,7 +241,7 @@ export function DiagramaA0() {
               y={BOX.y + 52}
               textAnchor="middle"
               fill="#eaf0f8"
-              className="font-neu-display"
+              className="font-display"
               style={{ fontSize: 12.5, fontWeight: 700 }}
             >
               AUTOMATIZAR EL DESPLIEGUE Y
@@ -251,7 +251,7 @@ export function DiagramaA0() {
               y={BOX.y + 70}
               textAnchor="middle"
               fill="#eaf0f8"
-              className="font-neu-display"
+              className="font-display"
               style={{ fontSize: 12.5, fontWeight: 700 }}
             >
               ALOJAMIENTO DE APLICACIONES
@@ -261,7 +261,7 @@ export function DiagramaA0() {
               y={BOX.y + 88}
               textAnchor="middle"
               fill="#eaf0f8"
-              className="font-neu-display"
+              className="font-display"
               style={{ fontSize: 12.5, fontWeight: 700 }}
             >
               EN LA NUBE
@@ -308,7 +308,7 @@ export function DiagramaA0() {
         </div>
 
         {/* Imagen oficial */}
-        <div className="neu-raised mt-10 overflow-hidden rounded-2xl">
+        <div className="float mt-10 overflow-hidden rounded-2xl">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-ink-950/10 px-5 py-4">
             <p className="font-mono text-[11px] uppercase tracking-widest text-ink-700/60">
               A-0 · Diagrama oficial
@@ -335,33 +335,33 @@ export function DiagramaA0() {
         </div>
 
         {/* Pie de diagrama */}
-        <div className="neu-raised mt-6 overflow-hidden rounded-xl">
+        <div className="float mt-6 overflow-hidden rounded-xl">
           <div className="grid divide-y divide-steel/900/10 sm:grid-cols-[110px_1fr_110px] sm:divide-x sm:divide-y-0">
-            <div className="flex items-center justify-center bg-neu-base px-4 py-3">
+            <div className="flex items-center justify-center bg-canvas px-4 py-3">
               <span className="font-mono text-[11px] uppercase tracking-widest text-signal">
                 {DIAGRAM_FOOTER[0].key}
               </span>
             </div>
             <div className="flex items-center px-4 py-3">
-              <span className="font-mono text-lg font-bold text-ink-950">{DIAGRAM_FOOTER[0].value}</span>
+              <span className="font-mono text-lg font-bold text-ink">{DIAGRAM_FOOTER[0].value}</span>
               <span className="ml-3 text-xs text-ink-700/60">
                 Diagrama de contexto de nivel cero
               </span>
             </div>
-            <div className="flex items-center justify-center bg-neu-base px-4 py-3">
+            <div className="flex items-center justify-center bg-canvas px-4 py-3">
               <span className="font-mono text-[11px] uppercase tracking-widest text-signal">
                 {DIAGRAM_FOOTER[2].key}
               </span>
             </div>
           </div>
           <div className="grid divide-y divide-steel/900/10 sm:grid-cols-[110px_1fr] sm:divide-x sm:divide-y-0">
-            <div className="flex items-center justify-center bg-neu-base px-4 py-3">
+            <div className="flex items-center justify-center bg-canvas px-4 py-3">
               <span className="font-mono text-[11px] uppercase tracking-widest text-signal">
                 {DIAGRAM_FOOTER[1].key}
               </span>
             </div>
             <div className="flex items-center px-4 py-3">
-              <span className="text-sm text-ink-950">{DIAGRAM_FOOTER[1].value}</span>
+              <span className="text-sm text-ink">{DIAGRAM_FOOTER[1].value}</span>
             </div>
           </div>
         </div>

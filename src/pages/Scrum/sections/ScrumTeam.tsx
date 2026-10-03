@@ -25,7 +25,7 @@ const TEAM = [
     name: 'Roman Pabon',
     puestoCloud: 'Administrador de Infraestructura Cloud',
     imageSrc: '/images/team/rp.png',
-    accent: 'bg-neu-base',
+    accent: 'bg-canvas',
   },
   {
     id: 'dev-2',
@@ -34,7 +34,7 @@ const TEAM = [
     name: 'Jaicel Velasco',
     puestoCloud: 'Arquitecto de Soluciones Cloud',
     imageSrc: '/images/team/jr.png',
-    accent: 'bg-neu-base',
+    accent: 'bg-canvas',
   },
   {
     id: 'dev-3',
@@ -43,36 +43,36 @@ const TEAM = [
     name: 'Manuel Jimenez',
     puestoCloud: 'Administrador DevOps',
     imageSrc: '/images/team/mj.png',
-    accent: 'bg-neu-base',
+    accent: 'bg-canvas',
   },
 ];
 
 function TeamCard({ member, featured = false }: { member: (typeof TEAM)[number]; featured?: boolean }) {
   return (
     <div
-      className={`neu-raised flex w-full flex-col rounded-3xl p-8 transition-all hover:-translate-y-1 ${featured ? 'bg-aqua/25' : ''}`}
+      className={`float flex w-full flex-col rounded-3xl p-8 transition-all hover:-translate-y-1 ${featured ? 'bg-aqua/25' : ''}`}
     >
       <div className="flex items-start justify-between gap-4">
         <img
           src={member.imageSrc}
           alt={`${member.name} — ${member.role}`}
           loading="lazy"
-          className={`shrink-0 rounded-2xl object-cover object-center ${ featured ? 'neu-icon h-28 w-28' : 'neu-icon h-24 w-24' }`}
+          className={`shrink-0 rounded-2xl object-cover object-center ${ featured ? 'float-sm h-28 w-28' : 'float-sm h-24 w-24' }`}
         />
         <span
-          className={`rounded-full px-4 py-1.5 font-mono text-xs font-semibold tracking-widest ${featured ? 'bg-aqua text-ink-950' : 'neu-pressed text-signal'}`}
+          className={`rounded-full px-4 py-1.5 font-mono text-xs font-semibold tracking-widest ${featured ? 'bg-aqua text-ink' : 'float-pill text-signal'}`}
         >
           {member.short}
         </span>
       </div>
-      <p className="mt-5 font-neu-display text-lg font-extrabold leading-tight text-ink-950">{member.role}</p>
+      <p className="mt-5 font-display text-lg font-extrabold leading-tight text-ink">{member.role}</p>
       {'puestoCloud' in member && member.puestoCloud ? (
-        <p className="neu-pressed mt-2 inline-flex items-center gap-1.5 self-start px-4 py-1.5 text-[11px] font-medium text-signal">
+        <p className="float-pill mt-2 inline-flex items-center gap-1.5 self-start px-4 py-1.5 text-[11px] font-medium text-signal">
           {member.puestoCloud as string}
         </p>
       ) : null}
-      <div className="neu-pressed mt-4 flex items-center gap-3 px-5 py-3">
-        <p className="font-mono text-sm font-medium leading-tight text-ink-950">{member.name}</p>
+      <div className="float-pill mt-4 flex items-center gap-3 px-5 py-3">
+        <p className="font-mono text-sm font-medium leading-tight text-ink">{member.name}</p>
       </div>
       {member.id === 'po' && (
         <p className="mt-4 text-center font-mono text-[11px] uppercase tracking-widest text-ink-500">
@@ -94,7 +94,7 @@ export function ScrumTeam() {
   const devs = TEAM.filter((m) => m.id.startsWith('dev'));
 
   return (
-    <section className="bg-neu-base py-16 sm:py-20">
+    <section className="bg-canvas py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="08"
@@ -106,7 +106,7 @@ export function ScrumTeam() {
         <div className="mt-6">
           <a
             href="#objetivos"
-            className="neu-btn inline-flex items-center gap-2 rounded-full bg-neu-base px-5 py-2.5 text-xs font-bold text-ink-950 transition hover:brightness-105"
+            className="float-btn inline-flex items-center gap-2 rounded-full bg-canvas px-5 py-2.5 text-xs font-bold text-ink transition hover:brightness-105"
           >
             Ver objetivos por área
             <i className="bx bx-arrow-to-bottom text-sm" />
@@ -141,7 +141,7 @@ export function ScrumTeam() {
           </div>
         </div>
 
-        <div className="neu-raised mt-12 overflow-hidden rounded-2xl p-4 sm:p-6">
+        <div className="float mt-12 overflow-hidden rounded-2xl p-4 sm:p-6">
           <img
             src="https://scrumorg-website-prod.s3.amazonaws.com/drupal/inline-images/2019-01/scrum%20team.png"
             alt="Scrum Team: Product Owner, Scrum Master y Developers colaborando"

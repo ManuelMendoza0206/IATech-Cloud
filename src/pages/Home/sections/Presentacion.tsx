@@ -15,10 +15,10 @@ const HIGHLIGHTS = [
 
 export default function Presentacion() {
   return (
-    <section id="presentacion" className="bg-neu-base py-20 sm:py-28">
+    <section id="presentacion" className="bg-canvas py-20 sm:py-28">
       <div className="mx-auto grid max-w-7xl gap-16 px-6 sm:px-10 lg:grid-cols-2 lg:items-center lg:gap-20">
         <div>
-          <h2 className="reveal font-neu-display text-3xl font-extrabold leading-tight text-ink-950 sm:text-4xl">
+          <h2 className="reveal font-display text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
             El motor tecnológico detrás de cada despliegue clínico
           </h2>
 
@@ -39,10 +39,10 @@ export default function Presentacion() {
             {HIGHLIGHTS.map((item) => (
               <li
                 key={item.title}
-                className="reveal neu-raised p-5"
+                className="float float-hover reveal buoyant p-6"
               >
-                <span className="neu-pressed mb-3 block h-2.5 w-10" aria-hidden="true" />
-                <p className="font-neu-display text-[15px] font-extrabold leading-tight text-ink-950">
+                <span className="float-pill mb-3 block h-2.5 w-10" aria-hidden="true" />
+                <p className="font-display text-[15px] font-extrabold leading-tight text-ink">
                   {item.title}
                 </p>
                 <p className="mt-1.5 text-sm leading-relaxed text-ink-700">
@@ -62,10 +62,10 @@ export default function Presentacion() {
             sizes="(max-width: 1024px) 100vw, 560px"
             loading="lazy"
             decoding="async"
-            className="neu-raised aspect-[4/3] w-full object-cover sm:aspect-video lg:aspect-[4/3]"
+            className="float aspect-[4/3] w-full object-cover sm:aspect-video lg:aspect-[4/3]"
           />
-          <div className="reveal neu-raised absolute -bottom-6 -left-6 px-6 py-4 text-ink-950">
-            <p className="font-neu-display text-2xl font-black tabular-nums text-signal">99%</p>
+          <div className="reveal float absolute -bottom-6 -left-6 px-6 py-4 text-ink">
+            <p className="font-display text-2xl font-black tabular-nums text-signal">99%</p>
             <p className="font-mono text-xs uppercase tracking-widest text-ink-500">
               Disponibilidad
             </p>

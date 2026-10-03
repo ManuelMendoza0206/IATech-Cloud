@@ -2,6 +2,10 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
+/**
+ * Floating UI: nada va pegado al borde superior. Solo queda la marca
+ * flotando y el acceso a las páginas, que viven en la píldora inferior.
+ */
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,34 +20,32 @@ export default function Navbar() {
 
   return (
     <>
-      <header
-        className={`fixed inset-x-0 top-0 z-30 w-full bg-neu-base/90 backdrop-blur-md transition-all duration-300 ${ isScrolled ? 'py-2 shadow-lg shadow-steel/20' : 'py-3' }`}
+      <div
+        className={`fixed left-5 top-5 z-40 transition-all duration-300 sm:left-8 sm:top-8 ${
+          isScrolled ? 'scale-90 opacity-90' : ''
+        }`}
       >
-        <div className="flex w-full items-center justify-between px-6 sm:px-10">
-          <Link
-            to="/"
-            className="font-logo text-xl tracking-wide text-ink-950 transition-opacity duration-300 hover:opacity-80 sm:text-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base rounded"
-          >
-            IATECH{' '}
-            <span className="text-signal">
-              · CLOUD
-            </span>
-          </Link>
+        <Link
+          to="/"
+          className="float-pill flex items-center gap-2.5 px-4 py-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink-70 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        >
+          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-ink text-[10px] font-bold text-white">
+            IC
+          </span>
+          <span className="text-[13px] font-semibold tracking-tight text-ink">IATECH.CLOUD</span>
+        </Link>
+      </div>
 
-          <button
-            onClick={() => setIsMenuOpen(true)}
-            aria-label="Abrir menú"
-            aria-expanded={isMenuOpen}
-            className="group flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-neu-base rounded-full"
-          >
-            <div className="neu-btn flex h-11 w-11 flex-col items-center justify-center gap-1 rounded-full bg-neu-base transition-all duration-200 group-hover:brightness-105">
-              <span className="h-[2px] w-4 bg-ink-950 transition-colors duration-200" />
-              <span className="h-[2px] w-4 bg-ink-950 transition-colors duration-200" />
-              <span className="h-[2px] w-4 bg-ink-950 transition-colors duration-200" />
-            </div>
-          </button>
-        </div>
-      </header>
+      <div className="fixed right-5 top-5 z-40 sm:right-8 sm:top-8">
+        <button
+          onClick={() => setIsMenuOpen(true)}
+          aria-label="Abrir menú"
+          aria-expanded={isMenuOpen}
+          className="float-pill flex h-11 w-11 items-center justify-center text-ink transition hover:text-ink-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink-70 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+        >
+          <i className="bx bx-grid-alt text-xl" aria-hidden="true" />
+        </button>
+      </div>
 
       <Sidebar isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     </>

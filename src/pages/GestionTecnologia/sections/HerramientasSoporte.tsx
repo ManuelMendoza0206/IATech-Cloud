@@ -12,7 +12,7 @@ const DATA: Herramienta[] = [
 
 export function HerramientasSoporte() {
   return (
-    <section className="bg-neu-base py-16 sm:py-20">
+    <section className="bg-canvas py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="04"
@@ -25,10 +25,10 @@ export function HerramientasSoporte() {
           {DATA.map((h) => (
             <div
               key={h.title}
-              className={`rounded-2xl border-l border-ink-950/10-2 ${h.color} bg-neu-base/5 p-6 backdrop-blur-sm`}
+              className={`rounded-2xl border-l border-ink-950/10-2 ${h.color} bg-canvas/5 p-6 backdrop-blur-sm`}
             >
-              <p className="font-neu-display text-xl text-ink-950">{h.title}</p>
-              <p className="mt-2 text-base sm:text-lg leading-relaxed text-ink-950/60">{h.desc}</p>
+              <p className="font-display text-xl text-ink">{h.title}</p>
+              <p className="mt-2 text-base sm:text-lg leading-relaxed text-ink/60">{h.desc}</p>
             </div>
           ))}
         </div>

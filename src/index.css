@@ -1,170 +1,193 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────────────────────
+   Floating UI — "Defying gravity. Elements that hover effortlessly
+   above the surface."
+
+   Las tres reglas del skill:
+   1. DETACHMENT  — nada toca los bordes; todo flota con margen
+   2. SOFT DIFFUSE SHADOWS — una sola sombra grande y muy borrosa
+   3. PILL SHAPES — píldoras en nav/botones, radios grandes en cards
+
+   Y la regla de animación, que es la identidad del estilo:
+   "DO animate floating elements! A slow, continuous 2px up/down
+   translateY animation makes them feel truly buoyant."
+   ───────────────────────────────────────────────────────────── */
+
 @theme {
-  /* Sistema claro final — tus 5 + tinta */
-  --color-lavender: #e5e1ee;
-  --color-ice: #dffdff;
-  --color-steel: #90bede;
-  --color-aqua: #68edc6;
-  --color-glow: #90f3ff;
+  /* Minimalist Slate */
+  --color-canvas: #f4f4f9;
+  --color-surface: #ffffff;
+  --color-ink: #2b303a;
+  --color-ink-70: #5c6b73;
+  --color-ink-45: #8d979d;
+  --color-line: #c0c5c1;
 
-  --color-ink-950: #0f2540;
-  --color-ink-700: #2e4a67;
-  --color-ink-500: #5b7a99;
-
-  --color-cloud-50: #f6feff;
-  --color-cloud-100: #dffdff;
-  --color-cloud-200: #e5e1ee;
-
-  /* Base neomórfica unificada: mezcla 50/50 de ice + lavender.
-     Regla del skill: fondo y elementos comparten el MISMO base exacto. */
-  --color-neu-base: #e2eff6;
-  --color-neu-shadow: #b7cbd8;
+  /* Alias de compatibilidad (migracion en curso) */
+  --color-neu-base: #f4f4f9;
+  --color-neu-shadow: #c0c5c1;
   --color-neu-highlight: #ffffff;
+  --color-ink-950: #2b303a;
+  --color-ink-700: #5c6b73;
+  --color-ink-500: #8d979d;
+  --color-cloud-50: #ffffff;
+  --color-cloud-100: #f4f4f9;
+  --color-cloud-200: #e7e8ee;
+  --color-signal: #4a6b78;
+  --color-aqua: #7fb0a8;
+  --color-glow: #a8c4c0;
+  --color-steel: #8d979d;
+  --color-ice: #ffffff;
+  --color-lavender: #e7e8ee;
 
-  /* Sombras neomórficas: highlight arriba-izq, sombra abajo-der (skill) */
-  --shadow-neu-raised: 9px 9px 18px var(--color-neu-shadow), -9px -9px 18px var(--color-neu-highlight);
-  --shadow-neu-pressed: inset 9px 9px 18px var(--color-neu-shadow), inset -9px -9px 18px var(--color-neu-highlight);
-  --shadow-neu-btn: 5px 5px 14px var(--color-neu-shadow), -5px -5px 14px var(--color-neu-highlight);
-
-  /* Aliases de compatibilidad con semántica legible (temporal, migración total en curso) */
-  --color-navy-950: #0f2540;
-  --color-navy-900: #14365f;
-  --color-navy-700: #2e4a67;
-  --color-mist: #f2f8ff;
-  --color-signal: #0e9f8a;
-
-  /* Tipografía institucional */
-  --font-display: "Space Grotesk", sans-serif;
+  --font-display: "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
-  --font-logo: "Space Grotesk", sans-serif;
-  --font-heading: "Space Grotesk", sans-serif;
+  --font-mono: "Inter", sans-serif;
+  --font-logo: "Inter", sans-serif;
+  --font-heading: "Inter", sans-serif;
+  --font-neu-display: "Inter", sans-serif;
+  --font-neu-body: "Inter", sans-serif;
 
-  /* Tipografía neumórfica (skill neumorphism: rounded sans) — uso scopado al Home */
-  --font-neu-display: "Nunito", sans-serif;
-  --font-neu-body: "Quicksand", sans-serif;
+  /* Una sola sombra, grande y difusa. No relieve de dos luces. */
+  --shadow-float: 0 16px 40px rgba(43, 48, 58, 0.08);
+  --shadow-float-sm: 0 10px 30px rgba(43, 48, 58, 0.05);
+  --shadow-float-lg: 0 24px 60px rgba(43, 48, 58, 0.12);
 }
 
 body {
-  @apply bg-neu-base text-ink-950 font-body antialiased;
+  @apply bg-canvas text-ink font-body antialiased;
+}
+
+/* El skill pide "generous line height" para el cuerpo. */
+body {
+  line-height: 1.75;
 }
 
 ::selection {
-  background-color: var(--color-aqua);
-  color: var(--color-ink-950);
+  background-color: var(--color-ink);
+  color: #ffffff;
 }
 
 * {
-  scrollbar-color: var(--color-neu-shadow) var(--color-neu-base);
+  scrollbar-color: var(--color-line) var(--color-surface);
   scrollbar-width: thin;
 }
 
-.hero-light-gradient {
-  background: linear-gradient(135deg, #e5e1ee 0%, #dffdff 45%, #90f3ff 100%);
+/* ── Elementos flotantes ──────────────────────────────────── */
+
+.float {
+  background: var(--color-surface);
+  border-radius: 28px;
+  box-shadow: var(--shadow-float);
 }
 
-/* Neomorfismo (skill neumorphism): MISMO base que el fondo, SIN bordes,
-   la forma la definen solo las sombras. */
-.neu-raised {
-  background: var(--color-neu-base);
-  border: none;
+.float-sm {
+  background: var(--color-surface);
   border-radius: 20px;
-  box-shadow: var(--shadow-neu-raised);
+  box-shadow: var(--shadow-float-sm);
 }
 
-.neu-pressed {
-  background: var(--color-neu-base);
-  border: none;
-  border-radius: 9999px;
-  box-shadow: var(--shadow-neu-pressed);
+.float-lg {
+  background: var(--color-surface);
+  border-radius: 36px;
+  box-shadow: var(--shadow-float-lg);
 }
 
-.neu-btn {
-  border: none;
-  box-shadow: var(--shadow-neu-btn);
-  transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+/* Píldora: nav flotante y chips */
+.float-pill {
+  background: var(--color-surface);
+  border-radius: 999px;
+  box-shadow: var(--shadow-float);
 }
 
-.neu-btn:hover {
-  filter: brightness(1.03);
+.float-hover {
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.neu-btn:active {
-  box-shadow: var(--shadow-neu-pressed);
-  transform: translateY(1px);
+.float-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-float-lg);
 }
 
-.neu-icon {
-  background: var(--color-neu-base);
-  border: none;
-  border-radius: 16px;
-  box-shadow: var(--shadow-neu-btn);
+/* Nav flotante: cápsula centrada abajo, despegada del borde */
+.float-nav {
+  background: var(--color-surface);
+  border-radius: 999px;
+  box-shadow: 0 16px 40px rgba(43, 48, 58, 0.1);
 }
 
-@keyframes cloud-color-breathe {
-  0% {
-    background-position: 0% 50%;
-    filter: drop-shadow(0 2px 14px rgba(104, 237, 198, 0.35));
-  }
-  50% {
-    background-position: 100% 50%;
-    filter: drop-shadow(0 2px 6px rgba(104, 237, 198, 0.15));
-  }
-  100% {
-    background-position: 0% 50%;
-    filter: drop-shadow(0 2px 14px rgba(104, 237, 198, 0.35));
-  }
+.float-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border-radius: 999px;
+  padding: 0.8rem 1.6rem;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease,
+    box-shadow 180ms ease;
 }
 
-.animate-cloud-gradient {
-  background-size: 250% 250%;
-  animation: cloud-color-breathe 5s ease-in-out infinite;
+.float-btn-primary {
+  background: var(--color-ink);
+  color: #ffffff;
+  box-shadow: var(--shadow-float-sm);
 }
 
-@media (scripting: enabled) {
-  .hero-enter {
-    opacity: 0;
-    transform: translateY(14px);
-    filter: blur(6px);
-  }
+.float-btn-primary:hover {
+  background: var(--color-ink-70);
+  transform: translateY(-2px);
+}
 
-  .hero-enter.is-mounted {
-    opacity: 1;
-    transform: none;
-    filter: blur(0);
-    transition:
-      opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
-      transform 700ms cubic-bezier(0.16, 1, 0.3, 1),
-      filter 700ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
+.float-btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-float-sm);
+}
 
-  .hero-enter-delay-1 {
-    transition-delay: 80ms;
-  }
+.float-btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-float);
+}
 
-  .hero-enter-delay-2 {
-    transition-delay: 160ms;
-  }
+/* Titular liviano: el contraste viene del peso, no del tamaño */
+.display-light {
+  font-weight: 200;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+
+.display-bold {
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ink-45);
+}
+
+/* Estado inicial del reveal: lo aplica JS, no CSS */
+.hero-item {
+  opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .buoyant,
   .animate-ping,
-  .animate-pulse,
-  .animate-cloud-gradient {
+  .animate-pulse {
     animation: none !important;
+    transform: none !important;
   }
 
-  .hero-enter {
-    opacity: 1;
-    transform: none;
-    filter: none;
-    transition: opacity 150ms ease;
-  }
-
-  .hero-enter.is-mounted {
-    transition: opacity 150ms ease;
+  .hero-item {
+    opacity: 1 !important;
   }
 
   * {
