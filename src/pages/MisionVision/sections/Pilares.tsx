@@ -57,8 +57,12 @@ export default function Pilares() {
           {PILLARS.map((pillar, index) => (
             <li
               key={pillar.title}
-              className="rounded-2xl border border-navy-700/70 bg-navy-900/70 p-6 backdrop-blur-sm transition hover:border-signal/50 hover:bg-navy-900"
+              className="group relative overflow-hidden rounded-2xl border border-navy-700/70 bg-navy-900/70 p-6 backdrop-blur-sm transition hover:-translate-y-1 hover:border-signal/50 hover:bg-navy-900 hover:shadow-xl hover:shadow-signal/5"
             >
+              <span
+                className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-signal transition-transform duration-300 group-hover:scale-x-100"
+                aria-hidden="true"
+              />
               <span className="font-mono text-xs text-signal">
                 {String(index + 1).padStart(2, '0')}
               </span>

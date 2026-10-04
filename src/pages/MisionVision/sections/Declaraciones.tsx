@@ -63,15 +63,21 @@ export default function Declaraciones() {
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
-          {STATEMENTS.map((item) => (
+        {/* Layout asimétrico: la Misión pesa más, la Visión se eleva como destino */}
+        <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
+          {STATEMENTS.map((item, index) => (
             <article
               key={item.id}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-navy-700/20 bg-white p-8 shadow-sm transition hover:border-signal/50 hover:shadow-xl sm:p-10"
+              className={`group relative flex flex-col overflow-hidden rounded-2xl border border-navy-700/20 bg-white shadow-sm transition hover:border-signal/50 hover:shadow-xl sm:p-10 ${
+                index === 0
+                  ? 'p-8 lg:col-span-7'
+                  : 'p-8 lg:col-span-5 lg:mt-20'
+              }`}
             >
               <div className="absolute inset-x-8 top-0 h-0.5 bg-gradient-to-r from-transparent via-signal to-transparent opacity-0 transition group-hover:opacity-100" />
+              <div className="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-signal/10 blur-3xl transition group-hover:bg-signal/20" />
 
-              <div className="flex items-center justify-between gap-4">
+              <div className="relative flex items-center justify-between gap-4">
                 <span className="font-mono text-[11px] uppercase tracking-widest text-signal">
                   {item.kicker}
                 </span>
@@ -80,13 +86,17 @@ export default function Declaraciones() {
                 </span>
               </div>
 
-              <h3 className="mt-6 font-display text-3xl font-semibold text-navy-900">
+              <h3
+                className={`relative mt-6 font-display font-semibold text-navy-900 ${
+                  index === 0 ? 'text-3xl sm:text-4xl' : 'text-3xl'
+                }`}
+              >
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm font-medium text-navy-700/80">{item.lead}</p>
-              <p className="mt-5 flex-1 leading-relaxed text-navy-700/75">{item.body}</p>
+              <p className="relative mt-2 text-sm font-medium text-navy-700/80">{item.lead}</p>
+              <p className="relative mt-5 flex-1 leading-relaxed text-navy-700/75">{item.body}</p>
 
-              <ul className="mt-8 flex flex-wrap gap-2">
+              <ul className="relative mt-8 flex flex-wrap gap-2">
                 {item.highlights.map((tag) => (
                   <li
                     key={tag}
@@ -98,6 +108,19 @@ export default function Declaraciones() {
               </ul>
             </article>
           ))}
+        </div>
+
+        {/* Eje presente → futuro */}
+        <div className="mt-14 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <span className="font-mono text-[10px] uppercase tracking-widest text-navy-700/50">
+            Presente · lo que hacemos hoy
+          </span>
+          <span className="hidden h-px w-16 bg-gradient-to-r from-transparent via-signal to-signal sm:block" />
+          <i className="bx bx-right-arrow-alt rotate-90 text-lg text-signal sm:rotate-0" aria-hidden="true" />
+          <span className="hidden h-px w-16 bg-gradient-to-r from-signal to-transparent sm:block" />
+          <span className="font-mono text-[10px] uppercase tracking-widest text-navy-700/50">
+            Futuro · lo que queremos construir
+          </span>
         </div>
       </div>
     </section>
