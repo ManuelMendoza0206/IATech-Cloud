@@ -35,10 +35,6 @@ export default function Hero() {
             </Reveal>
           </div>
 
-          <div className="col-span-full mt-12 sm:col-span-4 sm:col-start-9 sm:mt-0 sm:self-end">
-            <p className="swiss-numeral hero-item text-accent">01</p>
-            <p className="swiss-label mt-2 border-t border-ink pt-3">Documento de propósito</p>
-          </div>
         </div>
       </div>
     </section>

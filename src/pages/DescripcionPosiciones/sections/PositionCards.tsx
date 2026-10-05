@@ -20,7 +20,7 @@ const DRIVE_DOC_URL =
 export default function PositionCards({ expandedId, onToggle, cardRefs }: PositionCardsProps) {
   return (
     <section id="perfiles" className="bg-paper py-14 lg:py-20 text-ink">
-      <div className="mx-auto max-w-5xl px-6 sm:px-10">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
         
         {/* Encabezado de la Sección */}
         <div className="mb-8 flex flex-col justify-between gap-4 border-b border-ink-15 pb-4 sm:flex-row sm:items-end">
@@ -50,7 +50,7 @@ export default function PositionCards({ expandedId, onToggle, cardRefs }: Positi
                 ref={(el) => {
                   cardRefs.current[position.id] = el;
                 }}
-                className={`group relative overflow-hidden transition-all duration-200 ${ isExpanded ? 'swiss-chip' : 'swiss-cell' }`}
+                className={`group relative overflow-hidden transition-all duration-200 swiss-cell ${isExpanded ? 'ring-2 ring-accent' : ''}`}
               >
                 {/* Indicador de acento en el borde izquierdo */}
                 <div className={`absolute left-0 top-0 h-1 w-full transition-colors duration-200 lg:h-full lg:w-1 ${ isExpanded ? 'bg-accent' : 'bg-transparent group-hover:bg-accent/40' }`} />

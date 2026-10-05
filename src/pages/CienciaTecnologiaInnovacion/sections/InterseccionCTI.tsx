@@ -47,16 +47,6 @@ export function InterseccionCTI() {
             ))}
           </div>
 
-          <div className="swiss-cell mt-10 p-6">
-            <p className="font-mono text-xs uppercase tracking-widest text-accent">
-              Ejemplo integrador
-            </p>
-            <p className="mt-3 text-base sm:text-lg leading-relaxed text-ink/80">
-              Las <span className="font-semibold text-accent">vacunas</span>, donde convergen la
-              investigación científica, la producción tecnológica y la logística de
-              distribución innovadora.
-            </p>
-          </div>
         </div>
 
         <div className="relative">

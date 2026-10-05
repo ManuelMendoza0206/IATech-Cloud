@@ -24,8 +24,7 @@ export function TwoColumnLayout({
               src={imageSrc}
               alt={imageAlt}
               pending={imagePending}
-              aspect="4/3"
-              imgClassName="grayscale"
+              aspect="16/9"
               caption={false}
             />
             <p className="swiss-label mt-3 border-t border-ink-15 pt-2">{imageAlt}</p>

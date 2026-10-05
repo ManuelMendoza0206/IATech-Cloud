@@ -7,6 +7,9 @@ export interface HeroProps {
   imageAlt?: string;
   /** Qué imagen se espera, mostrado si el archivo falta. */
   imagePending?: string;
+  /** Imagen de fondo a todo el ancho, con velo para sostener el contraste del texto. */
+  backgroundSrc?: string;
+  backgroundAlt?: string;
 }
 
 export interface SectionHeaderProps {

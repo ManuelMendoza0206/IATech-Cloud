@@ -14,12 +14,30 @@ export function Hero({
   imageSrc,
   imageAlt,
   imagePending,
+  backgroundSrc,
+  backgroundAlt,
 }: HeroProps) {
   const [before, after] = highlight ? title.split(highlight) : [title];
+  const hasBackground = Boolean(backgroundSrc);
 
   return (
-    <section className="relative border-b border-ink bg-paper">
-      <div className="mx-auto max-w-7xl px-6 sm:px-10">
+    <section
+      className={`relative overflow-hidden border-b border-ink ${hasBackground ? 'bg-ink' : 'bg-paper'}`}
+    >
+      {hasBackground && (
+        <>
+          <img
+            src={backgroundSrc}
+            alt={backgroundAlt || ''}
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/45"
+            aria-hidden="true"
+          />
+        </>
+      )}
+      <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
         <div className="swiss-grid py-20 sm:py-28">
           <div className="col-span-full sm:col-span-8">
             <Reveal asHero>
@@ -28,7 +46,9 @@ export function Hero({
                 {subtitle}
               </span>
 
-              <h1 className="swiss-display hero-item mt-8 text-ink">
+              <h1
+                className={`swiss-display hero-item mt-8 ${hasBackground ? 'text-paper' : 'text-ink'}`}
+              >
                 {before}
                 {highlight && (
                   <>
@@ -39,7 +59,11 @@ export function Hero({
                 {after}
               </h1>
 
-              <p className="hero-item mt-8 max-w-xl text-base leading-relaxed text-ink-60 sm:text-lg">
+              <p
+                className={`hero-item mt-8 max-w-xl text-base leading-relaxed sm:text-lg ${
+                  hasBackground ? 'text-paper/75' : 'text-ink-60'
+                }`}
+              >
                 {description}
               </p>
             </Reveal>
@@ -64,7 +88,11 @@ export function Hero({
       <a
         href="#content-start"
         aria-label="Ir al contenido"
-        className="swiss-btn swiss-btn-secondary inline-flex items-center gap-2 border-x-0 border-b-0 px-6 py-3 text-[11px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        className={`swiss-btn inline-flex items-center gap-2 border-x-0 border-b-0 px-6 py-3 text-[11px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+          hasBackground
+            ? 'swiss-btn-primary border-paper/50'
+            : 'swiss-btn-secondary'
+        }`}
       >
         Contenido
         <i className="bx bx-down-arrow-alt text-base" aria-hidden="true" />

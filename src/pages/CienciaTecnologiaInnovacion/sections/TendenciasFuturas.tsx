@@ -43,7 +43,7 @@ export function TendenciasFuturas() {
             <img
               src="/images/cti-04.jpg"
               alt="Tendencias tecnológicas futuras"
-              className="w-full border border-ink object-cover grayscale"
+              className="w-full border border-ink object-cover"
               loading="lazy"
               onError={(event) => {
                 const el = event.currentTarget;
