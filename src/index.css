@@ -256,6 +256,13 @@ body {
   opacity: 0;
 }
 
+/* Revelado por regla: la hairline se dibuja de izquierda a derecha.
+   El estado|scaleX(0)| NO se declara aqui a proposito — lo aplica el
+   componente Reveal con `utils.set`. Si el JS no corre, la regla se ve. */
+.reveal-rule {
+  transform-origin: left center;
+}
+
 .swiss-rule-soft {
   border: 0;
   border-top: 1px solid var(--color-ink-15);
@@ -305,6 +312,10 @@ body {
     clip-path: none !important;
     transform: none !important;
     transition: none !important;
+  }
+
+  .reveal-rule {
+    transform: none !important;
   }
 
   * {

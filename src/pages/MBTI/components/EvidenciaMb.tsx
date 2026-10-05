@@ -1,4 +1,5 @@
 import { RailHeader, Sources, SourceList } from '../../../components/content';
+import { Reveal } from '../../../components/ui/Reveal';
 
 /**
  * Fiabilidad del MBTI Form M.
@@ -87,10 +88,19 @@ const SOURCES = [
   },
 ];
 
+/**
+ * La ficha técnica.
+ *
+ * El bloque se lee como una hoja de datos, no como cuatro tarjetas: la
+ * regla superior cruza de borde a borde, las cifras se alinean en la
+ * retícula y el libro de críticas es un libro mayor de dos columnas —
+ * la afirmación a la izquierda, la respuesta a la derecha. El riel de la
+ * etiqueta cae en x=0, pegado al borde.
+ */
 export function EvidenciaMbti() {
   return (
-    <section id="evidencia" className="border-b border-ink bg-paper py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-6 sm:px-10">
+    <section id="evidencia" className="relative overflow-hidden border-b border-ink bg-paper">
+      <div className="relative mx-auto max-w-7xl px-6 pt-20 sm:px-10 sm:pt-28 lg:pt-32">
         <RailHeader
           label="Evidencia"
           title="Qué mide bien y qué no"
@@ -109,35 +119,40 @@ export function EvidenciaMbti() {
             </>
           }
         />
+      </div>
 
-        {/* Cifras de la síntesis */}
-        <div className="mt-14 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+      {/* Cifras de la síntesis — regla de hoja completa */}
+      <Reveal mode="edge" className="relative mt-16 sm:mt-20">
+        <div className="border-t border-ink" aria-hidden="true" />
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-12 px-6 pt-6 sm:px-10 lg:grid-cols-4">
           {EVIDENCE.map((item) => (
-            <div key={item.label} className="swiss-figure">
-              <p className="font-display text-[clamp(1.75rem,3.5vw,2.5rem)] font-black leading-[0.9] tracking-[-0.035em] tabular-nums text-accent">
+            <div key={item.label} className="reveal-figure">
+              <p className="font-display text-[clamp(1.9rem,3.4vw,2.75rem)] font-black leading-[0.85] tracking-[-0.04em] whitespace-nowrap tabular-nums text-accent">
                 {item.value}
               </p>
-              <p className="swiss-label mt-3">{item.label}</p>
-              <p className="mt-2 max-w-[32ch] text-sm leading-relaxed text-ink-60">
-                {item.detail}
-              </p>
+              <p className="swiss-label mt-4">{item.label}</p>
+              <p className="mt-3 max-w-[32ch] text-sm leading-relaxed text-ink-60">{item.detail}</p>
             </div>
           ))}
         </div>
+      </Reveal>
 
-        {/* Críticas y respuesta */}
-        <div className="mt-16 swiss-grid gap-y-8 border-t border-ink pt-12">
-          <div className="col-span-full sm:col-span-3">
-            <p className="swiss-rail swiss-label">Críticas frecuentes</p>
-          </div>
-          <div className="col-span-full sm:col-span-9">
-            <ul className="border-t border-ink">
-              {CRITICISMS.map((item) => (
-                <li key={item.claim} className="border-b border-ink-15 py-6">
+      {/* Libro de críticas y respuesta */}
+      <div className="relative mt-20 sm:mt-24">
+        <div className="border-l-2 border-ink py-1 pl-5 sm:pl-7">
+          <p className="swiss-label">Críticas frecuentes</p>
+        </div>
+
+        <div className="mt-8 border-t border-ink" aria-hidden="true" />
+
+        <Reveal className="relative">
+          <ul className="mx-auto max-w-7xl px-6 sm:px-10">
+            {CRITICISMS.map((item) => (
+              <li key={item.claim} className="swiss-grid gap-y-4 border-b border-ink-15 py-7">
+                <div className="col-span-full sm:col-span-4">
                   <p className="font-display text-lg font-bold leading-tight tracking-[-0.02em] text-ink sm:text-xl">
                     «{item.claim}»
                   </p>
-                  <p className="mt-3 max-w-[66ch] leading-relaxed text-ink-60">{item.response}</p>
                   <p className="mt-3">
                     <a
                       href={item.href}
@@ -149,12 +164,18 @@ export function EvidenciaMbti() {
                       <i className="bx bx-link-external text-[0.9em] leading-none" aria-hidden="true" />
                     </a>
                   </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+                </div>
 
+                <p className="col-span-full max-w-[64ch] leading-relaxed text-ink-60 sm:col-span-8">
+                  {item.response}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 pb-24 sm:px-10 sm:pb-28">
         <Sources>
           <SourceList items={SOURCES} />
         </Sources>
