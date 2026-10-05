@@ -41,33 +41,32 @@ export default function Capacidades() {
   return (
     <section
       id="capacidades"
-      className="bg-mist py-20 sm:py-28"
-      style={{ contentVisibility: 'auto', containIntrinsicSize: '600px' }}
+      className="bg-paper py-20 sm:py-28"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <h2 className="font-display text-3xl leading-tight text-navy-900 sm:text-4xl">
+          <h2 className="reveal font-display text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
             Capacidades del área
           </h2>
-          <p className="max-w-xl text-sm leading-relaxed text-navy-700/80 sm:text-base">
+          <p className="reveal max-w-xl text-sm leading-relaxed text-ink-60 sm:text-base">
             Una sola plataforma bajo el capó de cada solución médica: de la estrategia
             a la operación en producción.
           </p>
         </div>
 
-        <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {CAPABILITIES.map((cap) => (
             <li
               key={cap.title}
-              className="group rounded-2xl border border-navy-700/10 bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:border-signal/40 hover:shadow-[0_16px_32px_rgba(5,11,24,0.10)]"
+              className="reveal swiss-cell group p-6 transition-all duration-200 hover:-translate-y-1"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-signal/10 text-xl text-signal transition-colors duration-200 group-hover:bg-signal group-hover:text-navy-950">
+              <span className="swiss-icon flex h-11 w-11 items-center justify-center text-xl text-accent transition-colors duration-200 group-hover:bg-accent group-hover:text-white">
                 <i className={`bx ${cap.icon}`} aria-hidden="true" />
               </span>
-              <h3 className="mt-4 font-display text-lg font-semibold leading-tight text-navy-900">
+              <h3 className="mt-4 font-display text-lg font-extrabold leading-tight text-ink">
                 {cap.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-navy-700/80">
+              <p className="mt-2 text-sm leading-relaxed text-ink-60">
                 {cap.description}
               </p>
             </li>

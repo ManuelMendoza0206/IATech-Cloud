@@ -12,7 +12,7 @@ const DATA: Politica[] = [
 
 export function PoliticasPublicas() {
   return (
-    <section className="bg-mist py-16 sm:py-20">
+    <section className="bg-paper py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="06"
@@ -24,11 +24,11 @@ export function PoliticasPublicas() {
           {DATA.map((p) => (
             <div
               key={p.num}
-              className="group relative overflow-hidden rounded-2xl border border-navy-900/10 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+              className="swiss-cell group relative overflow-hidden p-6 transition-shadow"
             >
-              <span className="font-mono text-4xl font-bold text-signal/20">{p.num}</span>
-              <p className="mt-3 font-display text-xl text-navy-900">{p.title}</p>
-              <p className="mt-2 text-base leading-relaxed text-navy-700/70">{p.text}</p>
+              <span className="font-mono text-4xl font-bold text-accent/20">{p.num}</span>
+              <p className="mt-3 font-display text-xl text-ink">{p.title}</p>
+              <p className="mt-2 text-base leading-relaxed text-ink-60/70">{p.text}</p>
             </div>
           ))}
         </div>

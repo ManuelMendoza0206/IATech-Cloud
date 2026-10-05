@@ -1,3 +1,4 @@
+import { Reveal } from '../../../components/ui/Reveal';
 import TeamCard from './TeamCard';
 
 const TEAM = [
@@ -45,7 +46,7 @@ const TEAM = [
 
 export default function TeamSection() {
   return (
-    <section id="equipo" className="relative overflow-hidden bg-mist py-16 sm:py-20 lg:py-24">
+    <section id="equipo" className="relative overflow-hidden bg-paper pb-24 pt-20 sm:pb-28 sm:pt-28 lg:pt-32">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.035]"
         style={{
@@ -54,22 +55,22 @@ export default function TeamSection() {
         }}
       />
 
-      <div className="relative mx-auto max-w-6xl px-6 sm:px-10">
-        <div className="mx-auto max-w-[60ch] text-center">
-          <h2 className="font-display text-3xl font-semibold tracking-[-0.02em] text-navy-950 sm:text-[2.35rem] sm:leading-none">
-            Nuestros perfiles MBTI
-          </h2>
-          <p className="mx-auto mt-4 max-w-[52ch] text-[15px] leading-relaxed text-navy-700/65">
-            Cuatro preferencias distintas, un mismo objetivo: mantener la infraestructura cloud de IATECH funcionando
-            sin fallas.
+      <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
+        <div className="max-w-[62ch] border-b border-ink pb-10">
+          <h2 className="swiss-display-sm max-w-[18ch] text-ink">Nuestros perfiles MBTI</h2>
+          <p className="mt-5 max-w-[56ch] text-base leading-relaxed text-ink-60 sm:text-lg">
+            Cuatro preferencias distintas, un mismo objetivo: mantener la infraestructura cloud de
+            IATECH funcionando sin fallas.
           </p>
         </div>
 
-        <div className="mx-auto mt-10 flex max-w-4xl flex-col gap-5 sm:mt-12 sm:gap-6">
-          {TEAM.map((member) => (
-            <TeamCard key={member.type} {...member} />
-          ))}
-        </div>
+        <Reveal stagger className="relative">
+          <div className="mt-10 flex flex-col gap-5 sm:mt-12 sm:gap-6">
+            {TEAM.map((member) => (
+              <TeamCard key={member.type} {...member} />
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -7,4 +7,5 @@ export { Mecanismos } from './Mecanismos';
 export { Salidas } from './Salidas';
 export { Resumen } from './Resumen';
 export { Video } from './Video';
+export { NormasIdef0 } from './NormasIdef0';
 export { default as SectionNav } from './SectionNav';

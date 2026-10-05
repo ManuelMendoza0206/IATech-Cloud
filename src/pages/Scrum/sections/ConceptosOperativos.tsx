@@ -22,8 +22,9 @@ const CONCEPTOS = [
 export function ConceptosOperativos() {
   return (
     <TwoColumnLayout
-      imageSrc="https://insideproduct.co/wp-content/uploads/2025/04/refinement-board.png"
+      imageSrc="/images/scrum-08.jpg"
       imageAlt="Board de refinamiento con historias de usuario y criterios de aceptación"
+      imagePending="Fotografía de un tablero de refinamiento del backlog: tarjetas de historia de usuario ordenadas en columnas, con anotaciones manuscritas."
       imagePosition="right"
       bg="mist"
       id="conceptos"
@@ -36,19 +37,19 @@ export function ConceptosOperativos() {
       <div className="mt-8 space-y-6">
         {CONCEPTOS.map((c) => (
           <div key={c.title} className="flex items-start gap-4">
-            <span className="mt-1 h-3 w-3 shrink-0 rounded-full bg-signal" />
+            <span className="mt-1 h-3 w-3 shrink-0 bg-accent" />
             <div>
-              <p className="font-display text-base text-navy-900">{c.title}</p>
-              <p className="mt-1 text-sm leading-relaxed text-navy-700/70">{c.text}</p>
+              <p className="font-display text-base text-ink">{c.title}</p>
+              <p className="mt-1 text-sm leading-relaxed text-ink-60/70">{c.text}</p>
             </div>
           </div>
         ))}
       </div>
-      <div className="mt-8 rounded-xl border border-navy-900/10 bg-white p-5 shadow-sm">
-        <p className="font-mono text-xs uppercase tracking-widest text-signal">Tip práctico</p>
-        <p className="mt-2 text-sm text-navy-700/70">
+      <div className="swiss-cell mt-8 p-5">
+        <p className="font-mono text-xs uppercase tracking-widest text-accent">Tip práctico</p>
+        <p className="mt-2 text-sm text-ink-60/70">
           Refinar el Backlog cada Sprint evita que el Planning se vuelva una sesión de descubrimiento. La
-          Velocity es una brújula del equipo, <span className="font-semibold text-navy-900">no un KPI de productividad</span>.
+          Velocity es una brújula del equipo, <span className="font-semibold text-ink">no un KPI de productividad</span>.
         </p>
       </div>
     </TwoColumnLayout>

@@ -2,17 +2,17 @@ import { SectionHeader } from '../../../components/content';
 import type { Herramienta } from '../types';
 
 const DATA: Herramienta[] = [
-  { title: 'Gestión de proyectos', desc: 'Plataformas de software para planificar, asignar recursos y controlar avances en tiempo real.', color: 'border-signal' },
-  { title: 'Monitorización y Service Desk', desc: 'Supervisión de infraestructura, alertas proactivas y soporte técnico operativo continuo.', color: 'border-navy-700' },
-  { title: 'Analítica de datos', desc: 'Plataformas de Business Intelligence e IA para decisiones informadas y predictivas.', color: 'border-signal' },
-  { title: 'Seguridad', desc: 'Control de accesos, gestión de riesgos, respaldo y protección integral de activos.', color: 'border-navy-700' },
-  { title: 'Automatización ITSM', desc: 'Flujos automáticos de tickets, cambios y despliegues para reducir errores manuales.', color: 'border-signal' },
-  { title: 'Colaboración DevOps', desc: 'Integración entre desarrollo y operaciones con CI/CD, observabilidad y entrega continua.', color: 'border-navy-700' },
+  { title: 'Gestión de proyectos', desc: 'Plataformas de software para planificar, asignar recursos y controlar avances en tiempo real.', color: 'border-accent' },
+  { title: 'Monitorización y Service Desk', desc: 'Supervisión de infraestructura, alertas proactivas y soporte técnico operativo continuo.', color: 'border-steel' },
+  { title: 'Analítica de datos', desc: 'Plataformas de Business Intelligence e IA para decisiones informadas y predictivas.', color: 'border-accent' },
+  { title: 'Seguridad', desc: 'Control de accesos, gestión de riesgos, respaldo y protección integral de activos.', color: 'border-steel' },
+  { title: 'Automatización ITSM', desc: 'Flujos automáticos de tickets, cambios y despliegues para reducir errores manuales.', color: 'border-accent' },
+  { title: 'Colaboración DevOps', desc: 'Integración entre desarrollo y operaciones con CI/CD, observabilidad y entrega continua.', color: 'border-steel' },
 ];
 
 export function HerramientasSoporte() {
   return (
-    <section className="bg-navy-900 py-16 sm:py-20">
+    <section className="bg-paper py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="04"
@@ -25,10 +25,10 @@ export function HerramientasSoporte() {
           {DATA.map((h) => (
             <div
               key={h.title}
-              className={`rounded-2xl border-l-2 ${h.color} bg-white/5 p-6 backdrop-blur-sm`}
+              className={`border-l border-ink-15-2 ${h.color} bg-paper/5 p-6 backdrop-blur-sm`}
             >
-              <p className="font-display text-xl text-mist">{h.title}</p>
-              <p className="mt-2 text-base sm:text-lg leading-relaxed text-mist/60">{h.desc}</p>
+              <p className="font-display text-xl text-ink">{h.title}</p>
+              <p className="mt-2 text-base sm:text-lg leading-relaxed text-ink/60">{h.desc}</p>
             </div>
           ))}
         </div>

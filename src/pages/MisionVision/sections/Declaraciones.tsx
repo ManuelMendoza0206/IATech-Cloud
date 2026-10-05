@@ -1,7 +1,11 @@
+import { useEffect, useRef } from 'react';
+import { createScope, createTimeline, onScroll, stagger, utils } from 'animejs';
+
 const STATEMENTS = [
   {
     id: 'mision',
-    kicker: '01 · Misión',
+    numeral: '01',
+    kicker: 'Misión',
     title: 'Misión',
     lead: 'Infraestructura cloud para que la atención clínica no se detenga.',
     body: 'Proveer la infraestructura en la nube escalable, resiliente y de alta disponibilidad para el ecosistema de IATECH, garantizando la continuidad operativa de nuestras soluciones de software médico. Nos comprometemos a habilitar la colaboración clínica y el acceso a la información de salud, trabajando en estrecha sinergia y colaboración con el resto de áreas para facilitar un entorno tecnológico robusto, integrado y confiable.',
@@ -11,7 +15,7 @@ const STATEMENTS = [
       'Sinergia entre áreas',
     ],
     icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.75">
+      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.75">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 2" />
       </svg>
@@ -19,7 +23,8 @@ const STATEMENTS = [
   },
   {
     id: 'vision',
-    kicker: '02 · Visión',
+    numeral: '02',
+    kicker: 'Visión',
     title: 'Visión',
     lead: 'Excelencia técnica que redefine la experiencia clínica en la nube.',
     body: 'Ser el referente de excelencia técnica en la optimización y despliegue de los servicios basados en la nube de IATECH, garantizando que nuestras soluciones médicas alcancen el más alto rendimiento, velocidad y disponibilidad operativa. Aspiramos a redefinir la experiencia clínica facilitando un acceso uniforme a la información de salud, implementando arquitecturas resilientes que aseguren la continuidad del servicio en todo momento y maximicen el valor de la inversión de nuestros socios mediante infraestructuras digitales eficientes y sostenibles.',
@@ -29,7 +34,7 @@ const STATEMENTS = [
       'Infraestructura sostenible',
     ],
     icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.75">
+      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.75">
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12s3.75-7.5 9.75-7.5S21.75 12 21.75 12s-3.75 7.5-9.75 7.5S2.25 12 2.25 12z" />
         <circle cx="12" cy="12" r="3" />
       </svg>
@@ -37,70 +42,149 @@ const STATEMENTS = [
   },
 ];
 
+/** Selectores que la secuencia revela, en orden de entrada. */
+const QUERY = {
+  rule: '.stmt-rule',
+  numeral: '.stmt-numeral',
+  kicker: '.stmt-kicker',
+  icon: '.stmt-icon',
+  title: '.stmt-title',
+  lead: '.stmt-lead',
+  body: '.stmt-body',
+  chips: '.stmt-chip',
+};
+
 export default function Declaraciones() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  /**
+   * Cada declaración se imprime: el filete de acento entra de izquierda a
+   * derecha, el numeral cae desde arriba, el titular se revela por corte
+   * vertical, el lead entra como un barrido y el cuerpo y los chips lo siguen.
+   *
+   * El estado inicial lo aplica JS con `utils.set`, no CSS: si el script no
+   * corre, el texto queda VISIBLE en lugar de atrapado en opacity 0.
+   */
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const scope = createScope({ root: section }).add(() => {
+      section.querySelectorAll<HTMLElement>('.stmt').forEach((block) => {
+        const part = (key: keyof typeof QUERY) => block.querySelector<HTMLElement>(QUERY[key]);
+        const chips = Array.from(block.querySelectorAll<HTMLElement>(QUERY.chips));
+
+        const rule = part('rule');
+        const numeral = part('numeral');
+        const kicker = part('kicker');
+        const icon = part('icon');
+        const title = part('title');
+        const lead = part('lead');
+        const body = part('body');
+
+        if (!rule || !numeral || !kicker || !title || !lead || !body) return;
+
+        utils.set(rule, { scaleX: 0 });
+        utils.set([numeral, kicker, title, lead, body], { opacity: 0 });
+        utils.set(chips, { opacity: 0 });
+        if (icon) utils.set(icon, { opacity: 0, rotate: -35 });
+
+        createTimeline({
+          defaults: { ease: 'outExpo' },
+          autoplay: onScroll({ target: block, enter: 'bottom 18%' }),
+        })
+          .add(rule, { scaleX: [0, 1], duration: 620 }, 0)
+          .add(numeral, { opacity: [0, 1], translateY: [-20, 0], duration: 520 }, 90)
+          .add(kicker, { opacity: [0, 1], translateX: [-10, 0], duration: 420 }, 160)
+          .add(title, {
+            opacity: [0, 1],
+            clipPath: ['inset(0 0 100% 0)', 'inset(0 0 0% 0)'],
+            duration: 760,
+          }, 200)
+          .add(
+            lead,
+            {
+              opacity: [0, 1],
+              clipPath: ['inset(0 100% 0 0)', 'inset(0 0% 0 0)'],
+              duration: 720,
+            },
+            340
+          )
+          .add(body, { opacity: [0, 1], translateY: [14, 0], duration: 640 }, 460)
+          .add(
+            chips,
+            { opacity: [0, 1], translateY: [10, 0], delay: stagger(70), duration: 420 },
+            620
+          );
+
+        if (icon) {
+          createTimeline({
+            defaults: { ease: 'outExpo' },
+            autoplay: onScroll({ target: block, enter: 'bottom 18%' }),
+          }).add(icon, { opacity: [0, 1], rotate: [0, 0], duration: 520 }, 100);
+        }
+      });
+    });
+
+    return () => scope.revert();
+  }, []);
+
   return (
-    <section id="declaraciones" className="relative overflow-hidden bg-white py-20 sm:py-28">
+    <section id="declaraciones" ref={sectionRef} className="relative overflow-hidden bg-paper py-20 sm:py-28">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.035]"
         style={{
           backgroundImage:
-            'linear-gradient(var(--color-navy-950, #050b18) 1px, transparent 1px), linear-gradient(to right, var(--color-navy-950, #050b18) 1px, transparent 1px)',
+            'linear-gradient(var(--color-steel, #90bede) 1px, transparent 1px), linear-gradient(to right, var(--color-steel, #90bede) 1px, transparent 1px)',
           backgroundSize: '32px 32px',
         }}
       />
 
       <div className="relative mx-auto max-w-6xl px-6 sm:px-10">
-        <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
-          <span className="font-mono text-xs uppercase tracking-widest text-navy-700/70">
-            Declaraciones
-          </span>
-          <h2 className="mt-3 font-display text-3xl font-semibold text-navy-900 sm:text-4xl">
+        <div className="max-w-3xl border-l-2 border-accent pl-6">
+          <span className="swiss-label text-accent">Declaraciones</span>
+          <h2 className="swiss-display-sm mt-5 text-ink">
             Lo que hacemos y hacia dónde vamos
           </h2>
-          <p className="mt-4 text-navy-700/75">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-60 sm:text-lg">
             Dos compromisos que orientan cada arquitectura, cada despliegue y cada
             integración del ecosistema IATECH.
           </p>
         </div>
 
-        {/* Layout asimétrico: la Misión pesa más, la Visión se eleva como destino */}
-        <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-          {STATEMENTS.map((item, index) => (
-            <article
-              key={item.id}
-              className={`group relative flex flex-col overflow-hidden rounded-2xl border border-navy-700/20 bg-white shadow-sm transition hover:border-signal/50 hover:shadow-xl sm:p-10 ${
-                index === 0
-                  ? 'p-8 lg:col-span-7'
-                  : 'p-8 lg:col-span-5 lg:mt-20'
-              }`}
-            >
-              <div className="absolute inset-x-8 top-0 h-0.5 bg-gradient-to-r from-transparent via-signal to-transparent opacity-0 transition group-hover:opacity-100" />
-              <div className="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-signal/10 blur-3xl transition group-hover:bg-signal/20" />
+        <div className="mt-16 flex flex-col gap-10 sm:mt-20 sm:gap-12">
+          {STATEMENTS.map((item) => (
+            <article key={item.id} className="stmt swiss-cell relative overflow-hidden p-8 sm:p-12">
+              <span className="stmt-rule absolute inset-x-0 top-0 h-[3px] origin-left bg-accent" aria-hidden="true" />
 
-              <div className="relative flex items-center justify-between gap-4">
-                <span className="font-mono text-[11px] uppercase tracking-widest text-signal">
-                  {item.kicker}
-                </span>
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-signal/20 bg-navy-950 text-signal">
+              <div className="flex flex-wrap items-start justify-between gap-6">
+                <div className="flex items-baseline gap-4">
+                  <span className="stmt-numeral font-display text-[clamp(3rem,6vw,4.5rem)] font-black leading-none tracking-[-0.04em] text-accent">
+                    {item.numeral}
+                  </span>
+                  <span className="stmt-kicker swiss-label">{item.kicker}</span>
+                </div>
+                <span className="stmt-icon swiss-icon flex h-14 w-14 shrink-0 items-center justify-center text-accent">
                   {item.icon}
                 </span>
               </div>
 
-              <h3
-                className={`relative mt-6 font-display font-semibold text-navy-900 ${
-                  index === 0 ? 'text-3xl sm:text-4xl' : 'text-3xl'
-                }`}
-              >
-                {item.title}
-              </h3>
-              <p className="relative mt-2 text-sm font-medium text-navy-700/80">{item.lead}</p>
-              <p className="relative mt-5 flex-1 leading-relaxed text-navy-700/75">{item.body}</p>
+              <h3 className="stmt-title swiss-display-sm mt-10 text-ink">{item.title}</h3>
 
-              <ul className="relative mt-8 flex flex-wrap gap-2">
+              <p className="stmt-lead mt-5 max-w-[38ch] text-xl font-semibold leading-snug tracking-[-0.02em] text-ink sm:text-2xl">
+                {item.lead}
+              </p>
+
+              <p className="stmt-body mt-8 max-w-[68ch] text-base leading-relaxed text-ink-60/85 sm:text-lg">
+                {item.body}
+              </p>
+
+              <ul className="mt-10 flex flex-wrap gap-2">
                 {item.highlights.map((tag) => (
                   <li
                     key={tag}
-                    className="rounded-full border border-navy-700/15 bg-mist px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-navy-900"
+                    className="stmt-chip swiss-chip px-3.5 py-1.5 font-mono text-[10px] uppercase tracking-wider"
                   >
                     {tag}
                   </li>
@@ -108,19 +192,6 @@ export default function Declaraciones() {
               </ul>
             </article>
           ))}
-        </div>
-
-        {/* Eje presente → futuro */}
-        <div className="mt-14 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-          <span className="font-mono text-[10px] uppercase tracking-widest text-navy-700/50">
-            Presente · lo que hacemos hoy
-          </span>
-          <span className="hidden h-px w-16 bg-gradient-to-r from-transparent via-signal to-signal sm:block" />
-          <i className="bx bx-right-arrow-alt rotate-90 text-lg text-signal sm:rotate-0" aria-hidden="true" />
-          <span className="hidden h-px w-16 bg-gradient-to-r from-signal to-transparent sm:block" />
-          <span className="font-mono text-[10px] uppercase tracking-widest text-navy-700/50">
-            Futuro · lo que queremos construir
-          </span>
         </div>
       </div>
     </section>

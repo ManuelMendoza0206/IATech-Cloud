@@ -2,16 +2,27 @@ import Hero from './sections/Hero';
 import Presentacion from './sections/Presentacion';
 import Capacidades from './sections/Capacidades';
 import Numeros from './sections/Numeros';
+import MetricasDora from './sections/MetricasDora';
 import Explorar from './sections/Explorar';
+import { Reveal } from '../../components/ui/Reveal';
 
 export default function Home() {
   return (
-    <div>
+    <div className="font-body">
       <Hero />
-      <Presentacion />
-      <Capacidades />
-      <Numeros />
-      <Explorar />
+      <Reveal stagger>
+        <Presentacion />
+      </Reveal>
+      <Reveal stagger>
+        <Capacidades />
+      </Reveal>
+      <Reveal stagger>
+        <Numeros />
+      </Reveal>
+      <MetricasDora />
+      <Reveal stagger>
+        <Explorar />
+      </Reveal>
     </div>
   );
 }

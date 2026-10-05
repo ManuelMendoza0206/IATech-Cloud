@@ -12,7 +12,7 @@ const TAGS = ['ITIL', 'COBIT', 'Ágiles', 'Mejora Continua'];
 
 export function ProcesosGobernanza() {
   return (
-    <section className="bg-white py-16 sm:py-20">
+    <section className="bg-paper py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-start">
           <div>
@@ -22,10 +22,10 @@ export function ProcesosGobernanza() {
               {GOBERNANZA.map((g) => (
                 <div
                   key={g.title}
-                  className="rounded-xl border border-navy-900/10 p-5"
+                  className="swiss-cell reveal p-6"
                 >
-                  <p className="font-display text-lg sm:text-xl text-navy-900">{g.title}</p>
-                  <p className="mt-1 text-base sm:text-lg leading-relaxed text-navy-700/70">{g.text}</p>
+                  <p className="font-display text-lg sm:text-xl text-ink">{g.title}</p>
+                  <p className="mt-1 text-base sm:text-lg leading-relaxed text-ink-60">{g.text}</p>
                 </div>
               ))}
             </div>
@@ -34,7 +34,7 @@ export function ProcesosGobernanza() {
               {TAGS.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-navy-900/10 px-4 py-1.5 font-mono text-xs text-navy-700/70"
+                  className="border border-ink-15 px-4 py-1.5 font-mono text-xs text-ink-60/70"
                 >
                   {tag}
                 </span>

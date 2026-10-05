@@ -1,30 +1,25 @@
 import type { SectionHeaderProps } from './types';
+import { Reveal } from '../ui/Reveal';
 
-export function SectionHeader({
-  number,
-  title,
-  description,
-  variant = 'light',
-  showNumber = true,
-}: SectionHeaderProps) {
-  const labelColor = variant === 'dark' ? 'text-signal' : 'text-navy-700/70';
-  const titleColor = variant === 'dark' ? 'text-mist' : 'text-navy-900';
-
+export function SectionHeader({ number, title, description, showNumber = true }: SectionHeaderProps) {
   return (
-    <div className="max-w-3xl">
-      {showNumber && (
-        <span className={`font-mono text-xs uppercase tracking-widest ${labelColor}`}>
-          Sección {number}
-        </span>
-      )}
-      <h2 className={`font-display text-3xl ${titleColor} sm:text-4xl`}>
-        {title}
-      </h2>
-      {description && (
-        <p className={`mt-4 text-base sm:text-lg leading-relaxed ${variant === 'dark' ? 'text-mist/60' : 'text-navy-700/80'}`}>
-          {description}
-        </p>
-      )}
-    </div>
+    <Reveal>
+      <div className="reveal max-w-3xl">
+        {showNumber && (
+          <div className="flex items-baseline gap-4 border-b border-ink pb-3">
+            <span className="font-display text-5xl font-black leading-none tracking-tight text-accent">
+              {number}
+            </span>
+            <span className="swiss-label">Sección</span>
+          </div>
+        )}
+        <h2 className={`swiss-display-sm text-ink ${showNumber ? 'mt-6' : ''}`}>{title}</h2>
+        {description && (
+          <p className="mt-6 max-w-xl border-l-2 border-ink-15 pl-5 text-base leading-relaxed text-ink-60 sm:text-lg">
+            {description}
+          </p>
+        )}
+      </div>
+    </Reveal>
   );
 }

@@ -1,52 +1,102 @@
 import type { HeroProps } from './types';
+import { Reveal } from '../ui/Reveal';
+import { Photo } from './Photo';
 
-export function Hero({ subtitle, title, highlight, description, author, imageSrc, imageAlt }: HeroProps) {
+/**
+ * Hero Swiss: tipografía masiva al Flush left, columna de contenido
+ * indentada sobre el grid y columna vacía como espacio negativo estructural.
+ */
+export function Hero({
+  subtitle,
+  title,
+  highlight,
+  description,
+  imageSrc,
+  imageAlt,
+  imagePending,
+  backgroundSrc,
+  backgroundAlt,
+}: HeroProps) {
   const [before, after] = highlight ? title.split(highlight) : [title];
+  const hasBackground = Boolean(backgroundSrc);
 
   return (
-    <section className={`relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28 ${imageSrc ? '' : 'bg-navy-900'}`}>
-      {imageSrc && (
-        <img
-          src={imageSrc}
-          alt={imageAlt || ''}
-          className="absolute inset-0 -z-20 h-full w-full object-cover"
-        />
+    <section
+      className={`relative overflow-hidden border-b border-ink ${hasBackground ? 'bg-ink' : 'bg-paper'}`}
+    >
+      {hasBackground && (
+        <>
+          <img
+            src={backgroundSrc}
+            alt={backgroundAlt || ''}
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/45"
+            aria-hidden="true"
+          />
+        </>
       )}
-      <div className={`absolute inset-0 ${imageSrc ? 'bg-navy-950/60' : 'bg-navy-950/70 mix-blend-multiply'}`} />
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-signal/30 blur-3xl" />
-        <div className="absolute -bottom-20 -right-20 h-[300px] w-[300px] rounded-full bg-signal/20 blur-3xl" />
-      </div>
-
       <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
-        <span className="font-mono text-xs uppercase tracking-widest text-signal">
-          {subtitle}
-        </span>
-        <h1 className="mt-4 font-display text-4xl text-mist sm:text-5xl lg:text-6xl">
-          {before}
-          {highlight && (
-            <>
-              <br />
-              <span className="text-signal">{highlight}</span>
-            </>
+        <div className="swiss-grid py-20 sm:py-28">
+          <div className="col-span-full sm:col-span-8">
+            <Reveal asHero>
+              <span className="swiss-label hero-item flex items-center gap-3 text-accent">
+                <span className="inline-block h-2 w-8 bg-accent" aria-hidden="true" />
+                {subtitle}
+              </span>
+
+              <h1
+                className={`swiss-display hero-item mt-8 ${hasBackground ? 'text-paper' : 'text-ink'}`}
+              >
+                {before}
+                {highlight && (
+                  <>
+                    {' '}
+                    <span className="text-accent">{highlight}</span>
+                  </>
+                )}
+                {after}
+              </h1>
+
+              <p
+                className={`hero-item mt-8 max-w-xl text-base leading-relaxed sm:text-lg ${
+                  hasBackground ? 'text-paper/75' : 'text-ink-60'
+                }`}
+              >
+                {description}
+              </p>
+            </Reveal>
+          </div>
+
+          {imageSrc && (
+            <div className="hero-item col-span-full mt-12 sm:col-span-4 sm:mt-0 sm:self-end">
+              <Photo
+                src={imageSrc}
+                alt={imageAlt || ''}
+                pending={imagePending}
+                aspect="4/3"
+                imgClassName="grayscale"
+                caption={false}
+              />
+              <p className="swiss-label mt-2 border-t border-ink-15 pt-2">{imageAlt}</p>
+            </div>
           )}
-          {after}
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg text-mist/70">{description}</p>
-        {author && (
-          <p className="mt-2 font-mono text-sm text-mist/50">Autor: {author}</p>
-        )}
+        </div>
       </div>
 
-      <div className="flex justify-center mt-12">
-        <a
-          href="#content-start"
-          aria-label="Ir al contenido"
-          className="animate-bounce text-signal/70 transition hover:text-signal"
-        >
-          <i className="bx bx-chevrons-down text-4xl" />
-        </a>
-      </div>
+      <a
+        href="#content-start"
+        aria-label="Ir al contenido"
+        className={`swiss-btn inline-flex items-center gap-2 border-x-0 border-b-0 px-6 py-3 text-[11px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+          hasBackground
+            ? 'swiss-btn-primary border-paper/50'
+            : 'swiss-btn-secondary'
+        }`}
+      >
+        Contenido
+        <i className="bx bx-down-arrow-alt text-base" aria-hidden="true" />
+      </a>
     </section>
   );
 }

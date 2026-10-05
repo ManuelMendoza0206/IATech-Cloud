@@ -28,7 +28,7 @@ function LazyPlayer({ id, title }: { id: string; title: string }) {
   const [thumbError, setThumbError] = useState(false);
 
   return (
-    <div className="relative aspect-video overflow-hidden rounded-2xl border border-navy-900/15 bg-navy-950 shadow-xl">
+    <div className="relative aspect-video overflow-hidden border border-ink-15 bg-ink">
       {playing ? (
         <iframe
           src={`https://www.youtube.com/embed/${id}?autoplay=1&rel=0`}
@@ -42,7 +42,7 @@ function LazyPlayer({ id, title }: { id: string; title: string }) {
           type="button"
           onClick={() => setPlaying(true)}
           aria-label={`Reproducir: ${title}`}
-          className="group absolute inset-0 h-full w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
+          className="group absolute inset-0 h-full w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
         >
           {!thumbError && (
             <img
@@ -54,9 +54,9 @@ function LazyPlayer({ id, title }: { id: string; title: string }) {
               className="absolute inset-0 h-full w-full object-cover opacity-60 transition group-hover:opacity-75"
             />
           )}
-          <span className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
+          <span className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
           <span className="absolute inset-0 flex items-center justify-center">
-            <span className="flex h-16 w-16 items-center justify-center rounded-full bg-signal text-navy-950 shadow-[0_8px_24px_rgba(56,214,200,0.4)] transition group-hover:scale-110">
+            <span className="flex h-16 w-16 items-center justify-center bg-accent text-paper transition group-hover:bg-ink">
               <i className="bx bx-play text-3xl" aria-hidden="true" />
             </span>
           </span>
@@ -68,13 +68,13 @@ function LazyPlayer({ id, title }: { id: string; title: string }) {
 
 export function Video() {
   return (
-    <section className="bg-white py-20 sm:py-28">
+    <section className="bg-surface py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <div className="max-w-3xl">
-          <h2 className="font-display text-3xl text-navy-900 sm:text-4xl">
+          <h2 className="font-display text-3xl text-ink sm:text-4xl">
             BPMN en video
           </h2>
-          <p className="mt-5 leading-relaxed text-navy-700/80">
+          <p className="mt-5 leading-relaxed text-ink-60">
             Dos piezas complementarias: la primera introduce el método y la segunda profundiza en
             la notación. Los reproductores no se descargan hasta que se piden.
           </p>
@@ -84,22 +84,22 @@ export function Video() {
           {VIDEOS.map((v) => (
             <div key={v.id}>
               <LazyPlayer id={v.id} title={v.title} />
-              <h3 className="mt-5 font-display text-lg font-semibold text-navy-900">{v.title}</h3>
+              <h3 className="mt-5 font-display text-lg font-semibold text-ink">{v.title}</h3>
               <ul className="mt-3 space-y-2">
                 {v.points.map((p) => (
                   <li key={p} className="flex items-start gap-3">
-                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-signal" aria-hidden="true" />
-                    <span className="text-sm leading-relaxed text-navy-700/80">{p}</span>
+                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                    <span className="text-sm leading-relaxed text-ink-60">{p}</span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-3 text-sm text-navy-700/60">
+              <p className="mt-3 text-sm text-ink-60">
                 Fuente:{' '}
                 <a
                   href={v.watch}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline decoration-signal underline-offset-4 hover:text-navy-900"
+                  className="underline decoration-signal underline-offset-4 hover:text-ink"
                 >
                   Ver en YouTube
                 </a>

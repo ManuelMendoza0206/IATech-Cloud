@@ -3,7 +3,7 @@ import { ARROW_GROUPS, RESUMEN_ROWS } from '../data/diagram';
 
 export function Resumen() {
   return (
-    <section className="bg-mist py-20 sm:py-28">
+    <section className="bg-paper py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="09"
@@ -11,11 +11,11 @@ export function Resumen() {
           description="La misma información del diagrama, ordenada por responsabilidad. Esta vista es la que se usa para validar el alcance con las áreas."
         />
 
-        <div className="mt-10 overflow-x-auto rounded-2xl border border-navy-900/10 bg-white shadow-sm">
+        <div className="swiss-cell mt-10 overflow-x-auto">
           <table className="w-full min-w-[46rem] border-collapse text-left">
             <caption className="sr-only">Comparación de los cuatro tipos de flecha del diagrama IDEF0</caption>
             <thead>
-              <tr className="bg-navy-950 text-mist">
+              <tr className="bg-paper text-ink">
                 <th scope="col" className="px-5 py-3.5 font-mono text-[11px] uppercase tracking-widest">
                   Origen
                 </th>
@@ -39,26 +39,26 @@ export function Resumen() {
                 return (
                   <tr
                     key={row.kind}
-                    className="border-b border-navy-900/10 last:border-0 transition hover:bg-mist/40"
+                    className="border-b border-ink-15 last:border-0 transition hover:bg-paper/40"
                   >
-                    <td className="whitespace-nowrap px-5 py-4 font-mono text-xs uppercase tracking-wider text-navy-700/70">
+                    <td className="whitespace-nowrap px-5 py-4 font-mono text-xs uppercase tracking-wider text-ink-60/70">
                       {row.origin}
                     </td>
                     <td className="px-5 py-4">
                       <span
-                        className="inline-flex items-center rounded-full px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-wider text-white"
+                        className="inline-flex items-center px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-wider text-white"
                         style={{ backgroundColor: g.color }}
                       >
                         {g.label}
                       </span>
                     </td>
-                    <td className="whitespace-nowrap px-5 py-4 text-sm font-medium text-navy-900">
+                    <td className="whitespace-nowrap px-5 py-4 text-sm font-medium text-ink">
                       {row.question}
                     </td>
-                    <td className="px-5 py-4 text-sm leading-relaxed text-navy-700/80">
+                    <td className="px-5 py-4 text-sm leading-relaxed text-ink-60/80">
                       {row.purpose}
                     </td>
-                    <td className="px-5 py-4 font-mono text-xs leading-relaxed text-navy-700/70">
+                    <td className="px-5 py-4 font-mono text-xs leading-relaxed text-ink-60/70">
                       {row.example}
                     </td>
                   </tr>
@@ -69,21 +69,21 @@ export function Resumen() {
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
-          <div className="rounded-2xl border border-navy-900/10 bg-white p-6 sm:p-7">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-signal">Lectura del modelo</p>
-            <p className="mt-3 text-sm leading-relaxed text-navy-700/80">
+          <div className="swiss-cell p-6 sm:p-7">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-accent">Lectura del modelo</p>
+            <p className="mt-3 text-sm leading-relaxed text-ink-60/80">
               Leído de izquierda a derecha, el diagrama cuenta una historia completa: el equipo
-              entrega un <strong className="text-navy-900">build</strong> y el{' '}
-              <strong className="text-navy-900">código</strong>, la organización impone{' '}
-              <strong className="text-navy-900">reglas</strong> y{' '}
-              <strong className="text-navy-900">presupuestos</strong>, AWS y el pipeline{' '}
-              <strong className="text-navy-900">ejecutan</strong> y el resultado es un{' '}
-              <strong className="text-navy-900">servicio operativo</strong> con su evidencia.
+              entrega un <strong className="text-ink">build</strong> y el{' '}
+              <strong className="text-ink">código</strong>, la organización impone{' '}
+              <strong className="text-ink">reglas</strong> y{' '}
+              <strong className="text-ink">presupuestos</strong>, AWS y el pipeline{' '}
+              <strong className="text-ink">ejecutan</strong> y el resultado es un{' '}
+              <strong className="text-ink">servicio operativo</strong> con su evidencia.
             </p>
           </div>
-          <div className="rounded-2xl border border-navy-900/10 bg-white p-6 sm:p-7">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-signal">Próximo nivel</p>
-            <p className="mt-3 text-sm leading-relaxed text-navy-700/80">
+          <div className="swiss-cell p-6 sm:p-7">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-accent">Próximo nivel</p>
+            <p className="mt-3 text-sm leading-relaxed text-ink-60/80">
               Este diagrama A-0 se descompondría en nodos hijos —A1 compilación y pruebas, A2
               construcción de artefactos, A3 promoción a producción— cada uno con su propio Bs y sus
               propias flechas. La descomposición se detiene cuando el detalle deja de aportar

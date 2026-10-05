@@ -27,8 +27,9 @@ const DATA: Beneficio[] = [
 export function Beneficios() {
   return (
     <TwoColumnLayout
-      imageSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKmC-v9bhzvqpRT1lnBqQmFfogZ5NsIOWvLfvVdtQrbV9s-kTcULjSo9A&s=10"
+      imageSrc="/images/gestion-01.jpg"
       imageAlt="Beneficios de la gestión tecnológica"
+      imagePending="Fotografía de un espacio de trabajo del equipo técnico: varias pantallas con métricas de infraestructura y una pizarra con anotaciones."
       bg="white"
     >
       <SectionHeader
@@ -40,12 +41,12 @@ export function Beneficios() {
       <div className="mt-8 space-y-6">
         {DATA.map((b) => (
           <div key={b.title} className="flex items-start gap-4">
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-signal/10 font-display text-sm text-signal">
+            <span className="swiss-chip flex h-12 w-12 shrink-0 items-center justify-center font-display text-sm text-accent">
               {b.metric}
             </span>
             <div>
-              <p className="font-display text-lg sm:text-xl text-navy-900">{b.title}</p>
-              <p className="mt-1 text-base sm:text-lg leading-relaxed text-navy-700/70">{b.text}</p>
+              <p className="font-display text-lg sm:text-xl text-ink">{b.title}</p>
+              <p className="mt-1 text-base sm:text-lg leading-relaxed text-ink-60/70">{b.text}</p>
             </div>
           </div>
         ))}

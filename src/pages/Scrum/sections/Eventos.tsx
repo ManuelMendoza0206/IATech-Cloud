@@ -40,7 +40,7 @@ const EVENTOS = [
 
 export function Eventos() {
   return (
-    <section className="bg-mist py-16 sm:py-20">
+    <section className="bg-paper py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="05"
@@ -49,21 +49,33 @@ export function Eventos() {
         />
 
         {/* Diagrama ciclo */}
-        <div className="mt-10 overflow-hidden rounded-2xl border border-navy-900/10 bg-white p-4 shadow-sm sm:p-6">
+        <div className="swiss-cell mt-10 overflow-hidden p-4 sm:p-6">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAj6dwIxhErU3Rg7TiPMs8-U81Er_Jid1jcp16Kh1hfIHORkgk-CHA0dhU&s=10"
+            src="/images/scrum-03.jpg"
             alt="Ciclo de eventos de Scrum: Sprint Planning → Daily Scrum → Sprint Review → Retrospective"
-            className="mx-auto max-h-72 w-auto rounded-xl object-contain"
+            className="mx-auto max-h-72 w-auto object-contain"
             loading="lazy"
+            onError={(event) => {
+              event.currentTarget.style.display = 'none';
+            }}
           />
+          <p className="mb-4 border border-ink bg-paper p-5">
+            <span className="mt-2 block font-display text-base font-black leading-tight break-all text-ink">
+              public/images/scrum-03.jpg
+            </span>
+            <span className="mt-3 block text-sm leading-relaxed text-ink-60">
+              Diagrama circular del ciclo de eventos de Scrum en fondo blanco, líneas finas, sin
+              colores. Reemplázalo por un gráfico propio en SVG si preferís.
+            </span>
+          </p>
           <div className="mt-4 flex flex-wrap justify-center gap-2 font-mono text-xs">
-            <span className="rounded-full bg-navy-900 px-3 py-1 text-mist">Sprint Planning</span>
-            <span className="text-navy-700/40">→</span>
-            <span className="rounded-full bg-signal px-3 py-1 text-navy-900">Daily Scrum</span>
-            <span className="text-navy-700/40">→</span>
-            <span className="rounded-full bg-navy-900 px-3 py-1 text-mist">Review</span>
-            <span className="text-navy-700/40">→</span>
-            <span className="rounded-full bg-navy-900 px-3 py-1 text-mist">Retrospective</span>
+            <span className="swiss-cell px-3 py-1 text-ink">Sprint Planning</span>
+            <span className="text-ink-60/40">→</span>
+            <span className="bg-accent px-3 py-1 text-ink">Daily Scrum</span>
+            <span className="text-ink-60/40">→</span>
+            <span className="swiss-cell px-3 py-1 text-ink">Review</span>
+            <span className="text-ink-60/40">→</span>
+            <span className="swiss-cell px-3 py-1 text-ink">Retrospective</span>
           </div>
         </div>
 
@@ -71,36 +83,36 @@ export function Eventos() {
           {EVENTOS.map((e) => (
             <div
               key={e.title}
-              className="rounded-2xl border border-navy-900/10 bg-white p-6 shadow-sm"
+              className="swiss-cell p-6"
             >
               <div className="flex items-start justify-between gap-4">
-                <i className={`bx ${e.icon} text-2xl text-signal`} />
-                <span className="rounded-full bg-mist px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-navy-700/60">
+                <i className={`bx ${e.icon} text-2xl text-accent`} />
+                <span className="swiss-cell px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-ink-60/60">
                   {e.duration}
                 </span>
               </div>
-              <p className="mt-3 font-display text-base text-navy-900">{e.title}</p>
-              <p className="mt-2 text-sm leading-relaxed text-navy-700/70">{e.purpose}</p>
+              <p className="mt-3 font-display text-base text-ink">{e.title}</p>
+              <p className="mt-2 text-sm leading-relaxed text-ink-60/70">{e.purpose}</p>
             </div>
           ))}
         </div>
 
         {/* Video */}
         <div className="mt-12">
-          <p className="font-mono text-xs uppercase tracking-widest text-navy-700/60">
+          <p className="font-mono text-xs uppercase tracking-widest text-ink-60/60">
             Video recomendado
           </p>
-          <h3 className="mt-2 font-display text-xl text-navy-900">
+          <h3 className="mt-2 font-display text-xl text-ink">
             Scrum en acción: del Planning a la Retrospective
           </h3>
           <VideoEmbed src="https://www.youtube.com/embed/vuBFzAdaHDY" title="Scrum - Eventos y ciclo Sprint" />
-          <p className="mt-3 text-sm text-navy-700/60">
+          <p className="mt-3 text-sm text-ink-60/60">
             Fuente:{' '}
             <a
               href="https://youtu.be/vuBFzAdaHDY?si=-P5BU_DpxF9Ap-9C"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-signal underline-offset-4 hover:text-navy-900"
+              className="underline decoration-accent underline-offset-4 hover:text-ink"
             >
               Ver en YouTube
             </a>

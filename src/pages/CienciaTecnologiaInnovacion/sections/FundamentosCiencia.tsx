@@ -27,16 +27,17 @@ const DATA: Fundamento[] = [
 export function FundamentosCiencia() {
   return (
     <TwoColumnLayout
-      imageSrc="https://cdn.aicad.es/asset/img/4/que-es-el-metodo-cientifico.png"
+      imageSrc="/images/cti-01.jpg"
       imageAlt="El método científico: observación, hipótesis, experimentación, conclusión"
+      imagePending="Instrumental de laboratorio o una placa de petri con una muestra, fotografiada de cerca sobre fondo blanco."
       bg="white"
     >
       <SectionHeader number="01" title="Fundamentos de la Ciencia" />
       <div className="mt-8 space-y-6">
         {DATA.map((item) => (
-          <div key={item.title} className="border-l-2 border-signal pl-5">
-            <p className="font-display text-lg sm:text-xl text-navy-900">{item.title}</p>
-            <p className="mt-1 text-base sm:text-lg leading-relaxed text-navy-700/70">{item.text}</p>
+          <div key={item.title} className="border-l border-ink pl-5">
+            <p className="font-display text-lg sm:text-xl text-ink">{item.title}</p>
+            <p className="mt-1 text-base sm:text-lg leading-relaxed text-ink-60/70">{item.text}</p>
           </div>
         ))}
       </div>

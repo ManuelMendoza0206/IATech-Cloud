@@ -10,6 +10,7 @@ import MBTI from './pages/MBTI/MBTI';
 import Scrum from './pages/Scrum/Scrum';
 import Objetivos from './pages/Scrum/Objetivos';
 import Idef0 from './pages/Idef0/Idef0';
+import Fuentes from './pages/Fuentes/Fuentes';
 import Bpmn from './pages/Bpmn/Bpmn';
 import Contactos from './pages/Contactos/Contactos';
 
@@ -32,6 +33,7 @@ export const ROUTES: AppRoute[] = [
   { path: '/scrum', label: 'Scrum', element: <Scrum /> },
   { path: '/scrum/objetivos', label: 'Objetivos por Área', element: <Objetivos />, hideFromNav: true },
   { path: '/idef0', label: 'IDEF0', element: <Idef0 /> },
+{ path: '/fuentes', label: 'Fuentes', element: <Fuentes />, hideFromNav: true },
   { path: '/bpmn', label: 'BPMN', element: <Bpmn /> },
   { path: '/contactos', label: 'Contactos', element: <Contactos /> },
 ];

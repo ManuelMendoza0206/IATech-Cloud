@@ -1,21 +1,17 @@
 import type { BulletListProps } from './types';
 
-export function BulletList({ items, variant = 'light' }: BulletListProps) {
-  const dotBg = variant === 'dark' ? 'bg-signal' : 'bg-signal';
-  const titleColor = variant === 'dark' ? 'text-mist' : 'text-navy-900';
-  const textColor = variant === 'dark' ? 'text-mist/60' : 'text-navy-700/70';
-
+export function BulletList({ items }: BulletListProps) {
   return (
-    <div className="mt-8 space-y-6">
-      {items.map((item) => (
-        <div key={item.title} className="flex items-start gap-4">
-          <span className={`mt-1 h-3 w-3 shrink-0 rounded-full ${dotBg}`} />
+    <ul className="mt-8">
+      {items.map((item, i) => (
+        <li key={item.title} className="grid grid-cols-[auto_1fr] gap-5 border-t border-ink-15 py-6">
+          <span className="swiss-label pt-1 text-accent">{String(i + 1).padStart(2, '0')}</span>
           <div>
-            <p className={`font-display text-lg sm:text-xl ${titleColor}`}>{item.title}</p>
-            <p className={`mt-1 text-base sm:text-lg leading-relaxed ${textColor}`}>{item.text}</p>
+            <p className="font-display text-lg font-bold leading-tight text-ink sm:text-xl">{item.title}</p>
+            <p className="mt-2 max-w-xl text-base leading-relaxed text-ink-60">{item.text}</p>
           </div>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }

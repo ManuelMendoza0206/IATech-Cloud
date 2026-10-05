@@ -20,12 +20,12 @@ const DATA: Conclusion[] = [
 
 export function Conclusiones() {
   return (
-    <section className="bg-navy-900 py-16 sm:py-20">
-      <div className="mx-auto max-w-4xl px-6 sm:px-10 text-center">
-        <span className="font-mono text-xs uppercase tracking-widest text-signal">
+    <section className="bg-paper py-16 sm:py-20">
+      <div className="mx-auto max-w-4xl px-6 sm:px-10">
+        <span className="font-mono text-xs uppercase tracking-widest text-accent">
           Conclusiones
         </span>
-        <h2 className="mt-4 font-display text-3xl text-mist sm:text-4xl">
+        <h2 className="mt-4 font-display text-3xl text-ink sm:text-4xl">
           El motor del progreso
         </h2>
 
@@ -33,10 +33,10 @@ export function Conclusiones() {
           {DATA.map((c) => (
             <div
               key={c.title}
-              className="rounded-2xl border border-signal/20 bg-signal/5 p-6"
+              className="swiss-cell p-6"
             >
-              <p className="font-display text-xl text-signal">{c.title}</p>
-              <p className="mt-2 text-base leading-relaxed text-mist/60">{c.text}</p>
+              <p className="font-display text-xl text-accent">{c.title}</p>
+              <p className="mt-2 text-base leading-relaxed text-ink/60">{c.text}</p>
             </div>
           ))}
         </div>

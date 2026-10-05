@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { animate, createSpring } from 'animejs';
 
 interface Stat {
   value: number;
@@ -83,17 +84,32 @@ function useCountUp(target: number, start: boolean, duration = 1500) {
 
 function StatItem({ stat, start }: { stat: Stat; start: boolean }) {
   const count = useCountUp(stat.value, start);
+  const numRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    if (!start) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!numRef.current) return;
+    const animation = animate(numRef.current, {
+      scale: [0.85, 1],
+      duration: 600,
+      ease: createSpring({ stiffness: 220, damping: 16 }),
+    });
+    return () => {
+      animation.revert();
+    };
+  }, [start]);
 
   return (
-    <div>
-      <p className="font-display text-5xl font-bold tabular-nums text-signal sm:text-6xl">
+    <div className="reveal bg-surface p-6 sm:p-8">
+      <p ref={numRef} className="font-display text-5xl font-black tabular-nums text-accent sm:text-6xl">
         {count}
         {stat.suffix}
       </p>
-      <p className="mt-3 font-mono text-xs uppercase tracking-widest text-mist">
+      <p className="swiss-label mt-3">
         {stat.label}
       </p>
-      <p className="mt-1 max-w-[28ch] text-sm leading-relaxed text-mist/60">{stat.sub}</p>
+      <p className="mt-1 max-w-[28ch] text-sm leading-relaxed text-ink-60">{stat.sub}</p>
     </div>
   );
 }
@@ -102,29 +118,20 @@ export default function Numeros() {
   const { ref, inView } = useInView<HTMLDivElement>(0.3);
 
   return (
-    <section
-      id="numeros"
-      aria-label="El área en cifras"
-      className="relative overflow-hidden bg-navy-950 py-20 sm:py-28"
-      style={{ contentVisibility: 'auto', containIntrinsicSize: '400px' }}
-    >
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.07]"
-        style={{
-          backgroundImage: 'radial-gradient(#38d6c8 1px, transparent 1px)',
-          backgroundSize: '26px 26px',
-        }}
-      />
-      <div className="pointer-events-none absolute -top-32 right-0 h-[360px] w-[360px] rounded-full bg-signal/15 blur-[120px]" />
-
-      <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
-        <h2 className="font-display text-3xl leading-tight text-mist sm:text-4xl">
-          Números que respaldan el servicio
-        </h2>
+    <section id="numeros" aria-label="El área en cifras" className="border-b border-ink bg-paper py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10">
+        <div className="swiss-grid items-end">
+          <h2 className="reveal col-span-full font-display text-3xl font-extrabold leading-tight text-ink sm:col-span-8 sm:text-5xl sm:leading-none">
+            Números que respaldan el servicio
+          </h2>
+          <p className="swiss-label col-span-full border-t border-ink pt-3 sm:col-span-4 sm:mt-0">
+            El área en cifras
+          </p>
+        </div>
 
         <div
           ref={ref}
-          className="mt-10 grid grid-cols-1 gap-10 border-t border-mist/10 pt-10 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-12 grid grid-cols-1 gap-px border border-ink bg-ink sm:grid-cols-2 lg:grid-cols-4"
         >
           {STATS.map((stat) => (
             <StatItem key={stat.label} stat={stat} start={inView} />

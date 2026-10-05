@@ -31,33 +31,32 @@ const SUBORDINATES = ['arquitecto-cloud', 'admin-devops', 'admin-infraestructura
 
 export default function OrgChart({ activeId, onSelect }: OrgChartProps) {
   return (
-    <section className="relative bg-mist pt-24 pb-14 text-navy-950 border-b border-navy-700/20 overflow-hidden">
+    <section className="relative bg-paper pt-24 pb-14 text-ink border-b border-ink-15 overflow-hidden">
       
       {/* Sutil halo ambiental suave */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(750px,90vw)] h-[min(400px,50vh)] bg-signal/[0.03] blur-[120px] pointer-events-none rounded-full" />
 
-      <div className="relative mx-auto max-w-5xl px-6 sm:px-10">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         
         {/* Encabezado Extravagante & Atrevido */}
-        <div className="mx-auto max-w-4xl text-center mb-12">
-          <div className="inline-flex items-center gap-2 rounded-full bg-signal/10 px-4 py-1.5 text-xs font-semibold text-signal border border-signal/20 shadow-sm mb-4">
+        <div className="mx-auto max-w-4xl mb-12">
+          <div className="swiss-chip swiss-cell inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold text-accent mb-5">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-signal opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-signal" />
+              <span className="animate-ping absolute inline-flex h-full w-full bg-accent opacity-75" />
+              <span className="relative inline-flex h-2 w-2 bg-accent" />
             </span>
             <span className="tracking-wide">ARQUITECTURA ORGANIZACIONAL</span>
           </div>
 
-          <h2 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-navy-950 leading-[1.1] uppercase">
+          <h2 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-ink leading-[1.1] uppercase">
             Organigrama del{' '}
-            <span className="text-signal">
+            <span className="text-accent">
               Área Cloud
             </span>
           </h2>
 
-          <p className="mt-5 text-base sm:text-lg text-navy-700/70 max-w-2xl mx-auto leading-relaxed font-sans font-medium">
+          <p className="mt-6 text-lg sm:text-xl text-ink-60/70 max-w-2xl mx-auto leading-relaxed font-sans font-medium">
             Estructura técnica y jerarquía operativa responsable de la infraestructura, disponibilidad y escalabilidad de{' '}
-            <span className="text-navy-950 font-semibold">IATECH</span>.
+            <span className="text-ink font-semibold">IATECH</span>.
           </p>
         </div>
 
@@ -65,23 +64,23 @@ export default function OrgChart({ activeId, onSelect }: OrgChartProps) {
         <div className="flex flex-col items-center">
 
           {/* 1. CTO — Nivel Ejecutivo de Referencia */}
-          <div className="flex items-center gap-3 rounded-lg border border-navy-700/20 bg-white px-4 py-2 shadow-[0_1px_3px_rgba(5,11,24,0.04)] z-10 hover:border-navy-700/30 transition-colors">
-            <span className="flex h-6 w-6 items-center justify-center rounded bg-signal/10 text-[10px] font-mono font-semibold text-signal border border-signal/20">
+          <div className="swiss-cell flex items-center gap-3 px-4 py-2 z-10 transition-colors">
+            <span className="swiss-chip swiss-cell flex h-8 w-8 items-center justify-center text-xs font-mono font-semibold text-accent">
               CTO
             </span>
             <div className="text-left">
-              <p className="text-[10px] uppercase font-mono tracking-wider text-navy-700/70">Supervisión Ejecutiva</p>
-              <p className="font-sans text-xs font-medium text-navy-950">Dirección de Tecnología</p>
+              <p className="text-xs uppercase font-mono tracking-wider text-ink-60/70">Supervisión Ejecutiva</p>
+              <p className="font-sans text-sm font-medium text-ink">Dirección de Tecnología</p>
             </div>
           </div>
 
           {/* Conector vertical CTO -> Gerente */}
-          <div className="relative h-6 w-[1.5px] bg-navy-700/30">
-            <div className="absolute -left-[3px] top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-signal/30 opacity-70 animate-pulse" />
+          <div className="relative h-6 w-[1.5px] bg-steel/30">
+            <div className="absolute -left-[3px] top-1/2 -translate-y-1/2 h-2 w-2 bg-accent/30 opacity-70 animate-pulse" />
           </div>
 
           {/* 2. GERENTE DE ÁREA CLOUD */}
-          <div className="w-full max-w-sm z-10">
+          <div className="w-full max-w-md z-10">
             <OrgNodeCard
               id="gerente-cloud"
               title="Gerente de Área Cloud"
@@ -93,35 +92,35 @@ export default function OrgChart({ activeId, onSelect }: OrgChartProps) {
           </div>
 
           {/* 3. ESTRUCTURA DE LÍNEAS CONECTORAS HACIA SUBORDINADOS */}
-          <div className="relative w-full max-w-4xl flex flex-col items-center">
+          <div className="relative w-full flex flex-col items-center">
             {/* Línea vertical baja del Gerente */}
-            <div className="relative h-6 w-[1.5px] bg-navy-700/30">
-              <div className="absolute -left-[3px] top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-signal/30 opacity-70 animate-pulse" />
+            <div className="relative h-6 w-[1.5px] bg-steel/30">
+              <div className="absolute -left-[3px] top-1/2 -translate-y-1/2 h-2 w-2 bg-accent/30 opacity-70 animate-pulse" />
             </div>
 
             {/* Puente Horizontal (Desktop) */}
             <div className="hidden md:block relative w-full">
               {/* Barra Horizontal limpia entre centros de las 3 tarjetas (16.66% a 83.33%) */}
-              <div className="absolute top-0 left-[16.66%] right-[16.66%] h-[1.5px] bg-navy-700/30" />
+              <div className="absolute top-0 left-[16.66%] right-[16.66%] h-[1.5px] bg-steel/30" />
 
               {/* Nodos de intersección discretos con pulsación sutil */}
-              <div className="absolute top-[-3px] left-[16.66%] -translate-x-1/2 h-2 w-2 rounded-full bg-navy-700/30 border border-white" />
-              <div className="absolute top-[-3px] left-[50%] -translate-x-1/2 h-2 w-2 rounded-full bg-signal border border-white shadow-sm" />
-              <div className="absolute top-[-3px] left-[83.33%] -translate-x-1/2 h-2 w-2 rounded-full bg-navy-700/30 border border-white" />
+              <div className="swiss-cell absolute top-[-3px] left-[16.66%] -translate-x-1/2 h-2 w-2 bg-steel/30" />
+              <div className="swiss-cell absolute top-[-3px] left-[50%] -translate-x-1/2 h-2 w-2 bg-accent" />
+              <div className="swiss-cell absolute top-[-3px] left-[83.33%] -translate-x-1/2 h-2 w-2 bg-steel/30" />
             </div>
 
             {/* Grid de 3 Subordinados */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full mt-0 md:mt-0 z-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-0 md:mt-0 z-10">
               {SUBORDINATES.map((id) => {
                 const pos = POSITIONS.find((p) => p.id === id);
                 if (!pos) return null;
                 return (
                   <div key={id} className="relative flex flex-col items-center">
                     {/* Bajada vertical en escritorio */}
-                    <div className="hidden md:block h-6 w-[1.5px] bg-navy-700/30" />
+                    <div className="hidden md:block h-6 w-[1.5px] bg-steel/30" />
                     
                     {/* Conector vertical en móvil */}
-                    <div className="block md:hidden h-3 w-[1.5px] bg-navy-700/30" />
+                    <div className="block md:hidden h-3 w-[1.5px] bg-steel/30" />
 
                     <OrgNodeCard
                       id={id}
@@ -139,7 +138,7 @@ export default function OrgChart({ activeId, onSelect }: OrgChartProps) {
         </div>
 
         {/* Nota al pie discreta */}
-        <p className="mt-10 text-center text-xs text-navy-700/70">
+        <p className="mt-10 text-sm text-ink-60/70">
           Haz clic en cualquier posición para consultar su ficha técnica y responsabilidades operativas.
         </p>
 
@@ -163,42 +162,34 @@ function OrgNodeCard({ id, title, category, isActive, onClick, isManager = false
   return (
     <button
       onClick={onClick}
-      className={`group relative flex flex-col justify-between w-full text-left transition-all duration-200 rounded-lg p-4 sm:p-5 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
-        isManager ? 'shadow-[0_2px_6px_rgba(5,11,24,0.06)]' : 'shadow-[0_1px_3px_rgba(5,11,24,0.04)]'
-      } ${
-        isActive
-          ? 'bg-white border-2 border-signal ring-2 ring-signal/15 shadow-[0_4px_16px_rgba(56,214,200,0.1)] -translate-y-0.5'
-          : 'bg-white border border-navy-700/20 hover:border-signal/30 hover:bg-white hover:shadow-md hover:-translate-y-0.5'
-      }`}
+      className={`swiss-cell group relative flex w-full flex-col justify-between p-6 text-left transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-paper ${isManager ? 'border-2 border-ink' : ''} ${isActive ? 'bg-ink text-paper' : 'hover:bg-ink-15'}`}
     >
       <div>
-        <div className="flex items-center justify-between gap-2 mb-2.5">
-          <span className="inline-flex rounded-md bg-signal/10 border border-signal/20 px-2.5 py-0.5 text-[11px] font-medium text-signal group-hover:bg-signal/20/80 transition-colors">
+        <div className="flex items-center justify-between gap-2 mb-3">
+          <span className="swiss-chip inline-flex px-3 py-1 text-xs font-medium text-accent transition-colors">
             {meta?.badge}
           </span>
 
-          <span className={`text-[11px] font-medium transition-colors ${isActive ? 'text-signal' : 'text-navy-700/70 group-hover:text-navy-950'}`}>
+          <span className={`text-xs font-medium transition-colors ${isActive ? 'text-accent' : 'text-ink-60/70 group-hover:text-ink'}`}>
             {isActive ? 'Seleccionado ✓' : 'Ver ficha →'}
           </span>
         </div>
 
-        <h2 className={`font-sans text-base sm:text-lg font-semibold leading-snug transition-colors ${
-          isActive ? 'text-signal' : 'text-navy-950 group-hover:text-signal'
-        }`}>
+        <h2 className={`font-display text-lg font-bold leading-snug transition-colors sm:text-xl ${ isActive ? 'text-accent' : 'text-ink group-hover:text-accent' }`}>
           {title}
         </h2>
 
-        <p className="mt-1 text-xs text-navy-700/70 leading-relaxed">
+        <p className="mt-2 text-sm text-ink-60/70 leading-relaxed">
           {meta?.focus}
         </p>
       </div>
 
-      <div className="mt-3.5 pt-2.5 border-t border-mist/50 flex items-center justify-between text-[11px] text-navy-700/70">
+      <div className="mt-5 pt-3 border-t border-ink-15 flex items-center justify-between text-xs text-ink-60/70">
         <span>{category}</span>
-        <span className="flex items-center gap-1.5 text-signal font-mono text-[10px]">
+        <span className="flex items-center gap-1.5 text-accent font-mono text-xs">
           <span className="relative flex h-1.5 w-1.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-signal opacity-75" />
-            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-signal" />
+            <span className="animate-ping absolute inline-flex h-full w-full bg-accent opacity-75" />
+            <span className="relative inline-flex h-1.5 w-1.5 bg-accent" />
           </span>
           1 Titular
         </span>

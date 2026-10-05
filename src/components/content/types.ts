@@ -3,9 +3,13 @@ export interface HeroProps {
   title: string;
   highlight?: string;
   description: string;
-  author?: string;
   imageSrc?: string;
   imageAlt?: string;
+  /** Qué imagen se espera, mostrado si el archivo falta. */
+  imagePending?: string;
+  /** Imagen de fondo a todo el ancho, con velo para sostener el contraste del texto. */
+  backgroundSrc?: string;
+  backgroundAlt?: string;
 }
 
 export interface SectionHeaderProps {
@@ -21,6 +25,8 @@ export interface TwoColumnLayoutProps {
   imageSrc: string;
   imageAlt: string;
   imagePosition?: 'left' | 'right';
+  /** Qué imagen se espera en `imageSrc`, mostrado si el archivo falta. */
+  imagePending?: string;
   bg?: 'white' | 'mist' | 'navy';
   id?: string;
 }

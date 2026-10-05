@@ -11,8 +11,9 @@ const DATA: TalentoItem[] = [
 export function GestionTalento() {
   return (
     <TwoColumnLayout
-      imageSrc="https://res.cloudinary.com/uvggt/image/upload/f_auto/v1600446040/2020/09%20SEPTIEMBRE/Gestion%20Talento%20Humano/recurso_humano_portada.jpg"
+      imageSrc="/images/gestion-02.jpg"
       imageAlt="Gestión del talento humano en tecnología"
+      imagePending="Fotografía de una sesión de trabajo entre dos personas frente a una pantalla, en un ambiente de oficina tecnológica."
       bg="mist"
     >
       <SectionHeader

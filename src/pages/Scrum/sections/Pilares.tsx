@@ -20,7 +20,7 @@ const PILARES = [
 
 export function Pilares() {
   return (
-    <section className="bg-mist py-16 sm:py-20">
+    <section className="bg-paper py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="02"
@@ -32,26 +32,18 @@ export function Pilares() {
           {PILARES.map((p) => (
             <div
               key={p.title}
-              className="rounded-2xl border border-navy-900/10 bg-white p-8 shadow-sm transition-shadow hover:shadow-lg"
+              className="swiss-cell p-8 transition-shadow"
             >
-              <i className={`bx ${p.icon} text-3xl text-signal`} />
-              <p className="mt-4 font-display text-xl text-navy-900">{p.title}</p>
-              <p className="mt-3 text-sm leading-relaxed text-navy-700/70">{p.text}</p>
+              <i className={`bx ${p.icon} text-3xl text-accent`} />
+              <p className="mt-4 font-display text-xl text-ink">{p.title}</p>
+              <p className="mt-3 text-sm leading-relaxed text-ink-60/70">{p.text}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-10 overflow-hidden rounded-2xl border border-navy-900/10 bg-white shadow-sm">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNN8VTQG1QWpqmMYN34qEPryzlc_y7ipv_LNDF7EkosA&s=10"
-            alt="Diagrama de los tres pilares de Scrum"
-            className="h-64 w-full object-cover sm:h-80"
-            loading="lazy"
-          />
-          <p className="px-6 py-3 font-mono text-xs uppercase tracking-widest text-navy-700/50">
-            Transparencia → Inspección → Adaptación — ciclo continuo
-          </p>
-        </div>
+        <p className="mt-10 border-l-2 border-ink-15 pl-5 font-mono text-xs uppercase tracking-widest text-ink-60/50">
+          Transparencia → Inspección → Adaptación — ciclo continuo
+        </p>
       </div>
     </section>
   );

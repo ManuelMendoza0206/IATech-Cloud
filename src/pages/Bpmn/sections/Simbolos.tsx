@@ -50,7 +50,7 @@ function SymbolGlyph({ kind, color }: { kind: BpmnSymbolKind['kind']; color: str
 
 export function Simbolos() {
   return (
-    <section className="bg-white py-20 sm:py-28">
+    <section className="bg-surface py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           showNumber={false}
@@ -60,16 +60,16 @@ export function Simbolos() {
         />
 
         {/* Tabla oficial de referencia */}
-        <div className="mt-10 overflow-hidden rounded-2xl border border-navy-900/10 bg-white shadow-sm">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-navy-900/10 px-5 py-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-navy-700/60">
+        <div className="mt-10 overflow-hidden border border-ink-15 bg-surface">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-ink-15 px-5 py-4">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-ink-60">
               Referencia · Tabla de símbolos BPMN
             </p>
             <a
               href="https://www.edrawsoft.com/solutions/shapes/bpmn.png"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-navy-700/60 transition hover:text-signal"
+              className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-ink-60 transition hover:text-accent"
             >
               Ver en tamaño completo
               <i className="bx bx-external-link text-sm" aria-hidden="true" />
@@ -90,7 +90,7 @@ export function Simbolos() {
             return (
               <div
                 key={kind}
-                className="group relative flex flex-col gap-6 overflow-hidden rounded-2xl border border-navy-900/10 bg-mist/40 p-6 transition hover:bg-mist sm:p-7 lg:flex-row"
+                className="group relative flex flex-col gap-6 overflow-hidden border border-ink-15 bg-paper/40 p-6 transition hover:bg-paper sm:p-7 lg:flex-row"
               >
                 <span
                   className="absolute left-0 top-0 h-full w-1 origin-top scale-y-0 transition-transform duration-300 group-hover:scale-y-100"
@@ -100,14 +100,14 @@ export function Simbolos() {
                 <div className="flex shrink-0 items-center gap-4 lg:w-72 lg:flex-col lg:items-start">
                   <SymbolGlyph kind={kind} color={g.color} />
                   <div>
-                    <h3 className="font-display text-lg font-semibold text-navy-900">{g.label}</h3>
+                    <h3 className="font-display text-lg font-semibold text-ink">{g.label}</h3>
                     <p className="mt-1 font-mono text-[10px] uppercase tracking-wider" style={{ color: g.color }}>
                       {g.english}
                     </p>
                   </div>
                 </div>
                 <div className="flex-1">
-                  <p className="leading-relaxed text-navy-700/80">{g.definition}</p>
+                  <p className="leading-relaxed text-ink-60">{g.definition}</p>
                   <ul className="mt-4 space-y-2.5">
                     {g.items.map((item, j) => (
                       <li key={item.title} className="flex items-start gap-3">
@@ -119,8 +119,8 @@ export function Simbolos() {
                           {j + 1}
                         </span>
                         <div>
-                          <p className="text-sm font-semibold text-navy-900">{item.title}</p>
-                          <p className="text-sm leading-relaxed text-navy-700/70">{item.text}</p>
+                          <p className="text-sm font-semibold text-ink">{item.title}</p>
+                          <p className="text-sm leading-relaxed text-ink-60">{item.text}</p>
                         </div>
                       </li>
                     ))}

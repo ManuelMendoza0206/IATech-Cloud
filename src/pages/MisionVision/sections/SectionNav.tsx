@@ -44,7 +44,7 @@ export default function SectionNav() {
   return (
     <nav
       aria-label="Navegación de secciones de Misión y Visión"
-      className="sticky top-0 z-20 border-b border-navy-700/20 bg-white/90 backdrop-blur-md"
+      className="sticky top-0 z-20 border-b border-ink-15 bg-paper/90 backdrop-blur-md"
     >
       <div className="mx-auto max-w-6xl overflow-x-auto px-6 sm:px-10">
         <ul className="flex gap-1 py-2">
@@ -54,8 +54,8 @@ export default function SectionNav() {
                 href={`#${id}`}
                 className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
                   active === id
-                    ? 'bg-navy-950 text-mist'
-                    : 'text-navy-700/60 hover:bg-navy-950/5 hover:text-navy-950'
+                    ? 'bg-ink text-paper'
+                    : 'text-ink-60 hover:bg-ink/5 hover:text-ink'
                 }`}
               >
                 <span className="font-mono text-[10px]">{short}</span>

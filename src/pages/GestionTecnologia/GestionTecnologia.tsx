@@ -1,10 +1,14 @@
 import { Hero } from '../../components/content';
+import { Reveal } from '../../components/ui/Reveal';
 import {
   ComponentesClave,
   GestionTalento,
   ProcesosGobernanza,
   HerramientasSoporte,
   Beneficios,
+  GobernanzaTi,
+  CalidadProducto,
+  FinOps,
 } from './sections';
 
 export default function GestionTecnologia() {
@@ -15,15 +19,22 @@ export default function GestionTecnologia() {
         title="Gestión de"
         highlight="Tecnología"
         description="Proceso estratégico orientado a alinear la tecnología con los objetivos de negocio. Abarca la planificación, implementación y optimización de los recursos tecnológicos para maximizar el ROI y mitigar riesgos."
-        imageSrc="/images/fondo2.jpg"
-        imageAlt="Gestión de Tecnología"
+        backgroundSrc="/images/fondo-gestion.jpg"
+        backgroundAlt="Gestión de Tecnología"
       />
       <div id="content-start" />
-      <ComponentesClave />
+      <Reveal stagger>
+        <ComponentesClave />
+      </Reveal>
       <GestionTalento />
-      <ProcesosGobernanza />
+      <Reveal stagger>
+        <ProcesosGobernanza />
+      </Reveal>
       <HerramientasSoporte />
       <Beneficios />
+      <GobernanzaTi />
+      <FinOps />
+      <CalidadProducto />
     </div>
   );
 }
