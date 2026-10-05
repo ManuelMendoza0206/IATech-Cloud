@@ -33,6 +33,7 @@ const PRACTICE_PAGES = [
   { to: '/mbti', label: 'MBTI · Equipo' },
   { to: '/scrum', label: 'Scrum' },
   { to: '/idef0', label: 'IDEF0' },
+  { to: '/bpmn', label: 'BPMN' },
 ];
 
 function buildMailto(email: string) {

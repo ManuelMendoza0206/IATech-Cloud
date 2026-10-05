@@ -13,6 +13,7 @@ export interface SectionHeaderProps {
   title: string;
   description?: string;
   variant?: 'light' | 'dark';
+  showNumber?: boolean;
 }
 
 export interface TwoColumnLayoutProps {
