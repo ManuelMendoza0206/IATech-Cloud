@@ -37,4 +37,3 @@ export const ROUTES: AppRoute[] = [
   { path: '/bpmn', label: 'BPMN', element: <Bpmn /> },
   { path: '/contactos', label: 'Contactos', element: <Contactos /> },
 ];
-];
