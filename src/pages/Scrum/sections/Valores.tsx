@@ -79,17 +79,7 @@ export function Valores() {
                 el.nextElementSibling?.classList.remove('hidden');
               }}
             />
-            <div className="hidden border border-ink bg-paper p-5">
-              <p className="swiss-label text-accent">Falta el archivo</p>
-              <p className="mt-2 font-display text-base font-black leading-tight break-all text-ink">
-                public/images/scrum-02.jpg
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-ink-60">
-                Fotografía de un equipo Scrum en una sesión de retrospectiva, con notas adhesivas
-                sobre un muro. Luz natural, encuadre medio, sin texto legible.
-              </p>
-            </div>
-            <p className="mt-4 font-mono text-xs uppercase tracking-widest text-ink/40">
+            <p className="mt-4 border-l-2 border-ink-15 pl-5 font-mono text-xs uppercase tracking-widest text-ink/40">
               Commitment · Focus · Openness · Respect · Courage
             </p>
           </div>

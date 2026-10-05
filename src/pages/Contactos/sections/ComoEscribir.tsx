@@ -15,24 +15,24 @@ const PASOS = [
 
 export function ComoEscribir() {
   return (
-    <section className="bg-white py-20 sm:py-28">
+    <section className="bg-surface py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <div className="max-w-3xl">
-          <h2 className="font-display text-3xl text-navy-900 sm:text-4xl">
+          <h2 className="font-display text-3xl text-ink sm:text-4xl">
             Cómo escribir al área
           </h2>
         </div>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-3">
           {PASOS.map((p, i) => (
-            <div key={p.title} className="rounded-2xl border border-navy-900/10 bg-mist/50 p-6">
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-navy-950 font-mono text-xs font-semibold text-signal">
+            <div key={p.title} className="border border-ink-15 bg-paper/50 p-6">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-ink font-mono text-xs font-semibold text-accent">
                 {String(i + 1).padStart(2, '0')}
               </span>
-              <h3 className="mt-4 font-display text-base font-semibold text-navy-900">
+              <h3 className="mt-4 font-display text-base font-semibold text-ink">
                 {p.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-navy-700/80">{p.text}</p>
+              <p className="mt-2 text-sm leading-relaxed text-ink-60">{p.text}</p>
             </div>
           ))}
         </div>

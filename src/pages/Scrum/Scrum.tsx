@@ -20,9 +20,6 @@ export default function Scrum() {
         title="Teoría de"
         highlight="Scrum"
         description="Framework adaptativo, iterativo e incremental para gestionar proyectos complejos. Basado en empirismo y pensamiento Lean, Scrum entrega valor continuo a través de ciclos cortos de inspección y adaptación."
-        imageSrc="/images/scrum-07.jpg"
-        imageAlt="Equipo trabajando con metodología Scrum"
-        imagePending="Fotografía de un equipo pequeño revisando el backlog en una pizarra, con tarjetas ordenadas en columnas."
       />
       <div id="content-start" />
       <SectionNav />

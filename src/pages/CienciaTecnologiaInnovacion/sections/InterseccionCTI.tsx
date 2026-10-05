@@ -62,17 +62,6 @@ export function InterseccionCTI() {
               el.nextElementSibling?.classList.remove('hidden');
             }}
           />
-          <div className="hidden border border-ink bg-paper p-5">
-            <p className="swiss-label text-accent">Falta el archivo</p>
-            <p className="mt-2 font-display text-base font-black leading-tight break-all text-ink">
-              public/images/cti-03.jpg
-            </p>
-            <p className="mt-3 text-sm leading-relaxed text-ink-60">
-              Imagen de un laboratorio con instrumentation activa y, en el mismo encuadre, una
-              pantalla con código o un plano técnico. Debe leerse como ciencia y tecnología a la
-              vez.
-            </p>
-          </div>
         </div>
       </div>
     </section>

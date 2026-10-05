@@ -45,7 +45,7 @@ const ELEMENTOS = [
 
 export function Notacion() {
   return (
-    <section className="bg-mist py-20 sm:py-28">
+    <section className="bg-paper py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="02"
@@ -57,7 +57,7 @@ export function Notacion() {
           {ELEMENTOS.map((e, i) => (
             <article
               key={e.title}
-              className={`group relative overflow-hidden rounded-2xl border border-navy-900/10 bg-white p-6 shadow-sm transition duration-300 hover:shadow-lg ${
+              className={`group relative overflow-hidden border border-ink-15 bg-surface p-6 transition duration-300 hover: ${
                 i === 0 ? 'sm:col-span-2 lg:col-span-1' : ''
               }`}
             >
@@ -69,13 +69,13 @@ export function Notacion() {
               <div className="flex items-start justify-between gap-4">
                 <div className="flex items-center gap-3.5">
                   <span
-                    className="flex h-11 w-11 items-center justify-center rounded-xl text-xl text-white shadow-sm"
+                    className="flex h-11 w-11 items-center justify-center text-xl text-white"
                     style={{ backgroundColor: e.color }}
                   >
                     <i className={`bx ${e.icon}`} aria-hidden="true" />
                   </span>
                   <div>
-                    <h3 className="font-display text-[15px] font-semibold leading-none tracking-tight text-navy-950">
+                    <h3 className="font-display text-[15px] font-semibold leading-none tracking-tight text-ink">
                       {e.title}
                     </h3>
                     <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.1em]" style={{ color: e.color }}>
@@ -84,37 +84,37 @@ export function Notacion() {
                   </div>
                 </div>
               </div>
-              <p className="mt-5 text-[14px] leading-relaxed text-navy-700/70">{e.text}</p>
-              <p className="mt-4 border-t border-navy-900/10 pt-3 font-mono text-[11px] uppercase tracking-wider text-navy-700/50">
+              <p className="mt-5 text-[14px] leading-relaxed text-ink-60">{e.text}</p>
+              <p className="mt-4 border-t border-ink-15 pt-3 font-mono text-[11px] uppercase tracking-wider text-ink-500">
                 {e.pregunta}
               </p>
             </article>
           ))}
         </div>
 
-        <div className="mt-10 rounded-2xl border border-navy-900/10 bg-white p-6 sm:p-7">
-          <p className="font-mono text-[11px] uppercase tracking-widest text-signal">Cómo leerlos juntos</p>
-          <p className="mt-3 text-sm leading-relaxed text-navy-700/80">
-            Un <strong className="text-navy-900">evento</strong> abre el proceso, las{' '}
-            <strong className="text-navy-900">actividades</strong> avanzan por los{' '}
-            <strong className="text-navy-900">flujos</strong>, los{' '}
-            <strong className="text-navy-900">gateways</strong> deciden y cada paso ocurre en la{' '}
-            <strong className="text-navy-900">lane</strong> de su responsable. Cinco formas, un
+        <div className="mt-10 border border-ink-15 bg-surface p-6 sm:p-7">
+          <p className="font-mono text-[11px] uppercase tracking-widest text-accent">Cómo leerlos juntos</p>
+          <p className="mt-3 text-sm leading-relaxed text-ink-60">
+            Un <strong className="text-ink">evento</strong> abre el proceso, las{' '}
+            <strong className="text-ink">actividades</strong> avanzan por los{' '}
+            <strong className="text-ink">flujos</strong>, los{' '}
+            <strong className="text-ink">gateways</strong> deciden y cada paso ocurre en la{' '}
+            <strong className="text-ink">lane</strong> de su responsable. Cinco formas, un
             solo recorrido.
           </p>
         </div>
 
         {/* Infografía de referencia */}
-        <div className="mt-10 overflow-hidden rounded-2xl border border-navy-900/10 bg-white shadow-sm">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-navy-900/10 px-5 py-4">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-navy-700/60">
+        <div className="mt-10 overflow-hidden border border-ink-15 bg-surface">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-ink-15 px-5 py-4">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-ink-60">
               Referencia · Componentes BPMN 2.0
             </p>
             <a
               href="https://www.cybermedian.com/wp-content/uploads/2026/04/bpmn-2-0-components-visual-logic-infographic-charcoal-sketch.jpg"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-navy-700/60 transition hover:text-signal"
+              className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-ink-60 transition hover:text-accent"
             >
               Ver en tamaño completo
               <i className="bx bx-external-link text-sm" aria-hidden="true" />

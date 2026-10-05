@@ -51,17 +51,6 @@ export function TendenciasFuturas() {
                 el.nextElementSibling?.classList.remove('hidden');
               }}
             />
-            <div className="hidden border border-ink bg-paper p-5">
-              <p className="swiss-label text-accent">Falta el archivo</p>
-              <p className="mt-2 font-display text-base font-black leading-tight break-all text-ink">
-                public/images/cti-04.jpg
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-ink-60">
-                Imagen de un profesional de salud con un visor de realidad aumentada o un monitor
-                con datos clínicos en vivo. Debe sugerir una tendencia concreta, no un concepto
-                abstracto.
-              </p>
-            </div>
           </div>
           <div>
             <p className="swiss-cell p-6 text-ink">

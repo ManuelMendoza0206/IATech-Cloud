@@ -141,30 +141,9 @@ export function ScrumTeam() {
           </div>
         </div>
 
-        <div className="swiss-cell mt-12 overflow-hidden p-4 sm:p-6">
-          <img
-            src="/images/scrum-06.jpg"
-            alt="Scrum Team: Product Owner, Scrum Master y Developers colaborando"
-            className="mx-auto max-h-80 w-auto object-contain"
-            loading="lazy"
-            onError={(event) => {
-              event.currentTarget.style.display = 'none';
-            }}
-          />
-          <p className="border border-ink bg-paper p-5">
-            <span className="swiss-label block text-accent">Falta el archivo</span>
-            <span className="mt-2 block font-display text-base font-black leading-tight break-all text-ink">
-              public/images/scrum-06.jpg
-            </span>
-            <span className="mt-3 block text-sm leading-relaxed text-ink-60">
-              Fotografía del equipo completo del Scrum Team alrededor de una mesa de trabajo, con
-              tarjetas y un tablero visible al fondo.
-            </span>
-          </p>
-          <p className="mt-4 font-mono text-xs uppercase tracking-widest text-ink-40">
-            Un solo equipo, un solo objetivo por Sprint
-          </p>
-        </div>
+        <p className="mt-12 border-l-2 border-ink-15 pl-5 font-mono text-xs uppercase tracking-widest text-ink-60">
+          Un solo equipo, un solo objetivo por Sprint
+        </p>
       </div>
     </section>
   );

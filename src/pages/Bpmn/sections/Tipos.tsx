@@ -41,7 +41,7 @@ const TIPOS = [
 
 export function Tipos() {
   return (
-    <section className="bg-white py-20 sm:py-28">
+    <section className="bg-surface py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           showNumber={false}
@@ -54,11 +54,11 @@ export function Tipos() {
           {TIPOS.map((t) => (
             <div
               key={t.familia}
-              className="overflow-hidden rounded-2xl border border-navy-900/10 bg-mist/40"
+              className="overflow-hidden border border-ink-15 bg-paper/40"
             >
               <div className="px-6 pt-6 sm:px-7">
                 <span
-                  className="inline-block rounded-full px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-wider text-white"
+                  className="inline-block border border-ink px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-wider text-ink"
                   style={{ backgroundColor: t.color }}
                 >
                   {t.familia}
@@ -68,7 +68,7 @@ export function Tipos() {
                 {t.variantes.map((v) => (
                   <li
                     key={v.nombre}
-                    className="flex items-start gap-4 rounded-xl border border-navy-900/10 bg-white p-4 sm:p-5"
+                    className="flex items-start gap-4 border border-ink-15 bg-surface p-4 sm:p-5"
                   >
                     <span
                       className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-mono text-[11px] font-bold text-white"
@@ -78,8 +78,8 @@ export function Tipos() {
                       {v.nombre[0]}
                     </span>
                     <div>
-                      <p className="font-display text-base font-semibold text-navy-900">{v.nombre}</p>
-                      <p className="mt-1 text-sm leading-relaxed text-navy-700/70">{v.desc}</p>
+                      <p className="font-display text-base font-semibold text-ink">{v.nombre}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-ink-60">{v.desc}</p>
                     </div>
                   </li>
                 ))}
@@ -88,8 +88,8 @@ export function Tipos() {
           ))}
         </div>
 
-        <p className="mt-8 text-sm text-navy-700/60">
-          <span className="font-semibold text-navy-900">Dato:</span> la especificación BPMN 2.0
+        <p className="mt-8 text-sm text-ink-60">
+          <span className="font-semibold text-ink">Dato:</span> la especificación BPMN 2.0
           define más de 100 símbolos, pero el 80% de los diagramas reales (incluido el de esta
           página) usa solo estas doce variantes.
         </p>

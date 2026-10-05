@@ -80,7 +80,7 @@ const REGLAS = [
 
 export function Definicion() {
   return (
-    <section className="bg-white py-20 sm:py-28">
+    <section className="bg-surface py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
           number="01"
@@ -88,9 +88,9 @@ export function Definicion() {
           description="BPMN (Business Process Model and Notation) es el estándar para dibujar procesos de negocio: el orden de las tareas, quién las ejecuta y qué decisiones dividen el camino. Si IDEF0 fija la función, BPMN fija el proceso que la cumple."
         />
 
-        <div className="mt-6 max-w-4xl space-y-4 text-navy-700/80">
+        <div className="mt-6 max-w-4xl space-y-4 text-ink-60">
           <p>
-            La sigla significa <strong className="text-navy-900">Business Process Model and
+            La sigla significa <strong className="text-ink">Business Process Model and
             Notation</strong>: modelo y notación en una sola especificación. Un diagrama BPMN no
             muestra clases ni servicios: muestra <em>un flujo en el tiempo</em>.
           </p>
@@ -106,32 +106,32 @@ export function Definicion() {
           {ORIGENES.map((o) => (
             <li
               key={o.title}
-              className="group rounded-2xl border border-navy-700/10 bg-mist/40 p-6 transition hover:border-signal/40 hover:bg-mist"
+              className="group border border-ink-15/10 bg-paper/40 p-6 transition hover:border-accent/40 hover:bg-paper"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-950 text-xl text-signal transition group-hover:bg-signal group-hover:text-navy-950">
+              <span className="flex h-11 w-11 items-center justify-center bg-ink text-xl text-accent transition group-hover:bg-accent group-hover:text-ink">
                 <i className={`bx ${o.icon}`} aria-hidden="true" />
               </span>
-              <h3 className="mt-4 font-display text-lg font-semibold text-navy-900">{o.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-navy-700/80">{o.text}</p>
+              <h3 className="mt-4 font-display text-lg font-semibold text-ink">{o.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-60">{o.text}</p>
             </li>
           ))}
         </ul>
 
         {/* BPMN vs IDEF0 */}
         <div className="mt-16">
-          <h3 className="font-display text-2xl font-semibold text-navy-900 sm:text-3xl">
+          <h3 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
             BPMN frente a IDEF0
           </h3>
-          <p className="mt-3 max-w-3xl text-navy-700/80">
+          <p className="mt-3 max-w-3xl text-ink-60">
             Las dos páginas modelan el mismo proyecto CLOUD desde ángulos distintos. Esta tabla
             deja por escrito qué pregunta responde cada uno.
           </p>
 
-          <div className="mt-8 overflow-hidden rounded-2xl border border-navy-900/10">
+          <div className="mt-8 overflow-hidden border border-ink-15">
             <table className="w-full border-collapse text-left">
               <caption className="sr-only">Diferencias entre BPMN e IDEF0</caption>
               <thead>
-                <tr className="bg-navy-950 text-mist">
+                <tr className="bg-ink text-paper">
                   <th scope="col" className="px-4 py-3 font-mono text-[11px] uppercase tracking-widest sm:px-6">
                     Aspecto
                   </th>
@@ -145,12 +145,12 @@ export function Definicion() {
               </thead>
               <tbody>
                 {DIFERENCIAS.map((row) => (
-                  <tr key={row.aspecto} className="border-b border-navy-900/10 bg-white last:border-0 even:bg-mist/30">
-                    <td className="px-4 py-4 font-mono text-xs uppercase tracking-wider text-navy-700/70 sm:px-6">
+                  <tr key={row.aspecto} className="border-b border-ink-15 bg-surface last:border-0 even:bg-paper/30">
+                    <td className="px-4 py-4 font-mono text-xs uppercase tracking-wider text-ink-60 sm:px-6">
                       {row.aspecto}
                     </td>
-                    <td className="px-4 py-4 text-sm text-navy-700/80 sm:px-6">{row.idef0}</td>
-                    <td className="px-4 py-4 text-sm font-medium text-navy-900 sm:px-6">{row.bpmn}</td>
+                    <td className="px-4 py-4 text-sm text-ink-60 sm:px-6">{row.idef0}</td>
+                    <td className="px-4 py-4 text-sm font-medium text-ink sm:px-6">{row.bpmn}</td>
                   </tr>
                 ))}
               </tbody>
@@ -158,16 +158,16 @@ export function Definicion() {
           </div>
 
           {/* Comparativa visual */}
-          <div className="mt-8 overflow-hidden rounded-2xl border border-navy-900/10 bg-white shadow-sm">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-navy-900/10 px-5 py-4">
-              <p className="font-mono text-[11px] uppercase tracking-widest text-navy-700/60">
+          <div className="mt-8 overflow-hidden border border-ink-15 bg-surface">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-ink-15 px-5 py-4">
+              <p className="font-mono text-[11px] uppercase tracking-widest text-ink-60">
                 Referencia · Comparativa visual BPMN
               </p>
               <a
                 href="https://www.cybermedian.com/wp-content/uploads/2026/09/img_6ab101368c355-1024x819.png"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-navy-700/60 transition hover:text-signal"
+                className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-ink-60 transition hover:text-accent"
               >
                 Ver en tamaño completo
                 <i className="bx bx-external-link text-sm" aria-hidden="true" />
@@ -185,18 +185,18 @@ export function Definicion() {
 
         {/* Reglas */}
         <div className="mt-16">
-          <h3 className="font-display text-2xl font-semibold text-navy-900 sm:text-3xl">
+          <h3 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
             Reglas de buena práctica
           </h3>
           <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {REGLAS.map((r) => (
               <li
                 key={r.title}
-                className="relative rounded-2xl border border-navy-900/10 bg-mist/40 p-6 transition hover:border-signal/40"
+                className="relative border border-ink-15 bg-paper/40 p-6 transition hover:border-accent/40"
               >
-                <span className="absolute left-0 top-6 h-8 w-1 rounded-r bg-signal" aria-hidden="true" />
-                <h4 className="font-display text-base font-semibold text-navy-900">{r.title}</h4>
-                <p className="mt-2 text-sm leading-relaxed text-navy-700/80">{r.text}</p>
+                <span className="absolute left-0 top-6 h-8 w-1 rounded-r bg-accent" aria-hidden="true" />
+                <h4 className="font-display text-base font-semibold text-ink">{r.title}</h4>
+                <p className="mt-2 text-sm leading-relaxed text-ink-60">{r.text}</p>
               </li>
             ))}
           </ul>

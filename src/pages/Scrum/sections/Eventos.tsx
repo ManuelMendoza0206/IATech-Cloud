@@ -60,7 +60,6 @@ export function Eventos() {
             }}
           />
           <p className="mb-4 border border-ink bg-paper p-5">
-            {/*<span className="swiss-label block text-accent">Falta el archivo</span>*/}
             <span className="mt-2 block font-display text-base font-black leading-tight break-all text-ink">
               public/images/scrum-03.jpg
             </span>
