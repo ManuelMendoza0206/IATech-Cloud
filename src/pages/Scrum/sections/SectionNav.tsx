@@ -6,8 +6,9 @@ const SECTIONS = [
   { id: 'valores', label: 'Valores', short: '03' },
   { id: 'eventos', label: 'Eventos', short: '04' },
   { id: 'artefactos', label: 'Artefactos', short: '05' },
-  { id: 'conceptos', label: 'Conceptos', short: '06' },
-  { id: 'equipo', label: 'Equipo', short: '07' },
+  { id: 'guia-2020', label: 'Guía 2020', short: '06' },
+  { id: 'conceptos', label: 'Conceptos', short: '07' },
+  { id: 'equipo', label: 'Equipo', short: '08' },
 ];
 
 export default function SectionNav() {

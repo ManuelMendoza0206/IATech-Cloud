@@ -9,6 +9,7 @@ import {
   Artefactos,
   ConceptosOperativos,
   ScrumTeam,
+  Guia2020,
 } from './sections';
 
 export default function Scrum() {
@@ -19,8 +20,9 @@ export default function Scrum() {
         title="Teoría de"
         highlight="Scrum"
         description="Framework adaptativo, iterativo e incremental para gestionar proyectos complejos. Basado en empirismo y pensamiento Lean, Scrum entrega valor continuo a través de ciclos cortos de inspección y adaptación."
-        imageSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3tcuzy6R-xkDBPNUKCYlhlL_Nu_YLJ6rLBis_sJKaPA&s=10"
+        imageSrc="/images/scrum-07.jpg"
         imageAlt="Equipo trabajando con metodología Scrum"
+        imagePending="Fotografía de un equipo pequeño revisando el backlog en una pizarra, con tarjetas ordenadas en columnas."
       />
       <div id="content-start" />
       <SectionNav />
@@ -60,6 +62,7 @@ export default function Scrum() {
       <div id="artefactos">
         <Artefactos />
       </div>
+      <Guia2020 />
       <ConceptosOperativos />
       <div id="equipo">
         <ScrumTeam />

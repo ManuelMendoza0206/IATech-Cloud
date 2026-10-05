@@ -1,0 +1,99 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "core": {
+    "text-muted": {
+      "value": "#6c757d",
+      "role": "text-muted",
+      "name": "bs-secondary"
+    },
+    "text-primary": {
+      "value": "#111111",
+      "role": "text-primary",
+      "name": "bs-secondary-bg-subtle"
+    },
+    "surface": {
+      "value": "#000000",
+      "role": "surface",
+      "name": "bs-emphasis-color"
+    },
+    "background": {
+      "value": "#ffffff",
+      "role": "background",
+      "name": "bs-emphasis-color"
+    },
+    "border": {
+      "value": "#3b3b3b",
+      "role": "border",
+      "name": "bs-secondary-bg"
+    }
+  },
+  "status": {
+    "success": {
+      "value": "#198754",
+      "role": "success",
+      "name": "bs-success"
+    },
+    "danger": {
+      "value": "#dc3545",
+      "role": "danger",
+      "name": "bs-danger"
+    },
+    "warning": {
+      "value": "#ffc107",
+      "role": "warning",
+      "name": "bs-warning"
+    }
+  },
+  "extended": {
+    "rfc-acc-text": {
+      "value": "#262262",
+      "role": "info",
+      "name": "rfc-acc-text"
+    },
+    "color-27aae1": {
+      "value": "#27aae1",
+      "role": "unknown"
+    },
+    "color-eae4da": {
+      "value": "#eae4da",
+      "role": "unknown"
+    },
+    "bs-primary": {
+      "value": "#0d6efd",
+      "role": "unknown",
+      "name": "bs-primary"
+    },
+    "color-639cd6": {
+      "value": "#639cd6",
+      "role": "unknown"
+    },
+    "bs-secondary-bg-subtle": {
+      "value": "#e2e8f0",
+      "role": "unknown",
+      "name": "bs-secondary-bg-subtle"
+    },
+    "color-001b54": {
+      "value": "#001b54",
+      "role": "unknown"
+    },
+    "bs-info": {
+      "value": "#0dcaf0",
+      "role": "unknown",
+      "name": "bs-info"
+    },
+    "bs-secondary-border-subtle": {
+      "value": "#cccccc",
+      "role": "unknown",
+      "name": "bs-secondary-border-subtle"
+    },
+    "bs-light-text-emphasis": {
+      "value": "#495057",
+      "role": "unknown",
+      "name": "bs-light-text-emphasis"
+    }
+  },
+  "meta": {
+    "theme": "light",
+    "extracted": "2026-10-05"
+  }
+}

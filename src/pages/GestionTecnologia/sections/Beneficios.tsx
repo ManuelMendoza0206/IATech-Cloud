@@ -27,8 +27,9 @@ const DATA: Beneficio[] = [
 export function Beneficios() {
   return (
     <TwoColumnLayout
-      imageSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKmC-v9bhzvqpRT1lnBqQmFfogZ5NsIOWvLfvVdtQrbV9s-kTcULjSo9A&s=10"
+      imageSrc="/images/gestion-01.jpg"
       imageAlt="Beneficios de la gestión tecnológica"
+      imagePending="Fotografía de un espacio de trabajo del equipo técnico: varias pantallas con métricas de infraestructura y una pizarra con anotaciones."
       bg="white"
     >
       <SectionHeader

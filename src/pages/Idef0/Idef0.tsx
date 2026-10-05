@@ -10,6 +10,7 @@ import {
   Salidas,
   Resumen,
   Video,
+  NormasIdef0,
 } from './sections';
 
 export default function Idef0() {
@@ -86,6 +87,7 @@ export default function Idef0() {
       <div id="video">
         <Video />
       </div>
+      <NormasIdef0 />
 
       {/* Cierre */}
       <section className="bg-paper py-16 sm:py-20">

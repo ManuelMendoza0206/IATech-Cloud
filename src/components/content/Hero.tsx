@@ -1,11 +1,20 @@
 import type { HeroProps } from './types';
 import { Reveal } from '../ui/Reveal';
+import { Photo } from './Photo';
 
 /**
  * Hero Swiss: tipografía masiva al Flush left, columna de contenido
  * indentada sobre el grid y columna vacía como espacio negativo estructural.
  */
-export function Hero({ subtitle, title, highlight, description, imageSrc, imageAlt }: HeroProps) {
+export function Hero({
+  subtitle,
+  title,
+  highlight,
+  description,
+  imageSrc,
+  imageAlt,
+  imagePending,
+}: HeroProps) {
   const [before, after] = highlight ? title.split(highlight) : [title];
 
   return (
@@ -38,14 +47,15 @@ export function Hero({ subtitle, title, highlight, description, imageSrc, imageA
 
           {imageSrc && (
             <div className="hero-item col-span-full mt-12 sm:col-span-4 sm:mt-0 sm:self-end">
-              <img
+              <Photo
                 src={imageSrc}
                 alt={imageAlt || ''}
-                className="aspect-[4/3] w-full border border-ink object-cover grayscale"
-                loading="lazy"
-                decoding="async"
+                pending={imagePending}
+                aspect="4/3"
+                imgClassName="grayscale"
+                caption={false}
               />
-              <p className="swiss-label mt-2">{imageAlt}</p>
+              <p className="swiss-label mt-2 border-t border-ink-15 pt-2">{imageAlt}</p>
             </div>
           )}
         </div>

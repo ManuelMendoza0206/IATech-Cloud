@@ -5,6 +5,8 @@ export interface HeroProps {
   description: string;
   imageSrc?: string;
   imageAlt?: string;
+  /** Qué imagen se espera, mostrado si el archivo falta. */
+  imagePending?: string;
 }
 
 export interface SectionHeaderProps {
@@ -19,6 +21,8 @@ export interface TwoColumnLayoutProps {
   imageSrc: string;
   imageAlt: string;
   imagePosition?: 'left' | 'right';
+  /** Qué imagen se espera en `imageSrc`, mostrado si el archivo falta. */
+  imagePending?: string;
   bg?: 'white' | 'mist' | 'navy';
   id?: string;
 }

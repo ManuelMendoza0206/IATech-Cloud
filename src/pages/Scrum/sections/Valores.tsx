@@ -69,11 +69,26 @@ export function Valores() {
           <div className="relative">
             <div className="swiss-chip absolute -inset-4 -z-10" />
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj24EmKcz_4A_CkYEHq_W4riQnYaSAAamMWqPLApPS1A&s=10"
+              src="/images/scrum-02.jpg"
               alt="Los cinco valores de Scrum"
-              className="w-full object-cover"
+              className="w-full border border-ink object-cover grayscale"
               loading="lazy"
+              onError={(event) => {
+                const el = event.currentTarget;
+                el.style.display = 'none';
+                el.nextElementSibling?.classList.remove('hidden');
+              }}
             />
+            <div className="hidden border border-ink bg-paper p-5">
+              <p className="swiss-label text-accent">Falta el archivo</p>
+              <p className="mt-2 font-display text-base font-black leading-tight break-all text-ink">
+                public/images/scrum-02.jpg
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-ink-60">
+                Fotografía de un equipo Scrum en una sesión de retrospectiva, con notas adhesivas
+                sobre un muro. Luz natural, encuadre medio, sin texto legible.
+              </p>
+            </div>
             <p className="mt-4 font-mono text-xs uppercase tracking-widest text-ink/40">
               Commitment · Focus · Openness · Respect · Courage
             </p>

@@ -6,3 +6,4 @@ export { ImpactoSocial } from './ImpactoSocial';
 export { PoliticasPublicas } from './PoliticasPublicas';
 export { TendenciasFuturas } from './TendenciasFuturas';
 export { Conclusiones } from './Conclusiones';
+export { MadurezTecnologica } from './MadurezTecnologica';

@@ -6,6 +6,9 @@ import {
   ProcesosGobernanza,
   HerramientasSoporte,
   Beneficios,
+  GobernanzaTi,
+  CalidadProducto,
+  FinOps,
 } from './sections';
 
 export default function GestionTecnologia() {
@@ -29,6 +32,9 @@ export default function GestionTecnologia() {
       </Reveal>
       <HerramientasSoporte />
       <Beneficios />
+      <GobernanzaTi />
+      <FinOps />
+      <CalidadProducto />
     </div>
   );
 }

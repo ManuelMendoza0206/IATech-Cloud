@@ -11,8 +11,9 @@ const DATA: TipoItem[] = [
 export function FundamentosTecnologia() {
   return (
     <TwoColumnLayout
-      imageSrc="https://media.istockphoto.com/id/1336601182/es/vector/concepto-de-reparaci%C3%B3n-de-computadoras.jpg?s=612x612&w=is&k=20&c=hqZIlOPtHTzEAJJFBWzOZU04BlYfKE53lwr9dsMvBNA="
+      imageSrc="/images/cti-02.jpg"
       imageAlt="Tecnología: hardware, software y gestión"
+      imagePending="Fotografía de un banco de pruebas técnicas: placa, instrumental y una computadora de escritorio en el mismo encuadre."
       imagePosition="left"
       bg="mist"
     >

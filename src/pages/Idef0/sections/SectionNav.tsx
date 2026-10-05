@@ -11,6 +11,7 @@ const SECTIONS = [
   { id: 'salidas', label: 'Salidas', short: '08' },
   { id: 'resumen', label: 'Resumen', short: '09' },
   { id: 'video', label: 'Video', short: '10' },
+  { id: 'normas', label: 'Normas', short: '11' },
 ];
 
 export default function SectionNav() {

@@ -27,8 +27,9 @@ const DATA: Fundamento[] = [
 export function FundamentosCiencia() {
   return (
     <TwoColumnLayout
-      imageSrc="https://cdn.aicad.es/asset/img/4/que-es-el-metodo-cientifico.png"
+      imageSrc="/images/cti-01.jpg"
       imageAlt="El método científico: observación, hipótesis, experimentación, conclusión"
+      imagePending="Instrumental de laboratorio o una placa de petri con una muestra, fotografiada de cerca sobre fondo blanco."
       bg="white"
     >
       <SectionHeader number="01" title="Fundamentos de la Ciencia" />

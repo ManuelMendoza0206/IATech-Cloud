@@ -9,6 +9,7 @@ import {
   PoliticasPublicas,
   TendenciasFuturas,
   Conclusiones,
+  MadurezTecnologica,
 } from './sections';
 
 export default function CienciaTecnologiaInnovacion() {
@@ -31,6 +32,7 @@ export default function CienciaTecnologiaInnovacion() {
       <div id="impacto"><ImpactoSocial /></div>
       <div id="politicas"><PoliticasPublicas /></div>
       <div id="tendencias"><TendenciasFuturas /></div>
+      <MadurezTecnologica />
       <Conclusiones />
     </div>
   );

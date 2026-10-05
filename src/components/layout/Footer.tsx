@@ -49,9 +49,26 @@ export default function Footer() {
                 <li>
                   <Link to="/idef0" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">IDEF0</Link>
                 </li>
+                <li>
+                  <Link to="/fuentes" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Fuentes</Link>
+                </li>
               </ul>
             </nav>
 
+            <div className="sm:col-span-3">
+              <p className="swiss-label border-b border-ink pb-3">Verificación</p>
+              <p className="mt-4 text-sm leading-relaxed text-ink-60">
+                Todo dato nuevo publicado en el sitio lleva su fuente. El índice completo, con
+                enlace a cada publicación original, está en una sola página.
+              </p>
+              <Link
+                to="/fuentes"
+                className="swiss-btn swiss-btn-secondary mt-5 inline-flex items-center gap-2 px-5 py-2.5 text-[11px]"
+              >
+                Índice de fuentes
+                <i className="bx bx-right-arrow-alt text-base" aria-hidden="true" />
+              </Link>
+            </div>
           </div>
         </div>
 

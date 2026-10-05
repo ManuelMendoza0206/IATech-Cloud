@@ -22,8 +22,9 @@ const CONCEPTOS = [
 export function ConceptosOperativos() {
   return (
     <TwoColumnLayout
-      imageSrc="https://insideproduct.co/wp-content/uploads/2025/04/refinement-board.png"
+      imageSrc="/images/scrum-08.jpg"
       imageAlt="Board de refinamiento con historias de usuario y criterios de aceptación"
+      imagePending="Fotografía de un tablero de refinamiento del backlog: tarjetas de historia de usuario ordenadas en columnas, con anotaciones manuscritas."
       imagePosition="right"
       bg="mist"
       id="conceptos"

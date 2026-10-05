@@ -6,4 +6,5 @@ export { Eventos } from './Eventos';
 export { Artefactos } from './Artefactos';
 export { ConceptosOperativos } from './ConceptosOperativos';
 export { ObjetivosAreas } from './ObjetivosAreas';
+export { Guia2020 } from './Guia2020';
 export { default as SectionNav } from './SectionNav';

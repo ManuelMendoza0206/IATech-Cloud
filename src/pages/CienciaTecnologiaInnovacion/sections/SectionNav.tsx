@@ -8,6 +8,7 @@ const SECTIONS = [
   { id: 'impacto', label: 'Impacto', short: '05' },
   { id: 'politicas', label: 'Políticas', short: '06' },
   { id: 'tendencias', label: 'Tendencias', short: '07' },
+  { id: 'madurez', label: 'Madurez', short: '08' },
 ];
 
 export default function SectionNav() {

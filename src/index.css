@@ -153,6 +153,79 @@ body {
   color: var(--color-ink-60);
 }
 
+/* Micro-label sobre superficie oscura: se tiñe desde el propio ground */
+.swiss-label-invert {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ink-15);
+}
+
+/* Cita de fuente: links underlines, nunca sueltos */
+.swiss-source {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-ink-60);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-ink-15);
+  transition: color 120ms linear, text-decoration-color 120ms linear;
+}
+
+.swiss-source:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+.swiss-source:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Riel izquierdo para la etiqueta de sección: la etiqueta es parte del
+   grid, no un kicker flotando sobre el titular. */
+.swiss-rail {
+  border-left: 1px solid var(--color-ink);
+  padding-left: 1rem;
+}
+
+/* Columna de datos: cifras tabulares alineadas, sin sombras */
+.swiss-figure {
+  border-top: 1px solid var(--color-ink);
+  padding-top: 1rem;
+}
+
+.swiss-figure-muted {
+  border-top: 1px solid var(--color-ink-15);
+  padding-top: 1rem;
+}
+
+/* Barras de datos: magnitud por longitud, nunca por color */
+.swiss-bar {
+  display: block;
+  height: 0.5rem;
+  background: var(--color-ink);
+}
+
+.swiss-bar-accent {
+  display: block;
+  height: 0.5rem;
+  background: var(--color-accent);
+}
+
+/* Escala TRL / ladders: peldaños con borde, no barras redondeadas */
+.swiss-rung {
+  border-left: 2px solid var(--color-ink);
+  transition: border-color 120ms linear;
+}
+
+.swiss-rung-active {
+  border-left-color: var(--color-accent);
+}
+
 .swiss-numeral {
   font-size: clamp(4rem, 12vw, 11rem);
   font-weight: 900;

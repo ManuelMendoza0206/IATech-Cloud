@@ -3,8 +3,9 @@ import { TwoColumnLayout, SectionHeader } from '../../../components/content';
 export function Definicion() {
   return (
     <TwoColumnLayout
-      imageSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs5PQ2Y3Vlw8_jjzWD6zVxa9Vrzu0kbEYryfVjwkzI9A&s=10"
+      imageSrc="/images/scrum-01.jpg"
       imageAlt="Fundamento teórico de Scrum: empirismo y pensamiento Lean"
+      imagePending="Fotografía cenital de un tablero Scrum: backlog, tableros de sprint y calendario de ceremonias. Luz neutra, sin texto legible."
       bg="white"
     >
       <SectionHeader

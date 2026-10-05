@@ -62,11 +62,27 @@ export function InterseccionCTI() {
         <div className="relative">
           <div className="swiss-chip absolute -inset-4 -z-10" />
           <img
-            src="https://img.magnific.com/vector-gratis/bombilla-elementos-estacionarios_1308-128061.jpg?semt=ais_hybrid&w=740&q=80"
+            src="/images/cti-03.jpg"
             alt="Intersección entre ciencia, tecnología e innovación"
-            className="w-full object-cover"
+            className="w-full border border-ink object-cover grayscale"
             loading="lazy"
+            onError={(event) => {
+              const el = event.currentTarget;
+              el.style.display = 'none';
+              el.nextElementSibling?.classList.remove('hidden');
+            }}
           />
+          <div className="hidden border border-ink bg-paper p-5">
+            <p className="swiss-label text-accent">Falta el archivo</p>
+            <p className="mt-2 font-display text-base font-black leading-tight break-all text-ink">
+              public/images/cti-03.jpg
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-ink-60">
+              Imagen de un laboratorio con instrumentation activa y, en el mismo encuadre, una
+              pantalla con código o un plano técnico. Debe leerse como ciencia y tecnología a la
+              vez.
+            </p>
+          </div>
         </div>
       </div>
     </section>

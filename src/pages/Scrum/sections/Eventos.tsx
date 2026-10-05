@@ -51,11 +51,24 @@ export function Eventos() {
         {/* Diagrama ciclo */}
         <div className="swiss-cell mt-10 overflow-hidden p-4 sm:p-6">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAj6dwIxhErU3Rg7TiPMs8-U81Er_Jid1jcp16Kh1hfIHORkgk-CHA0dhU&s=10"
+            src="/images/scrum-03.jpg"
             alt="Ciclo de eventos de Scrum: Sprint Planning → Daily Scrum → Sprint Review → Retrospective"
             className="mx-auto max-h-72 w-auto object-contain"
             loading="lazy"
+            onError={(event) => {
+              event.currentTarget.style.display = 'none';
+            }}
           />
+          <p className="mb-4 border border-ink bg-paper p-5">
+            <span className="swiss-label block text-accent">Falta el archivo</span>
+            <span className="mt-2 block font-display text-base font-black leading-tight break-all text-ink">
+              public/images/scrum-03.jpg
+            </span>
+            <span className="mt-3 block text-sm leading-relaxed text-ink-60">
+              Diagrama circular del ciclo de eventos de Scrum en fondo blanco, líneas finas, sin
+              colores. Reemplázalo por un gráfico propio en SVG si preferís.
+            </span>
+          </p>
           <div className="mt-4 flex flex-wrap justify-center gap-2 font-mono text-xs">
             <span className="swiss-cell px-3 py-1 text-ink">Sprint Planning</span>
             <span className="text-ink-60/40">→</span>

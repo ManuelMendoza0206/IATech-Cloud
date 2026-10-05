@@ -36,11 +36,24 @@ export function Artefactos() {
 
         <div className="swiss-cell mt-10 overflow-hidden p-4 sm:p-6">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0GH2HfJcNOR6mhTxpNUOmB1tnFSKGkoLtcZEyDLwYD-CukYsgDuQLus19&s=10"
+            src="/images/scrum-05.jpg"
             alt="Artefactos de Scrum y sus compromisos: Product Backlog → Product Goal, Sprint Backlog → Sprint Goal, Incremento → Definition of Done"
             className="mx-auto max-h-72 w-auto object-contain"
             loading="lazy"
+            onError={(event) => {
+              event.currentTarget.style.display = 'none';
+            }}
           />
+          <p className="border border-ink bg-paper p-5">
+            <span className="swiss-label block text-accent">Falta el archivo</span>
+            <span className="mt-2 block font-display text-base font-black leading-tight break-all text-ink">
+              public/images/scrum-05.jpg
+            </span>
+            <span className="mt-3 block text-sm leading-relaxed text-ink-60">
+              Esquema de los tres artefactos con su compromiso asociado, en líneas finas sobre
+              fondo blanco.
+            </span>
+          </p>
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-3">

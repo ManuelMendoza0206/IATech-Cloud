@@ -41,21 +41,48 @@ export function TendenciasFuturas() {
           <div className="relative">
             <div className="swiss-cell absolute -inset-4 -z-10" />
             <img
-              src="https://img.magnific.com/vector-gratis/ilustracion-concepto-realidad-virtual_23-2148790842.jpg?semt=ais_test_b&w=740&q=80"
+              src="/images/cti-04.jpg"
               alt="Tendencias tecnológicas futuras"
-              className="w-full object-cover"
+              className="w-full border border-ink object-cover grayscale"
               loading="lazy"
+              onError={(event) => {
+                const el = event.currentTarget;
+                el.style.display = 'none';
+                el.nextElementSibling?.classList.remove('hidden');
+              }}
             />
+            <div className="hidden border border-ink bg-paper p-5">
+              <p className="swiss-label text-accent">Falta el archivo</p>
+              <p className="mt-2 font-display text-base font-black leading-tight break-all text-ink">
+                public/images/cti-04.jpg
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-ink-60">
+                Imagen de un profesional de salud con un visor de realidad aumentada o un monitor
+                con datos clínicos en vivo. Debe sugerir una tendencia concreta, no un concepto
+                abstracto.
+              </p>
+            </div>
           </div>
           <div>
             <p className="swiss-cell p-6 text-ink">
-              <span className="font-mono text-xs uppercase tracking-widest text-accent">
+              <span className="swiss-label block text-accent">
                 Dato clave
               </span>
               <p className="mt-3 text-lg">
-                Estimación de inversión global en I+D de{' '}
-                <span className="font-display text-2xl text-accent">2.6 billones de dólares</span>{' '}
-                para 2025.
+                Gasto mundial en I+D estimado en{' '}
+                <span className="font-display text-2xl text-accent">2,87 billones de dólares</span>{' '}
+                en 2024, sobre 2,78 billones en 2023.
+              </p>
+              <p className="mt-3">
+                <a
+                  href="https://www.wipo.int/en/web/global-innovation-index/w/blogs/2025/end-of-year-edition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="swiss-source inline-flex items-center gap-1"
+                >
+                  WIPO · Global Innovation Index 2025
+                  <i className="bx bx-link-external text-[0.9em] leading-none" aria-hidden="true" />
+                </a>
               </p>
             </p>
             <VideoEmbed
