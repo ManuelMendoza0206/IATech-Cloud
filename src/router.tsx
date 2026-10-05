@@ -33,4 +33,5 @@ export const ROUTES: AppRoute[] = [
   { path: '/scrum/objetivos', label: 'Objetivos por Área', element: <Objetivos />, hideFromNav: true },
   { path: '/idef0', label: 'IDEF0', element: <Idef0 /> },
   { path: '/bpmn', label: 'BPMN', element: <Bpmn /> },
+  { path: '/contactos', label: 'Contactos', element: <Contactos /> },
 ];

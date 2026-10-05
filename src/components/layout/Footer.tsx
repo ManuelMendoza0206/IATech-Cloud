@@ -34,6 +34,7 @@ const PRACTICE_PAGES = [
   { to: '/scrum', label: 'Scrum' },
   { to: '/idef0', label: 'IDEF0' },
   { to: '/bpmn', label: 'BPMN' },
+  { to: '/contactos', label: 'Contactos' },
 ];
 
 function buildMailto(email: string) {
