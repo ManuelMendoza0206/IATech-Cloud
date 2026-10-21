@@ -14,6 +14,7 @@ import Fuentes from './pages/Fuentes/Fuentes';
 import Bpmn from './pages/Bpmn/Bpmn';
 import Tableau from './pages/Tableau/Tableau';
 import Contactos from './pages/Contactos/Contactos';
+import Weka from './pages/Weka/Weka';
 
 export interface AppRoute {
   path: string;
@@ -34,8 +35,9 @@ export const ROUTES: AppRoute[] = [
   { path: '/scrum', label: 'Scrum', element: <Scrum /> },
   { path: '/scrum/objetivos', label: 'Objetivos por Área', element: <Objetivos />, hideFromNav: true },
   { path: '/idef0', label: 'IDEF0', element: <Idef0 /> },
-{ path: '/fuentes', label: 'Fuentes', element: <Fuentes />, hideFromNav: true },
+  { path: '/fuentes', label: 'Fuentes', element: <Fuentes />, hideFromNav: true },
   { path: '/bpmn', label: 'BPMN', element: <Bpmn /> },
   { path: '/tableau', label: 'Tableau', element: <Tableau /> },
   { path: '/contactos', label: 'Contactos', element: <Contactos /> },
+  { path: '/weka', label: 'Weka', element: <Weka /> },
 ];
