@@ -53,6 +53,35 @@ export function Tablero() {
           ))}
         </div>
 
+        <figure className="mt-12 border border-ink-15 bg-white">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-ink-15 px-5 py-4">
+            <span className="swiss-label">El tablero original en Tableau</span>
+            <a
+              href="/images/tableau/dashboard.jpeg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="swiss-source inline-flex items-center gap-1"
+            >
+              Ver en tamaño completo
+              <i className="bx bx-external-link text-[0.9em] leading-none" aria-hidden="true" />
+            </a>
+          </div>
+          <img
+            src="/images/tableau/dashboard.jpeg"
+            alt="Tablero de costo cloud construido en Tableau: costo mensual 21.284,5 USD, costo anual estimado 255.414 USD, 100 recursos y 19 críticos, con el desglose por tipo de recurso, por proveedor, por ambiente, por criticidad, por región y los recursos creados por año"
+            loading="lazy"
+            decoding="async"
+            className="w-full"
+          />
+          <figcaption className="border-t border-ink-15 px-5 py-4">
+            <p className="text-sm leading-relaxed text-ink-60">
+              Esta es la salida del libro de Tableau, con su paleta y su retícula propias. Las
+              cifras coinciden con las de los indicadores de arriba y con las de los gráficos que
+              siguen, redibujados con la retícula del sitio.
+            </p>
+          </figcaption>
+        </figure>
+
         <Dashboard />
       </div>
     </section>
