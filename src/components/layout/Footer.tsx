@@ -53,6 +53,9 @@ export default function Footer() {
                   <Link to="/bpmn" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">BPMN</Link>
                 </li>
                 <li>
+                  <Link to="/tableau" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Tableau</Link>
+                </li>
+                <li>
                   <Link to="/contactos" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Contactos</Link>
                 </li>
                 <li>

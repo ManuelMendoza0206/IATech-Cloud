@@ -12,6 +12,7 @@ import Objetivos from './pages/Scrum/Objetivos';
 import Idef0 from './pages/Idef0/Idef0';
 import Fuentes from './pages/Fuentes/Fuentes';
 import Bpmn from './pages/Bpmn/Bpmn';
+import Tableau from './pages/Tableau/Tableau';
 import Contactos from './pages/Contactos/Contactos';
 
 export interface AppRoute {
@@ -35,5 +36,6 @@ export const ROUTES: AppRoute[] = [
   { path: '/idef0', label: 'IDEF0', element: <Idef0 /> },
 { path: '/fuentes', label: 'Fuentes', element: <Fuentes />, hideFromNav: true },
   { path: '/bpmn', label: 'BPMN', element: <Bpmn /> },
+  { path: '/tableau', label: 'Tableau', element: <Tableau /> },
   { path: '/contactos', label: 'Contactos', element: <Contactos /> },
 ];

@@ -43,6 +43,12 @@ const AREA_PAGES = [
     title: 'IDEF0',
     description: 'El modelo de funciones del proyecto CLOUD, documentado.',
   },
+  {
+    path: '/tableau',
+    icon: 'bx-bar-chart-alt-2',
+    title: 'Tableau',
+    description: 'El tablero de costo cloud y la teoría del libro de trabajo.',
+  },
 ];
 
 export default function Explorar() {
