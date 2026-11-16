@@ -49,6 +49,12 @@ const AREA_PAGES = [
     title: 'Tableau',
     description: 'El tablero de costo cloud y la teoría del libro de trabajo.',
   },
+  {
+    path: '/conclusiones',
+    icon: 'bx-check-shield',
+    title: 'Conclusiones y Recomendaciones',
+    description: 'Síntesis del trabajo realizado y líneas de acción a futuro.',
+  },
 ];
 
 export default function Explorar() {
