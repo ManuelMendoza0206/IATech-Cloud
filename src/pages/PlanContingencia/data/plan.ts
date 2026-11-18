@@ -1,9 +1,9 @@
 /**
- * Pegar aquí el enlace compartido de Google Drive del documento
+ * Enlace compartido en Google Drive del documento
  * "PLAN DE CONTINGENCIA GESTION TIC 2026 - AreaCloud.docx".
- * Mientras esté vacío, el botón de documento redirige a la sección #documento.
  */
-export const PLAN_CONTINGENCIA_DRIVE_URL = '';
+export const PLAN_CONTINGENCIA_DRIVE_URL =
+  'https://drive.google.com/file/d/1BllclfUAmbBfSmE3lcklgc9ioQ5G94Rb/view?usp=drive_link';
 
 export interface FaseCiclo {
   fase: string;
