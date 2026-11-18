@@ -29,7 +29,6 @@ export interface AppRoute {
 
 export const ROUTES: AppRoute[] = [
   { path: '/', label: 'Inicio', element: <Home /> },
-  { path: '/servicios', label: 'Servicios', element: <Servicios /> },
 //  { path: '/area-trabajo', label: 'Área de Trabajo', element: <AreaTrabajo /> },
   { path: '/gestion-tecnologia', label: 'Gestión de Tecnología', element: <GestionTecnologia /> },
   { path: '/ciencia-tecnologia-innovacion', label: 'Ciencia, Tecnología e Innovación', element: <CienciaTecnologiaInnovacion /> },
@@ -46,6 +45,7 @@ export const ROUTES: AppRoute[] = [
   { path: '/contactos', label: 'Contactos', element: <Contactos /> },
   { path: '/weka', label: 'Weka', element: <Weka /> },
   { path: '/presupuesto', label: 'Presupuesto', element: <Presupuesto /> },
+  { path: '/servicios', label: 'Servicios', element: <Servicios /> },
   { path: '/plan-de-contingencia', label: 'Plan de Contingencia', element: <PlanContingencia /> },
   { path: '/conclusiones', label: 'Conclusiones y Recomendaciones', element: <Conclusiones /> },
 ];

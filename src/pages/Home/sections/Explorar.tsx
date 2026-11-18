@@ -2,12 +2,6 @@ import { Link } from 'react-router-dom';
 
 const AREA_PAGES = [
   {
-    path: '/servicios',
-    icon: 'bx-cloud',
-    title: 'Servicios',
-    description: 'AWS, Azure, Google Cloud y las capas que opera el área.',
-  },
-  {
     path: '/gestion-tecnologia',
     icon: 'bx-chip',
     title: 'Gestión de Tecnología',
@@ -60,6 +54,12 @@ const AREA_PAGES = [
     icon: 'bx-wallet',
     title: 'Presupuesto',
     description: 'Planificación y seguimiento de los recursos del área, en resumen conceptual.',
+  },
+  {
+    path: '/servicios',
+    icon: 'bx-cloud',
+    title: 'Servicios',
+    description: 'AWS, Azure, Google Cloud y las capas que opera el área.',
   },
   {
     path: '/plan-de-contingencia',

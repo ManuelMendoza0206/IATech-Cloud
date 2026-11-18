@@ -29,9 +29,6 @@ export default function Footer() {
                   <Link to="/" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Inicio</Link>
                 </li>
                 <li>
-                  <Link to="/servicios" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Servicios</Link>
-                </li>
-                <li>
                   <Link to="/gestion-tecnologia" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Gestión de Tecnología</Link>
                 </li>
                 <li>
@@ -66,6 +63,9 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link to="/presupuesto" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Presupuesto</Link>
+                </li>
+                <li>
+                  <Link to="/servicios" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Servicios</Link>
                 </li>
                 <li>
                   <Link to="/plan-de-contingencia" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Plan de Contingencia</Link>
