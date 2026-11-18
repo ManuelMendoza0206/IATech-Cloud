@@ -8,7 +8,7 @@ export default function Documento() {
     <section id="documento" className="border-t border-ink bg-surface py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <SectionHeader
-          number="04"
+          number="05"
           title="Documento de presupuesto"
           description="El detalle operativo se gestiona en un documento compartido. La web presenta únicamente el resumen conceptual."
         />
@@ -16,8 +16,8 @@ export default function Documento() {
         <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:items-start">
           <div className="swiss-cell p-6 sm:p-8 lg:col-span-7">
             <span className="swiss-chip inline-flex items-center gap-2 px-4 py-1.5 text-xs font-medium text-accent">
-              <i className="bx bxl-google text-base" aria-hidden="true" />
-              Google Sheets · Drive
+              <i className="bx bx-link-external text-base" aria-hidden="true" />
+              Documento · Drive
             </span>
 
             <h3 className="mt-6 font-display text-2xl font-extrabold leading-tight text-ink">
@@ -50,7 +50,7 @@ export default function Documento() {
                 rel="noopener noreferrer"
                 className="swiss-btn swiss-btn-primary inline-flex items-center gap-2 px-7 py-3 text-[11px]"
               >
-                Abrir en Google Sheets
+                Abrir documento
                 <i className="bx bx-link-external text-base" aria-hidden="true" />
               </a>
               <span className="font-mono text-xs uppercase tracking-widest text-ink-40">

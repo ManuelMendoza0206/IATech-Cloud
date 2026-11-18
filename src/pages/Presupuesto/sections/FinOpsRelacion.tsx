@@ -72,7 +72,23 @@ export default function FinOpsRelacion() {
                 objetivos del servicio.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <figure className="mt-6 border border-ink-15 bg-white">
+                <img
+                  src="/images/tableau/dashboard.jpeg"
+                  alt="Tablero de costos cloud que ilustra la visibilidad del consumo y la distribución del gasto"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full"
+                />
+                <figcaption className="border-t border-ink-15 px-4 py-3">
+                  <p className="text-xs leading-relaxed text-ink-60 sm:text-sm">
+                    La visualización del consumo —como el tablero de costos del área— ayuda a
+                    relacionar planificación, uso real y decisiones de optimización.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   to="/gestion-tecnologia#finops"
                   className="swiss-btn swiss-btn-secondary inline-flex items-center gap-2 px-5 py-2.5 text-[11px]"

@@ -97,6 +97,22 @@ export default function Componentes() {
           ))}
         </ul>
 
+        <figure className="mt-12 border border-ink-15 bg-white">
+          <img
+            src="/images/cloud2.jpg"
+            alt="Infraestructura y servicios en la nube que forman parte de los componentes del presupuesto"
+            loading="lazy"
+            decoding="async"
+            className="aspect-[21/9] w-full object-cover"
+          />
+          <figcaption className="border-t border-ink-15 px-5 py-4">
+            <p className="text-sm leading-relaxed text-ink-60">
+              Infraestructura, servicios y herramientas conviven dentro del presupuesto: cada
+              componente aporta capacidad para operar y evolucionar la plataforma del área.
+            </p>
+          </figcaption>
+        </figure>
+
         <p className="mt-10 border-l-2 border-ink pl-5 text-sm leading-relaxed text-ink-60 sm:text-base">
           La composición y el peso relativo de cada componente dependen de las prioridades,
           la etapa del proyecto y las necesidades operativas del periodo. El detalle específico se

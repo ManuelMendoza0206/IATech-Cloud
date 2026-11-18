@@ -1,5 +1,5 @@
 import { Reveal } from '../../components/ui/Reveal';
-import { Teoria, Componentes, FinOpsRelacion, Documento } from './sections';
+import { Teoria, Componentes, FinOpsRelacion, Video, Documento } from './sections';
 
 const DRIVE_URL =
   'https://docs.google.com/spreadsheets/d/1Rh2leQZQYRSxdFC3Zl0ewtRmyJ5NhX7R/edit?usp=drive_link&ouid=114171327152076986642&rtpof=true&sd=true';
@@ -41,7 +41,7 @@ export default function Presupuesto() {
                     rel="noopener noreferrer"
                     className="swiss-btn swiss-btn-secondary inline-flex items-center gap-2 px-7 py-3 text-[11px]"
                   >
-                    Abrir en Drive
+                    Abrir documento
                     <i className="bx bx-link-external text-base" aria-hidden="true" />
                   </a>
                 </div>
@@ -59,6 +59,7 @@ export default function Presupuesto() {
       <Teoria />
       <Componentes />
       <FinOpsRelacion />
+      <Video />
       <Documento />
 
       <section className="bg-ink py-20 sm:py-28">
