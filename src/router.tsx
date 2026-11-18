@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import Home from './pages/Home/Home';
+import Servicios from './pages/Servicios/Servicios';
 //import AreaTrabajo from './pages/AreaTrabajo/AreaTrabajo';
 import GestionTecnologia from './pages/GestionTecnologia/GestionTecnologia';
 import CienciaTecnologiaInnovacion from './pages/CienciaTecnologiaInnovacion/CienciaTecnologiaInnovacion';
@@ -27,6 +28,7 @@ export interface AppRoute {
 
 export const ROUTES: AppRoute[] = [
   { path: '/', label: 'Inicio', element: <Home /> },
+  { path: '/servicios', label: 'Servicios', element: <Servicios /> },
 //  { path: '/area-trabajo', label: 'Área de Trabajo', element: <AreaTrabajo /> },
   { path: '/gestion-tecnologia', label: 'Gestión de Tecnología', element: <GestionTecnologia /> },
   { path: '/ciencia-tecnologia-innovacion', label: 'Ciencia, Tecnología e Innovación', element: <CienciaTecnologiaInnovacion /> },
