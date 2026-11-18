@@ -56,6 +56,23 @@ export default function Teoria() {
                 área. El detalle y los valores se gestionan en el documento compartido.
               </p>
             </div>
+
+            <figure className="mt-8 border border-ink-15 bg-white">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOgIos_Dy8Qfub4OK3UzYi7487G6c3akzfQtAdgQ8cRw&s=10"
+                alt="Planificación y seguimiento de recursos como parte de la gestión presupuestaria"
+                loading="lazy"
+                decoding="async"
+                referrerPolicy="no-referrer"
+                className="aspect-[4/3] w-full object-cover"
+              />
+              <figcaption className="border-t border-ink-15 px-5 py-4">
+                <p className="text-sm leading-relaxed text-ink-60">
+                  La planificación y el seguimiento permiten ordenar recursos y prioridades para
+                  sostener la operación del área.
+                </p>
+              </figcaption>
+            </figure>
           </div>
 
           <div className="lg:col-span-7">

@@ -72,6 +72,23 @@ export default function FinOpsRelacion() {
                 objetivos del servicio.
               </p>
 
+              <figure className="mt-6 border border-ink-15 bg-white">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfmd7vnFQMt4Dzt5Hp8YY8z-3KWxScY1Dzty-sZ1XljA&s=10"
+                  alt="Visibilidad y análisis del consumo para la gestión de costos en la nube"
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                  className="w-full object-cover"
+                />
+                <figcaption className="border-t border-ink-15 px-4 py-3">
+                  <p className="text-xs leading-relaxed text-ink-60 sm:text-sm">
+                    La visibilidad del consumo apoya la relación entre planificación, uso real y
+                    decisiones de optimización en la gestión de costos.
+                  </p>
+                </figcaption>
+              </figure>
+
               <p className="mt-6 border-l-2 border-ink pl-4 text-sm leading-relaxed text-ink-60">
                 La visibilidad del consumo —apoyada en tableros y reportes del área— ayuda a
                 relacionar planificación, uso real y decisiones de optimización.
