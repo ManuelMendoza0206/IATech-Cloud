@@ -15,6 +15,7 @@ import Bpmn from './pages/Bpmn/Bpmn';
 import Tableau from './pages/Tableau/Tableau';
 import Contactos from './pages/Contactos/Contactos';
 import Weka from './pages/Weka/Weka';
+import Monitoreo from './pages/Monitoreo/Monitoreo';
 
 export interface AppRoute {
   path: string;
@@ -40,4 +41,5 @@ export const ROUTES: AppRoute[] = [
   { path: '/tableau', label: 'Tableau', element: <Tableau /> },
   { path: '/contactos', label: 'Contactos', element: <Contactos /> },
   { path: '/weka', label: 'Weka', element: <Weka /> },
+  { path: '/monitoreo', label: 'Monitoreo', element: <Monitoreo /> },
 ];

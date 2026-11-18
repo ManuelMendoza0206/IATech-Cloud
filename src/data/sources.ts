@@ -321,6 +321,26 @@ export const SOURCES: SourceEntry[] = [
     kind: 'guia',
     note: 'Proyecto hermano de Weka para minería de datos en streaming, con las mismas interfaces de learners y filtros.',
   },
+  {
+    id: 'prtg-home',
+    short: 'Paessler · PRTG',
+    title: 'PRTG Network Monitor: All-in-One Network Monitoring Software',
+    publisher: 'Paessler GmbH',
+    year: '2026',
+    href: 'https://www.paessler.com/prtg',
+    kind: 'guia',
+    note: 'Descripción del producto: sensores, alertas, mapas en tiempo real y monitoreo de servicios en la nube.',
+  },
+  {
+    id: 'prtg-faq',
+    short: 'Paessler · FAQ de PRTG',
+    title: 'PRTG Network Monitor FAQs',
+    publisher: 'Paessler GmbH',
+    year: '2026',
+    href: 'https://www.paessler.com/prtg/faqs',
+    kind: 'guia',
+    note: 'Definición de sensor, más de 250 sensores preconfigurados, reportes automáticos y licencias por sensores.',
+  },
 ];
 
 export const SOURCES_BY_ID: Record<string, SourceEntry> = Object.fromEntries(
