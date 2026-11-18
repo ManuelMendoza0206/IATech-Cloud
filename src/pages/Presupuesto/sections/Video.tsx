@@ -24,6 +24,17 @@ const VIDEOS = [
       'Prácticas para mejorar el control financiero sin frenar la operación',
     ],
   },
+  {
+    id: 'UcnHCjp20YQ',
+    titulo: 'FinOps explicado: control y valor del gasto en la nube',
+    canal: 'Abhishek Veeramalla · introducción práctica a FinOps',
+    watch: 'https://www.youtube.com/watch?v=UcnHCjp20YQ',
+    puntos: [
+      'Conceptos clave para entender el gasto y el valor en entornos cloud',
+      'Por qué la visibilidad y la colaboración son centrales en FinOps',
+      'Relación entre optimización de costos y objetivos del negocio',
+    ],
+  },
 ];
 
 function LazyPlayer({ id, titulo }: { id: string; titulo: string }) {
@@ -79,7 +90,7 @@ export default function Video() {
           description="Material audiovisual para complementar la planificación presupuestaria, la visibilidad del consumo y las prácticas de gestión financiera en la nube."
         />
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-8">
+        <div className="mt-12 grid gap-10 md:grid-cols-2 xl:grid-cols-3 lg:gap-8">
           {VIDEOS.map((v) => (
             <div key={v.id}>
               <LazyPlayer id={v.id} titulo={v.titulo} />

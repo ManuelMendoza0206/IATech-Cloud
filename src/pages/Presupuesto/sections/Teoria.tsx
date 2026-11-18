@@ -56,22 +56,6 @@ export default function Teoria() {
                 área. El detalle y los valores se gestionan en el documento compartido.
               </p>
             </div>
-
-            <figure className="mt-8 border border-ink-15 bg-white">
-              <img
-                src="/images/gestion-01.jpg"
-                alt="Trabajo de planificación y gestión de los recursos tecnológicos del área"
-                loading="lazy"
-                decoding="async"
-                className="aspect-[4/3] w-full object-cover"
-              />
-              <figcaption className="border-t border-ink-15 px-5 py-4">
-                <p className="text-sm leading-relaxed text-ink-60">
-                  La planificación presupuestaria acompaña la gestión del área: ordenar recursos,
-                  responsabilidades y prioridades para sostener la operación.
-                </p>
-              </figcaption>
-            </figure>
           </div>
 
           <div className="lg:col-span-7">

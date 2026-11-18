@@ -99,7 +99,7 @@ export default function Componentes() {
 
         <figure className="mt-12 border border-ink-15 bg-white">
           <img
-            src="/images/cloud2.jpg"
+            src="/images/cloud1.jpg"
             alt="Infraestructura y servicios en la nube que forman parte de los componentes del presupuesto"
             loading="lazy"
             decoding="async"
