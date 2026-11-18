@@ -62,6 +62,12 @@ const AREA_PAGES = [
     description: 'Planificación y seguimiento de los recursos del área, en resumen conceptual.',
   },
   {
+    path: '/plan-de-contingencia',
+    icon: 'bx-first-aid',
+    title: 'Plan de Contingencia',
+    description: 'Análisis de riesgos en La Paz y Multi-Cloud, DRP, alertas y cronograma de simulacros.',
+  },
+  {
     path: '/conclusiones',
     icon: 'bx-check-shield',
     title: 'Conclusiones y Recomendaciones',
