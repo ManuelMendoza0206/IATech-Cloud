@@ -50,6 +50,12 @@ const AREA_PAGES = [
     description: 'El tablero de costo cloud y la teoría del libro de trabajo.',
   },
   {
+    path: '/presupuesto',
+    icon: 'bx-wallet',
+    title: 'Presupuesto',
+    description: 'Planificación y seguimiento de los recursos del área, en resumen conceptual.',
+  },
+  {
     path: '/conclusiones',
     icon: 'bx-check-shield',
     title: 'Conclusiones y Recomendaciones',

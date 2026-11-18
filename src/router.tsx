@@ -16,6 +16,7 @@ import Tableau from './pages/Tableau/Tableau';
 import Contactos from './pages/Contactos/Contactos';
 import Weka from './pages/Weka/Weka';
 import Conclusiones from './pages/Conclusiones/Conclusiones';
+import Presupuesto from './pages/Presupuesto/Presupuesto';
 
 export interface AppRoute {
   path: string;
@@ -41,5 +42,6 @@ export const ROUTES: AppRoute[] = [
   { path: '/tableau', label: 'Tableau', element: <Tableau /> },
   { path: '/contactos', label: 'Contactos', element: <Contactos /> },
   { path: '/weka', label: 'Weka', element: <Weka /> },
+  { path: '/presupuesto', label: 'Presupuesto', element: <Presupuesto /> },
   { path: '/conclusiones', label: 'Conclusiones y Recomendaciones', element: <Conclusiones /> },
 ];
