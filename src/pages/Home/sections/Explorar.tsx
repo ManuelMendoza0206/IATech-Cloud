@@ -68,10 +68,10 @@ const AREA_PAGES = [
     description: 'Planificación y seguimiento de los recursos del área, en resumen conceptual.',
   },
   {
-    path: '/servicios',
+    path: '/soporte-externo',
     icon: 'bx-cloud',
-    title: 'Servicios',
-    description: 'AWS, Azure, Google Cloud y las capas que opera el área.',
+    title: 'Soporte Externo',
+    description: 'Proveedores externos (AWS, Azure, Google Cloud) y las capas que opera el área.',
   },
   {
     path: '/plan-de-contingencia',

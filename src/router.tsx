@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { Navigate } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Servicios from './pages/Servicios/Servicios';
 //import AreaTrabajo from './pages/AreaTrabajo/AreaTrabajo';
@@ -44,7 +45,8 @@ export const ROUTES: AppRoute[] = [
   { path: '/tableau', label: 'Tableau', element: <Tableau /> },
   { path: '/weka', label: 'Weka', element: <Weka /> },
   { path: '/presupuesto', label: 'Presupuesto', element: <Presupuesto /> },
-  { path: '/servicios', label: 'Servicios', element: <Servicios /> },
+  { path: '/soporte-externo', label: 'Soporte Externo', element: <Servicios /> },
+  { path: '/servicios', label: 'Soporte Externo', element: <Navigate to="/soporte-externo" replace />, hideFromNav: true },
   { path: '/plan-de-contingencia', label: 'Plan de Contingencia', element: <PlanContingencia /> },
   { path: '/conclusiones', label: 'Conclusiones y Recomendaciones', element: <Conclusiones /> },
   { path: '/contactos', label: 'Contactos', element: <Contactos /> },

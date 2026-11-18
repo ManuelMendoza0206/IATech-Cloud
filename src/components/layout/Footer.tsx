@@ -13,7 +13,7 @@ const FOOTER_LINKS = [
   { to: '/tableau', label: 'Tableau' },
   { to: '/weka', label: 'Weka' },
   { to: '/presupuesto', label: 'Presupuesto' },
-  { to: '/servicios', label: 'Servicios' },
+  { to: '/soporte-externo', label: 'Soporte Externo' },
   { to: '/plan-de-contingencia', label: 'Plan de Contingencia' },
   { to: '/conclusiones', label: 'Conclusiones y Recomendaciones' },
   { to: '/contactos', label: 'Contactos' },

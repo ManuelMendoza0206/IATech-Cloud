@@ -19,11 +19,11 @@ export default function Servicios() {
               <Reveal asHero>
                 <span className="swiss-label hero-item flex items-center gap-3 text-accent">
                   <span className="inline-block h-2 w-8 bg-accent" aria-hidden="true" />
-                  Catálogo cloud
+                  Proveedores y soporte externo
                 </span>
 
                 <h1 className="swiss-display hero-item mt-8 text-ink">
-                  Servi<span className="text-accent">cios</span>
+                  Soporte <span className="text-accent">Externo</span>
                 </h1>
 
                 <p className="hero-item mt-10 max-w-2xl border-l-2 border-ink pl-5 text-base leading-relaxed text-ink-60 sm:text-lg">
