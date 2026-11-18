@@ -11,7 +11,7 @@ const PRINCIPIOS = [
     icon: 'bx-calendar',
     titulo: 'Horizonte y planificación',
     texto:
-      'Definir un periodo de referencia permite anticipar necesidades, ordenar decisiones y evitar respuestas reactivas cuando surgen cambios en la demanda o en la infraestructura.',
+      'Un periodo de referencia definido ayuda a anticipar necesidades, ordenar decisiones y evitar respuestas reactivas cuando cambian la demanda o la infraestructura.',
   },
   {
     icon: 'bx-line-chart',
@@ -23,7 +23,7 @@ const PRINCIPIOS = [
     icon: 'bx-shield-quarter',
     titulo: 'Transparencia y responsabilidad',
     texto:
-      'Hacer explícitas las categorías de gasto y sus responsables facilita la rendición de cuentas, la priorización y la toma de decisiones informada dentro del equipo.',
+      'Cuando las categorías de gasto y sus responsables están claros, es más fácil rendir cuentas, priorizar y tomar decisiones informadas dentro del equipo.',
   },
 ];
 
@@ -34,26 +34,26 @@ export default function Teoria() {
         <SectionHeader
           number="01"
           title="Qué es y para qué sirve"
-          description="El presupuesto es la herramienta que permite planificar, asignar y dar seguimiento a los recursos del área de forma ordenada."
+          description="El presupuesto ordena cómo se planifican, asignan y siguen los recursos del área."
         />
 
         <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
             <div className="space-y-5 text-base leading-relaxed text-ink-60 sm:text-lg">
               <p>
-                En un área de servicios cloud e integración, el presupuesto no se limita a listar
+                En un área de servicios cloud e integración, el presupuesto va más allá de listar
                 gastos: expresa qué capacidades se quieren sostener, qué servicios deben operar con
                 continuidad y qué mejoras se priorizan en un periodo determinado.
               </p>
               <p>
-                Planificar con anticipación ayuda a coordinar al equipo, a dimensionar la
-                infraestructura y a evaluar el impacto de cada decisión antes de ejecutarla. El
-                seguimiento posterior permite comparar lo planificado con lo realizado y ajustar el
-                rumbo cuando el contexto cambia.
+                Planificar con anticipación coordina al equipo, dimensiona la infraestructura y
+                permite evaluar el impacto de cada decisión antes de ejecutarla. Después, el
+                seguimiento compara lo planificado con lo realizado y ajusta el rumbo cuando el
+                contexto cambia.
               </p>
               <p className="border-l-2 border-ink pl-5 text-ink">
                 Esta página presenta un <strong>resumen conceptual</strong> del presupuesto del
-                área. El detalle y los valores se gestionan en el documento compartido.
+                área. El detalle y los valores están en el documento compartido.
               </p>
             </div>
 

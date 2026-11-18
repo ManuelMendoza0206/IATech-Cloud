@@ -65,7 +65,7 @@ export default function Componentes() {
         <SectionHeader
           number="02"
           title="Componentes del presupuesto"
-          description="Una vista conceptual de los bloques que componen el presupuesto del área. Se describen las categorías, sin detallar cifras."
+          description="Vista conceptual de los bloques que componen el presupuesto del área. Las categorías se describen sin cifras."
         />
 
         <ul className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -107,16 +107,16 @@ export default function Componentes() {
           />
           <figcaption className="border-t border-ink-15 px-5 py-4">
             <p className="text-sm leading-relaxed text-ink-60">
-              Infraestructura, servicios y herramientas conviven dentro del presupuesto: cada
-              componente aporta capacidad para operar y evolucionar la plataforma del área.
+              Infraestructura, servicios y herramientas forman parte del presupuesto: cada
+              componente aporta capacidad para operar y hacer evolucionar la plataforma del área.
             </p>
           </figcaption>
         </figure>
 
         <p className="mt-10 border-l-2 border-ink pl-5 text-sm leading-relaxed text-ink-60 sm:text-base">
-          La composición y el peso relativo de cada componente dependen de las prioridades,
-          la etapa del proyecto y las necesidades operativas del periodo. El detalle específico se
-          documenta en el presupuesto compartido.
+          La composición y el peso relativo de cada componente dependen de las prioridades, la
+          etapa del proyecto y las necesidades operativas del periodo. El detalle está en el
+          presupuesto compartido.
         </p>
       </div>
     </section>

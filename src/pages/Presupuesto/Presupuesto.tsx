@@ -22,9 +22,9 @@ export default function Presupuesto() {
                 </h1>
 
                 <p className="hero-item mt-10 max-w-2xl border-l-2 border-ink pl-5 text-base leading-relaxed text-ink-60 sm:text-lg">
-                  Marco de planificación para estimar, asignar y dar seguimiento a los recursos del
-                  Área de Servicios Cloud e Integración. Esta página ofrece un resumen conceptual,
-                  sin cifras: el detalle se gestiona en el documento compartido.
+                  Plan para estimar, asignar y seguir los recursos del Área de Servicios Cloud e
+                  Integración. Esta página ofrece un resumen conceptual, sin cifras; el detalle está
+                  en el documento compartido.
                 </p>
 
                 <div className="hero-cta mt-12 flex flex-wrap items-center gap-4">
@@ -71,9 +71,9 @@ export default function Presupuesto() {
                 Planificar para sostener la operación
               </h2>
               <p className="mt-8 max-w-2xl border-l-2 border-accent pl-5 text-base leading-relaxed text-paper/70 sm:text-lg">
-                El presupuesto orienta cómo se asignan y revisan los recursos del área. Mantenerlo
-                actualizado y vinculado a la gestión del servicio permite tomar decisiones con
-                claridad y responder a las necesidades de la operación.
+                El presupuesto orienta cómo se asignan y revisan los recursos del área. Cuando se
+                mantiene actualizado y vinculado a la gestión del servicio, las decisiones se toman
+                con más claridad y la operación responde mejor a lo que necesita.
               </p>
             </div>
           </div>

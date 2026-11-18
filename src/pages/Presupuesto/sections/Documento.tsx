@@ -10,7 +10,7 @@ export default function Documento() {
         <SectionHeader
           number="05"
           title="Documento de presupuesto"
-          description="El detalle operativo se gestiona en un documento compartido. La web presenta únicamente el resumen conceptual."
+          description="El detalle operativo está en un documento compartido. La web muestra solo el resumen conceptual."
         />
 
         <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:items-start">
@@ -26,15 +26,15 @@ export default function Documento() {
 
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-60 sm:text-lg">
               El documento reúne la planificación y el desglose del presupuesto trabajado por el
-              equipo. Aquí se centraliza la información que respalda el seguimiento y la toma de
-              decisiones, manteniendo la web enfocada en el marco conceptual y no en las cifras.
+              equipo. Centraliza la información para el seguimiento y la toma de decisiones,
+              mientras la web se enfoca en el marco conceptual y no en las cifras.
             </p>
 
             <ul className="mt-8 space-y-3 border-t border-ink-15 pt-6">
               {[
                 'Acceso al documento compartido para consulta y trabajo del equipo.',
-                'Detalle y valores administrados fuera de la página, en el archivo de Drive.',
-                'Referencia única para revisar la planificación del periodo.',
+                'Detalle y valores fuera de la página, en el archivo de Drive.',
+                'Referencia para revisar la planificación del periodo.',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-ink-60 sm:text-base">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-accent" aria-hidden="true" />
@@ -66,13 +66,11 @@ export default function Documento() {
                 Resumen sin cifras
               </h4>
               <p className="mt-3 text-sm leading-relaxed text-ink-60 sm:text-base">
-                Por decisión del equipo, esta página no expone montos ni totales. Su propósito es
-                explicar cómo se estructura el presupuesto y ofrecer un acceso directo al documento
-                donde se gestiona el detalle.
+                Por decisión del equipo, esta página no expone montos ni totales. Explica cómo se
+                estructura el presupuesto y ofrece acceso directo al documento con el detalle.
               </p>
               <p className="mt-4 text-sm leading-relaxed text-ink-60 sm:text-base">
-                Si necesitás consultar valores específicos, utilizá el enlace al documento
-                compartido.
+                Si necesitás consultar valores específicos, usá el enlace al documento compartido.
               </p>
             </div>
           </div>

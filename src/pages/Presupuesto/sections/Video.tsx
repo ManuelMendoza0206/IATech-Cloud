@@ -87,7 +87,7 @@ export default function Video() {
         <SectionHeader
           number="04"
           title="Recursos en video"
-          description="Material audiovisual para complementar la planificación presupuestaria, la visibilidad del consumo y las prácticas de gestión financiera en la nube."
+          description="Videos para complementar la planificación presupuestaria, la visibilidad del consumo y la gestión financiera en la nube."
         />
 
         <div className="mt-12 grid gap-10 md:grid-cols-2 xl:grid-cols-3 lg:gap-8">

@@ -5,22 +5,22 @@ const PUNTOS = [
   {
     titulo: 'Visibilidad del gasto',
     texto:
-      'Conocer en qué se utilizan los recursos permite entender el origen del consumo y sostener conversaciones informadas sobre prioridades y eficiencia.',
+      'Saber en qué se usan los recursos aclara el origen del consumo y respalda conversaciones informadas sobre prioridades y eficiencia.',
   },
   {
     titulo: 'Asignación y responsabilidad',
     texto:
-      'Relacionar los recursos con áreas, servicios o propósitos facilita atribuir responsabilidades y evaluar el valor que aporta cada inversión.',
+      'Relacionar los recursos con áreas, servicios o propósitos define responsabilidades y ayuda a evaluar el valor de cada inversión.',
   },
   {
     titulo: 'Optimización continua',
     texto:
-      'Revisar el uso y ajustar capacidad, configuraciones o servicios ayuda a evitar desperdicios y a mantener el equilibrio entre costo, rendimiento y disponibilidad.',
+      'Revisar el uso y ajustar capacidad, configuraciones o servicios reduce desperdicios y mantiene el equilibrio entre costo, rendimiento y disponibilidad.',
   },
   {
     titulo: 'Decisiones informadas',
     texto:
-      'El presupuesto, junto con la medición del consumo, brinda una base para decidir cuándo escalar, consolidar o redefinir recursos según las necesidades del área.',
+      'El presupuesto, junto con la medición del consumo, da una base para decidir cuándo escalar, consolidar o redefinir recursos según las necesidades del área.',
   },
 ];
 
@@ -63,13 +63,12 @@ export default function FinOpsRelacion() {
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-ink-60 sm:text-base">
                 La planificación presupuestaria cobra sentido cuando se apoya en datos de uso y en
-                una lectura compartida del consumo. Por eso el presupuesto se complementa con la
-                gestión tecnológica y las prácticas de FinOps trabajadas en el área.
+                una lectura compartida del consumo. Por eso se complementa con la gestión
+                tecnológica y con las prácticas de FinOps trabajadas en el área.
               </p>
               <p className="mt-4 text-sm leading-relaxed text-ink-60 sm:text-base">
-                Esta combinación permite pasar de una estimación inicial a un proceso de mejora
-                continua, donde las decisiones sobre recursos se sustentan en información y en los
-                objetivos del servicio.
+                Así, una estimación inicial se convierte en un proceso de mejora continua, con
+                decisiones sobre recursos basadas en información y en los objetivos del servicio.
               </p>
 
               <figure className="mt-6 border border-ink-15 bg-white">
