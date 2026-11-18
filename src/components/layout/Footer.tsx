@@ -1,11 +1,37 @@
 import { Link } from 'react-router-dom';
 
+const FOOTER_LINKS = [
+  { to: '/', label: 'Inicio' },
+  { to: '/gestion-tecnologia', label: 'Gestión de Tecnología' },
+  { to: '/ciencia-tecnologia-innovacion', label: 'Ciencia, Tecnología e Innovación' },
+  { to: '/mision-vision', label: 'Misión y Visión' },
+  { to: '/descripcion-posiciones', label: 'Descripción de Posiciones' },
+  { to: '/mbti', label: 'MBTI · Equipo' },
+  { to: '/scrum', label: 'Scrum' },
+  { to: '/idef0', label: 'IDEF0' },
+  { to: '/bpmn', label: 'BPMN' },
+  { to: '/tableau', label: 'Tableau' },
+  { to: '/weka', label: 'Weka' },
+  { to: '/presupuesto', label: 'Presupuesto' },
+  { to: '/servicios', label: 'Servicios' },
+  { to: '/plan-de-contingencia', label: 'Plan de Contingencia' },
+  { to: '/conclusiones', label: 'Conclusiones y Recomendaciones' },
+  { to: '/contactos', label: 'Contactos' },
+  { to: '/fuentes', label: 'Fuentes' },
+] as const;
+
+const MIDPOINT = Math.ceil(FOOTER_LINKS.length / 2);
+const FOOTER_COLUMNS = [
+  FOOTER_LINKS.slice(0, MIDPOINT),
+  FOOTER_LINKS.slice(MIDPOINT),
+];
+
 export default function Footer() {
   return (
     <footer className="border-t border-ink bg-paper text-ink">
       <div className="mx-auto max-w-7xl px-6 py-14 sm:px-10">
         <div className="grid gap-10 sm:grid-cols-12">
-          <div className="sm:col-span-5">
+          <div className="sm:col-span-12 lg:col-span-3">
             <span className="font-display text-sm font-black uppercase tracking-[0.2em]">
               IATECH<span className="text-accent">.CLOUD</span>
             </span>
@@ -21,66 +47,29 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="sm:col-span-4 sm:col-start-8">
+          <div className="sm:col-span-8 lg:col-span-6">
             <nav aria-label="Navegación del sitio">
               <p className="swiss-label border-b border-ink pb-3">Índice</p>
-              <ul className="mt-4 space-y-1 text-sm">
-                <li>
-                  <Link to="/" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Inicio</Link>
-                </li>
-                <li>
-                  <Link to="/gestion-tecnologia" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Gestión de Tecnología</Link>
-                </li>
-                <li>
-                  <Link to="/ciencia-tecnologia-innovacion" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Ciencia, Tecnología e Innovación</Link>
-                </li>
-                <li>
-                  <Link to="/mision-vision" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Misión y Visión</Link>
-                </li>
-                <li>
-                  <Link to="/descripcion-posiciones" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Descripción de Posiciones</Link>
-                </li>
-                <li>
-                  <Link to="/mbti" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">MBTI · Equipo</Link>
-                </li>
-                <li>
-                  <Link to="/scrum" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Scrum</Link>
-                </li>
-                <li>
-                  <Link to="/idef0" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">IDEF0</Link>
-                </li>
-                <li>
-                  <Link to="/bpmn" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">BPMN</Link>
-                </li>
-                <li>
-                  <Link to="/tableau" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Tableau</Link>
-                </li>
-                <li>
-                  <Link to="/weka" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Weka</Link>
-                </li>
-                <li>
-                  <Link to="/presupuesto" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Presupuesto</Link>
-                </li>
-                <li>
-                  <Link to="/servicios" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Servicios</Link>
-                </li>
-                <li>
-                  <Link to="/plan-de-contingencia" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Plan de Contingencia</Link>
-                </li>
-                <li>
-                  <Link to="/conclusiones" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Conclusiones y Recomendaciones</Link>
-                </li>
-                <li>
-                  <Link to="/contactos" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Contactos</Link>
-                </li>
-                <li>
-                  <Link to="/fuentes" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Fuentes</Link>
-                </li>
-              </ul>
+              <div className="mt-4 grid grid-cols-1 gap-x-8 gap-y-1 text-sm sm:grid-cols-2">
+                {FOOTER_COLUMNS.map((column, colIdx) => (
+                  <ul key={colIdx} className="space-y-1">
+                    {column.map((item) => (
+                      <li key={item.to}>
+                        <Link
+                          to={item.to}
+                          className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ))}
+              </div>
             </nav>
           </div>
 
-          <div className="sm:col-span-3">
+          <div className="sm:col-span-4 lg:col-span-3">
             <p className="swiss-label border-b border-ink pb-3">Verificación</p>
             <p className="mt-4 text-sm leading-relaxed text-ink-60">
               Todo dato nuevo publicado en el sitio lleva su fuente. El índice completo, con
