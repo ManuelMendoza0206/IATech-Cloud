@@ -56,9 +56,6 @@ export default function Footer() {
                   <Link to="/tableau" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Tableau</Link>
                 </li>
                 <li>
-                  <Link to="/contactos" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Contactos</Link>
-                </li>
-                <li>
                   <Link to="/weka" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Weka</Link>
                 </li>
                 <li>
@@ -72,6 +69,9 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link to="/conclusiones" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Conclusiones y Recomendaciones</Link>
+                </li>
+                <li>
+                  <Link to="/contactos" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Contactos</Link>
                 </li>
                 <li>
                   <Link to="/fuentes" className="block py-0.5 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Fuentes</Link>

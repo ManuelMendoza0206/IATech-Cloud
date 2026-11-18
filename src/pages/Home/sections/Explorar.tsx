@@ -44,10 +44,22 @@ const AREA_PAGES = [
     description: 'El modelo de funciones del proyecto CLOUD, documentado.',
   },
   {
+    path: '/bpmn',
+    icon: 'bx-sitemap',
+    title: 'BPMN',
+    description: 'Modelado de procesos de negocio y flujos operativos del área.',
+  },
+  {
     path: '/tableau',
     icon: 'bx-bar-chart-alt-2',
     title: 'Tableau',
     description: 'El tablero de costo cloud y la teoría del libro de trabajo.',
+  },
+  {
+    path: '/weka',
+    icon: 'bx-analyse',
+    title: 'Weka',
+    description: 'Descubrimiento de patrones y análisis de datos del área.',
   },
   {
     path: '/presupuesto',
@@ -72,6 +84,12 @@ const AREA_PAGES = [
     icon: 'bx-check-shield',
     title: 'Conclusiones y Recomendaciones',
     description: 'Síntesis del trabajo realizado y líneas de acción a futuro.',
+  },
+  {
+    path: '/contactos',
+    icon: 'bx-envelope',
+    title: 'Contactos',
+    description: 'Canales de comunicación directa con el Área Cloud y su equipo.',
   },
 ];
 

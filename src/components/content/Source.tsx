@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 /**
  * Cita de fuente verificable. Toda cifra nueva del sitio pasa por acá:
  * el dato viaja con su referencia, nunca suelto.
@@ -46,10 +48,10 @@ export function Sources({ title = 'Fuentes', children, className = '' }: Sources
       <p className="swiss-label">{title}</p>
       <ul className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-1.5">{children}</ul>
       <p className="mt-3">
-        <a href="/fuentes" className="swiss-source inline-flex items-center gap-1">
+        <Link to="/fuentes" className="swiss-source inline-flex items-center gap-1">
           Ver el índice completo de fuentes
           <i className="bx bx-right-arrow-alt text-[0.95em] leading-none" aria-hidden="true" />
-        </a>
+        </Link>
       </p>
     </div>
   );

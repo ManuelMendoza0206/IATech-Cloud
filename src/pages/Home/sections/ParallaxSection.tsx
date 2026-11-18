@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const ROWS = [
   {
@@ -86,12 +87,12 @@ function ParallaxRow({
 
         {/* Botón plano y rectangular estilo referencia */}
         <div className="mt-10">
-          <a
-            href={link}
+          <Link
+            to={link}
             className={`inline-block px-7 py-3 font-mono text-xs font-bold uppercase tracking-widest transition ${ isDark ? 'bg-paper text-ink hover:brightness-105' : 'bg-paper text-ink hover:brightness-105' }`}
           >
             Descubrir
-          </a>
+          </Link>
         </div>
       </div>
 

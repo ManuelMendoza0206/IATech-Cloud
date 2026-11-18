@@ -42,10 +42,10 @@ export const ROUTES: AppRoute[] = [
   { path: '/fuentes', label: 'Fuentes', element: <Fuentes />, hideFromNav: true },
   { path: '/bpmn', label: 'BPMN', element: <Bpmn /> },
   { path: '/tableau', label: 'Tableau', element: <Tableau /> },
-  { path: '/contactos', label: 'Contactos', element: <Contactos /> },
   { path: '/weka', label: 'Weka', element: <Weka /> },
   { path: '/presupuesto', label: 'Presupuesto', element: <Presupuesto /> },
   { path: '/servicios', label: 'Servicios', element: <Servicios /> },
   { path: '/plan-de-contingencia', label: 'Plan de Contingencia', element: <PlanContingencia /> },
   { path: '/conclusiones', label: 'Conclusiones y Recomendaciones', element: <Conclusiones /> },
+  { path: '/contactos', label: 'Contactos', element: <Contactos /> },
 ];

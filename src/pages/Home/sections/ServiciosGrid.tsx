@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const SERVICES = [
   {
     image: '/images/home1.jpg',
@@ -83,12 +85,12 @@ export default function ServiciosGrid() {
               </div>
 
               {/* CTA adaptado al estilo bloque de la imagen, pero con tus colores */}
-              <a
-                href={service.link}
+              <Link
+                to={service.link}
                 className="swiss-btn mt-auto inline-flex self-end items-center gap-2 bg-aqua px-6 py-2 font-mono text-[11px] font-black uppercase tracking-wider text-ink transition group-hover:brightness-105"
               >
                 Descubrir
-              </a>
+              </Link>
             </article>
           ))}
         </div>
