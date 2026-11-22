@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import { Reveal } from '../../components/ui/Reveal';
 import GraficoLinea, { type Punto } from './GraficoLinea';
 import { QueEsPRTG, ValorCloud, ValorEmpresas } from './SeccionesInformativas';
+import Ilustrativos from './Ilustrativos';
+import Contador from './Contador';
+import { useEntradaEscalonada } from './animaciones';
 
 type Sensor = {
   objid: number;
@@ -24,9 +27,9 @@ const ETIQUETA: Record<Estado, string> = {
   unknown: 'Desconocido',
 };
 
-const RANGOS: Record<Rango, { etiqueta: string; sdate: string; avg: number }> = {
-  '1d': { etiqueta: '24 horas', sdate: '-1d', avg: 300 },
-  '7d': { etiqueta: '7 días', sdate: '-7d', avg: 3600 },
+const RANGOS: Record<Rango, { etiqueta: string; dias: number; avg: number }> = {
+  '1d': { etiqueta: '24 horas', dias: 1, avg: 300 },
+  '7d': { etiqueta: '7 días', dias: 7, avg: 3600 },
 };
 
 const COLUMNAS = 'objid,sensor,device,status,message,lastvalue';
@@ -73,10 +76,47 @@ function limpiar(texto: string): string {
   return decodificado.replace(/\s+/g, ' ').trim();
 }
 
-// Fecha de PRTG: "2026-11-17-11-00-00" (año-mes-día-hora-minuto-segundo).
+// Fecha para pedir datos a PRTG con fechas explícitas: "2026-11-20-17-05-31".
+function formatoPrtg(d: Date): string {
+  const p = (n: number) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}-${p(d.getHours())}-${p(d.getMinutes())}-${p(d.getSeconds())}`;
+}
+
+// Fecha que devuelve PRTG en histórico: "21/11/2026 17:00:00 - 18:00:00" (toma la de inicio).
 function parseFechaPrtg(texto: string): number {
-  const [y, mo, d, h, mi, s] = texto.split('-').map(Number);
+  const [fecha, hora] = texto.split(' - ')[0].trim().split(' ');
+  const [d, mo, y] = fecha.split('/').map(Number);
+  const [h, mi, s] = hora.split(':').map(Number);
   return new Date(y, mo - 1, d, h, mi, s).getTime();
+}
+
+// Un sensor puede tener varios canales (p. ej. tiempo de carga y tiempo de inactividad).
+// Se grafica el canal con más valores en el rango, y se descartan los intervalos vacíos.
+function puntosDeXml(texto: string): Punto[] {
+  if (!texto.includes('<histdata')) return [];
+  const xml = new DOMParser().parseFromString(texto, 'application/xml');
+  const porCanal = new Map<string, Punto[]>();
+
+  xml.querySelectorAll('item').forEach((item) => {
+    const fecha = item.querySelector('datetime')?.textContent ?? '';
+    const t = parseFechaPrtg(fecha);
+    if (!Number.isFinite(t)) return;
+    item.querySelectorAll('value_raw').forEach((el) => {
+      const texto = el.textContent?.trim() ?? '';
+      const v = Number(texto);
+      if (texto === '' || !Number.isFinite(v)) return;
+      const canal = el.getAttribute('channel') ?? '';
+      const lista = porCanal.get(canal) ?? [];
+      lista.push({ t, v });
+      porCanal.set(canal, lista);
+    });
+  });
+
+  let mejor: Punto[] = [];
+  porCanal.forEach((lista) => {
+    if (lista.length > mejor.length) mejor = lista;
+  });
+  return mejor.sort((a, b) => a.t - b.t);
 }
 
 export default function Monitoreo() {
@@ -85,6 +125,7 @@ export default function Monitoreo() {
   const [error, setError] = useState<string | null>(null);
   const [actualizado, setActualizado] = useState<Date | null>(null);
 
+  const resumenRef = useEntradaEscalonada<HTMLDivElement>('.mon-item');
   const [seleccionado, setSeleccionado] = useState<number | null>(null);
   const [rango, setRango] = useState<Rango>('1d');
   const [historico, setHistorico] = useState<Punto[]>([]);
@@ -129,29 +170,20 @@ export default function Monitoreo() {
   useEffect(() => {
     if (activo === null) return;
     const controlador = new AbortController();
-    const { sdate, avg } = RANGOS[rango];
+    const { dias, avg } = RANGOS[rango];
 
     async function cargarHistorico() {
       setCargandoHist(true);
       setErrorHist(null);
       try {
-        const url = `/prtg-api/historicdata.json?id=${activo}&sdate=${sdate}&edate=0&avg=${avg}&output=json`;
+        const ahora = new Date();
+        const desde = new Date(ahora.getTime() - dias * 86400000);
+        const url = `/prtg-api/historicdata.xml?id=${activo}&sdate=${formatoPrtg(desde)}&edate=${formatoPrtg(ahora)}&avg=${avg}`;
         const res = await fetch(url, { signal: controlador.signal });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         // PRTG responde texto plano cuando aún no hay datos suficientes.
         const texto = await res.text();
-        let data: { histdata?: { datetime: string; value_raw: number | string }[] } = {};
-        try {
-          data = JSON.parse(texto);
-        } catch {
-          data = {};
-        }
-        const puntos: Punto[] = (data.histdata ?? [])
-          .map((h: { datetime: string; value_raw: number | string }) => ({
-            t: parseFechaPrtg(h.datetime),
-            v: Number(h.value_raw),
-          }))
-          .filter((p: Punto) => Number.isFinite(p.t) && Number.isFinite(p.v));
+        const puntos = puntosDeXml(texto);
         setHistorico(puntos);
         if (puntos.length < 2) {
           setErrorHist('PRTG todavía no tiene suficientes datos de este sensor para graficarlo.');
@@ -198,11 +230,27 @@ export default function Monitoreo() {
                   Estado en vivo de los sensores de PRTG Network Monitor. Los datos se actualizan
                   cada {INTERVALO_MS / 1000} segundos.
                 </p>
+
+                <div className="hero-cta mt-12 flex flex-wrap items-center gap-4">
+                  <a
+                    href="http://127.0.0.1/welcome.htm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Abrir el centro de monitoreo de PRTG"
+                    className="swiss-btn swiss-btn-primary inline-flex items-center gap-2 px-7 py-3 text-[11px] text-paper"
+                  >
+                    Abrir centro de monitoreo
+                    <i className="bx bx-link-external text-base" aria-hidden="true" />
+                  </a>
+                  <span className="swiss-label text-ink-60">Requiere estar en el equipo donde corre PRTG</span>
+                </div>
               </Reveal>
             </div>
 
             <div className="col-span-full mt-12 sm:col-span-3 sm:col-start-10 sm:mt-0 sm:self-end">
-              <p className="swiss-numeral hero-item text-accent">{sensores.length}</p>
+              <p className="swiss-numeral hero-item text-accent">
+                <Contador valor={sensores.length} />
+              </p>
               <p className="swiss-label mt-2 border-t border-ink pt-3">Sensores totales</p>
             </div>
           </div>
@@ -217,10 +265,12 @@ export default function Monitoreo() {
       {/* Resumen */}
       <section className="border-b border-ink bg-paper">
         <div className="mx-auto max-w-7xl px-6 sm:px-10">
-          <div className="swiss-grid py-16">
+          <div ref={resumenRef} className="swiss-grid py-16">
             {(['ok', 'down', 'warn', 'paused'] as Estado[]).map((estado) => (
-              <div key={estado} className="col-span-full border-t border-ink pt-4 sm:col-span-3">
-                <p className="swiss-numeral text-ink">{conteo[estado]}</p>
+              <div key={estado} className="mon-item col-span-full border-t border-ink pt-4 sm:col-span-3">
+                <p className="swiss-numeral text-ink">
+                  <Contador valor={conteo[estado]} />
+                </p>
                 <p className="swiss-label mt-2">{ETIQUETA[estado]}</p>
               </div>
             ))}
@@ -325,13 +375,20 @@ export default function Monitoreo() {
               <div className="col-span-full mt-12">
                 {cargandoHist && <p className="swiss-label text-ink-60">Cargando histórico…</p>}
 
-                {!cargandoHist && errorHist && (
+                {!cargandoHist && errorHist && estadoSensor(sensorActivo) !== 'down' && (
                   <p className="border-l-2 border-ink pl-5 text-base leading-relaxed text-ink-60">
                     {errorHist}
                   </p>
                 )}
 
-                {!cargandoHist && !errorHist && (
+                {!cargandoHist && estadoSensor(sensorActivo) === 'down' && (
+                  <p className="border-l-2 border-accent pl-5 text-base leading-relaxed text-ink">
+                    Este sensor está en fallo, así que PRTG no registra valores medidos, solo tiempo de
+                    inactividad. El gráfico aparecerá cuando vuelva a responder.
+                  </p>
+                )}
+
+                {!cargandoHist && !errorHist && estadoSensor(sensorActivo) !== 'down' && (
                   <GraficoLinea datos={historico} unidad={sensorActivo.lastvalue.match(/[^\d\s.,-]+$/)?.[0] ?? ''} />
                 )}
               </div>
@@ -340,6 +397,9 @@ export default function Monitoreo() {
         </section>
       )}
       {/* Valor para empresas y para Cloud */}
+      <section className="border-t border-ink bg-paper">
+        <Ilustrativos />
+      </section>
       <section className="border-t border-ink bg-paper">
         <ValorEmpresas />
       </section>

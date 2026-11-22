@@ -1,3 +1,5 @@
+import { useRef, useState } from 'react';
+
 export type Punto = { t: number; v: number };
 
 type Props = {
@@ -10,7 +12,11 @@ const H = 300;
 const PAD = { top: 16, right: 24, bottom: 40, left: 64 };
 
 // Gráfico de línea en SVG, sin librerías externas, con los colores del sitio.
+// Incluye trazo animado al entrar y un cursor con tooltip al pasar sobre la serie.
 export default function GraficoLinea({ datos, unidad = '' }: Props) {
+  const svgRef = useRef<SVGSVGElement>(null);
+  const [indice, setIndice] = useState<number | null>(null);
+
   if (datos.length < 2) return null;
 
   const tMin = datos[0].t;
@@ -46,8 +52,34 @@ export default function GraficoLinea({ datos, unidad = '' }: Props) {
   const formatoValor = (v: number) =>
     `${v.toLocaleString('es-PE', { maximumFractionDigits: 2 })}${unidad ? ` ${unidad}` : ''}`;
 
+  // Punto más cercano al cursor, según la posición horizontal.
+  const alMover = (e: React.MouseEvent<SVGSVGElement>) => {
+    const svg = svgRef.current;
+    if (!svg) return;
+    const rect = svg.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * W;
+    let mejor = 0;
+    let distancia = Infinity;
+    datos.forEach((d, i) => {
+      const dx = Math.abs(areaX(d.t) - x);
+      if (dx < distancia) {
+        distancia = dx;
+        mejor = i;
+      }
+    });
+    setIndice(mejor);
+  };
+
+  const activo = indice !== null ? datos[indice] : null;
+
   return (
-    <div className="text-ink">
+    <div className="relative text-ink">
+      <style>{`
+        @keyframes trazo-entrada { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+        .trazo-animado { stroke-dasharray: 1; stroke-dashoffset: 1; animation: trazo-entrada 1.4s ease-out forwards; }
+        @media (prefers-reduced-motion: reduce) { .trazo-animado { animation: none; stroke-dashoffset: 0; } }
+      `}</style>
+
       <div className="mb-6 grid grid-cols-3 gap-6 border-t border-ink pt-4">
         <div>
           <p className="swiss-label text-ink-60">Mínimo</p>
@@ -64,10 +96,13 @@ export default function GraficoLinea({ datos, unidad = '' }: Props) {
       </div>
 
       <svg
+        ref={svgRef}
         viewBox={`0 0 ${W} ${H}`}
         className="h-auto w-full"
         role="img"
         aria-label="Gráfico histórico del sensor"
+        onMouseMove={alMover}
+        onMouseLeave={() => setIndice(null)}
       >
         {/* Rejilla horizontal y etiquetas de valor */}
         {ticksV.map((v) => (
@@ -112,16 +147,49 @@ export default function GraficoLinea({ datos, unidad = '' }: Props) {
         <path d={area} fill="currentColor" fillOpacity={0.06} />
         <path
           d={linea}
+          pathLength={1}
           fill="none"
           stroke="currentColor"
           strokeWidth={2}
           strokeLinejoin="round"
           strokeLinecap="round"
+          className="trazo-animado"
         />
 
+        {/* Cursor al pasar el mouse */}
+        {activo && (
+          <g>
+            <line
+              x1={areaX(activo.t)}
+              x2={areaX(activo.t)}
+              y1={PAD.top}
+              y2={base}
+              stroke="currentColor"
+              strokeOpacity={0.3}
+              strokeDasharray="4 4"
+            />
+            <circle cx={areaX(activo.t)} cy={areaY(activo.v)} r={6} className="text-accent" fill="currentColor" />
+          </g>
+        )}
+
         {/* Último punto resaltado */}
-        <circle cx={areaX(ultimo.t)} cy={areaY(ultimo.v)} r={5} className="text-accent" fill="currentColor" />
+        {!activo && (
+          <circle cx={areaX(ultimo.t)} cy={areaY(ultimo.v)} r={5} className="text-accent" fill="currentColor" />
+        )}
       </svg>
+
+      {activo && (
+        <div
+          className="pointer-events-none absolute top-0 border border-ink bg-paper px-3 py-2 text-xs shadow-sm"
+          style={{
+            left: `${(areaX(activo.t) / W) * 100}%`,
+            transform: `translate(${areaX(activo.t) / W > 0.7 ? '-105%' : '8px'}, 0)`,
+          }}
+        >
+          <p className="swiss-label text-ink-60">{formatoFecha(activo.t)}</p>
+          <p className="mt-1 font-semibold text-accent">{formatoValor(activo.v)}</p>
+        </div>
+      )}
     </div>
   );
 }

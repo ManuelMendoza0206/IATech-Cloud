@@ -1,5 +1,6 @@
 import { SectionHeader, Source, Sources } from '../../components/content';
 import { SOURCES_BY_ID } from '../../data/sources';
+import { useEntradaEscalonada } from './animaciones';
 
 type Tarjeta = { icono: string; titulo: string; texto: string };
 
@@ -82,11 +83,12 @@ function Seccion({
   descripcion: string;
   tarjetas: Tarjeta[];
 }) {
+  const tarjetasRef = useEntradaEscalonada<HTMLUListElement>('li');
   return (
     <div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 sm:py-28">
       <SectionHeader number={numero} title={titulo} description={descripcion} />
 
-      <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <ul ref={tarjetasRef} className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {tarjetas.map((t) => (
           <li
             key={t.titulo}
