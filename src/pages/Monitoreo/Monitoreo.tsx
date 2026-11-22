@@ -3,6 +3,9 @@ import { Reveal } from '../../components/ui/Reveal';
 import GraficoLinea, { type Punto } from './GraficoLinea';
 import { QueEsPRTG, ValorCloud, ValorEmpresas } from './SeccionesInformativas';
 import Ilustrativos from './Ilustrativos';
+import { ComoFunciona, Disponibilidad, MapaInfraestructura } from './SeccionesTecnicas';
+import { Catalogo, Escalabilidad, Eventos } from './SeccionesDatos';
+import { CicloIncidentes, Kpis, Preguntas } from './SeccionesProceso';
 import Contador from './Contador';
 import { useEntradaEscalonada } from './animaciones';
 
@@ -14,6 +17,11 @@ type Sensor = {
   status_raw: number;
   message: string;
   lastvalue: string;
+  group?: string;
+  uptime_raw?: number;
+  uptimetime?: string;
+  type?: string;
+  type_raw?: string;
 };
 
 type Estado = 'ok' | 'warn' | 'down' | 'paused' | 'unknown';
@@ -32,7 +40,7 @@ const RANGOS: Record<Rango, { etiqueta: string; dias: number; avg: number }> = {
   '7d': { etiqueta: '7 días', dias: 7, avg: 3600 },
 };
 
-const COLUMNAS = 'objid,sensor,device,status,message,lastvalue';
+const COLUMNAS = 'objid,sensor,device,group,status,message,lastvalue,uptime_raw,uptimetime,type,type_raw';
 const INTERVALO_MS = 30000;
 
 // Códigos status_raw de la API de PRTG.
@@ -126,6 +134,7 @@ export default function Monitoreo() {
   const [actualizado, setActualizado] = useState<Date | null>(null);
 
   const resumenRef = useEntradaEscalonada<HTMLDivElement>('.mon-item');
+  const tablaRef = useEntradaEscalonada<HTMLDivElement>('tbody tr', !cargando && !error && sensores.length > 0);
   const [seleccionado, setSeleccionado] = useState<number | null>(null);
   const [rango, setRango] = useState<Rango>('1d');
   const [historico, setHistorico] = useState<Punto[]>([]);
@@ -222,6 +231,18 @@ export default function Monitoreo() {
                   Monitoreo de red
                 </span>
 
+                {!error && (
+                  <span className="hero-item mt-6 inline-flex items-center gap-3 border border-ink px-3 py-1.5">
+                    <span className="relative flex h-2.5 w-2.5" aria-hidden="true">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
+                      <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent" />
+                    </span>
+                    <span className="swiss-label text-ink">
+                      En vivo{actualizado ? ` · ${actualizado.toLocaleTimeString('es-PE')}` : ''}
+                    </span>
+                  </span>
+                )}
+
                 <h1 className="swiss-display hero-item mt-8 text-ink">
                   Monitoreo<span className="text-accent">.</span>
                 </h1>
@@ -262,6 +283,18 @@ export default function Monitoreo() {
         <QueEsPRTG />
       </section>
 
+      {/* Cómo funciona */}
+      <section className="border-b border-ink bg-paper">
+        <ComoFunciona />
+      </section>
+
+      {/* Mapa de infraestructura */}
+      {!error && sensores.length > 0 && (
+        <section className="border-b border-ink bg-paper">
+          <MapaInfraestructura sensores={sensores} />
+        </section>
+      )}
+
       {/* Resumen */}
       <section className="border-b border-ink bg-paper">
         <div className="mx-auto max-w-7xl px-6 sm:px-10">
@@ -292,7 +325,7 @@ export default function Monitoreo() {
               )}
             </div>
 
-            <div className="col-span-full mt-12">
+            <div ref={tablaRef} className="col-span-full mt-12">
               {cargando && <p className="swiss-label text-ink-60">Cargando sensores…</p>}
 
               {error && (
@@ -324,10 +357,18 @@ export default function Monitoreo() {
                             className={`cursor-pointer border-b border-ink-15 align-top transition-colors hover:bg-ink/5 ${esActivo ? 'bg-ink/5' : ''}`}
                           >
                             <td className="py-4 pr-4">
-                              <span
-                                className={`swiss-label ${estado === 'down' ? 'text-accent' : 'text-ink'}`}
-                              >
-                                {ETIQUETA[estado]}
+                              <span className="inline-flex items-center gap-2">
+                                {estado === 'down' && (
+                                  <span className="relative flex h-2 w-2" aria-hidden="true">
+                                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
+                                    <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+                                  </span>
+                                )}
+                                <span
+                                  className={`swiss-label ${estado === 'down' ? 'text-accent' : 'text-ink'}`}
+                                >
+                                  {ETIQUETA[estado]}
+                                </span>
                               </span>
                             </td>
                             <td className="py-4 pr-4 text-ink">{limpiar(s.sensor)}</td>
@@ -345,6 +386,25 @@ export default function Monitoreo() {
           </div>
         </div>
       </section>
+
+      {/* Disponibilidad */}
+      {!error && sensores.length > 0 && (
+        <section className="border-t border-ink bg-paper">
+          <Disponibilidad sensores={sensores} />
+        </section>
+      )}
+
+      {/* Escalabilidad (proyección) */}
+      <section className="border-t border-ink bg-paper">
+        <Escalabilidad />
+      </section>
+
+      {/* Eventos recientes */}
+      {!error && (
+        <section className="border-t border-ink bg-paper">
+          <Eventos />
+        </section>
+      )}
 
       {/* Histórico */}
       {!error && sensorActivo && (
@@ -399,6 +459,20 @@ export default function Monitoreo() {
       {/* Valor para empresas y para Cloud */}
       <section className="border-t border-ink bg-paper">
         <Ilustrativos />
+      </section>
+      {!error && sensores.length > 0 && (
+        <section className="border-t border-ink bg-paper">
+          <Catalogo sensores={sensores} />
+        </section>
+      )}
+      <section className="border-t border-ink bg-paper">
+        <CicloIncidentes />
+      </section>
+      <section className="border-t border-ink bg-paper">
+        <Kpis />
+      </section>
+      <section className="border-t border-ink bg-paper">
+        <Preguntas />
       </section>
       <section className="border-t border-ink bg-paper">
         <ValorEmpresas />

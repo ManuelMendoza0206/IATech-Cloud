@@ -4,14 +4,13 @@ import { animate, stagger } from 'animejs';
 export const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // Entrada escalonada de los elementos `selector` dentro del contenedor, al entrar en pantalla.
-export function useEntradaEscalonada<T extends HTMLElement>(selector: string) {
+export function useEntradaEscalonada<T extends HTMLElement>(selector: string, activo = true) {
   const ref = useRef<T>(null);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || reduceMotion()) return;
-    const items = el.querySelectorAll<HTMLElement>(selector);
-    items.forEach((i) => (i.style.opacity = '0'));
+    if (!activo || !el || reduceMotion()) return;
+    const items = el.querySelectorAll<HTMLElement>(selector);    items.forEach((i) => (i.style.opacity = '0'));
 
     const observer = new IntersectionObserver(
       ([entrada]) => {
@@ -29,7 +28,7 @@ export function useEntradaEscalonada<T extends HTMLElement>(selector: string) {
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, [selector]);
+  }, [selector, activo]);
 
   return ref;
 }
