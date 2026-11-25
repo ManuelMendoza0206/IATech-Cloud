@@ -10,6 +10,7 @@ const FOOTER_LINKS = [
   { to: '/scrum', label: 'Scrum' },
   { to: '/idef0', label: 'IDEF0' },
   { to: '/bpmn', label: 'BPMN' },
+  { to: '/inventario', label: 'Inventario Cloud' },
   { to: '/tableau', label: 'Tableau' },
   { to: '/weka', label: 'Weka' },
   { to: '/presupuesto', label: 'Presupuesto' },

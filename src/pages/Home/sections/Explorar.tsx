@@ -50,6 +50,12 @@ const AREA_PAGES = [
     description: 'Modelado de procesos de negocio y flujos operativos del área.',
   },
   {
+    path: '/inventario',
+    icon: 'bx-list-ul',
+    title: 'Inventario Cloud',
+    description: 'El registro de recursos, su ciclo de vida y el criterio para mantenerlo confiable.',
+  },
+  {
     path: '/tableau',
     icon: 'bx-bar-chart-alt-2',
     title: 'Tableau',
