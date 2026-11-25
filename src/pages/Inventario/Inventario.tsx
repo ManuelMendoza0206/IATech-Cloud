@@ -1,6 +1,14 @@
 import { Reveal } from '../../components/ui/Reveal';
 import { INVENTARIO_URL, MUESTRA } from './data/inventario';
-import { Definicion, Lexico, Anatomia, CicloVida, Gobierno, Higiene } from './sections';
+import {
+  Definicion,
+  Lexico,
+  Anatomia,
+  CicloVida,
+  Gobierno,
+  Higiene,
+  Decisiones,
+} from './sections';
 
 export default function Inventario() {
   return (
@@ -114,6 +122,7 @@ export default function Inventario() {
       <CicloVida />
       <Gobierno />
       <Higiene />
+      <Decisiones />
     </div>
   );
 }
