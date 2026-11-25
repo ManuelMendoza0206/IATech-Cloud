@@ -21,7 +21,7 @@ interface RailHeaderProps {
 export function RailHeader({ label, title, aside, id }: RailHeaderProps) {
   return (
     <Reveal>
-      <div id={id} className="swiss-grid items-start border-b border-ink pb-8">
+      <div id={id} className="reveal swiss-grid items-start border-b border-ink pb-8">
         <div className="col-span-full sm:col-span-3">
           <p className="swiss-rail swiss-label">{label}</p>
         </div>

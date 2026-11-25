@@ -113,7 +113,7 @@ export function Eventos() {
               target="_blank"
               rel="noopener noreferrer"
               className="underline decoration-accent underline-offset-4 hover:text-ink"
-            >
+             >
               Ver en YouTube
             </a>
           </p>
