@@ -5,3 +5,4 @@ export { default as CicloVida } from './CicloVida';
 export { default as Gobierno } from './Gobierno';
 export { default as Higiene } from './Higiene';
 export { default as Decisiones } from './Decisiones';
+export { default as Acceso } from './Acceso';

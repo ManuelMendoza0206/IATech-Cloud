@@ -8,6 +8,7 @@ import {
   Gobierno,
   Higiene,
   Decisiones,
+  Acceso,
 } from './sections';
 
 export default function Inventario() {
@@ -123,6 +124,7 @@ export default function Inventario() {
       <Gobierno />
       <Higiene />
       <Decisiones />
+      <Acceso />
     </div>
   );
 }
