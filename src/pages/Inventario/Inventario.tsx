@@ -1,6 +1,6 @@
 import { Reveal } from '../../components/ui/Reveal';
 import { INVENTARIO_URL, MUESTRA } from './data/inventario';
-import { Definicion, Lexico, Anatomia } from './sections';
+import { Definicion, Lexico, Anatomia, CicloVida } from './sections';
 
 export default function Inventario() {
   return (
@@ -111,6 +111,7 @@ export default function Inventario() {
       <Definicion />
       <Lexico />
       <Anatomia />
+      <CicloVida />
     </div>
   );
 }
