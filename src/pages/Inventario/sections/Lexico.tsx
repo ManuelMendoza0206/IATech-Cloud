@@ -58,7 +58,7 @@ export default function Lexico() {
         />
 
         <div className="mt-12 overflow-x-auto border border-ink-15">
-          <table className="w-full min-w-[44rem] border-collapse text-left">
+          <table className="w-full border-collapse text-left">
             <caption className="sr-only">
               Equivalencias entre la teoría clásica de inventarios y el inventario de recursos cloud
             </caption>
@@ -70,7 +70,7 @@ export default function Lexico() {
                 <th scope="col" className="px-4 py-3 font-mono text-[11px] uppercase tracking-widest sm:px-6">
                   Equivalente cloud
                 </th>
-                <th scope="col" className="px-4 py-3 font-mono text-[11px] uppercase tracking-widest sm:px-6">
+                <th scope="col" className="hidden px-4 py-3 font-mono text-[11px] uppercase tracking-widest lg:table-cell sm:px-6">
                   Qué cambia
                 </th>
               </tr>
@@ -86,8 +86,11 @@ export default function Lexico() {
                   </th>
                   <td className="px-4 py-4 text-sm font-semibold text-accent sm:px-6">
                     {row.cloud}
+                    <span className="mt-2 block text-xs font-normal leading-relaxed text-ink-60 lg:hidden">
+                      {row.cambia}
+                    </span>
                   </td>
-                  <td className="max-w-[46ch] px-4 py-4 text-sm leading-relaxed text-ink-60 sm:px-6">
+                  <td className="hidden px-4 py-4 text-sm leading-relaxed text-ink-60 lg:table-cell sm:px-6">
                     {row.cambia}
                   </td>
                 </tr>

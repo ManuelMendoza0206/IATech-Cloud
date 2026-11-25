@@ -49,7 +49,7 @@ export default function Gobierno() {
 
           <div className="col-span-full lg:col-span-9">
             <div className="overflow-x-auto border border-ink-15 bg-surface">
-              <table className="w-full min-w-[40rem] border-collapse text-left">
+              <table className="w-full border-collapse text-left">
                 <caption className="sr-only">
                   Roles del inventario cloud, lo que decide cada uno y aquello por lo que responde
                 </caption>
@@ -61,7 +61,7 @@ export default function Gobierno() {
                     <th scope="col" className="px-4 py-3 font-mono text-[11px] uppercase tracking-widest sm:px-6">
                       Decide
                     </th>
-                    <th scope="col" className="px-4 py-3 font-mono text-[11px] uppercase tracking-widest sm:px-6">
+                    <th scope="col" className="hidden px-4 py-3 font-mono text-[11px] uppercase tracking-widest lg:table-cell sm:px-6">
                       Responde por
                     </th>
                   </tr>
@@ -77,8 +77,12 @@ export default function Gobierno() {
                       </th>
                       <td className="px-4 py-4 text-sm leading-relaxed text-ink-60 sm:px-6">
                         {fila.decide}
+                        <span className="mt-2 block text-xs leading-relaxed text-ink-60 lg:hidden">
+                          <span className="swiss-label mr-1">Responde por</span>
+                          {fila.responde}
+                        </span>
                       </td>
-                      <td className="px-4 py-4 text-sm leading-relaxed text-ink-60 sm:px-6">
+                      <td className="hidden px-4 py-4 text-sm leading-relaxed text-ink-60 lg:table-cell sm:px-6">
                         {fila.responde}
                       </td>
                     </tr>

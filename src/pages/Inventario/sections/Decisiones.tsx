@@ -81,7 +81,7 @@ export default function Decisiones() {
                     </p>
                   </div>
 
-                  <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-ink-40 transition-colors duration-150 group-hover:text-accent">
+                  <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-ink-60 transition-colors duration-150 group-hover:text-accent">
                     Ver página
                     <i
                       className="bx bx-right-arrow-alt text-base transition-transform duration-150 group-hover:translate-x-1"

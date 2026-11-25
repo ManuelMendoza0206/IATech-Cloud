@@ -82,7 +82,7 @@ export default function Anatomia() {
         <div className="mt-12 swiss-grid gap-y-10">
           <div className="col-span-full lg:col-span-8">
             <div className="overflow-x-auto border border-ink-15 bg-surface">
-              <table className="w-full min-w-[36rem] border-collapse text-left">
+              <table className="w-full border-collapse text-left">
                 <caption className="sr-only">
                   Atributos de un registro de inventario cloud, la pregunta que responde cada uno y
                   los valores que usa el área
@@ -92,7 +92,7 @@ export default function Anatomia() {
                     <th scope="col" className="px-4 py-3 font-mono text-[11px] uppercase tracking-widest sm:px-6">
                       Atributo
                     </th>
-                    <th scope="col" className="px-4 py-3 font-mono text-[11px] uppercase tracking-widest sm:px-6">
+                    <th scope="col" className="hidden px-4 py-3 font-mono text-[11px] uppercase tracking-widest lg:table-cell sm:px-6">
                       Pregunta que responde
                     </th>
                     <th scope="col" className="px-4 py-3 font-mono text-[11px] uppercase tracking-widest sm:px-6">
@@ -108,9 +108,14 @@ export default function Anatomia() {
                     >
                       <th scope="row" className="px-4 py-4 text-sm font-semibold text-ink sm:px-6">
                         {campo.atributo}
+                        <span className="mt-1 block text-xs font-normal text-ink-60 lg:hidden">
+                          {campo.pregunta}
+                        </span>
                       </th>
-                      <td className="px-4 py-4 text-sm text-ink-60 sm:px-6">{campo.pregunta}</td>
-                      <td className="max-w-[42ch] px-4 py-4 text-sm leading-relaxed text-ink-60 sm:px-6">
+                      <td className="hidden px-4 py-4 text-sm text-ink-60 lg:table-cell sm:px-6">
+                        {campo.pregunta}
+                      </td>
+                      <td className="px-4 py-4 text-sm leading-relaxed text-ink-60 sm:px-6">
                         {campo.valores}
                       </td>
                     </tr>
@@ -119,7 +124,7 @@ export default function Anatomia() {
               </table>
             </div>
 
-            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ink-40">
+            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ink-60">
               El identificador no aparece en la tabla porque no es un atributo más: es la clave que
               hace única la fila. Sin él, dos registros del mismo recurso parecen dos recursos.
             </p>
@@ -150,7 +155,7 @@ export default function Anatomia() {
                 ))}
               </dl>
 
-              <p className="border-t border-ink-15 px-4 py-3 text-[11px] leading-relaxed text-ink-40">
+              <p className="border-t border-ink-15 px-4 py-3 text-[11px] leading-relaxed text-ink-60">
                 Valores ilustrativos. El registro real se consulta en la aplicación del área.
               </p>
             </div>
