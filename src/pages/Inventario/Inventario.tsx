@@ -11,6 +11,17 @@ import {
   Acceso,
 } from './sections';
 
+const SECCIONES = [
+  { id: 'definicion', label: 'Definición' },
+  { id: 'origen', label: 'Del almacén al cloud' },
+  { id: 'estructura', label: 'Anatomía' },
+  { id: 'ciclo', label: 'Ciclo de vida' },
+  { id: 'gobierno', label: 'Gobierno' },
+  { id: 'calidad', label: 'Calidad' },
+  { id: 'decisiones', label: 'Decisiones' },
+  { id: 'acceso', label: 'Acceso' },
+];
+
 export default function Inventario() {
   return (
     <div>
@@ -81,7 +92,7 @@ export default function Inventario() {
                             <span className="block font-mono text-[11px] font-semibold leading-tight tracking-tight text-ink tabular-nums">
                               {recurso.id}
                             </span>
-                            <span className="mt-1 block text-xs leading-tight text-ink-40">
+                            <span className="mt-1 block text-xs leading-tight text-ink-60">
                               {recurso.tipo}
                             </span>
                           </td>
@@ -98,7 +109,7 @@ export default function Inventario() {
                               />
                               {recurso.criticidad}
                             </span>
-                            <span className="mt-1 block text-[11px] leading-tight text-ink-40">
+                            <span className="mt-1 block text-[11px] leading-tight text-ink-60">
                               {recurso.ambiente}
                             </span>
                           </td>
@@ -107,7 +118,7 @@ export default function Inventario() {
                     </tbody>
                   </table>
 
-                  <p className="border-t border-ink-15 px-4 py-3 text-[11px] leading-relaxed text-ink-40">
+                  <p className="border-t border-ink-15 px-4 py-3 text-[11px] leading-relaxed text-ink-60">
                     Ejemplo ilustrativo. El registro real se consulta en la aplicación del área.
                   </p>
                 </div>
@@ -116,6 +127,23 @@ export default function Inventario() {
           </div>
         </div>
       </section>
+
+      <nav aria-label="Contenido de la página" className="border-b border-ink bg-surface">
+        <div className="mx-auto max-w-7xl px-6 sm:px-10">
+          <div className="flex flex-wrap items-baseline gap-x-7 gap-y-2 py-4">
+            <span className="swiss-label shrink-0">En esta página</span>
+            {SECCIONES.map((seccion) => (
+              <a
+                key={seccion.id}
+                href={`#${seccion.id}`}
+                className="text-sm font-semibold text-ink-60 transition-colors duration-150 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
+              >
+                {seccion.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </nav>
 
       <Definicion />
       <Lexico />
